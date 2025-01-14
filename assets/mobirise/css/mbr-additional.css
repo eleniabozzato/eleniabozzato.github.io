@@ -1239,6 +1239,11 @@ a {
 .cid-uzqA4UMy2v .link {
   color: #e6007e;
 }
+.cid-uzqA4UMy2v .card-title,
+.cid-uzqA4UMy2v .card-box {
+  text-align: center;
+  color: #e6007e;
+}
 .cid-uzqDGkkCri {
   padding-top: 90px;
   padding-bottom: 90px;
