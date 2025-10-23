@@ -1109,6 +1109,38 @@ a {
 .cid-uzqan7rVjx .mbr-section-btn {
   color: #000000;
 }
+.cid-v0sko32aDw {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #000000;
+}
+@media (min-width: 1500px) {
+  .cid-v0sko32aDw .container {
+    max-width: 1400px;
+  }
+}
+.cid-v0sko32aDw .mbr-iconfont {
+  display: block;
+  font-size: 5rem;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+.cid-v0sko32aDw .card-wrapper {
+  margin-top: 3rem;
+}
+.cid-v0sko32aDw .row {
+  justify-content: center;
+}
+.cid-v0sko32aDw .mbr-section-title {
+  color: #ffffff;
+}
+.cid-v0sko32aDw .card-title,
+.cid-v0sko32aDw .iconfont-wrapper {
+  color: #e6007e;
+}
+.cid-v0sko32aDw .card-text {
+  color: #ffffff;
+}
 .cid-uzqsBbUpFR {
   padding-top: 4rem;
   padding-bottom: 0rem;
