@@ -1,14 +1,51 @@
 (function () {
+  var TRUNCATE_LENGTH = 330;
+
   var section = document.getElementById('slider6-3f');
   if (!section) return;
 
   var container = section.querySelector('.embla__container');
   if (!container) return;
 
+  var autoPlayTimer = null;
+  var embla = null;
+
   function escapeHtml(str) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    autoPlayTimer = setInterval(function () {
+      if (!document.hidden && embla) {
+        if (embla.scrollProgress() !== 1) {
+          embla.scrollNext();
+        } else {
+          embla.scrollTo(0);
+        }
+      }
+    }, 5000);
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+
+  function collapseAllReviews() {
+    var expanded = container.querySelectorAll('.review-text.is-expanded');
+    for (var i = 0; i < expanded.length; i++) {
+      var p = expanded[i];
+      p.querySelector('.review-full').style.display = 'none';
+      p.querySelector('.review-truncated').style.display = '';
+      p.querySelector('.review-toggle-btn').style.display = 'block';
+      p.querySelector('.review-collapse-btn').style.display = 'none';
+      p.classList.remove('is-expanded');
+    }
   }
 
   fetch('recensioni.txt')
@@ -36,31 +73,94 @@
       for (var i = 0; i < parts.length; i += 2) {
         var author = parts[i].trim();
         var content = parts[i + 1].trim();
+        var isLong = content.length > TRUNCATE_LENGTH;
 
         var slide = document.createElement('div');
         slide.className = 'embla__slide slider-image item';
         slide.style.marginLeft = '1rem';
         slide.style.marginRight = '1rem';
-        slide.innerHTML =
-          '<div class="slide-content">' +
-          '<div class="item-content">' +
-          '<h6 class="item-subtitle mbr-fonts-style mt-1 display-7">' +
-          '<strong>' +
-          escapeHtml(author) +
-          '</strong>' +
-          '</h6>' +
-          '<p class="mbr-text mbr-fonts-style mt-3 display-7">' +
-          escapeHtml(content) +
-          '</p>' +
-          '</div>' +
-          '</div>';
 
+        var slideContent = document.createElement('div');
+        slideContent.className = 'slide-content';
+
+        var itemContent = document.createElement('div');
+        itemContent.className = 'item-content';
+
+        var authorEl = document.createElement('h6');
+        authorEl.className = 'item-subtitle mbr-fonts-style mt-1 display-7';
+        authorEl.innerHTML = '<strong>' + escapeHtml(author) + '</strong>';
+
+        var textEl = document.createElement('p');
+        textEl.className = 'mbr-text mbr-fonts-style mt-3 display-7 review-text';
+
+        if (isLong) {
+          var truncatedSpan = document.createElement('span');
+          truncatedSpan.className = 'review-truncated';
+          truncatedSpan.textContent = content.slice(0, TRUNCATE_LENGTH) + '\u2026';
+
+          var fullSpan = document.createElement('span');
+          fullSpan.className = 'review-full';
+          fullSpan.textContent = content;
+          fullSpan.style.display = 'none';
+
+          var toggleBtn = document.createElement('button');
+          toggleBtn.className = 'review-toggle-btn';
+          toggleBtn.type = 'button';
+          toggleBtn.textContent = 'mostra di pi\u00f9';
+          toggleBtn.style.cssText =
+            'display:block;background:none;border:none;padding:0;margin-top:0.5rem;' +
+            'cursor:pointer;font:inherit;font-weight:600;text-decoration:underline;' +
+            'width:100%;text-align:center;';
+
+          var collapseBtn = document.createElement('button');
+          collapseBtn.className = 'review-collapse-btn';
+          collapseBtn.type = 'button';
+          collapseBtn.textContent = 'mostra meno';
+          collapseBtn.style.cssText =
+            'display:none;background:none;border:none;padding:0;margin-top:0.5rem;' +
+            'cursor:pointer;font:inherit;font-weight:600;text-decoration:underline;' +
+            'width:100%;text-align:center;';
+
+          toggleBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var p = this.parentNode;
+            p.querySelector('.review-truncated').style.display = 'none';
+            p.querySelector('.review-full').style.display = '';
+            p.querySelector('.review-toggle-btn').style.display = 'none';
+            p.querySelector('.review-collapse-btn').style.display = 'block';
+            p.classList.add('is-expanded');
+            stopAutoPlay();
+          });
+
+          collapseBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            var p = this.parentNode;
+            p.querySelector('.review-truncated').style.display = '';
+            p.querySelector('.review-full').style.display = 'none';
+            p.querySelector('.review-toggle-btn').style.display = 'block';
+            p.querySelector('.review-collapse-btn').style.display = 'none';
+            p.classList.remove('is-expanded');
+            startAutoPlay();
+          });
+
+          textEl.appendChild(truncatedSpan);
+          textEl.appendChild(fullSpan);
+          textEl.appendChild(toggleBtn);
+          textEl.appendChild(collapseBtn);
+        } else {
+          textEl.textContent = content;
+        }
+
+        itemContent.appendChild(authorEl);
+        itemContent.appendChild(textEl);
+        slideContent.appendChild(itemContent);
+        slide.appendChild(slideContent);
         container.appendChild(slide);
       }
 
       // Initialize Embla carousel
       var viewport = section.querySelector('.embla__viewport');
-      var embla = EmblaCarousel(viewport, {
+      embla = EmblaCarousel(viewport, {
         align: 'center',
         skipSnaps: true,
         containScroll: 'trimSnaps',
@@ -84,20 +184,28 @@
         }
       }
 
-      prevBtn.addEventListener('click', embla.scrollPrev, false);
-      nextBtn.addEventListener('click', embla.scrollNext, false);
-      embla.on('select', updateButtons);
+      function resumeCarousel() {
+        collapseAllReviews();
+        startAutoPlay();
+      }
+
+      prevBtn.addEventListener('click', function () {
+        collapseAllReviews();
+        embla.scrollPrev();
+        startAutoPlay();
+      }, false);
+
+      nextBtn.addEventListener('click', function () {
+        collapseAllReviews();
+        embla.scrollNext();
+        startAutoPlay();
+      }, false);
+
+      embla.on('select', function () {
+        updateButtons();
+      });
       embla.on('init', updateButtons);
 
-      // Auto play every 5 seconds
-      setInterval(function () {
-        if (!document.hidden) {
-          if (embla.scrollProgress() !== 1) {
-            embla.scrollNext();
-          } else {
-            embla.scrollTo(0);
-          }
-        }
-      }, 5000);
+      startAutoPlay();
     });
 })();
