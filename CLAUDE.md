@@ -39,5 +39,10 @@ The root `Caddyfile` targets the production host name; `docker-compose.yml` over
   - Page CSS should change only padding and typography. For the closed state, adjust `padding-bottom`, not `height`, so the animation stays smooth.
   - A link to `page.html#<item-id>` opens that item and scrolls to it. The home services pills use this to link to `come-lavoro.html`.
   - Keep `overflow: clip` on items and `body`, never `hidden`: `hidden` breaks `scroll-margin-top` and the sticky header.
-- **`assets/js/contact-form.js`** — only on `contatti.html`. Validates `#contact-form`, requires a Cloudflare Turnstile token (`.cf-turnstile` widget, script loaded in the page head), then POSTs JSON `{name, email, message, token}` to `ENDPOINT`. The endpoint is still a placeholder (`TODO` in the file); there is no backend in this repo.
+- **`assets/js/contact-form.js`** — only on `contatti.html`. The form is sent to [PostTo](https://postto.dev/docs), a hosted form service; there is no backend in this repo.
+  - **Endpoint:** the form's `action` (`https://postto.dev/api/v1/send/<token>`), so the form also works as a plain HTML POST without JS.
+  - **Submit:** the script validates the fields and requires a Cloudflare Turnstile token. It then POSTs `FormData` with `Accept: application/json`, which makes PostTo answer in JSON instead of redirecting, and maps PostTo `error` codes to Italian messages.
+  - **Field names** `name`, `email`, `message` and `subject` are PostTo's auto-mapped names; keep them.
+  - **PostTo reserved fields:** `_hp` is the honeypot and must stay hidden and empty; `cf-turnstile-response` is added by the widget.
+  - **Turnstile:** the site key is in `contatti.html`; the secret key lives in the PostTo endpoint settings (Anti-spam → Cloudflare Turnstile).
 - **Images** live in `assets/img/` with descriptive kebab-case names (`<page>-<subject>.jpg`). Set explicit `width`/`height` and `loading="lazy"` below the fold, and write Italian `alt` text.

@@ -43,7 +43,13 @@
         <h1>Se hai un progetto <br class="br-d" />da sviluppare o senti <br class="br-d" />il bisogno di dare <br class="br-d" />una direzione più chiara <br class="br-d" />alla tua comunicazione, <br class="br-d" /><span class="italic-accent italic-accent--acqua">CONOSCIAMOCI</span>.</h1>
         <p class="lead">Ti risponderò il prima possibile <br class="br-d" />per capire insieme come posso aiutarti.</p>
 
-        <form id="contact-form" novalidate>
+        <form id="contact-form" action="https://postto.dev/api/v1/send/ep_tbREgrjT2wVeVuEz" method="POST" novalidate>
+          <input type="hidden" name="subject" value="Nuovo messaggio da eleniabozzato.com" />
+          <!-- PostTo honeypot: bots fill it, people never see it -->
+          <div hidden>
+            <label for="hp">Lascia vuoto</label>
+            <input type="text" id="hp" name="_hp" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="contact-form__row">
             <div class="form-field">
               <input type="text" id="name" name="name" placeholder=" " autocomplete="name" required />
