@@ -1,7 +1,7 @@
 /* ---------- Page: come-lavoro ---------- */
 .cl-hero { border-bottom: 2px solid var(--line); min-height: 0; }
 .cl-hero .hero-split__media { border-right: 2px solid var(--line); position: relative; }
-.cl-hero .hero-split__media img { position: absolute; inset: 0; }
+.cl-hero .hero-split__media img { position: absolute; inset: 0; object-position: 50% 26%; }
 .cl-hero .hero-split__text {
   padding: 2.5rem;
   background: radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(260px * var(--glow-scale)) at 6% 50%, var(--glow-acqua));
@@ -61,6 +61,7 @@
   .cl-accordion .accordion__panel-content { padding: 0.25rem 1.4rem 1.4rem; }
   .cl-method h2 { font-size: 1.4rem; }
   .cl-hero .hero-split__media { border-right: 0; }
+  .cl-hero .hero-split__media img { object-position: 50% 0%; }
   .cl-hero p br, .cl-accordion p br, .cl-method p br, .cl-method h2 br { display: none; }
 }
 /* Wide screens: keep the glow where the 1025px design puts it (6% of a 512px column) */
