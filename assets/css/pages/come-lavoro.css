@@ -64,9 +64,9 @@
   .cl-accordion .accordion__panel-content { padding: 0.25rem 1.4rem 1.4rem; }
   .cl-method h2 { font-size: 1.4rem; }
   .cl-hero .hero-split__media { border-right: 0; }
-  /* square, framed on the face and the open laptop: the top of the head may be cut */
+  /* square, framed on the face and the open laptop: only a little of the top of the head is cut */
   .cl-hero .hero-split__media { aspect-ratio: 1 / 1; }
-  .cl-hero .hero-split__media img { object-position: 50% 70%; }
+  .cl-hero .hero-split__media img { object-position: 50% 45%; }
   .cl-hero p br, .cl-accordion p br, .cl-method p br, .cl-method h2 br { display: none; }
 }
 /* Wide screens: keep the glow where the 1025px design puts it (6% of a 512px column) */

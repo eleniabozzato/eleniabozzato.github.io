@@ -83,15 +83,16 @@
 /* same title as the home sections (those rules are scoped to .page-home) */
 .page-project .more-exp .section-title { font-size: 2.5rem; font-weight: 700; line-height: 42px; }
 .page-project .more-exp .section-title .italic-accent { font-size: 1.05em; }
-.more-exp__marquee { overflow: clip; }
+/* Scroll container moved by main.js (auto-advance, swipe, wheel, mouse drag); no scrollbar.
+   Hover does not pause it (it made the cards hard to follow). */
+.more-exp__marquee { overflow-x: auto; overflow-y: clip; scrollbar-width: none; overscroll-behavior-x: contain; cursor: grab; }
+.more-exp__marquee::-webkit-scrollbar { display: none; }
+.more-exp__marquee.is-dragging { cursor: grabbing; user-select: none; }
+.more-exp__marquee img { -webkit-user-drag: none; }
 .more-exp__track {
   --card-w: 340px; --card-gap: 24px;
   display: flex; width: max-content; margin: 0; padding: 0; list-style: none; text-align: left;
-  animation: more-exp-scroll 50s linear infinite;
 }
-/* hover does not pause (it made the cards hard to follow); keyboard focus does */
-.more-exp__marquee:focus-within .more-exp__track { animation-play-state: paused; }
-@keyframes more-exp-scroll { to { transform: translateX(-33.3333%); } }
 .more-exp__item { flex: none; width: var(--card-w); margin-right: var(--card-gap); }
 .more-exp__card {
   display: flex; flex-direction: column; height: 100%; border: var(--line-hairline); border-radius: var(--radius-lg);
@@ -105,8 +106,6 @@
 .more-exp__name .italic-accent { display: block; font-size: 2.1rem; font-weight: 400; }
 .more-exp__desc { font-size: 1rem; line-height: 1.4; }
 @media (prefers-reduced-motion: reduce) {
-  .more-exp__marquee { overflow-x: auto; padding-bottom: 12px; }
-  .more-exp__track { animation: none; }
   .more-exp__item[aria-hidden="true"] { display: none; }
 }
 

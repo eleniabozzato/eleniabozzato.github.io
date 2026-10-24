@@ -1663,11 +1663,21 @@ textarea:focus-visible,
   max-width: 290px;
 }
 .page-home .exp-grid__cell .btn { margin-top: auto; flex-shrink: 0; }
-.page-home .exp-grid__cell:nth-child(2) { background: radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(330px * var(--glow-scale)) at 100% 100%, var(--glow-rosa)), var(--white); }
-.page-home .exp-grid__cell:nth-child(3) { background: radial-gradient(ellipse calc(340px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 0% 100%, var(--glow-acqua)), var(--white); }
-.page-home .exp-grid__cell:nth-child(4) { background: radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(330px * var(--glow-scale)) at 100% 0%, var(--glow-rosa)), var(--white); }
-.page-home .exp-grid__cell:nth-child(5) { background: radial-gradient(ellipse calc(360px * var(--glow-scale)) calc(300px * var(--glow-scale)) at 0% 0%, var(--glow-acqua)), var(--white); }
-.page-home .exp-grid__cell:nth-child(6) { background: radial-gradient(ellipse calc(340px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 100% 100%, var(--glow-rosa)), var(--white); }
+/* Glows are pseudo-elements centred on the bottom line of a cell, so each one straddles a row
+   separator (half above, half below). They sit behind the cell content (z-index -1) and the
+   cells are transparent, so the hairlines stay on top. Cell 6 keeps a corner glow: it is the
+   last row, so there is no line to cross. */
+.page-home .exp-grid { isolation: isolate; }
+.page-home .exp-grid__cell { position: relative; }
+.page-home .exp-grid__cell::after {
+  --gx: calc(300px * var(--glow-scale)); --gy: calc(330px * var(--glow-scale));
+  content: "";
+  position: absolute; left: 0; right: 0; top: calc(100% - var(--gy)); height: calc(var(--gy) * 2);
+  z-index: -1; pointer-events: none;
+}
+.page-home .exp-grid__cell:nth-child(2)::after { background: radial-gradient(ellipse var(--gx) var(--gy) at 100% 50%, var(--glow-rosa)); }
+.page-home .exp-grid__cell:nth-child(3)::after { --gx: calc(340px * var(--glow-scale)); background: radial-gradient(ellipse var(--gx) var(--gy) at 0% 50%, var(--glow-acqua)); }
+.page-home .exp-grid__cell:nth-child(6) { background: radial-gradient(ellipse calc(340px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 100% 100%, var(--glow-rosa)); }
 
 .page-home .section--reviews { padding: 56px 0 62px; border-bottom: 0; }
 .page-home .section--reviews .section__head { margin-bottom: 38px; }
@@ -1731,13 +1741,12 @@ textarea:focus-visible,
   .page-home .exp-grid__cell:nth-last-child(2) { border-bottom: var(--line-hairline); }
   .page-home .exp-grid__cell .btn { margin-top: 1.5rem; }
   .page-home .exp-grid__title { font-size: 2rem; }
-  /* Stacked cells: glows sit inside the cell (not on the corner, where half of it is cut),
-     alternating right/left like the desktop grid. Cell 1 has none, as on desktop. */
-  .page-home .exp-grid__cell:nth-child(2) { background: radial-gradient(ellipse 200px 170px at 92% 50%, var(--glow-rosa)), var(--white); }
-  .page-home .exp-grid__cell:nth-child(3) { background: radial-gradient(ellipse 200px 170px at 8% 50%, var(--glow-acqua)), var(--white); }
-  .page-home .exp-grid__cell:nth-child(4) { background: radial-gradient(ellipse 200px 170px at 92% 50%, var(--glow-rosa)), var(--white); }
-  .page-home .exp-grid__cell:nth-child(5) { background: radial-gradient(ellipse 200px 170px at 8% 50%, var(--glow-acqua)), var(--white); }
-  .page-home .exp-grid__cell:nth-child(6) { background: radial-gradient(ellipse 200px 170px at 92% 50%, var(--glow-rosa)), var(--white); }
+  /* Stacked cells: one glow on each line between cells, alternating right/left. */
+  .page-home .exp-grid__cell::after { --gx: 200px; --gy: 170px; }
+  .page-home .exp-grid__cell:nth-child(n)::after { background: none; }
+  .page-home .exp-grid__cell:nth-child(odd):not(:last-child)::after { background: radial-gradient(ellipse var(--gx) var(--gy) at 92% 50%, var(--glow-rosa)); }
+  .page-home .exp-grid__cell:nth-child(even):not(:last-child)::after { background: radial-gradient(ellipse var(--gx) var(--gy) at 8% 50%, var(--glow-acqua)); }
+  .page-home .exp-grid__cell:nth-child(6) { background: none; }
   .page-home .section--reviews { padding: 2.5rem 0; }
   .page-home .carousel--clean .carousel__viewport { margin: 0 2.25rem; padding: 0; }
   .page-home .carousel--clean .carousel__btn {
