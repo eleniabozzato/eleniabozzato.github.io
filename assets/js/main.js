@@ -207,8 +207,21 @@
     toggle();
   }
 
+  // WhatsApp: the number is base64 in data-wa and decoded only on click, so it is not
+  // in the HTML as plain text for scrapers. Without JS the link falls back to contatti.html.
+  function initWhatsApp() {
+    document.querySelectorAll("[data-wa]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const number = atob(link.dataset.wa).replace(/\D/g, "");
+        window.open("https://wa.me/" + number, "_blank", "noopener");
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initToTop();
+    initWhatsApp();
     initNav();
     initActiveLink();
     initSubmenu();
