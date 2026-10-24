@@ -1,6 +1,6 @@
 /* ---------- Page: dentisti-cordovado ---------- */
 .page-dentisti .hero-split--glow .hero-split__text {
-  background: radial-gradient(ellipse 230px 290px at 92% 48%, rgba(160, 228, 250, 0.95) 0%, rgba(160, 228, 250, 0) 100%), var(--white);
+  background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at 92% 48%, var(--glow-acqua)), var(--white);
 }
 .page-dentisti .hero-split__text { padding: 3rem var(--gutter); }
 .page-dentisti .hero-split__eyebrow {
@@ -76,7 +76,7 @@
   .page-dentisti .hero-split { grid-template-columns: calc(var(--bleed) + 512.5px) 1fr; }
   .page-dentisti .hero-split__text { padding-left: calc(var(--bleed) + 68px); }
   .page-dentisti .hero-split--glow .hero-split__text {
-    background: radial-gradient(ellipse 230px 290px at calc(100% - 41px) 48%, rgba(160, 228, 250, 0.95) 0%, rgba(160, 228, 250, 0) 100%), var(--white);
+    background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at calc(100% - 41px) 48%, var(--glow-acqua)), var(--white);
   }
 }
 @media (min-width: 1800px) {
@@ -84,6 +84,10 @@
 }
 @media (max-width: 767px) {
   .page-dentisti .br-desk { display: none; }
+  /* Mobile: glow enters from the right edge instead of sitting under the text */
+  .page-dentisti .hero-split--glow .hero-split__text {
+    background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at 100% 40%, var(--glow-acqua)), var(--white);
+  }
   .page-dentisti .hero-split__project-name { font-size: 2.4rem; }
   .page-dentisti .hero-split__project-name .italic-accent { font-size: 2.3rem; }
   .page-dentisti .hero-split__tagline { font-size: 1.4rem; }

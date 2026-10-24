@@ -4,7 +4,7 @@
 .cl-hero .hero-split__media img { position: absolute; inset: 0; }
 .cl-hero .hero-split__text {
   padding: 2.5rem;
-  background: radial-gradient(ellipse 300px 260px at 6% 50%, #b8eefc 0%, rgba(184, 238, 252, 0) 100%);
+  background: radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(260px * var(--glow-scale)) at 6% 50%, var(--glow-acqua));
 }
 .cl-hero .hero-split__text h1,
 .cl-hero .hero-split__text h2 {
@@ -66,6 +66,6 @@
 /* Wide screens: keep the glow where the 1025px design puts it (6% of a 512px column) */
 @media (min-width: 1025px) {
   .cl-hero .hero-split__text {
-    background: radial-gradient(ellipse 300px 260px at 31px 50%, #b8eefc 0%, rgba(184, 238, 252, 0) 100%);
+    background: radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(260px * var(--glow-scale)) at 31px 50%, var(--glow-acqua));
   }
 }
