@@ -1,5 +1,8 @@
 /* ---------- Page: progetto (case-study template, shared by all project pages) ----------
-   Per-project hero crop: set --hero-pos on the hero <img> (style attribute), e.g. style="--hero-pos: 70% 50%". */
+   Per-project hero crop: set --hero-pos on the hero <img> (style attribute), e.g. style="--hero-pos: 70% 50%".
+   A cover that is only a logo on a flat colour must not be cropped on wide screens:
+   set style="--hero-fit: contain; --hero-bg: <cover colour>" instead. */
+.page-project .hero-split__media img { object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); }
 .page-project .hero-split--glow .hero-split__text {
   background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at 92% 48%, var(--glow-acqua)), var(--white);
 }
@@ -68,7 +71,7 @@
   .page-project .hero-split__media { height: 513px; }
   .page-project .hero-split__media img {
     width: calc(100% + 95px); height: 513px; max-width: none; margin: 0 0 0 -46px;
-    object-fit: cover; object-position: var(--hero-pos, 50% 45.7%);
+    object-fit: var(--hero-fit, cover); object-position: var(--hero-pos, 50% 45.7%);
   }
   .page-project .hero-split__text { padding: 121px 4rem 0 68px; justify-content: flex-start; }
 }
