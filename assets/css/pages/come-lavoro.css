@@ -22,9 +22,10 @@
 .cl-services .section-title { font-size: 2.5rem; line-height: 1.05; letter-spacing: -0.01em; }
 .cl-accordion { max-width: 900px; margin: 0 auto; gap: 1rem; }
 .cl-accordion .accordion__item,
-.cl-accordion .accordion__item[data-open="true"] { border: var(--line-hairline); border-radius: 45px; }
+.cl-accordion .accordion__item[data-open="true"] { border: var(--line-hairline); }
+/* half the closed height: a pill when closed, same shape when open (no radius animation) */
+.cl-accordion .accordion__item { border-radius: 47px; }
 /* closed = pill; the radius eases back to 45px when it opens */
-.cl-accordion .accordion__item[data-open="false"] { border-radius: 999px; }
 .cl-accordion { --accordion-closed-bg: linear-gradient(90deg, rgba(245, 35, 125, 0.28), rgba(12, 193, 224, 0.28)); }
 .cl-accordion .accordion__trigger {
   align-items: flex-start;
@@ -59,7 +60,7 @@
   .cl-services .section-title { font-size: 1.7rem; }
   .cl-accordion .accordion__trigger { font-size: 1.15rem; padding: 1.2rem 1.4rem 0; }
   .cl-accordion .accordion__item[data-open="false"] .accordion__trigger { padding-bottom: 1.2rem; }
-  .cl-accordion .accordion__item, .cl-accordion .accordion__item[data-open="true"] { border-radius: 28px; }
+  .cl-accordion .accordion__item { border-radius: 41px; }
   .cl-accordion .accordion__panel-content { padding: 0.25rem 1.4rem 1.4rem; }
   .cl-method h2 { font-size: 1.4rem; }
   .cl-hero .hero-split__media { border-right: 0; }

@@ -782,7 +782,6 @@ textarea:focus-visible,
   border-radius: var(--radius-lg);
   overflow: clip; /* not hidden: a scroll container would ignore scroll-margin-top */
   background: var(--white);
-  transition: border-radius var(--accordion-speed) var(--accordion-ease);
 }
 .accordion__item::before {
   content: "";
@@ -1649,6 +1648,8 @@ textarea:focus-visible,
 }
 .page-home .exp-grid__cell .badge { margin-bottom: 19px; }
 .page-home .exp-grid__title {
+  /* always two lines tall, so a one-line name (PULICASA) stays aligned with its row */
+  display: flex; flex-direction: column; justify-content: center; min-height: 70px;
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 35px;

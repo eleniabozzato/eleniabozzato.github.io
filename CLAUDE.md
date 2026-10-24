@@ -38,7 +38,7 @@ The root `Caddyfile` targets the production host name; `docker-compose.yml` over
 - **`assets/js/main.js`** — loaded on every page. One IIFE that wires up, by class name: mobile nav toggle, active nav link (`aria-current` from the URL filename, or from `data-nav-current` on `<body>`), accordions, and `.carousel` (reviews/gallery; dots are generated from slides). Components are activated just by adding the right markup.
 - **Accordions:**
   - Items start closed (`data-open="false"`) and toggle independently.
-  - Closed items are pills (`border-radius: 999px`); open items use the page radius.
+  - The radius is fixed at half the closed height, so a closed item is a pill and opening it does not change its shape. Do not animate `border-radius`.
   - A closed item shows a gradient, set per page with `--accordion-closed-bg`. Opening fades the gradient out and turns the title from ink into gradient text, all with shared transitions in `style.css`.
   - Page CSS should change only padding and typography. For the closed state, adjust `padding-bottom`, not `height`, so the animation stays smooth.
   - A link to `page.html#<item-id>` opens that item and scrolls to it. The home services pills use this to link to `come-lavoro.html`.

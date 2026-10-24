@@ -24,10 +24,8 @@
 .page-project main > .section { padding: 44px 0 64px; }
 .page-project .accordion { max-width: 900px; margin: 0 auto; gap: 16px; }
 .page-project .accordion__item {
-  border-radius: 45px; /* same as come-lavoro */
-  transition: border-radius var(--accordion-speed) var(--accordion-ease);
+  border-radius: 50px; /* half the closed height: a pill when closed, same shape when open */
 }
-.page-project .accordion__item[data-open="false"] { border-radius: 999px; } /* closed = pill */
 .page-project .accordion__trigger {
   align-items: flex-start; padding: 30px 40px 0; font-size: 1.875rem; line-height: 1.2;
 }
@@ -149,8 +147,7 @@
   .page-project .client-logo img { width: 200px; max-width: 60%; }
   .page-project .client-logo--wide img { width: 220px; max-width: 65%; }
   .page-project .gallery-carousel--standalone { margin: 32px 0 0; }
-  .page-project .accordion__item { border-radius: 28px; }
-  .page-project .accordion__item[data-open="false"] { border-radius: 999px; }
+  .page-project .accordion__item { border-radius: 37px; }
   .page-project .client-logo--xwide img { width: 300px; max-width: 80%; }
   .page-project .more-exp .section-title { font-size: 1.7rem; line-height: 1.2; }
   .more-exp__track { --card-w: 260px; --card-gap: 16px; }
