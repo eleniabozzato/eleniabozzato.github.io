@@ -26,10 +26,6 @@
 .page-esperienze .exp-photo-grid__title .italic-accent { display: block; font-size: 2.6rem; font-weight: 400; }
 .exp-photo-grid__desc { font-size: 1.25rem; line-height: 28px; margin: 29px 0 26px; max-width: 280px; }
 .exp-photo-grid--full .exp-photo-grid__desc { margin-bottom: auto; padding-bottom: 26px; }
-/* Closing call to action: no cover photo, so it fills the cell with the brand gradient */
-.exp-photo-grid__cell--cta { background: var(--grad-brand); }
-.exp-photo-grid--full .exp-photo-grid__cell--cta .exp-photo-grid__body { justify-content: center; }
-.exp-photo-grid__cell--cta .exp-photo-grid__desc { margin-bottom: 26px; padding-bottom: 0; }
 @media (max-width: 639px) {
   .exp-photo-grid--full .exp-photo-grid__cell:nth-child(even) { border-right: var(--line-hairline); }
   .exp-photo-grid--full { border-left: var(--line-hairline); }
