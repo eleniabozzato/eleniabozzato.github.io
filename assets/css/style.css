@@ -1355,8 +1355,9 @@ textarea:focus-visible,
   }
 
   .strip__track {
-    font-size: 0.72rem;
-    gap: 0.4rem 0.7rem;
+    height: 44px;
+    font-size: 1rem;
+    gap: 0.5rem;
   }
 
   .carousel__btn--prev { left: 0; }
@@ -1413,7 +1414,9 @@ textarea:focus-visible,
 }
 /* Photo box matches the PDF: x 443–948 at 1025px, so it starts 14px left of the column */
 .page-home .hero__media { margin: 0 14px 0 -14px; position: relative; }
-.page-home .hero__media img { height: auto; }
+/* The photo is 960px wide but the column is 940px of it: the extra 20px on the
+   right keep the loose hair strands uncut. */
+.page-home .hero__media img { width: calc(100% * 960 / 940); max-width: none; height: auto; }
 /* Pink glow behind the cut-out photo. It sits on the photo (not on .hero) so it
    follows the photo when the layout stacks on mobile. Centre: 77px into the
    column, 400px down, as measured on the PDF. */
