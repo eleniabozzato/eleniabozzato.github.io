@@ -23,7 +23,7 @@
 .page-project .client-logo img { max-width: 300px; width: 300px; }
 .page-project main > .section { padding: 44px 0 64px; }
 .page-project .accordion { max-width: 900px; margin: 0 auto; gap: 16px; }
-.page-project .accordion__item { border-radius: 40px; }
+.page-project .accordion__item { border-radius: 45px; } /* same as come-lavoro */
 .page-project .accordion__trigger {
   align-items: flex-start; padding: 30px 40px 0; font-size: 1.875rem; line-height: 1.2;
 }
@@ -33,12 +33,12 @@
 }
 .page-project .accordion__icon {
   font-size: 0; width: 30px; height: 40px; margin: -2px 0 -20px; background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 39V1M2 14L15 1l13 13'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 39V1M2 14L15 1l13 13'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 39V1M2 14L15 1l13 13'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 39V1M2 14L15 1l13 13'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .page-project .accordion__item[data-open="false"] .accordion__icon { transform: rotate(180deg); }
 .page-project .accordion__panel-content {
-  padding: 0 40px 36px; font-size: 0.9375rem; line-height: 1.4;
+  padding: 9px 40px 36px; font-size: 0.9375rem; line-height: 1.4;
 }
 .page-project .accordion__panel-content p { max-width: 712px; margin: 0 0 1.4em; }
 .page-project .accordion__panel-content p:last-child { margin-bottom: 0; }
@@ -66,9 +66,47 @@
 .page-project .testimonial-card__author { color: var(--ink); font-size: 1.25rem; line-height: 1.4; }
 .page-project .testimonial-card__role { font-size: 1.25rem; line-height: 1.35; }
 
+/* ---------- "Vedi le altre esperienze": slow marquee of the other projects ----------
+   The track holds 3 identical sets (1 real + 2 aria-hidden) and slides by one set, so the loop is seamless
+   as long as one set is not narrower than the screen. */
+.page-project main > .section.more-exp { padding: 56px 0 64px; border-top: var(--line-hairline); text-align: center; }
+.more-exp__head { padding: 0 var(--gutter); margin-bottom: 36px; }
+/* same title as the home sections (those rules are scoped to .page-home) */
+.page-project .more-exp .section-title { font-size: 2.5rem; font-weight: 700; line-height: 42px; }
+.page-project .more-exp .section-title .italic-accent { font-size: 1.05em; }
+.more-exp__marquee { overflow: clip; }
+.more-exp__track {
+  --card-w: 340px; --card-gap: 24px;
+  display: flex; width: max-content; margin: 0; padding: 0; list-style: none; text-align: left;
+  animation: more-exp-scroll 50s linear infinite;
+}
+.more-exp__marquee:hover .more-exp__track,
+.more-exp__marquee:focus-within .more-exp__track { animation-play-state: paused; }
+@keyframes more-exp-scroll { to { transform: translateX(-33.3333%); } }
+.more-exp__item { flex: none; width: var(--card-w); margin-right: var(--card-gap); }
+.more-exp__card {
+  display: flex; flex-direction: column; height: 100%; border: var(--line-hairline); border-radius: var(--radius-lg);
+  overflow: clip; background: var(--white); color: var(--ink);
+}
+.more-exp__card:hover, .more-exp__card:focus-visible { background: var(--grad-brand-soft, var(--white)); }
+.more-exp__media { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: var(--line-hairline); }
+.more-exp__media img { display: block; width: 100%; height: 100%; object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); object-position: 50% 25%; }
+.more-exp__body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 28px; text-align: center; }
+.more-exp__name { font-size: 2rem; font-weight: 400; line-height: 1.05; }
+.more-exp__name .italic-accent { display: block; font-size: 2.1rem; font-weight: 400; }
+.more-exp__desc { font-size: 1rem; line-height: 1.4; }
+@media (prefers-reduced-motion: reduce) {
+  .more-exp__marquee { overflow-x: auto; padding-bottom: 12px; }
+  .more-exp__track { animation: none; }
+  .more-exp__item[aria-hidden="true"] { display: none; }
+}
+
 @media (min-width: 1024px) {
-  .page-project .hero-split { min-height: 0; height: 513px; }
-  .page-project .hero-split__media { height: 513px; }
+  /* height: auto so the closing hairline sits below the 513px columns instead of under the photo */
+  .page-project .hero-split { min-height: 0; }
+  .page-project .hero-split__text { height: 513px; }
+  /* the photo is the right column, so the divider is on its left edge */
+  .page-project .hero-split__media { height: 513px; border-right: 0; border-left: var(--line-hairline); }
   .page-project .hero-split__media img {
     width: calc(100% + 95px); height: 513px; max-width: none; margin: 0 0 0 -46px;
     object-fit: var(--hero-fit, cover); object-position: var(--hero-pos, 50% 45.7%);
@@ -98,10 +136,14 @@
   .page-project .hero-split__tagline { font-size: 1.4rem; }
   .page-project .client-logo img { width: 200px; max-width: 60%; }
   .page-project .accordion__item { border-radius: 28px; }
+  .page-project .more-exp .section-title { font-size: 1.7rem; line-height: 1.2; }
+  .more-exp__track { --card-w: 260px; --card-gap: 16px; }
+  .more-exp__name { font-size: 1.7rem; }
+  .more-exp__name .italic-accent { font-size: 1.8rem; }
   .page-project .accordion__trigger { padding: 22px 20px 0; font-size: 1.4rem; gap: 0.5rem; }
   .page-project .accordion__icon { width: 24px; height: 32px; margin-bottom: -12px; flex-shrink: 0; }
   .page-project .accordion__item[data-open="false"] .accordion__trigger { padding-bottom: 22px; }
-  .page-project .accordion__panel-content { padding: 0 20px 24px; }
+  .page-project .accordion__panel-content { padding: 4px 20px 24px; }
   /* Full-width slides: the arrows sit on the slide edges instead of in the side gutters */
   .page-project .gallery-carousel { padding: 0; margin: 24px 0 8px; }
   .page-project .gallery-carousel .carousel__viewport { padding: 0; }
@@ -115,3 +157,4 @@
   .page-project .testimonial-card { padding: 28px 22px; border-radius: 28px; }
   .page-project .testimonial-card p:first-child { font-size: 1.05rem; }
 }
+.page-project .gallery-carousel .carousel__btn svg * { vector-effect: non-scaling-stroke; } /* keeps the 2px line when the arrow is scaled down on mobile */

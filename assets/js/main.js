@@ -26,6 +26,60 @@
     });
   }
 
+  /* ---------- Esperienze drop-down ----------
+     Desktop: opens on hover and on the chevron, closes on mouse leave (short delay),
+     Escape, outside click and when focus leaves. Mobile: chevron toggles the sub-list. */
+  function initSubmenu() {
+    const item = document.querySelector(".nav__item--has-sub");
+    if (!item) return;
+    const toggle = item.querySelector(".nav__sub-toggle");
+    const desktop = window.matchMedia("(min-width: 768px)");
+    let timer;
+
+    function setOpen(open) {
+      clearTimeout(timer);
+      item.setAttribute("data-open", String(open));
+      toggle.setAttribute("aria-expanded", String(open));
+    }
+
+    // Current project in the list, from the URL filename
+    const current = window.location.pathname.split("/").pop() || "index.html";
+    let onProject = false;
+    item.querySelectorAll(".nav__sublink").forEach(function (link) {
+      if (link.getAttribute("href") === current) {
+        link.setAttribute("aria-current", "page");
+        onProject = true;
+      }
+    });
+    // On a project page the mobile list starts open: sibling projects are one tap away.
+    if (onProject && !desktop.matches) setOpen(true);
+
+    toggle.addEventListener("click", function () {
+      setOpen(item.getAttribute("data-open") !== "true");
+    });
+    item.addEventListener("pointerenter", function (e) {
+      if (desktop.matches && e.pointerType === "mouse") setOpen(true);
+    });
+    item.addEventListener("pointerleave", function (e) {
+      if (!desktop.matches || e.pointerType !== "mouse") return;
+      clearTimeout(timer);
+      timer = setTimeout(function () { setOpen(false); }, 200);
+    });
+    item.addEventListener("focusout", function (e) {
+      if (desktop.matches && !item.contains(e.relatedTarget)) setOpen(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || item.getAttribute("data-open") !== "true") return;
+      const hadFocus = item.contains(document.activeElement);
+      setOpen(false);
+      if (hadFocus) toggle.focus();
+    });
+    document.addEventListener("click", function (e) {
+      if (desktop.matches && !item.contains(e.target)) setOpen(false);
+    });
+    desktop.addEventListener("change", function () { setOpen(false); });
+  }
+
   /* ---------- Active nav link ---------- */
   function initActiveLink() {
     // Project pages set <body data-nav-current="esperienze.html"> to highlight their section.
@@ -136,6 +190,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     initNav();
     initActiveLink();
+    initSubmenu();
     initAccordions();
     initCarousels();
   });

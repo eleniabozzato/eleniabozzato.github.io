@@ -40,7 +40,8 @@
 
   /* Editorial divider lines (match PDF: thin, near-black, clearly visible) */
   --line: #000000;
-  --line-hairline: 1px solid var(--line);
+  --line-w: 2px; /* the one stroke width: dividers, borders, icon strokes (= Come lavoro accordion arrow) */
+  --line-hairline: var(--line-w) solid var(--line);
 
   --radius-pill: 999px;
   --radius-lg: 32px;
@@ -181,8 +182,8 @@ textarea:focus-visible,
   font-size: 0.92rem;
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  border: 2px solid var(--line);
-  background: var(--white);
+  border: var(--line-hairline);
+  background: var(--grad-social);
   color: var(--ink);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
   white-space: nowrap;
@@ -193,26 +194,21 @@ textarea:focus-visible,
 }
 
 
-.btn--outline {
-  background: var(--white);
-  border-color: var(--ink);
-  color: var(--ink);
-}
-
+.btn--outline,
 .btn--gradient,
 .btn--gradient-ink {
-  background: var(--white);
-  color: var(--ink);
+  background: var(--grad-social);
   border-color: var(--line);
+  color: var(--ink);
 }
-/* Every button is white with a 2px black border; the pink-to-cyan gradient appears on hover/focus only */
+/* Every button carries the pink-to-cyan gradient and a black border; hover/focus turns it white */
 .btn:hover,
 .btn:focus-visible,
 .btn--outline:hover,
 .btn--dark:hover,
 .btn--gradient:hover,
 .btn--gradient-ink:hover {
-  background: var(--grad-social);
+  background: var(--white);
   color: var(--ink);
   border-color: var(--line);
 }
@@ -303,7 +299,7 @@ textarea:focus-visible,
   left: 0;
   right: 0;
   bottom: 0;
-  height: 1px;
+  height: var(--line-w);
   background: var(--magenta);
   transform: scaleX(0);
   transition: transform 0.2s ease;
@@ -317,6 +313,95 @@ textarea:focus-visible,
 }
 .nav__link[aria-current="page"]::after {
   transform: scaleX(1);
+}
+
+/* Esperienze drop-down: chevron toggle + project list. Closed = visibility: hidden,
+   so the links leave the tab order. */
+.nav__item--has-sub {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.nav__sub-toggle {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.nav__sub-toggle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: var(--line-w) solid currentColor;
+  border-bottom: var(--line-w) solid currentColor;
+  transform: translate(-50%, -70%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.nav__sub-toggle[aria-expanded="true"]::before {
+  transform: translate(-50%, -30%) rotate(-135deg);
+}
+.nav__sub-toggle:hover,
+.nav__sub-toggle:focus-visible,
+.nav__sublink:hover,
+.nav__sublink:focus-visible,
+.nav__sublink[aria-current="page"] {
+  color: var(--magenta);
+}
+.nav__sublink[aria-current="page"] {
+  font-weight: 700;
+}
+.nav__sub {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.18s ease, visibility 0s linear 0.18s;
+}
+.nav__item--has-sub[data-open="true"] .nav__sub {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+.nav__sublink {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--ink);
+}
+
+@media (min-width: 768px) {
+  .nav__item--has-sub {
+    position: relative;
+    align-self: stretch; /* the hover area reaches the header line, so the panel is not left behind */
+  }
+  .nav__sub {
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    z-index: 1;
+    min-width: 230px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background: var(--white);
+    border: var(--line-hairline);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+  }
+  .nav__sublink {
+    padding: 0.625rem 0.875rem;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__sub,
+  .nav__sub-toggle::before {
+    transition: none;
+  }
 }
 
 /* ---------- Hero ---------- */
@@ -604,16 +689,16 @@ textarea:focus-visible,
   gap: 1rem;
   padding: 1.6rem 2.4rem;
   border-radius: var(--radius-pill);
-  border: 2px solid var(--line);
-  background: var(--white);
+  border: var(--line-hairline);
+  background: var(--grad-brand);
   font-weight: 700;
   font-size: 1.2rem;
   transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
-/* Like .btn: white by default, brand gradient on hover/focus only */
+/* Like .btn: brand gradient by default, white on hover/focus */
 .pill-card:hover,
 .pill-card:focus-visible {
-  background: var(--grad-brand);
+  background: var(--white);
   box-shadow: var(--shadow-soft);
   transform: translateY(-2px);
 }
@@ -854,7 +939,7 @@ textarea:focus-visible,
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 1.5px solid rgba(17, 17, 17, 0.15);
+  border: var(--line-w) solid rgba(17, 17, 17, 0.15);
   background: var(--white);
   display: flex;
   align-items: center;
@@ -1093,7 +1178,6 @@ textarea:focus-visible,
   display: grid;
   grid-template-columns: 1fr;
   align-items: stretch;
-  border-bottom: var(--line-hairline);
 }
 .contact-layout__media {
   min-height: 320px;
@@ -1116,7 +1200,7 @@ textarea:focus-visible,
 }
 @media (min-width: 1024px) {
   .contact-layout__form-wrap {
-    border-left: 1px solid rgba(17, 17, 17, 0.1);
+    border-left: var(--line-w) solid rgba(17, 17, 17, 0.1);
   }
 }
 
@@ -1240,8 +1324,10 @@ textarea:focus-visible,
 .footer-contact__icon svg {
   width: 70px;
   height: 70px;
-  stroke-width: 0.5;
+  stroke-width: var(--line-w);
 }
+/* non-scaling: the stroke stays at --line-w whatever the viewBox scale */
+.footer-contact__icon svg * { vector-effect: non-scaling-stroke; }
 .footer-social {
   display: flex;
   gap: 4.5rem;
@@ -1258,9 +1344,12 @@ textarea:focus-visible,
   align-items: center;
   justify-content: center;
   color: var(--icon-dark);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
-.footer-social__link:hover {
+/* Same hover as .btn: gradient by default, white on hover/focus */
+.footer-social__link:hover,
+.footer-social__link:focus-visible {
+  background: var(--white);
   transform: translateY(-3px);
   box-shadow: var(--shadow-soft);
 }
@@ -1338,11 +1427,42 @@ textarea:focus-visible,
     display: block;
     width: 100%;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+    border-bottom: var(--line-w) solid rgba(17, 17, 17, 0.06);
     font-size: 1.05rem;
   }
   .nav__toggle {
     display: flex;
+  }
+  .nav__menu > li {
+    width: 100%;
+  }
+  .nav__item--has-sub {
+    flex-wrap: wrap;
+    gap: 0;
+    border-bottom: var(--line-w) solid rgba(17, 17, 17, 0.06);
+  }
+  .nav__item--has-sub > .nav__link {
+    flex: 1;
+    width: auto;
+    border-bottom: none;
+  }
+  .nav__sub-toggle {
+    width: 48px;
+    height: 48px;
+  }
+  .nav__sub {
+    display: none;
+    flex-basis: 100%;
+    padding: 0 0 0.5rem 1rem;
+    visibility: visible;
+    opacity: 1;
+  }
+  .nav__item--has-sub[data-open="true"] .nav__sub {
+    display: block;
+  }
+  .nav__sublink {
+    padding: 0.8125rem 0;
+    font-size: 1rem;
   }
 
   .section {
@@ -1366,7 +1486,7 @@ textarea:focus-visible,
    Home page (body.page-home) — desktop mockup match
    ========================================================================= */
 .page-home {
-  --arrow-long: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 38 22' fill='none' stroke='%23000' stroke-width='1.3'%3E%3Cpath d='M0 11h37M27 1l10 10-10 10'/%3E%3C/svg%3E");
+  --arrow-long: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 40 24' fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M0 11h37M27 1l10 10-10 10'/%3E%3C/svg%3E");
 }
 .page-home .hero {
   position: relative;
@@ -1495,8 +1615,8 @@ textarea:focus-visible,
   font-size: 1.875rem;
 }
 .page-home .pill-card__arrow {
-  width: 38px;
-  height: 22px;
+  width: 40px;
+  height: 24px;
   border-radius: 0;
   background: var(--arrow-long) no-repeat center / contain;
   font-size: 0;
@@ -1566,8 +1686,8 @@ textarea:focus-visible,
 .page-home .review-card__author { color: var(--ink); font-size: 1.25rem; line-height: 28px; }
 .page-home .review-card__role { font-size: 1.25rem; line-height: 28px; }
 .page-home .carousel--clean .carousel__btn {
-  width: 38px;
-  height: 22px;
+  width: 40px;
+  height: 24px;
   border: 0;
   border-radius: 0;
   background: var(--arrow-long) no-repeat center / contain;
@@ -1605,7 +1725,12 @@ textarea:focus-visible,
   .page-home .exp-grid__title { font-size: 2rem; }
   .page-home .section--reviews { padding: 2.5rem 0; }
   .page-home .carousel--clean .carousel__viewport { margin: 0 2.25rem; padding: 0; }
-  .page-home .carousel--clean .carousel__btn { width: 28px; }
+  .page-home .carousel--clean .carousel__btn {
+    width: 28px;
+    /* same 2px stroke at the smaller size (2 * 40 / 28) */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 40 24' fill='none' stroke='%23000' stroke-width='2.86'%3E%3Cpath d='M0 11h37M27 1l10 10-10 10'/%3E%3C/svg%3E");
+  }
+  .page-home .carousel--clean .carousel__btn:hover { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 40 24' fill='none' stroke='%23000' stroke-width='2.86'%3E%3Cpath d='M0 11h37M27 1l10 10-10 10'/%3E%3C/svg%3E"); }
   .page-home .carousel--clean .carousel__btn--prev { left: 0; }
   .page-home .carousel--clean .carousel__btn--next { right: 0; }
   .page-home .review-card { padding: 1.5rem 1.25rem; border-radius: 28px; }
