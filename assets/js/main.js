@@ -28,7 +28,8 @@
 
   /* ---------- Active nav link ---------- */
   function initActiveLink() {
-    const current = (window.location.pathname.split("/").pop() || "index.html");
+    // Project pages set <body data-nav-current="esperienze.html"> to highlight their section.
+    const current = document.body.dataset.navCurrent || (window.location.pathname.split("/").pop() || "index.html");
     document.querySelectorAll(".nav__link").forEach(function (link) {
       const href = link.getAttribute("href");
       if (href === current || (current === "" && href === "index.html")) {
