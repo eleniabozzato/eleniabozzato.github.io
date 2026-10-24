@@ -59,8 +59,19 @@
 }
 
 @media (max-width: 767px) {
+  /* childhood photo: square, the girl (about 47% across the frame) centred */
+  .cs-hero { aspect-ratio: 1 / 1; }
+  .cs-hero img { object-position: 44% 50%; }
+  /* glows alternate (acqua high on the left, pink low on the right) instead of facing each other */
+  .cs-story {
+    background:
+      radial-gradient(ellipse calc(270px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 0% 22%, var(--glow-acqua)),
+      radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(340px * var(--glow-scale)) at 100% 78%, var(--glow-rosa));
+  }
+  .cs-accordion { gap: 16px; } /* same as the Come lavoro accordion (1rem) */
   .cs-split { grid-template-columns: 1fr; }
-  .cs-split__media { min-height: 0; aspect-ratio: 2 / 3; border-right: 0; border-bottom: var(--line-hairline); }
+  .cs-split__media { min-height: 0; aspect-ratio: 1 / 1; border-right: 0; border-bottom: var(--line-hairline); }
+  .cs-split__media img { object-position: 50% 8%; }
   .cs-split__text { padding: 28px var(--gutter); }
   .cs-story br, .cs-split__text br, .cs-accordion br, .cs-card br { display: none; }
   .cs-h2 { font-size: 24px; }

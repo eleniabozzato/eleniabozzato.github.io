@@ -30,6 +30,7 @@
   --glow-acqua: rgb(187 242 253) 0%, rgb(187 242 253 / 0.9) 20%, rgb(187 242 253 / 0.68) 40%, rgb(187 242 253 / 0.42) 60%, rgb(187 242 253 / 0.2) 80%, rgb(187 242 253 / 0) 100%;
   --glow-rosa: rgb(251 200 221) 0%, rgb(251 200 221 / 0.9) 20%, rgb(251 200 221 / 0.68) 40%, rgb(251 200 221 / 0.42) 60%, rgb(251 200 221 / 0.2) 80%, rgb(251 200 221 / 0) 100%;
   --glow-scale: 1;
+  --lh-body-mobile: 1.4; /* body copy on mobile = home split text (21px / 15px) */
 
   --font-ui: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: "Bauer Bodoni", "Bodoni Moda", Georgia, serif;
@@ -1673,6 +1674,8 @@ textarea:focus-visible,
 .page-home .carousel--clean { max-width: none; }
 .page-home .carousel--clean .carousel__viewport { margin: 0 78px; }
 .page-home .carousel--clean .carousel__slide { padding: 0; }
+/* same gap as the "Scopri le altre esperienze" marquee cards (progetto.css --card-gap) */
+.page-home .carousel--clean .carousel__track { --slide-gap: 24px; gap: var(--slide-gap); }
 .page-home .carousel--clean .carousel__dots { display: none; }
 .page-home .review-card {
   padding: 42px 50px 44px;
@@ -1713,11 +1716,14 @@ textarea:focus-visible,
   .page-home .question p { font-size: 1rem; }
   .page-home .split { grid-template-columns: 1fr; min-height: 0; }
   .page-home .split__media { min-height: 380px; border-right: 0; border-bottom: var(--line-hairline); }
+  /* the subject sits right of centre in the photo: zoom in enough to centre her face (no empty edge) */
+  .page-home .split__media img { transform: scale(1.7); transform-origin: 82% 32%; }
   .page-home .split__text { padding: 2.5rem var(--gutter); }
   .page-home .split__text h2 { font-size: 1.6rem; line-height: 1.2; }
   .page-home .section--servizi { padding: 2.5rem 0; }
   .page-home .section-title,
   .page-home .section-title--lg { font-size: 1.7rem; line-height: 1.2; }
+  .page-home .pill-grid { gap: 1rem; } /* = Come lavoro accordion gap */
   .page-home .pill-card { height: auto; min-height: 72px; padding: 1rem 1.25rem; font-size: 1.05rem; line-height: 1.25; }
   .page-home .exp-grid { grid-template-columns: 1fr; }
   .page-home .exp-grid__cell { height: auto; padding: 2.5rem var(--gutter); }
@@ -1725,6 +1731,13 @@ textarea:focus-visible,
   .page-home .exp-grid__cell:nth-last-child(2) { border-bottom: var(--line-hairline); }
   .page-home .exp-grid__cell .btn { margin-top: 1.5rem; }
   .page-home .exp-grid__title { font-size: 2rem; }
+  /* Stacked cells: glows sit inside the cell (not on the corner, where half of it is cut),
+     alternating right/left like the desktop grid. Cell 1 has none, as on desktop. */
+  .page-home .exp-grid__cell:nth-child(2) { background: radial-gradient(ellipse 200px 170px at 92% 50%, var(--glow-rosa)), var(--white); }
+  .page-home .exp-grid__cell:nth-child(3) { background: radial-gradient(ellipse 200px 170px at 8% 50%, var(--glow-acqua)), var(--white); }
+  .page-home .exp-grid__cell:nth-child(4) { background: radial-gradient(ellipse 200px 170px at 92% 50%, var(--glow-rosa)), var(--white); }
+  .page-home .exp-grid__cell:nth-child(5) { background: radial-gradient(ellipse 200px 170px at 8% 50%, var(--glow-acqua)), var(--white); }
+  .page-home .exp-grid__cell:nth-child(6) { background: radial-gradient(ellipse 200px 170px at 92% 50%, var(--glow-rosa)), var(--white); }
   .page-home .section--reviews { padding: 2.5rem 0; }
   .page-home .carousel--clean .carousel__viewport { margin: 0 2.25rem; padding: 0; }
   .page-home .carousel--clean .carousel__btn {
@@ -1736,9 +1749,13 @@ textarea:focus-visible,
   .page-home .carousel--clean .carousel__btn--prev { left: 0; }
   .page-home .carousel--clean .carousel__btn--next { right: 0; }
   .page-home .review-card { padding: 1.5rem 1.25rem; border-radius: 28px; }
+  .page-home .carousel--clean .carousel__track { --slide-gap: 16px; } /* = mobile marquee --card-gap */
   .page-home .review-card__quote,
   .page-home .review-card__author,
-  .page-home .review-card__role { font-size: 1rem; }
+  .page-home .review-card__role { font-size: 1rem; line-height: var(--lh-body-mobile); }
+  .page-home .hero__content p,
+  .page-home .question p,
+  .page-home .exp-grid__desc { line-height: var(--lh-body-mobile); }
   .footer-cta__title { font-size: 2rem; }
   .footer-contact { margin-right: 0; gap: 1.5rem 2rem; }
   .footer-social { gap: 1.5rem; }
@@ -1758,6 +1775,8 @@ textarea:focus-visible,
 .to-top.is-visible { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
 .to-top:hover, .to-top:focus-visible { background: var(--white); transform: translateY(-3px); box-shadow: var(--shadow-soft); }
 .to-top svg { width: 18px; height: 21px; }
+/* non-scaling: the arrow stroke stays at --line-w, same as the button border */
+.to-top svg path { vector-effect: non-scaling-stroke; stroke-width: var(--line-w); }
 @media (min-width: 1024px) {
   .to-top { right: 32px; bottom: 32px; width: 64px; height: 64px; }
   .to-top svg { width: 24px; height: 28px; }

@@ -23,6 +23,14 @@
   transition: opacity 0.15s ease;
 }
 .contact-layout .form-field :not(:placeholder-shown) + .form-field__label { opacity: 0; }
+@media (max-width: 767px) {
+  /* square photo, legs cropped */
+  .contact-layout__media { min-height: 0; aspect-ratio: 1 / 1; }
+  .contact-layout__media img { object-position: 50% 18%; }
+  /* same 16px gap as the Come lavoro accordion, between every field */
+  .contact-layout .form-field { margin-bottom: 16px; }
+  .contact-layout .cf-turnstile { margin: 0; }
+}
 @media (min-width: 1024px) {
   .contact-layout { height: 569px; }
   .contact-layout__media { min-height: 0; overflow: hidden; border-right: var(--line-hairline); }

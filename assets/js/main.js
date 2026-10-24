@@ -9,11 +9,17 @@
     const menu = document.querySelector(".nav__menu");
     if (!toggle || !menu) return;
 
+    // Lock scroll on <html>, not <body>: overflow on body (with html non-visible) makes body its
+    // own scroll container, which resets scroll to 0 and takes the sticky header with it.
+    function lockScroll(lock) {
+      document.documentElement.style.overflow = lock ? "hidden" : "";
+    }
+
     toggle.addEventListener("click", function () {
       const isOpen = menu.getAttribute("data-open") === "true";
       menu.setAttribute("data-open", String(!isOpen));
       toggle.setAttribute("aria-expanded", String(!isOpen));
-      document.body.style.overflow = !isOpen ? "hidden" : "";
+      lockScroll(!isOpen);
     });
 
     // Close menu when a link is clicked (mobile)
@@ -21,7 +27,7 @@
       link.addEventListener("click", function () {
         menu.setAttribute("data-open", "false");
         toggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
+        lockScroll(false);
       });
     });
   }
@@ -154,7 +160,8 @@
       }
 
       function update() {
-        track.style.transform = "translateX(-" + index * 100 + "%)";
+        // --slide-gap (optional, on the track) is the flex gap between slides
+        track.style.transform = "translateX(calc(" + -index + " * (100% + var(--slide-gap, 0px))))";
         // Opt-in: size the viewport to the active slide (slides have different lengths)
         if (carousel.classList.contains("carousel--auto-height")) {
           const viewport = carousel.querySelector(".carousel__viewport");
