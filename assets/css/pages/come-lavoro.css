@@ -23,6 +23,8 @@
 .cl-accordion { max-width: 900px; margin: 0 auto; gap: 1rem; }
 .cl-accordion .accordion__item,
 .cl-accordion .accordion__item[data-open="true"] { border: var(--line-hairline); border-radius: 45px; }
+/* closed = pill; the radius eases back to 45px when it opens */
+.cl-accordion .accordion__item[data-open="false"] { border-radius: 999px; }
 .cl-accordion { --accordion-closed-bg: linear-gradient(90deg, rgba(245, 35, 125, 0.28), rgba(12, 193, 224, 0.28)); }
 .cl-accordion .accordion__trigger {
   align-items: flex-start;

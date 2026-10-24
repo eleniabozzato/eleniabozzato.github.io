@@ -187,7 +187,28 @@
     });
   }
 
+  // Back-to-top: markup is injected so it stays identical on every page.
+  function initToTop() {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "to-top";
+    btn.setAttribute("aria-label", "Torna su");
+    btn.innerHTML =
+      '<svg viewBox="0 0 34 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 39V3M3 17L17 2l14 15"/></svg>';
+    document.body.appendChild(btn);
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    function toggle() {
+      btn.classList.toggle("is-visible", window.scrollY > window.innerHeight);
+    }
+    btn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduce.matches ? "auto" : "smooth" });
+    });
+    window.addEventListener("scroll", toggle, { passive: true });
+    toggle();
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    initToTop();
     initNav();
     initActiveLink();
     initSubmenu();

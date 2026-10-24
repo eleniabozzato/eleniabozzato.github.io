@@ -782,6 +782,7 @@ textarea:focus-visible,
   border-radius: var(--radius-lg);
   overflow: clip; /* not hidden: a scroll container would ignore scroll-margin-top */
   background: var(--white);
+  transition: border-radius var(--accordion-speed) var(--accordion-ease);
 }
 .accordion__item::before {
   content: "";
@@ -1664,7 +1665,7 @@ textarea:focus-visible,
 .page-home .exp-grid__cell:nth-child(3) { background: radial-gradient(ellipse calc(340px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 0% 100%, var(--glow-acqua)), var(--white); }
 .page-home .exp-grid__cell:nth-child(4) { background: radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(330px * var(--glow-scale)) at 100% 0%, var(--glow-rosa)), var(--white); }
 .page-home .exp-grid__cell:nth-child(5) { background: radial-gradient(ellipse calc(360px * var(--glow-scale)) calc(300px * var(--glow-scale)) at 0% 0%, var(--glow-acqua)), var(--white); }
-.page-home .exp-grid__cell--cta { background: var(--grad-brand); }
+.page-home .exp-grid__cell:nth-child(6) { background: radial-gradient(ellipse calc(340px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 100% 100%, var(--glow-rosa)), var(--white); }
 
 .page-home .section--reviews { padding: 56px 0 62px; border-bottom: 0; }
 .page-home .section--reviews .section__head { margin-bottom: 38px; }
@@ -1743,3 +1744,21 @@ textarea:focus-visible,
   .footer-social__link { width: 64px; height: 64px; }
   .footer-legal { font-size: 0.7rem; }
 }
+
+/* ---------- Back-to-top (injected by main.js on every page) ---------- */
+.to-top {
+  position: fixed; right: 16px; bottom: 16px; z-index: 40;
+  width: 48px; height: 48px; padding: 0; border-radius: 50%;
+  background: var(--grad-social); border: var(--line-hairline); color: var(--icon-dark);
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, visibility 0s linear 0.25s;
+}
+.to-top.is-visible { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+.to-top:hover, .to-top:focus-visible { background: var(--white); transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+.to-top svg { width: 18px; height: 21px; }
+@media (min-width: 1024px) {
+  .to-top { right: 32px; bottom: 32px; width: 64px; height: 64px; }
+  .to-top svg { width: 24px; height: 28px; }
+}
+@media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }

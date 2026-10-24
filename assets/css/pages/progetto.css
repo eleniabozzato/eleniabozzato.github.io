@@ -23,7 +23,11 @@
 .page-project .client-logo img { max-width: 300px; width: 300px; }
 .page-project main > .section { padding: 44px 0 64px; }
 .page-project .accordion { max-width: 900px; margin: 0 auto; gap: 16px; }
-.page-project .accordion__item { border-radius: 45px; } /* same as come-lavoro */
+.page-project .accordion__item {
+  border-radius: 45px; /* same as come-lavoro */
+  transition: border-radius var(--accordion-speed) var(--accordion-ease);
+}
+.page-project .accordion__item[data-open="false"] { border-radius: 999px; } /* closed = pill */
 .page-project .accordion__trigger {
   align-items: flex-start; padding: 30px 40px 0; font-size: 1.875rem; line-height: 1.2;
 }
@@ -67,6 +71,8 @@
 .page-project .testimonial-card__role { font-size: 1.25rem; line-height: 1.35; }
 /* Standalone photo carousel under the testimonial (Al Plan Hotel): 5:4 photos, arrows outside the image */
 .page-project .client-logo--wide img { max-width: 330px; width: 330px; }
+/* Carrozzeria: a flat wordmark, so it needs twice the width to weigh as much as the Dentisti and Al Plan logos */
+.page-project .client-logo--xwide img { max-width: 600px; width: 600px; }
 .page-project .gallery-carousel--standalone { max-width: 900px; margin: 56px auto 0; padding: 0 117px; }
 .page-project .gallery-carousel--standalone .carousel__slide img { aspect-ratio: 5 / 4; object-fit: cover; }
 .page-project .gallery-credit { margin: 14px 0 0; text-align: center; font-size: 0.8125rem; line-height: 1.4; color: var(--ink-soft); }
@@ -75,6 +81,7 @@
    The track holds 3 identical sets (1 real + 2 aria-hidden) and slides by one set, so the loop is seamless
    as long as one set is not narrower than the screen. */
 .page-project main > .section.more-exp { padding: 56px 0 64px; border-top: var(--line-hairline); text-align: center; }
+.more-exp__eyebrow { color: var(--acqua); } /* single hook: the eyebrow text is replaced here later */
 .more-exp__head { padding: 0 var(--gutter); margin-bottom: 36px; }
 /* same title as the home sections (those rules are scoped to .page-home) */
 .page-project .more-exp .section-title { font-size: 2.5rem; font-weight: 700; line-height: 42px; }
@@ -85,7 +92,7 @@
   display: flex; width: max-content; margin: 0; padding: 0; list-style: none; text-align: left;
   animation: more-exp-scroll 50s linear infinite;
 }
-.more-exp__marquee:hover .more-exp__track,
+/* hover does not pause (it made the cards hard to follow); keyboard focus does */
 .more-exp__marquee:focus-within .more-exp__track { animation-play-state: paused; }
 @keyframes more-exp-scroll { to { transform: translateX(-33.3333%); } }
 .more-exp__item { flex: none; width: var(--card-w); margin-right: var(--card-gap); }
@@ -94,8 +101,8 @@
   overflow: clip; background: var(--white); color: var(--ink);
 }
 .more-exp__card:hover, .more-exp__card:focus-visible { background: var(--grad-brand-soft, var(--white)); }
-.more-exp__media { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-bottom: var(--line-hairline); }
-.more-exp__media img { display: block; width: 100%; height: 100%; object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); object-position: 50% 25%; }
+.more-exp__media { display: block; aspect-ratio: 4 / 3; overflow: hidden; }
+.more-exp__media img { display: block; width: 100%; height: 100%; object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); object-position: var(--card-pos, 50% 25%); }
 .more-exp__body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 28px; text-align: center; }
 .more-exp__name { font-size: 2rem; font-weight: 400; line-height: 1.05; }
 .more-exp__name .italic-accent { display: block; font-size: 2.1rem; font-weight: 400; }
@@ -143,6 +150,8 @@
   .page-project .client-logo--wide img { width: 220px; max-width: 65%; }
   .page-project .gallery-carousel--standalone { margin: 32px 0 0; }
   .page-project .accordion__item { border-radius: 28px; }
+  .page-project .accordion__item[data-open="false"] { border-radius: 999px; }
+  .page-project .client-logo--xwide img { width: 300px; max-width: 80%; }
   .page-project .more-exp .section-title { font-size: 1.7rem; line-height: 1.2; }
   .more-exp__track { --card-w: 260px; --card-gap: 16px; }
   .more-exp__name { font-size: 1.7rem; }
