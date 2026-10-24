@@ -982,11 +982,6 @@ textarea:focus-visible,
 .exp-grid__cell .btn {
   margin-top: 0.5rem;
 }
-.exp-grid__cell--center {
-  grid-column: 1 / -1;
-  align-items: center;
-  text-align: center;
-}
 @media (min-width: 640px) {
   .exp-grid {
     display: grid;
@@ -1509,12 +1504,12 @@ textarea:focus-visible,
   height: 384px;
   justify-content: flex-start;
 }
-.page-home .exp-grid__cell:nth-child(odd):not(.exp-grid__cell--center) { border-right: var(--line-hairline); }
-.page-home .exp-grid__cell:last-child { border-bottom: 0; height: 320px; }
+.page-home .exp-grid__cell:nth-child(odd) { border-right: var(--line-hairline); }
+.page-home .exp-grid__cell:nth-last-child(-n + 2) { border-bottom: 0; }
 /* Wide screens: keep cell content where the 1025px design puts it. Percent padding
    resolves against the half-width grid track, so (100% - design-w/2) is the bleed. */
 @media (min-width: 1025px) {
-  .page-home .exp-grid__cell:nth-child(odd):not(.exp-grid__cell--center) { padding-left: calc(24px + max(0px, 100% - var(--design-w) / 2)); }
+  .page-home .exp-grid__cell:nth-child(odd) { padding-left: calc(24px + max(0px, 100% - var(--design-w) / 2)); }
   .page-home .exp-grid__cell:nth-child(even) { padding-right: calc(24px + max(0px, 100% - var(--design-w) / 2)); }
 }
 .page-home .exp-grid__cell .badge { margin-bottom: 19px; }
@@ -1525,20 +1520,17 @@ textarea:focus-visible,
   margin-bottom: 28px;
 }
 .page-home .exp-grid__title .italic-accent { display: block; font-size: 0.97em; }
-.page-home .exp-grid__cell--center .exp-grid__title .italic-accent { font-size: 0.97em; }
-.page-home .exp-grid__cell--center .exp-grid__title .italic-accent { display: inline; }
 .page-home .exp-grid__desc {
   font-size: 1.25rem;
   line-height: 28px;
   max-width: 290px;
 }
-.page-home .exp-grid__cell--center .exp-grid__desc { max-width: none; }
 .page-home .exp-grid__cell .btn { margin-top: auto; flex-shrink: 0; }
-.page-home .exp-grid__cell--center .btn { margin-top: 26px; }
 .page-home .exp-grid__cell:nth-child(2) { background: radial-gradient(ellipse 300px 330px at 100% 100%, #f9c3de, rgba(249, 195, 222, 0)), var(--white); }
 .page-home .exp-grid__cell:nth-child(3) { background: radial-gradient(ellipse 340px 320px at 0% 100%, #b9eefb, rgba(185, 238, 251, 0)), var(--white); }
 .page-home .exp-grid__cell:nth-child(4) { background: radial-gradient(ellipse 300px 330px at 100% 0%, #f9c3de, rgba(249, 195, 222, 0)), var(--white); }
 .page-home .exp-grid__cell:nth-child(5) { background: radial-gradient(ellipse 360px 300px at 0% 0%, #b9eefb, rgba(185, 238, 251, 0)), var(--white); }
+.page-home .exp-grid__cell--cta { background: var(--grad-brand); }
 
 .page-home .section--reviews { padding: 56px 0 62px; border-bottom: 0; }
 .page-home .section--reviews .section__head { margin-bottom: 38px; }
@@ -1591,9 +1583,9 @@ textarea:focus-visible,
   .page-home .section-title--lg { font-size: 1.7rem; line-height: 1.2; }
   .page-home .pill-card { height: auto; min-height: 72px; padding: 1rem 1.25rem; font-size: 1.05rem; line-height: 1.25; }
   .page-home .exp-grid { grid-template-columns: 1fr; }
-  .page-home .exp-grid__cell,
-  .page-home .exp-grid__cell:last-child { height: auto; padding: 2.5rem var(--gutter); }
-  .page-home .exp-grid__cell:nth-child(odd):not(.exp-grid__cell--center) { border-right: 0; }
+  .page-home .exp-grid__cell { height: auto; padding: 2.5rem var(--gutter); }
+  .page-home .exp-grid__cell:nth-child(odd) { border-right: 0; }
+  .page-home .exp-grid__cell:nth-last-child(2) { border-bottom: var(--line-hairline); }
   .page-home .exp-grid__cell .btn { margin-top: 1.5rem; }
   .page-home .exp-grid__title { font-size: 2rem; }
   .page-home .section--reviews { padding: 2.5rem 0; }
