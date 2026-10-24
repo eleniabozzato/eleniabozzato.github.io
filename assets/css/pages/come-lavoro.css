@@ -1,14 +1,16 @@
 /* ---------- Page: come-lavoro ---------- */
-.cl-hero { border-bottom: var(--line-hairline); min-height: 0; }
-.cl-hero .hero-split__media { border-right: var(--line-hairline); position: relative; }
+
+/* Hero: photo left, text right. The text block carries a soft acqua glow. */
+.cl-hero .hero-split__media { position: relative; }
 .cl-hero .hero-split__media img { position: absolute; inset: 0; object-position: 50% 26%; }
 .cl-hero .hero-split__text {
-  padding: 2.5rem;
+  padding: var(--space-4);
   background: radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(260px * var(--glow-scale)) at 6% 50%, var(--glow-acqua));
 }
 .cl-hero .hero-split__text h1,
 .cl-hero .hero-split__text h2 {
   font-size: 1.9rem;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: -0.01em;
   margin: 0;
@@ -17,56 +19,56 @@
 .cl-hero .hero-split__text p { font-size: 0.94rem; line-height: 1.4; margin-bottom: 1.31rem; }
 .cl-hero .hero-split__text p:last-child { margin-bottom: 0; }
 .cl-hero .hero-split__text .cl-hero__lead { margin-top: -0.05rem; }
-.cl-hero .italic-accent { font-weight: 400; }
-.cl-services .badge { font-size: 1.1rem; margin-bottom: 0.9rem; }
-.cl-services .section-title { font-size: 2.5rem; line-height: 1.05; letter-spacing: -0.01em; }
-.cl-accordion { max-width: 900px; margin: 0 auto; gap: 1rem; }
-.cl-accordion .accordion__item,
-.cl-accordion .accordion__item[data-open="true"] { border: var(--line-hairline); }
-/* half the closed height: a pill when closed, same shape when open (no radius animation) */
-.cl-accordion .accordion__item { border-radius: 47px; }
-/* closed = pill; the radius eases back to 45px when it opens */
-.cl-accordion { --accordion-closed-bg: linear-gradient(90deg, rgba(245, 35, 125, 0.28), rgba(12, 193, 224, 0.28)); }
-.cl-accordion .accordion__trigger {
-  align-items: flex-start;
-  padding: 1.6rem 2.5rem 0;
-  font-size: 1.9rem;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+
+/* Services */
+.cl-services .badge { --badge-size: 1.1rem; --badge-gap: 0.9rem; }
+.cl-services .section-title { line-height: 1.05; letter-spacing: -0.01em; }
+.cl-services .section-title .italic-accent { font-size: 1em; }
+
+/* Accordion: tall pills with gradient titles. The arrow is bigger than the title line,
+   so it also sets the height of the row (--accordion-icon-mb). */
+.cl-accordion {
+  --accordion-radius: 47px; /* half the closed height */
+  --accordion-closed-bg: linear-gradient(90deg, rgba(245, 35, 125, 0.28), rgba(12, 193, 224, 0.28));
+  --accordion-title-grad: linear-gradient(90deg, rgba(245, 35, 125, 0.7), rgba(12, 193, 224, 0.7));
+  --accordion-title-open-opacity: 0.5;
+  --accordion-title-size: 1.9rem;
+  --accordion-title-lh: 1.1;
+  --accordion-title-ls: -0.01em;
+  --accordion-pt: 1.6rem;
+  --accordion-px: 2.5rem;
+  --accordion-icon-w: 31.97px; /* the old glyph box: keeps the titles wrapping the same */
+  --accordion-icon-h: 31px;
+  --accordion-icon-dy: 0px;
+  --accordion-icon-mb: 7.4px;
+  --accordion-body-pad: 0.25rem 2.5rem 1.9rem;
+  --accordion-body-size: 0.875rem;
+  --accordion-body-lh: 1.5;
 }
-.cl-accordion .accordion__trigger > span:first-child {
-  background: linear-gradient(90deg, rgba(245, 35, 125, 0.7), rgba(12, 193, 224, 0.7));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  opacity: 0.5;
-}
-.cl-accordion .accordion__item[data-open="false"] .accordion__trigger { padding-bottom: 1.6rem; }
-.cl-accordion .accordion__item[data-open="false"] .accordion__trigger > span:first-child { opacity: 1; }
-.cl-accordion .accordion__icon { font-size: 2.6rem; font-weight: 200; line-height: 1; margin-top: -0.2rem; }
-.cl-accordion .accordion__panel-content { padding: 0.25rem 2.5rem 1.9rem; font-size: 0.875rem; line-height: 1.5; }
 .cl-accordion .accordion__panel-content p { margin-bottom: 1.5em; }
 .cl-accordion .accordion__panel-content p:last-child { margin-bottom: 0; }
 .cl-accordion .accordion__panel-content p + ul { margin-top: -0.4rem; }
-.cl-accordion .accordion__panel-content ul { padding-left: 1.7rem; margin-top: 0; }
-.cl-accordion .accordion__panel-content li { margin: 0; }
-.cl-method { border-top: var(--line-hairline); text-align: center; padding: 3.25rem 0 3rem; }
-.cl-method .badge { font-size: 1.1rem; margin-bottom: 0.9rem; }
+.cl-accordion .accordion__panel-content ul { padding-left: 1.7rem; }
+
+/* Method */
+.cl-method { border-top: var(--line-hairline); text-align: center; padding: var(--section-y) 0 3rem; }
+.cl-method .badge { --badge-size: 1.1rem; --badge-gap: 0.9rem; }
 .cl-method h2 { font-size: 1.9rem; font-weight: 300; line-height: 1; margin: 0 0 1.1rem; }
 .cl-method p { font-size: 0.94rem; line-height: 1.4; }
+
 @media (max-width: 767px) {
   .cl-hero .hero-split__text h1, .cl-hero .hero-split__text h2 { font-size: 1.5rem; }
-  .cl-services .section-title { font-size: 1.7rem; }
-  .cl-accordion .accordion__trigger { font-size: 1.15rem; padding: 1.2rem 1.4rem 0; }
-  .cl-accordion .accordion__item[data-open="false"] .accordion__trigger { padding-bottom: 1.2rem; }
-  .cl-accordion .accordion__item { border-radius: 41px; }
-  .cl-accordion .accordion__panel-content { padding: 0.25rem 1.4rem 1.4rem; }
-  .cl-method h2 { font-size: 1.4rem; }
-  .cl-hero .hero-split__media { border-right: 0; }
   /* square, framed on the face and the open laptop: only a little of the top of the head is cut */
   .cl-hero .hero-split__media { aspect-ratio: 1 / 1; }
   .cl-hero .hero-split__media img { object-position: 50% 45%; }
+  .cl-accordion {
+    --accordion-radius: 41px;
+    --accordion-title-size: 1.15rem;
+    --accordion-pt: 1.2rem;
+    --accordion-px: 1.4rem;
+    --accordion-body-pad: 0.25rem 1.4rem 1.4rem;
+  }
+  .cl-method h2 { font-size: 1.4rem; }
   .cl-hero p br, .cl-accordion p br, .cl-method p br, .cl-method h2 br { display: none; }
 }
 /* Wide screens: keep the glow where the 1025px design puts it (6% of a 512px column) */

@@ -1,8 +1,31 @@
 /* =========================================================================
-   Elenia Bozzato — Design System & Site Styles
+   Elenia Bozzato — shared styles
+
+   Contents
+   1. Fonts
+   2. Design tokens (:root)
+   3. Reset and base elements
+   4. Layout (container, section, bleed)
+   5. Typography (italic accent, badge, section title, project name)
+   6. Components
+      6.1  Button
+      6.2  Arrow icon
+      6.3  Nav and Esperienze drop-down
+      6.4  Hero split
+      6.5  Accordion
+      6.6  Carousel
+      6.7  Quote card
+      6.8  Footer
+      6.9  Back-to-top
+   Page files (assets/css/pages/*.css) only hold what is specific to one page:
+   layout, copy sizes and per-component overrides set through custom properties.
+
+   Media queries: each component keeps its own desktop (min-width: 1024px / 1025px)
+   and mobile (max-width: 767px) rules right after its base rules, so one component
+   reads top to bottom in one place. There is no block of responsive rules at the end.
    ========================================================================= */
 
-/* ---------- Fonts ---------- */
+/* ---------- 1. Fonts ---------- */
 @font-face {
   font-family: "Bauer Bodoni";
   src: url("../fonts/bauer-bodoni.woff2") format("woff2");
@@ -11,17 +34,18 @@
   font-display: swap;
 }
 
-/* ---------- Design tokens ---------- */
+/* ---------- 2. Design tokens ---------- */
 :root {
+  /* Colour */
   --magenta: #f7007f;
   --acqua: #0cc0df;
   --ink: #000000;
-  --ink-soft: #000000; /* nessun grigio nel design Canva: il corpo testo è nero */
   --white: #ffffff;
+  --icon-dark: #1c1c2e;
   --grad-brand: linear-gradient(90deg, #f9c3de, #b6ecf8);
   --grad-brand-soft: linear-gradient(90deg, rgba(245, 35, 125, 0.12), rgba(12, 193, 224, 0.12));
-  --grad-brand-softer: linear-gradient(135deg, rgba(245, 35, 125, 0.08), rgba(12, 193, 224, 0.08));
-  --bg-section-tint: linear-gradient(180deg, #fff6fb 0%, #f3fcfe 100%);
+  --grad-social: linear-gradient(90deg, #f6c3de, #b8e6f4);
+  --grad-title: linear-gradient(90deg, #f7b9d8, #b5ecf8); /* gradient text: accordion and card titles */
 
   /* Soft glows (Canva spec: very blurred acqua and pink circles). Use as the colour
      stops of a radial-gradient. The stops follow the bell-shaped fade measured on
@@ -30,35 +54,88 @@
   --glow-acqua: rgb(187 242 253) 0%, rgb(187 242 253 / 0.9) 20%, rgb(187 242 253 / 0.68) 40%, rgb(187 242 253 / 0.42) 60%, rgb(187 242 253 / 0.2) 80%, rgb(187 242 253 / 0) 100%;
   --glow-rosa: rgb(251 200 221) 0%, rgb(251 200 221 / 0.9) 20%, rgb(251 200 221 / 0.68) 40%, rgb(251 200 221 / 0.42) 60%, rgb(251 200 221 / 0.2) 80%, rgb(251 200 221 / 0) 100%;
   --glow-scale: 1;
-  --lh-body-mobile: 1.4; /* body copy on mobile = home split text (21px / 15px) */
 
+  /* Type */
   --font-ui: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: "Bauer Bodoni", "Bodoni Moda", Georgia, serif;
+  --fs-display: 2.5rem;    /* section titles, project names, home question */
+  --fs-title: 1.875rem;    /* pill cards, accordion titles */
+  --fs-lead: 1.25rem;      /* eyebrows, descriptions, quotes */
+  --fs-body: 0.9375rem;    /* running text, nav links */
+  --lh-lead: 28px;         /* line height that goes with --fs-lead on desktop */
+  --lh-body-mobile: 1.4;   /* body copy on mobile = home split text (21px / 15px) */
 
-  --pink-soft: #f0a8cc;
-  --grad-social: linear-gradient(90deg, #f6c3de, #b8e6f4);
-  --icon-dark: #1c1c2e;
-
-  /* Editorial divider lines (match PDF: thin, near-black, clearly visible) */
+  /* Line: the one stroke width for dividers, borders and icon strokes */
   --line: #000000;
-  --line-w: 2px; /* the one stroke width: dividers, borders, icon strokes (= Come lavoro accordion arrow) */
+  --line-w: 2px;
   --line-hairline: var(--line-w) solid var(--line);
 
+  /* Spacing scale (only the steps that repeat) */
+  --space-1: 0.5rem;       /* 8px  */
+  --space-2: 1rem;         /* 16px: gap between accordion items, form fields, mobile cards */
+  --space-3: 1.5rem;       /* 24px: gap between marquee cards and carousel slides */
+  --space-4: 2.5rem;       /* 40px */
+  --section-y: 3.25rem;    /* vertical padding of a section */
+
+  /* Radii */
   --radius-pill: 999px;
-  --radius-lg: 32px;
-  --radius-md: 20px;
-  --radius-sm: 12px;
+  --radius-lg: 32px;       /* project cards */
+  --radius-md: 20px;       /* drop-down panel */
+  --radius-card: 40px;     /* quote cards */
+  --radius-accordion: 50px; /* half the closed height: a pill closed, same shape open */
 
   --shadow-soft: 0 12px 40px rgba(17, 17, 17, 0.08);
-  --shadow-card: 0 8px 24px rgba(17, 17, 17, 0.06);
 
+  /* Motion */
+  --dur-fast: 0.2s;
+  --dur-base: 0.3s;
+  --dur-slow: 0.55s;       /* accordion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Stacking */
+  --z-behind: -1;
+  --z-raised: 2;
+  --z-to-top: 40;
+  --z-header: 100;
+
+  /* Component sizes */
+  --btn-h: 45px;
+  --social-size: 76px;
+  --to-top-size: 48px;
+  --to-top-offset: 16px;
+
+  /* Layout */
   --container: 1200px;
   --gutter: clamp(1.25rem, 6.15vw, 5rem);
-
   --nav-h: 116px;
 }
 
-/* ---------- Reset ---------- */
+/* The page is designed at 1025px and zoomed up to 1440px by assets/js/scale.js.
+   Past that the zoom stops and the layout gets wider than the design: content
+   stays centred at the design width, while backgrounds, lines and edge images
+   run full-bleed. Full-bleed blocks pad their content with --bleed-pad
+   (percentages resolve against the block's own parent, so use it on blocks
+   that span the full page width). Fixed px gutter so it zooms with the page. */
+@media (min-width: 1025px) {
+  :root {
+    --design-w: 1025px;
+    --container: 1025px;
+    --gutter: 63px;
+    --bleed: max(0px, calc((100% - var(--design-w)) / 2));
+    --bleed-pad: calc(var(--bleed) + var(--gutter));
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --nav-h: 68px;
+    --glow-scale: 0.6;
+    --radius-accordion: 37px;
+    --social-size: 64px;
+  }
+}
+
+/* ---------- 3. Reset and base elements ---------- */
 *,
 *::before,
 *::after {
@@ -77,22 +154,6 @@ body {
   background: var(--white);
   overflow-x: clip; /* clip, not hidden: hidden makes body a scroll container and breaks the sticky header */
   -webkit-font-smoothing: antialiased;
-}
-
-/* The page is designed at 1025px and zoomed up to 1440px by assets/js/scale.js.
-   Past that the zoom stops and the layout gets wider than the design: content
-   stays centred at the design width, while backgrounds, lines and edge images
-   run full-bleed. Full-bleed blocks pad their content with --bleed-pad
-   (percentages resolve against the block's own parent, so use it on blocks
-   that span the full page width). Fixed px gutter so it zooms with the page. */
-@media (min-width: 1025px) {
-  :root {
-    --design-w: 1025px;
-    --container: 1025px;
-    --gutter: 63px;
-    --bleed: max(0px, calc((100% - var(--design-w)) / 2));
-    --bleed-pad: calc(var(--bleed) + var(--gutter));
-  }
 }
 
 img {
@@ -120,7 +181,6 @@ h1, h2, h3, h4, p {
   margin: 0;
 }
 
-/* Focus visibility (accessibility) */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -131,6 +191,7 @@ textarea:focus-visible,
   border-radius: 4px;
 }
 
+/* ---------- 4. Layout ---------- */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -138,6 +199,22 @@ textarea:focus-visible,
   padding: 0 var(--gutter);
 }
 
+.section {
+  padding: var(--section-y) 0;
+}
+.section__head {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3rem;
+}
+@media (max-width: 767px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+/* ---------- 5. Typography ---------- */
+/* Headline accent word: <span class="italic-accent italic-accent--magenta|--acqua">WORD</span> */
 .italic-accent {
   font-family: var(--font-serif);
   font-style: italic;
@@ -146,37 +223,55 @@ textarea:focus-visible,
 .italic-accent--magenta { color: var(--magenta); }
 .italic-accent--acqua { color: var(--acqua); }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-/* ---------- Section badge ---------- */
+/* Eyebrow above a title. Sizes come from custom properties, so a page tunes one
+   badge without restyling it. --block turns it into a block-level line. */
 .badge {
   display: inline-block;
-  font-size: 1.25rem;
+  font-size: var(--badge-size, var(--fs-lead));
   font-weight: 400;
-  line-height: 1.35;
+  line-height: var(--badge-lh, 1.35);
   text-transform: uppercase;
   color: var(--magenta);
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--badge-gap, 0.75rem);
 }
 .badge--acqua { color: var(--acqua); }
+.badge--block { display: block; }
 
-/* ---------- Buttons ---------- */
+.section-title {
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: 42px;
+}
+.section-title .italic-accent { font-size: 1.05em; }
+.section-title--lg { line-height: 48px; }
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+}
+
+/* Project name: a regular-weight line plus the accent word on its own line.
+   Used by the home and Esperienze cards, the "more experiences" cards and the project hero. */
+.project-name {
+  font-size: var(--pn-size, var(--fs-display));
+  font-weight: var(--pn-weight, 400);
+  line-height: var(--pn-lh, 1);
+}
+.project-name .italic-accent {
+  display: block;
+  font-size: var(--pn-accent-size, 1em);
+  line-height: var(--pn-accent-lh, inherit);
+}
+
+/* ---------- 6.1 Button ----------
+   Brand gradient and black border by default; white on hover and focus. */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   justify-content: center;
-  height: 45px;
+  height: var(--btn-h);
   padding: 0 1.35rem;
   border-radius: var(--radius-pill);
   font-weight: 700;
@@ -186,51 +281,45 @@ textarea:focus-visible,
   border: var(--line-hairline);
   background: var(--grad-social);
   color: var(--ink);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  transition: transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease, background var(--dur-fast) ease, color var(--dur-fast) ease;
   white-space: nowrap;
 }
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-soft);
 }
-
-
-.btn--outline,
-.btn--gradient,
-.btn--gradient-ink {
-  background: var(--grad-social);
-  border-color: var(--line);
-  color: var(--ink);
-}
-/* Every button carries the pink-to-cyan gradient and a black border; hover/focus turns it white */
 .btn:hover,
-.btn:focus-visible,
-.btn--outline:hover,
-.btn--dark:hover,
-.btn--gradient:hover,
-.btn--gradient-ink:hover {
+.btn:focus-visible {
   background: var(--white);
-  color: var(--ink);
-  border-color: var(--line);
 }
 
-.btn--pill-arrow {
-  justify-content: space-between;
-  width: 100%;
+/* ---------- 6.2 Arrow icon ----------
+   One inline SVG for every arrow on the site. The stroke is non-scaling, so it is
+   --line-w at any size (a scaled viewBox would thin it). Draw the path in the
+   viewBox and size the icon with --arrow-w / --arrow-h.
+     <svg class="arrow arrow--right" viewBox="0 0 40 24"><path d="M1 12h37M27 1l11 11-11 11"/></svg>
+     <svg class="arrow arrow--up" viewBox="0 0 34 40"><path d="M17 39V3M3 17L17 2l14 15"/></svg> */
+.arrow {
+  flex-shrink: 0;
+  width: var(--arrow-w);
+  height: var(--arrow-h);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
-.btn--pill-arrow .arrow {
-  font-size: 1.1rem;
-  transition: transform 0.2s ease;
+.arrow path {
+  stroke-width: var(--line-w);
+  vector-effect: non-scaling-stroke;
 }
-.btn--pill-arrow:hover .arrow {
-  transform: translateX(4px);
-}
+.arrow--right { --arrow-w: 40px; --arrow-h: 24px; }
+.arrow--up { --arrow-w: 34px; --arrow-h: 40px; }
 
-/* ---------- Nav ---------- */
+/* ---------- 6.3 Nav ---------- */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: var(--z-header);
   background: var(--white);
   border-bottom: var(--line-hairline);
 }
@@ -247,7 +336,7 @@ textarea:focus-visible,
   align-items: center;
   gap: 1.25rem;
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: var(--fs-lead);
   color: var(--ink);
 }
 .nav__brand img {
@@ -260,14 +349,14 @@ textarea:focus-visible,
   display: none;
   background: none;
   border: none;
-  padding: 0.5rem;
+  padding: var(--space-1);
   flex-direction: column;
   gap: 5px;
 }
 .nav__toggle span {
   display: block;
   width: 26px;
-  height: 2px;
+  height: var(--line-w);
   background: var(--ink);
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
@@ -289,7 +378,7 @@ textarea:focus-visible,
 
 .nav__link {
   position: relative;
-  font-size: 0.9375rem;
+  font-size: var(--fs-body);
   font-weight: 400;
   color: var(--ink);
   padding-bottom: 2px;
@@ -303,7 +392,7 @@ textarea:focus-visible,
   height: var(--line-w);
   background: var(--magenta);
   transform: scaleX(0);
-  transition: transform 0.2s ease;
+  transition: transform var(--dur-fast) ease;
 }
 .nav__link:hover::after {
   transform: scaleX(1);
@@ -343,7 +432,7 @@ textarea:focus-visible,
   border-right: var(--line-w) solid currentColor;
   border-bottom: var(--line-w) solid currentColor;
   transform: translate(-50%, -70%) rotate(45deg);
-  transition: transform 0.2s ease;
+  transition: transform var(--dur-fast) ease;
 }
 .nav__sub-toggle[aria-expanded="true"]::before {
   transform: translate(-50%, -30%) rotate(-135deg);
@@ -370,7 +459,7 @@ textarea:focus-visible,
 }
 .nav__sublink {
   display: block;
-  font-size: 0.9375rem;
+  font-size: var(--fs-body);
   color: var(--ink);
 }
 
@@ -385,8 +474,8 @@ textarea:focus-visible,
     left: -1rem;
     z-index: 1;
     min-width: 230px;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
+    margin-top: var(--space-1);
+    padding: var(--space-1);
     background: var(--white);
     border: var(--line-hairline);
     border-radius: var(--radius-md);
@@ -398,1010 +487,11 @@ textarea:focus-visible,
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .nav__sub,
-  .nav__sub-toggle::before {
-    transition: none;
-  }
-}
-
-/* ---------- Hero ---------- */
-.hero {
-  background: var(--grad-brand-soft);
-  padding: 4rem 0;
-}
-.hero__inner {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: center;
-}
-.hero__content h1 {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  line-height: 1.15;
-  font-weight: 700;
-  margin-bottom: 1.25rem;
-}
-.hero__content p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--ink-soft);
-  max-width: 46ch;
-}
-.hero__media {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-soft);
-}
-.hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.hero--reverse .hero__inner {
-  grid-template-columns: 1fr;
-}
-.hero--full .hero__media {
-  border-radius: 0;
-}
-
-/* Full-bleed split hero (come-lavoro, dentisti-cordovado, contatti) */
-.hero-split {
-  display: grid;
-  grid-template-columns: 1fr;
-  background: var(--white);
-  border-bottom: var(--line-hairline);
-}
-.hero-split--tint .hero-split__text {
-  background: var(--grad-brand-soft);
-}
-.hero-split--photo-only {
-  grid-template-columns: 1fr;
-}
-.hero-split__media {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-.hero-split__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.hero-split__text {
-  padding: 2.5rem var(--gutter);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.hero-split__text h1 {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: 1rem;
-}
-.hero-split__text h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 1.75rem 0 1rem;
-}
-.hero-split__text p {
-  color: var(--ink-soft);
-  line-height: 1.65;
-  margin-bottom: 0.9rem;
-  font-size: 1rem;
-}
-.hero-split__eyebrow {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--acqua);
-  margin-bottom: 0.5rem;
-}
-.hero-split__project-name {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 1.5rem;
-}
-.hero-split__tagline {
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
-  font-weight: 700;
-  line-height: 1.35;
-}
-
-@media (min-width: 1024px) {
-  .hero-split {
-    grid-template-columns: 1fr 1fr;
-    min-height: 560px;
-  }
-  .hero-split--photo-only {
-    grid-template-columns: 1fr;
-    min-height: 0;
-  }
-  .hero-split--reverse {
-    grid-template-columns: 1fr 1fr;
-  }
-  .hero-split--reverse .hero-split__media { order: 2; }
-  .hero-split__media {
-    aspect-ratio: auto;
-    border-right: var(--line-hairline);
-  }
-  .hero-split--reverse .hero-split__media {
-    border-right: none;
-    border-left: var(--line-hairline);
-  }
-  .hero-split__text {
-    padding: 3rem 4rem;
-  }
-}
-
-/* ---------- Strip marquee (scrolls horizontally) ---------- */
-.strip {
-  background: var(--grad-brand);
-  color: var(--ink);
-  border-top: var(--line-hairline);
-  border-bottom: var(--line-hairline);
-  padding: 0;
-  overflow: hidden;
-}
-.strip__track {
-  display: flex;
-  width: max-content;
-  flex-wrap: nowrap;
-  gap: 0.55rem;
-  align-items: center;
-  height: 50px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: uppercase;
-  white-space: nowrap;
-  animation: strip-marquee 28s linear infinite;
-}
-.strip__dot {
-  color: var(--magenta);
-}
-@keyframes strip-marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); } /* track holds 4 identical sets; 2 sets > widest screen */
-}
-@media (prefers-reduced-motion: reduce) {
-  .strip__track { animation: none; }
-}
-
-/* ---------- Section spacing ---------- */
-.section {
-  padding: 3.25rem 0;
-}
-.section--tint {
-  background: var(--bg-section-tint);
-}
-.section__head {
-  text-align: center;
-  max-width: 780px;
-  margin: 0 auto 3rem;
-}
-.section__head--left {
-  text-align: left;
-  margin: 0 0 3rem;
-}
-.section-title {
-  font-size: clamp(1.7rem, 3.6vw, 2.4rem);
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-/* ---------- Question section ---------- */
-.question {
-  text-align: center;
-  padding: 3.25rem 0;
-}
-.question h2 {
-  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
-  font-weight: 600;
-  line-height: 1.4;
-  max-width: 820px;
-  margin: 0 auto 1.5rem;
-}
-.question p {
-  max-width: 640px;
-  margin: 0 auto;
-  color: var(--ink-soft);
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
-
-/* ---------- Split content (media + text) — bordered editorial block ---------- */
-.split {
-  display: grid;
-  grid-template-columns: 1fr;
-  border: var(--line-hairline);
-  overflow: hidden;
-  background: var(--white);
-}
-.split__media {
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  border-bottom: var(--line-hairline);
-}
-.split__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.split__text {
-  padding: 2.5rem var(--gutter);
-  background: var(--grad-brand-soft);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.split__text h2,
-.split__text h3 {
-  font-size: clamp(1.9rem, 3.6vw, 2.7rem);
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 1.5rem;
-}
-.split__text p {
-  color: var(--ink);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  font-size: 1.08rem;
-}
-.split__text .btn {
-  margin-top: 1.5rem;
-  align-self: flex-start;
-}
-@media (min-width: 1024px) {
-  .split {
-    grid-template-columns: 1fr 1fr;
-  }
-  .split__media {
-    aspect-ratio: auto;
-    border-bottom: none;
-    border-right: var(--line-hairline);
-  }
-  .split--reverse .split__media {
-    order: 2;
-    border-right: none;
-    border-left: var(--line-hairline);
-  }
-  .split__text {
-    padding: 3rem 3.5rem;
-  }
-}
-
-/* ---------- Pill cards (services) ---------- */
-.pill-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.pill-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.6rem 2.4rem;
-  border-radius: var(--radius-pill);
-  border: var(--line-hairline);
-  background: var(--grad-brand);
-  font-weight: 700;
-  font-size: 1.2rem;
-  transition: box-shadow 0.2s ease, transform 0.2s ease, background 0.2s ease;
-}
-/* Like .btn: brand gradient by default, white on hover/focus */
-.pill-card:hover,
-.pill-card:focus-visible {
-  background: var(--white);
-  box-shadow: var(--shadow-soft);
-  transform: translateY(-2px);
-}
-.pill-card__arrow {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--grad-brand);
-  color: var(--white);
-  font-size: 1.1rem;
-}
-
-/* ---------- Experience / project cards ---------- */
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-.project-card {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--white);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-}
-.project-card__media {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-.project-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.project-card__body {
-  padding: 1.8rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  flex: 1;
-}
-.project-card__title {
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-.project-card__desc {
-  color: var(--ink-soft);
-  line-height: 1.6;
-  flex: 1;
-}
-.project-card--center {
-  max-width: 480px;
-  margin: 3rem auto 0;
-  text-align: center;
-}
-.project-card--center .project-card__body {
-  align-items: center;
-}
-
-/* ---------- Accordion ----------
-   Items start closed. A closed item shows the brand gradient; opening fades it
-   out while the panel grows, the title shifts from ink to gradient text and the
-   content slides in. Pages tune the gradient with --accordion-closed-bg. */
-.accordion {
-  --accordion-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --accordion-speed: 0.55s;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-}
-.accordion__item {
-  position: relative;
-  isolation: isolate;
-  scroll-margin-top: calc(var(--nav-h) + 24px); /* deep links land below the sticky header */
-  border: var(--line-hairline);
-  border-radius: var(--radius-lg);
-  overflow: clip; /* not hidden: a scroll container would ignore scroll-margin-top */
-  background: var(--white);
-}
-.accordion__item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--accordion-closed-bg, linear-gradient(90deg, #f9bfd9, #b6eaf5));
-  opacity: 0;
-  transition: opacity var(--accordion-speed) ease;
-}
-.accordion__item[data-open="false"]::before {
-  opacity: 1;
-}
-.accordion__trigger {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1.4rem 1.8rem;
-  background: none;
-  border: none;
-  text-align: left;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--pink-soft);
-  cursor: pointer;
-  transition: padding var(--accordion-speed) var(--accordion-ease), color var(--accordion-speed) ease;
-}
-.accordion__item[data-open="false"] .accordion__trigger {
-  color: var(--ink);
-}
-/* Gradient titles: the ink colour fades to transparent to reveal the clipped
-   gradient. The fill follows `color` because -webkit-text-fill-color does not
-   animate; the extra .accordion keeps this above the page rules. */
-.accordion .accordion__item .accordion__trigger > span:first-child {
-  -webkit-text-fill-color: currentColor;
-  transition: color var(--accordion-speed) ease, opacity var(--accordion-speed) ease;
-}
-.accordion .accordion__item[data-open="false"] .accordion__trigger > span:first-child {
-  color: var(--ink);
-}
-.accordion__icon {
-  flex-shrink: 0;
-  font-size: 1.3rem;
-  color: var(--ink);
-  transition: transform var(--accordion-speed) var(--accordion-ease);
-}
-.accordion__panel {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows var(--accordion-speed) var(--accordion-ease);
-}
-.accordion__item[data-open="true"] .accordion__panel {
-  grid-template-rows: 1fr;
-}
-.accordion__panel-inner {
-  overflow: hidden;
-  visibility: hidden;
-  transition: visibility 0s linear var(--accordion-speed);
-}
-.accordion__item[data-open="true"] .accordion__panel-inner {
-  visibility: visible;
-  transition-delay: 0s;
-}
-.accordion__panel-content {
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.3s ease, transform var(--accordion-speed) var(--accordion-ease);
-}
-.accordion__item[data-open="true"] .accordion__panel-content {
-  opacity: 1;
-  transform: none;
-  transition-delay: 0.12s;
-}
-@media (prefers-reduced-motion: reduce) {
-  .accordion { --accordion-speed: 0s; }
-  .accordion__item[data-open="true"] .accordion__panel-content { transition-delay: 0s; }
-}
-.accordion__panel-content {
-  padding: 0 1.8rem 1.6rem;
-  color: var(--ink-soft);
-  line-height: 1.7;
-}
-.accordion__panel-content ul {
-  margin-top: 0.5rem;
-  padding-left: 1.2rem;
-  list-style: disc;
-}
-.accordion__panel-content li {
-  margin-bottom: 0.4rem;
-}
-
-/* ---------- Vision / Mission cards ---------- */
-.vm-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  max-width: 820px;
-  margin: 0 auto;
-}
-.vm-card {
-  padding: 2.2rem;
-  border-radius: var(--radius-lg);
-  background: var(--white);
-  border: var(--line-hairline);
-}
-.vm-card p {
-  color: var(--ink-soft);
-  line-height: 1.7;
-  margin-top: 0.75rem;
-}
-
-/* ---------- Reviews carousel ---------- */
-.carousel {
-  position: relative;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.carousel__viewport {
-  overflow: hidden;
-}
-.carousel__track {
-  display: flex;
-  transition: transform 0.4s ease;
-}
-.carousel__slide {
-  flex: 0 0 100%;
-  padding: 0 0.5rem;
-}
-.review-card {
-  padding: 2.4rem;
-  border-radius: var(--radius-lg);
-  background: var(--white);
-  border: var(--line-hairline);
-  text-align: center;
-}
-.review-card__quote {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
-}
-.review-card__author {
-  font-weight: 700;
-  color: var(--magenta);
-}
-.review-card__role {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-}
-.carousel__btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: var(--line-w) solid rgba(17, 17, 17, 0.15);
-  background: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  z-index: 2;
-}
-.carousel__btn:hover {
-  background: var(--grad-brand);
-  color: var(--white);
-  border-color: transparent;
-}
-.carousel__btn--prev { left: -8px; }
-.carousel__btn--next { right: -8px; }
-@media (min-width: 640px) {
-  .carousel__btn--prev { left: -56px; }
-  .carousel__btn--next { right: -56px; }
-}
-.carousel__dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-}
-.carousel__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(17, 17, 17, 0.15);
-  padding: 0;
-}
-.carousel__dot[aria-current="true"] {
-  background: var(--magenta);
-  width: 22px;
-  border-radius: 999px;
-  transition: width 0.2s ease;
-}
-.section-cta-center {
-  text-align: center;
-  margin-top: 2.5rem;
-}
-
-/* ---------- Client logo ---------- */
-.client-logo {
-  display: flex;
-  justify-content: center;
-  padding: 3rem 0 1rem;
-}
-.client-logo img {
-  max-width: 160px;
-  height: auto;
-}
-
-/* ---------- Banner (Consu.lab etc.) ---------- */
-.banner-feature {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: var(--white);
-}
-.banner-feature img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-.banner-feature::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(0,0,0,0.45), rgba(0,0,0,0.2));
-  z-index: 1;
-}
-.banner-feature__content {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
-}
-.banner-feature__content h3 {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  margin-bottom: 0.5rem;
-}
-.banner-feature__content p {
-  font-size: 1.05rem;
-  opacity: 0.95;
-}
-/* Plain variant: the source image already contains its own text/logo,
-   so no dark overlay or extra caption is layered on top. */
-.banner-feature--plain::after,
-.banner-feature--plain .banner-feature__content {
-  display: none;
-}
-.banner-feature--plain {
-  min-height: 0;
-}
-.banner-feature--plain img {
-  position: static;
-}
-
-/* ---------- Experience grid (bordered, text-only — Home) ---------- */
-.exp-grid {
-  border-top: var(--line-hairline);
-  border-left: var(--line-hairline);
-}
-.exp-grid__cell {
-  border-right: var(--line-hairline);
-  border-bottom: var(--line-hairline);
-  padding: 3rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.75rem;
-}
-.exp-grid__title {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-.exp-grid__desc {
-  color: var(--ink-soft);
-  line-height: 1.6;
-}
-.exp-grid__cell .btn {
-  margin-top: 0.5rem;
-}
-@media (min-width: 640px) {
-  .exp-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* ---------- Experience photo grid (bordered, with cover image — Esperienze page) ---------- */
-.exp-photo-grid {
-  border-top: var(--line-hairline);
-  border-left: var(--line-hairline);
-}
-.exp-photo-grid__cell {
-  border-right: var(--line-hairline);
-  border-bottom: var(--line-hairline);
-  display: flex;
-  flex-direction: column;
-}
-.exp-photo-grid__media {
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-.exp-photo-grid__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.exp-photo-grid__body {
-  padding: 2rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.7rem;
-  flex: 1;
-}
-.exp-photo-grid__title {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-@media (min-width: 640px) {
-  .exp-photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-/* ---------- Testimonial card (project detail) ---------- */
-.testimonial-card {
-  max-width: 720px;
-  margin: 3rem auto 0;
-  padding: 2.4rem;
-  border-radius: var(--radius-lg);
-  background: var(--grad-brand-soft);
-  text-align: center;
-}
-.testimonial-card p:first-child {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  margin-bottom: 1rem;
-}
-.testimonial-card__author {
-  font-weight: 700;
-  color: var(--magenta);
-}
-
-/* ---------- Gallery mini-carousel (project detail) ---------- */
-.gallery-carousel {
-  margin: 2.5rem 0;
-}
-.gallery-carousel__track {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 0.5rem;
-}
-.gallery-carousel__track img {
-  flex: 0 0 80%;
-  max-width: 420px;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  border-radius: var(--radius-md);
-  scroll-snap-align: start;
-}
-.gallery-placeholder {
-  width: 100%;
-  aspect-ratio: 16/10;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  border: var(--line-hairline);
-}
-.gallery-carousel { position: relative; padding: 0 3.5rem; }
-.gallery-carousel .carousel__viewport { overflow: hidden; }
-.gallery-carousel .carousel__btn--prev { left: 0; }
-.gallery-carousel .carousel__btn--next { right: 0; }
-
-/* ---------- Contact page ---------- */
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: stretch;
-}
-.contact-layout__media {
-  min-height: 320px;
-}
-.contact-layout__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.contact-layout h1 {
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 1rem;
-}
-.contact-layout .lead {
-  color: var(--ink-soft);
-  margin-bottom: 2rem;
-  font-size: 1.05rem;
-}
-@media (min-width: 1024px) {
-  .contact-layout__form-wrap {
-    border-left: var(--line-w) solid rgba(17, 17, 17, 0.1);
-  }
-}
-
-.contact-form__row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0 1rem;
-}
-@media (min-width: 560px) {
-  .contact-form__row {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.form-field {
-  margin-bottom: 1.4rem;
-}
-.form-field label {
-  display: block;
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-.form-field input,
-.form-field textarea {
-  width: 100%;
-  padding: 1.1rem 1.6rem;
-  border-radius: var(--radius-pill);
-  border: var(--line-hairline);
-  font-family: inherit;
-  font-size: 0.95rem;
-  color: var(--ink);
-  background: #fff;
-}
-.form-field textarea {
-  border-radius: var(--radius-lg);
-}
-.form-field input::placeholder,
-.form-field textarea::placeholder {
-  color: #f0a8cc;
-}
-.form-field textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-.form-status {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  min-height: 1.2em;
-}
-.form-status[data-state="error"] { color: #c0165c; }
-.form-status[data-state="success"] { color: #0a8f5b; }
-.cf-turnstile {
-  margin: 1rem 0;
-}
-
-/* ---------- Footer ---------- */
-.site-footer {
-  background:
-    radial-gradient(ellipse calc(280px * var(--glow-scale)) calc(230px * var(--glow-scale)) at 100% 0%, var(--glow-rosa)),
-    radial-gradient(ellipse calc(560px * var(--glow-scale)) calc(240px * var(--glow-scale)) at 50% 100%, var(--glow-acqua)),
-    var(--white);
-  border-top: var(--line-hairline);
-}
-.footer-cta {
-  text-align: center;
-  padding: 3.5rem 0 0;
-}
-.footer-cta__eyebrow {
-  font-size: 1.25rem;
-  font-weight: 400;
-  line-height: 1.35;
-  text-transform: uppercase;
-  color: var(--acqua);
-  margin-bottom: 0.5rem;
-}
-.footer-cta__title {
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  font-weight: 700;
-  line-height: 1.2;
-}
-.footer-cta .btn {
-  margin-top: 2rem;
-}
-
-.footer-main {
-  max-width: none;
-  padding: 1.7rem 0 0;
-}
-.footer-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.75rem;
-  margin-bottom: 3.05rem;
-  text-align: center;
-}
-.footer-contact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem 6rem;
-  margin-right: 3rem; /* mockup centres the contacts ~24px left of the page axis */
-}
-.footer-contact__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-.footer-contact__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  flex-shrink: 0;
-  color: var(--ink);
-}
-.footer-contact__icon svg {
-  width: 70px;
-  height: 70px;
-  stroke-width: var(--line-w);
-}
-/* non-scaling: the stroke stays at --line-w whatever the viewBox scale */
-.footer-contact__icon svg * { vector-effect: non-scaling-stroke; }
-.footer-social {
-  display: flex;
-  gap: 4.5rem;
-  align-items: center;
-  justify-content: center;
-}
-.footer-social__link {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  background: var(--grad-social);
-  border: var(--line-hairline);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--icon-dark);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-/* Same hover as .btn: gradient by default, white on hover/focus */
-.footer-social__link:hover,
-.footer-social__link:focus-visible {
-  background: var(--white);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-soft);
-}
-.footer-social__link svg {
-  width: 24px;
-  height: 24px;
-}
-.footer-legal {
-  border-top: var(--line-hairline);
-  margin: 0 calc(50% - 50vw);
-  padding: 1.9rem var(--gutter);
-  text-align: center;
-  font-size: 0.9375rem;
-  line-height: 1.3;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-/* =========================================================================
-   Responsive — Desktop enhancements (≥1024px)
-   ========================================================================= */
 @media (min-width: 1024px) {
   .nav__toggle { display: none; }
-
-  .hero__inner {
-    grid-template-columns: 1.1fr 0.9fr;
-  }
-  .hero--reverse .hero__inner {
-    grid-template-columns: 0.9fr 1.1fr;
-  }
-  .hero--reverse .hero__media { order: -1; }
-
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-layout {
-    grid-template-columns: 1fr 1fr;
-  }
-
 }
 
-/* =========================================================================
-   Responsive — Mobile (<768px)
-   ========================================================================= */
 @media (max-width: 767px) {
-  :root {
-    --nav-h: 68px;
-    --glow-scale: 0.6;
-  }
-
   .nav__menu {
     position: fixed;
     top: var(--nav-h);
@@ -1413,10 +503,10 @@ textarea:focus-visible,
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0;
-    padding: 1.5rem var(--gutter);
+    padding: var(--space-3) var(--gutter);
     transform: translateX(100%);
     visibility: hidden;
-    transition: transform 0.3s ease, visibility 0s linear 0.3s;
+    transition: transform var(--dur-base) ease, visibility 0s linear var(--dur-base);
     overflow-y: auto;
   }
   .nav__menu[data-open="true"] {
@@ -1427,7 +517,7 @@ textarea:focus-visible,
   .nav__link {
     display: block;
     width: 100%;
-    padding: 1rem 0;
+    padding: var(--space-2) 0;
     border-bottom: var(--line-w) solid rgba(17, 17, 17, 0.06);
     font-size: 1.05rem;
   }
@@ -1454,7 +544,7 @@ textarea:focus-visible,
   .nav__sub {
     display: none;
     flex-basis: 100%;
-    padding: 0 0 0.5rem 1rem;
+    padding: 0 0 var(--space-1) var(--space-2);
     visibility: visible;
     opacity: 1;
   }
@@ -1465,329 +555,418 @@ textarea:focus-visible,
     padding: 0.8125rem 0;
     font-size: 1rem;
   }
+}
 
-  .section {
-    padding: 3.5rem 0;
-  }
-
-  .strip__track {
-    height: 44px;
-    font-size: 1rem;
-    gap: 0.5rem;
-  }
-
-  .carousel__btn--prev { left: 0; }
-  .carousel__btn--next { right: 0; }
-  .carousel__viewport {
-    padding: 0 3rem;
+@media (prefers-reduced-motion: reduce) {
+  .nav__sub,
+  .nav__sub-toggle::before {
+    transition: none;
   }
 }
 
-/* =========================================================================
-   Home page (body.page-home) — desktop mockup match
-   ========================================================================= */
-.page-home {
-  --arrow-long: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 40 24' fill='none' stroke='%23000' stroke-width='2'%3E%3Cpath d='M0 11h37M27 1l10 10-10 10'/%3E%3C/svg%3E");
-}
-.page-home .hero {
-  position: relative;
-  isolation: isolate; /* keeps the photo glow (z-index: -1) above this background */
-  padding: 0;
-  overflow: hidden;
-  background: radial-gradient(var(--glow-header-hero) at 100% 0%, var(--glow-acqua)), var(--white);
-}
-/* Only the home header has a glow: one ellipse centred on the header/hero line,
-   drawn half in each element so the two halves meet at the hairline. */
-.page-home { --glow-header-hero: ellipse calc(190px * var(--glow-scale)) calc(200px * var(--glow-scale)); }
-.page-home .site-header {
-  background: radial-gradient(var(--glow-header-hero) at 100% 100%, var(--glow-acqua)), var(--white);
-}
-.page-home .hero__inner {
-  grid-template-columns: 1fr 505px;
-  gap: 0;
-  align-items: start;
-  height: 510px;
-}
-.page-home .hero__content { padding-top: 82px; }
-.page-home .hero__content .badge { margin-bottom: 12px; }
-.page-home .hero__content h1 {
-  font-size: 3.125rem;
-  line-height: 50.5px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.page-home .hero__content h1 .italic-accent { font-size: 1.04em; }
-.page-home .hero__content p {
-  font-size: 1.25rem;
-  line-height: 28px;
-  max-width: 320px;
-}
-.page-home .hero__media {
-  border-radius: 0;
-  box-shadow: none;
-  overflow: visible;
-  background: none;
-}
-/* Photo box matches the PDF: x 443–948 at 1025px, so it starts 14px left of the column */
-.page-home .hero__media { margin: 0 14px 0 -14px; position: relative; }
-/* The photo is 960px wide but the column is 940px of it: the extra 20px on the
-   right keep the loose hair strands uncut. */
-.page-home .hero__media img { width: calc(100% * 960 / 940); max-width: none; height: auto; }
-/* Pink glow behind the cut-out photo. It sits on the photo (not on .hero) so it
-   follows the photo when the layout stacks on mobile. Centre: 77px into the
-   column, 400px down, as measured on the PDF. */
-.page-home .hero__media::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: -403px;
-  top: -20px;
-  width: 960px;
-  height: 840px;
-  background: radial-gradient(closest-side, var(--glow-rosa));
-  pointer-events: none;
-}
-
-.page-home .question { padding: 56px var(--gutter); max-width: none; }
-.page-home .question h2 {
-  font-size: 2.5rem;
-  font-weight: 400;
-  line-height: 47px;
-  max-width: none;
-  margin-bottom: 27px;
-}
-.page-home .question h2 .italic-accent { font-size: 1.12em; }
-.page-home .question p {
-  max-width: 760px;
-  font-size: 1.25rem;
-  line-height: 28px;
-}
-
-.page-home .split-section { padding: 0; }
-.page-home .split {
-  border: 0;
-  border-top: var(--line-hairline);
+/* ---------- 6.4 Hero split ----------
+   Photo and text side by side from 1024px, stacked below. The photo may come first
+   or last in the markup: its divider line sits on the side facing the text.
+   Used by Come lavoro and the project pages. */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--white);
   border-bottom: var(--line-hairline);
-  min-height: 556px;
 }
-.page-home .split__media { border-right: var(--line-hairline); position: relative; }
-.page-home .split__media img {
+.hero-split__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.hero-split__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-split__text {
+  padding: var(--space-4) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-split__eyebrow {
+  --badge-lh: 1.2;
+  --badge-gap: 0.7rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-split {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-split__media {
+    aspect-ratio: auto;
+  }
+  .hero-split__media:first-child { border-right: var(--line-hairline); }
+  .hero-split__media:last-child { border-left: var(--line-hairline); }
+}
+
+/* ---------- 6.5 Accordion ----------
+   Items start closed. A closed item shows the brand gradient; opening fades it
+   out while the panel grows, the title shifts from ink to gradient text and the
+   content slides in. Pages set the numbers through custom properties:
+     --accordion-max-w, --accordion-gap          list
+     --accordion-radius                          item shape (default: a pill)
+     --accordion-pt, --accordion-px, --accordion-pr, --accordion-pb-closed, --accordion-gap-x
+                                                 trigger padding and the gap to the icon
+     --accordion-title-size, --accordion-title-lh, --accordion-title-ls, --accordion-title-grad
+     --accordion-title-open-opacity              title gradient text and its look when open
+     --accordion-closed-bg                       gradient behind a closed item
+     --accordion-icon-w, --accordion-icon-h, --accordion-icon-dy, --accordion-icon-mb
+                                                 arrow size, nudge and the height it adds to the row
+     --accordion-body-pad, --accordion-body-size, --accordion-body-lh
+                                                 panel text
+   Keep `overflow: clip` on the item, never `hidden`: a scroll container would
+   ignore scroll-margin-top and break the sticky header. */
+.accordion {
+  --accordion-speed: var(--dur-slow);
+  --accordion-icon-dy: -2px; /* the arrow sits 2px above the title's first line */
+  display: flex;
+  flex-direction: column;
+  gap: var(--accordion-gap, var(--space-2));
+  max-width: var(--accordion-max-w, 900px);
+  margin: 0 auto;
+}
+.accordion__item {
+  position: relative;
+  isolation: isolate;
+  scroll-margin-top: calc(var(--nav-h) + 24px); /* deep links land below the sticky header */
+  border: var(--line-hairline);
+  border-radius: var(--accordion-radius, var(--radius-accordion));
+  overflow: clip;
+  background: var(--white);
+}
+.accordion__item::before {
+  content: "";
   position: absolute;
   inset: 0;
-  object-position: 50% 12%;
-  transform: scale(1.3);
-  transform-origin: 74% 41%;
+  z-index: var(--z-behind);
+  background: var(--accordion-closed-bg, linear-gradient(90deg, #f9c0dc, #b5ecf8));
+  opacity: 0;
+  transition: opacity var(--accordion-speed) ease;
 }
-.page-home .split__text h2 .italic-accent { font-size: 1.075em; }
-.page-home .split__text {
-  padding: 0 60px;
-  background:
-    radial-gradient(ellipse calc(270px * var(--glow-scale)) calc(300px * var(--glow-scale)) at 0% 55%, var(--glow-acqua)),
-    var(--white);
+.accordion__item[data-open="false"]::before {
+  opacity: 1;
 }
-.page-home .split__text .badge { font-size: 1.25rem; margin-bottom: 10px; }
-.page-home .split__text h2 {
-  font-size: 2rem;
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--accordion-gap-x, var(--space-2));
+  padding: var(--accordion-pt, 30px) var(--accordion-pr, var(--accordion-px, 40px)) 0 var(--accordion-px, 40px);
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: var(--accordion-title-size, var(--fs-title));
   font-weight: 700;
-  line-height: 33px;
-  margin-bottom: 19px;
+  line-height: var(--accordion-title-lh, 1.2);
+  letter-spacing: var(--accordion-title-ls, normal);
+  cursor: pointer;
+  transition: padding var(--accordion-speed) var(--ease-out);
 }
-.page-home .split__text p {
-  font-size: 0.9375rem;
-  line-height: 21px;
-  margin-bottom: 21px;
-  max-width: 365px;
+.accordion__item[data-open="false"] .accordion__trigger {
+  padding-bottom: var(--accordion-pb-closed, var(--accordion-pt, 30px));
 }
-.page-home .split__text .btn { margin-top: 5px; }
-
-.page-home .section--servizi { padding: 47px 0 69px; }
-.page-home .section__head { margin-bottom: 33px; max-width: none; }
-.page-home .section-title {
-  font-size: 2.5rem;
-  line-height: 42px;
-  font-weight: 700;
+/* Title: gradient text when open (the ink colour fades to transparent to reveal the
+   clipped gradient). The fill follows `color` because -webkit-text-fill-color does not animate. */
+.accordion__trigger > span:first-child {
+  background: var(--accordion-title-grad, var(--grad-title));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: currentColor;
+  color: transparent;
+  opacity: var(--accordion-title-open-opacity, 1);
+  transition: color var(--accordion-speed) ease, opacity var(--accordion-speed) ease;
 }
-.page-home .section-title--lg { line-height: 48px; }
-.page-home .section-title .italic-accent { font-size: 1.05em; }
-.page-home .pill-grid { gap: 28px; max-width: none; }
-.page-home .pill-card {
-  height: 97px;
-  padding: 0 39px;
-  font-size: 1.875rem;
+.accordion__item[data-open="false"] .accordion__trigger > span:first-child {
+  color: var(--ink);
+  opacity: 1;
 }
-.page-home .pill-card__arrow {
-  width: 40px;
-  height: 24px;
-  border-radius: 0;
-  background: var(--arrow-long) no-repeat center / contain;
-  font-size: 0;
+/* Arrow: points up when open, down when closed */
+.accordion__icon {
+  --arrow-w: var(--accordion-icon-w, 34px);
+  --arrow-h: var(--accordion-icon-h, 40px);
+  color: var(--ink);
+  margin-top: var(--accordion-icon-dy);
+  margin-bottom: var(--accordion-icon-mb, calc(-1 * (var(--accordion-icon-dy) + var(--arrow-h)))); /* default: adds no height to the row */
+  transition: transform var(--accordion-speed) var(--ease-out);
 }
-
-.page-home .exp-section { padding: 0; }
-.page-home .exp-grid {
+.accordion__item[data-open="false"] .accordion__icon {
+  transform: rotate(180deg);
+}
+.accordion__panel {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  border: 0;
-  border-top: var(--line-hairline);
-  border-bottom: var(--line-hairline);
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--accordion-speed) var(--ease-out);
 }
-.page-home .exp-grid__cell {
-  border: 0;
-  border-bottom: var(--line-hairline);
-  padding: 54px 24px 59px;
-  gap: 0;
-  height: 384px;
-  justify-content: flex-start;
+.accordion__item[data-open="true"] .accordion__panel {
+  grid-template-rows: 1fr;
 }
-.page-home .exp-grid__cell:nth-child(odd) { border-right: var(--line-hairline); }
-.page-home .exp-grid__cell:nth-last-child(-n + 2) { border-bottom: 0; }
-/* Wide screens: keep cell content where the 1025px design puts it. Percent padding
-   resolves against the half-width grid track, so (100% - design-w/2) is the bleed. */
-@media (min-width: 1025px) {
-  .page-home .exp-grid__cell:nth-child(odd) { padding-left: calc(24px + max(0px, 100% - var(--design-w) / 2)); }
-  .page-home .exp-grid__cell:nth-child(even) { padding-right: calc(24px + max(0px, 100% - var(--design-w) / 2)); }
+.accordion__panel-inner {
+  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 0s linear var(--accordion-speed);
 }
-.page-home .exp-grid__cell .badge { margin-bottom: 19px; }
-.page-home .exp-grid__title {
-  /* always two lines tall, so a one-line name (PULICASA) stays aligned with its row */
-  display: flex; flex-direction: column; justify-content: center; min-height: 70px;
-  font-size: 2.5rem;
-  font-weight: 400;
-  line-height: 35px;
-  margin-bottom: 28px;
+.accordion__item[data-open="true"] .accordion__panel-inner {
+  visibility: visible;
+  transition-delay: 0s;
 }
-.page-home .exp-grid__title .italic-accent { display: block; font-size: 0.97em; }
-.page-home .exp-grid__desc {
-  font-size: 1.25rem;
-  line-height: 28px;
-  max-width: 290px;
+.accordion__panel-content {
+  padding: var(--accordion-body-pad, 9px 40px 36px);
+  font-size: var(--accordion-body-size, var(--fs-body));
+  line-height: var(--accordion-body-lh, 1.4);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity var(--dur-base) ease, transform var(--accordion-speed) var(--ease-out);
 }
-.page-home .exp-grid__cell .btn { margin-top: auto; flex-shrink: 0; }
-/* Glows are pseudo-elements centred on the bottom line of a cell, so each one straddles a row
-   separator (half above, half below). They sit behind the cell content (z-index -1) and the
-   cells are transparent, so the hairlines stay on top. Cell 6 keeps a corner glow: it is the
-   last row, so there is no line to cross. */
-.page-home .exp-grid { isolation: isolate; }
-.page-home .exp-grid__cell { position: relative; }
-.page-home .exp-grid__cell::after {
-  --gx: calc(300px * var(--glow-scale)); --gy: calc(330px * var(--glow-scale));
-  content: "";
-  position: absolute; left: 0; right: 0; top: calc(100% - var(--gy)); height: calc(var(--gy) * 2);
-  z-index: -1; pointer-events: none;
+.accordion__item[data-open="true"] .accordion__panel-content {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.12s;
 }
-.page-home .exp-grid__cell:nth-child(2)::after { background: radial-gradient(ellipse var(--gx) var(--gy) at 100% 50%, var(--glow-rosa)); }
-.page-home .exp-grid__cell:nth-child(3)::after { --gx: calc(340px * var(--glow-scale)); background: radial-gradient(ellipse var(--gx) var(--gy) at 0% 50%, var(--glow-acqua)); }
-.page-home .exp-grid__cell:nth-child(6) { background: radial-gradient(ellipse calc(340px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 100% 100%, var(--glow-rosa)); }
+.accordion__panel-content ul {
+  list-style: disc;
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion { --accordion-speed: 0s; }
+  .accordion__item[data-open="true"] .accordion__panel-content { transition-delay: 0s; }
+}
 
-.page-home .section--reviews { padding: 56px 0 62px; border-bottom: 0; }
-.page-home .section--reviews .section__head { margin-bottom: 38px; }
-.page-home .carousel--clean { max-width: none; }
-.page-home .carousel--clean .carousel__viewport { margin: 0 78px; }
-.page-home .carousel--clean .carousel__slide { padding: 0; }
-/* same gap as the "Scopri le altre esperienze" marquee cards (progetto.css --card-gap) */
-.page-home .carousel--clean .carousel__track { --slide-gap: 24px; gap: var(--slide-gap); }
-.page-home .carousel--clean .carousel__dots { display: none; }
-.page-home .review-card {
-  padding: 42px 50px 44px;
-  border-radius: 40px;
+/* ---------- 6.6 Carousel ----------
+   Slide track moved by main.js; arrows are .arrow icons inside the buttons.
+   The prev arrow is the next arrow mirrored. */
+.carousel {
+  position: relative;
 }
-.page-home .review-card__quote {
-  font-size: 1.25rem;
-  line-height: 28px;
+.carousel__viewport {
+  overflow: hidden;
+}
+.carousel__track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.carousel__slide {
+  flex: 0 0 100%;
+}
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+}
+.carousel__btn--prev { left: 0; }
+.carousel__btn--next { right: 0; }
+.carousel__btn--prev .arrow { transform: scaleX(-1); }
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+}
+.carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(17, 17, 17, 0.15);
+  padding: 0;
+}
+.carousel__dot[aria-current="true"] {
+  background: var(--magenta);
+  width: 22px;
+  border-radius: var(--radius-pill);
+  transition: width var(--dur-fast) ease;
+}
+
+/* ---------- 6.7 Quote card ----------
+   Review (home) and testimonial (project pages): a bordered rounded card with an italic
+   quote, the author and a role line. Pages set the padding, the text size and the gap. */
+.quote-card {
+  padding: var(--quote-pad, 42px 50px 44px);
+  border: var(--line-hairline);
+  border-radius: var(--quote-radius, var(--radius-card));
+  background: var(--white);
+  text-align: center;
+  font-size: var(--quote-size, var(--fs-lead));
+  line-height: var(--quote-lh, var(--lh-lead));
+}
+.quote-card__quote {
   font-style: italic;
-  margin: 0 auto 27px;
-  max-width: 660px;
+  margin: 0 auto var(--quote-gap, 27px);
 }
-.page-home .review-card__author { color: var(--ink); font-size: 1.25rem; line-height: 28px; }
-.page-home .review-card__role { font-size: 1.25rem; line-height: 28px; }
-.page-home .carousel--clean .carousel__btn {
-  width: 40px;
-  height: 24px;
-  border: 0;
-  border-radius: 0;
-  background: var(--arrow-long) no-repeat center / contain;
-  font-size: 0;
+.quote-card__author {
+  font-weight: 700;
 }
-.page-home .carousel--clean .carousel__btn--prev { left: 6px; transform: translateY(-50%) scaleX(-1); }
-.page-home .carousel--clean .carousel__btn--next { right: 6px; }
-.page-home .carousel--clean .carousel__btn:hover { background: var(--arrow-long) no-repeat center / contain; }
-.page-home .section-cta-center { margin-top: 39px; }
-
-/* Home — mobile (<768px): minimal stacking, no redesign */
 @media (max-width: 767px) {
-  .page-home .hero { padding-bottom: 0; }
-  .page-home .hero__inner { grid-template-columns: 1fr; height: auto; }
-  .page-home .hero__content { padding: 2.5rem 0 1.5rem; }
-  .page-home .hero__content h1 { font-size: 2.2rem; line-height: 1.1; }
-  .page-home .hero__media { margin: 0 auto; max-width: 320px; }
-  .page-home .hero__media::before { left: 50%; top: 55%; width: 460px; height: 440px; transform: translate(-50%, -50%); }
-  .page-home .question { padding: 2.5rem var(--gutter); }
-  .page-home .question h2 { font-size: 1.6rem; line-height: 1.3; }
-  .page-home .question p { font-size: 1rem; }
-  .page-home .split { grid-template-columns: 1fr; min-height: 0; }
-  .page-home .split__media { min-height: 380px; border-right: 0; border-bottom: var(--line-hairline); }
-  /* the subject sits right of centre in the photo: zoom in enough to centre her face (no empty edge) */
-  .page-home .split__media img { transform: scale(1.7); transform-origin: 82% 32%; }
-  .page-home .split__text { padding: 2.5rem var(--gutter); }
-  .page-home .split__text h2 { font-size: 1.6rem; line-height: 1.2; }
-  .page-home .section--servizi { padding: 2.5rem 0; }
-  .page-home .section-title,
-  .page-home .section-title--lg { font-size: 1.7rem; line-height: 1.2; }
-  .page-home .pill-grid { gap: 1rem; } /* = Come lavoro accordion gap */
-  .page-home .pill-card { height: auto; min-height: 72px; padding: 1rem 1.25rem; font-size: 1.05rem; line-height: 1.25; }
-  .page-home .exp-grid { grid-template-columns: 1fr; }
-  .page-home .exp-grid__cell { height: auto; padding: 2.5rem var(--gutter); }
-  .page-home .exp-grid__cell:nth-child(odd) { border-right: 0; }
-  .page-home .exp-grid__cell:nth-last-child(2) { border-bottom: var(--line-hairline); }
-  .page-home .exp-grid__cell .btn { margin-top: 1.5rem; }
-  .page-home .exp-grid__title { font-size: 2rem; }
-  /* Stacked cells: one glow on each line between cells, alternating right/left. */
-  .page-home .exp-grid__cell::after { --gx: 200px; --gy: 170px; }
-  .page-home .exp-grid__cell:nth-child(n)::after { background: none; }
-  .page-home .exp-grid__cell:nth-child(odd):not(:last-child)::after { background: radial-gradient(ellipse var(--gx) var(--gy) at 92% 50%, var(--glow-rosa)); }
-  .page-home .exp-grid__cell:nth-child(even):not(:last-child)::after { background: radial-gradient(ellipse var(--gx) var(--gy) at 8% 50%, var(--glow-acqua)); }
-  .page-home .exp-grid__cell:nth-child(6) { background: none; }
-  .page-home .section--reviews { padding: 2.5rem 0; }
-  .page-home .carousel--clean .carousel__viewport { margin: 0 2.25rem; padding: 0; }
-  .page-home .carousel--clean .carousel__btn {
-    width: 28px;
-    /* same 2px stroke at the smaller size (2 * 40 / 28) */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 40 24' fill='none' stroke='%23000' stroke-width='2.86'%3E%3Cpath d='M0 11h37M27 1l10 10-10 10'/%3E%3C/svg%3E");
+  .quote-card {
+    --quote-radius: 28px;
   }
-  .page-home .carousel--clean .carousel__btn:hover { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -1 40 24' fill='none' stroke='%23000' stroke-width='2.86'%3E%3Cpath d='M0 11h37M27 1l10 10-10 10'/%3E%3C/svg%3E"); }
-  .page-home .carousel--clean .carousel__btn--prev { left: 0; }
-  .page-home .carousel--clean .carousel__btn--next { right: 0; }
-  .page-home .review-card { padding: 1.5rem 1.25rem; border-radius: 28px; }
-  .page-home .carousel--clean .carousel__track { --slide-gap: 16px; } /* = mobile marquee --card-gap */
-  .page-home .review-card__quote,
-  .page-home .review-card__author,
-  .page-home .review-card__role { font-size: 1rem; line-height: var(--lh-body-mobile); }
-  .page-home .hero__content p,
-  .page-home .question p,
-  .page-home .exp-grid__desc { line-height: var(--lh-body-mobile); }
+}
+
+/* ---------- 6.8 Footer ---------- */
+.site-footer {
+  background:
+    radial-gradient(ellipse calc(280px * var(--glow-scale)) calc(230px * var(--glow-scale)) at 100% 0%, var(--glow-rosa)),
+    radial-gradient(ellipse calc(560px * var(--glow-scale)) calc(240px * var(--glow-scale)) at 50% 100%, var(--glow-acqua)),
+    var(--white);
+  border-top: var(--line-hairline);
+}
+.footer-cta {
+  text-align: center;
+  padding: 3.5rem 0 0;
+}
+.footer-cta__eyebrow {
+  --badge-gap: var(--space-1);
+}
+.footer-cta__title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.footer-main {
+  max-width: none;
+  padding: 1.7rem 0 0;
+}
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.75rem;
+  margin-bottom: 3.05rem;
+  text-align: center;
+}
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 6rem;
+  margin-right: 3rem; /* mockup centres the contacts ~24px left of the page axis */
+}
+.footer-contact__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+}
+.footer-contact__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  flex-shrink: 0;
+  color: var(--ink);
+}
+.footer-contact__icon svg {
+  width: 70px;
+  height: 70px;
+  stroke-width: var(--line-w);
+}
+/* non-scaling: the stroke stays at --line-w whatever the viewBox scale */
+.footer-contact__icon svg * { vector-effect: non-scaling-stroke; }
+.footer-social {
+  display: flex;
+  gap: 4.5rem;
+  align-items: center;
+  justify-content: center;
+}
+/* Round gradient button, shared with the back-to-top button: white and lifted on hover/focus */
+.footer-social__link,
+.to-top {
+  border-radius: 50%;
+  background: var(--grad-social);
+  border: var(--line-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-dark);
+  transition: transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease, background var(--dur-fast) ease;
+}
+.footer-social__link:hover,
+.footer-social__link:focus-visible,
+.to-top:hover,
+.to-top:focus-visible {
+  background: var(--white);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+.footer-social__link {
+  width: var(--social-size);
+  height: var(--social-size);
+}
+.footer-social__link svg {
+  width: 24px;
+  height: 24px;
+}
+.footer-legal {
+  border-top: var(--line-hairline);
+  margin: 0 calc(50% - 50vw);
+  padding: 1.9rem var(--gutter);
+  text-align: center;
+  font-size: var(--fs-body);
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+@media (max-width: 767px) {
   .footer-cta__title { font-size: 2rem; }
   .footer-contact { margin-right: 0; gap: 1.5rem 2rem; }
-  .footer-social { gap: 1.5rem; }
-  .footer-social__link { width: 64px; height: 64px; }
+  .footer-social { gap: var(--space-3); }
   .footer-legal { font-size: 0.7rem; }
 }
 
-/* ---------- Back-to-top (injected by main.js on every page) ---------- */
+/* ---------- 6.9 Back-to-top (button injected by main.js on every page) ---------- */
 .to-top {
-  position: fixed; right: 16px; bottom: 16px; z-index: 40;
-  width: 48px; height: 48px; padding: 0; border-radius: 50%;
-  background: var(--grad-social); border: var(--line-hairline); color: var(--icon-dark);
-  display: flex; align-items: center; justify-content: center; cursor: pointer;
-  opacity: 0; visibility: hidden; transform: translateY(12px);
-  transition: opacity 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, visibility 0s linear 0.25s;
+  position: fixed;
+  right: var(--to-top-offset);
+  bottom: var(--to-top-offset);
+  z-index: var(--z-to-top);
+  width: var(--to-top-size);
+  height: var(--to-top-size);
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease, background var(--dur-fast) ease, visibility 0s linear 0.25s;
 }
-.to-top.is-visible { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
-.to-top:hover, .to-top:focus-visible { background: var(--white); transform: translateY(-3px); box-shadow: var(--shadow-soft); }
-.to-top svg { width: 18px; height: 21px; }
-/* non-scaling: the arrow stroke stays at --line-w, same as the button border */
-.to-top svg path { vector-effect: non-scaling-stroke; stroke-width: var(--line-w); }
+.to-top .arrow {
+  --arrow-w: 18px;
+  --arrow-h: 21px;
+}
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+.to-top:hover,
+.to-top:focus-visible {
+  transform: translateY(-3px);
+}
 @media (min-width: 1024px) {
-  .to-top { right: 32px; bottom: 32px; width: 64px; height: 64px; }
-  .to-top svg { width: 24px; height: 28px; }
+  .to-top {
+    --to-top-size: 64px;
+    --to-top-offset: 32px;
+  }
+  .to-top .arrow {
+    --arrow-w: 24px;
+    --arrow-h: 28px;
+  }
 }
 @media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }

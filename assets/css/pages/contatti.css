@@ -1,13 +1,57 @@
 /* ---------- Page: contatti ---------- */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+.contact-layout__media { min-height: 320px; }
+.contact-layout__media img { width: 100%; height: 100%; object-fit: cover; }
+.contact-layout__form-wrap { padding: var(--space-4) var(--gutter); }
 .contact-layout .br-d { display: none; }
-.contact-layout__form-wrap { padding: 2.5rem var(--gutter); }
-.contact-layout .cf-turnstile { margin: 0; }
+.contact-layout h1 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: var(--space-2);
+}
+.contact-layout .lead {
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
 
+/* Form */
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 var(--space-2);
+}
+@media (min-width: 560px) {
+  .contact-form__row { grid-template-columns: 1fr 1fr; }
+}
+.form-field {
+  position: relative;
+  margin-bottom: 1.4rem;
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 1.1rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: var(--line-hairline);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--white);
+}
+.form-field textarea {
+  border-radius: var(--radius-lg);
+  min-height: 140px;
+  resize: vertical;
+}
 /* Gradient placeholders (mockup): ::placeholder can't take a background, so the
    visible label sits over the empty field and fades out once it has a value.
    Inputs keep placeholder=" " so :placeholder-shown tracks emptiness. */
-.contact-layout .form-field { position: relative; }
-.contact-layout .form-field__label {
+.form-field__label {
   position: absolute;
   top: calc(1.1rem + 1px);
   left: calc(1.6rem + 1px);
@@ -22,64 +66,60 @@
   color: transparent;
   transition: opacity 0.15s ease;
 }
-.contact-layout .form-field :not(:placeholder-shown) + .form-field__label { opacity: 0; }
+.form-field :not(:placeholder-shown) + .form-field__label { opacity: 0; }
+.cf-turnstile { margin: 0; }
+.form-status {
+  margin-top: var(--space-2);
+  font-size: 0.9rem;
+  min-height: 1.2em;
+}
+.form-status[data-state="error"] { color: #c0165c; }
+.form-status[data-state="success"] { color: #0a8f5b; }
+
 @media (max-width: 767px) {
   /* square photo, legs cropped */
   .contact-layout__media { min-height: 0; aspect-ratio: 1 / 1; }
   .contact-layout__media img { object-position: 50% 18%; }
   /* same 16px gap as the Come lavoro accordion, between every field */
-  .contact-layout .form-field { margin-bottom: 16px; }
-  .contact-layout .cf-turnstile { margin: 0; }
+  .form-field { margin-bottom: var(--space-2); }
 }
 @media (min-width: 1024px) {
-  .contact-layout { height: 569px; }
+  .contact-layout { grid-template-columns: 1fr 1fr; height: 569px; }
   .contact-layout__media { min-height: 0; overflow: hidden; border-right: var(--line-hairline); }
   /* Mockup shows her ~10% closer: zoom in around the top-left of the frame */
   .contact-layout__media img { object-position: center 20%; transform: scale(1.1); transform-origin: 0 6%; }
-  .contact-layout__form-wrap {
-    border-left: 0;
-    padding: 38px 58px 0 36px;
-  }
+  .contact-layout__form-wrap { padding: 38px 58px 0 36px; }
   .contact-layout .br-d { display: inline; }
   .contact-layout h1 {
     font-size: 30px;
-    font-weight: 400;
     line-height: 30px;
     margin-bottom: 22px;
   }
   .contact-layout .lead {
-    font-size: 15px;
+    font-size: var(--fs-body);
     line-height: 21px;
     margin-bottom: 21px;
   }
-  .contact-layout .form-field { margin-bottom: 10px; }
+  .form-field { margin-bottom: 10px; }
   .contact-form__row { gap: 0 14px; }
-  .contact-layout .form-field input,
-  .contact-layout .form-field textarea {
-    border: var(--line-hairline);
+  .form-field input,
+  .form-field textarea {
     padding: 0 16px;
     height: 44px;
     font-size: 14px;
     font-weight: 600;
   }
-  .contact-layout .form-field textarea {
+  .form-field textarea {
     height: 119px;
     min-height: 0;
     padding-top: 12px;
     border-radius: 25px;
     resize: none;
   }
-  .contact-layout .form-field__label { top: 0; left: 18px; font-size: 14px; line-height: 44px; }
-  .contact-layout .form-field textarea + .form-field__label { top: 14px; line-height: normal; }
-  .contact-layout .btn--gradient-ink {
-    height: 44px;
-    padding: 0 18px;
-    letter-spacing: 0;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  .contact-layout .form-status { margin-top: 0.5rem; min-height: 0; }
+  .form-field__label { top: 0; left: 18px; font-size: 14px; line-height: 44px; }
+  .form-field textarea + .form-field__label { top: 14px; line-height: normal; }
+  .contact-layout .btn { padding: 0 18px; letter-spacing: 0; font-size: 14px; height: 44px; }
+  .form-status { margin-top: var(--space-1); min-height: 0; }
 }
 
 /* Wide screens: photo grows to the left edge, form stays where the centred design puts it */

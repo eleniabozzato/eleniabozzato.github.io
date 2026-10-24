@@ -104,10 +104,8 @@
      e.g. the home services pills linking into come-lavoro.html. */
   function setAccordionItem(item, open) {
     const trigger = item.querySelector(".accordion__trigger");
-    const icon = item.querySelector(".accordion__icon");
-    item.setAttribute("data-open", String(open));
+    item.setAttribute("data-open", String(open)); // CSS turns the arrow
     if (trigger) trigger.setAttribute("aria-expanded", String(open));
-    if (icon) icon.textContent = open ? "↑" : "↓";
   }
 
   function openAccordionFromHash() {
@@ -201,7 +199,7 @@
     btn.className = "to-top";
     btn.setAttribute("aria-label", "Torna su");
     btn.innerHTML =
-      '<svg viewBox="0 0 34 40" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 39V3M3 17L17 2l14 15"/></svg>';
+      '<svg class="arrow arrow--up" viewBox="0 0 34 40" aria-hidden="true"><path d="M17 39V3M3 17L17 2l14 15"/></svg>';
     document.body.appendChild(btn);
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
     function toggle() {

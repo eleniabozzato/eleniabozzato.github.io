@@ -1,88 +1,63 @@
 /* ---------- Page: progetto (case-study template, shared by all project pages) ----------
    Per-project hero crop: set --hero-pos on the hero <img> (style attribute), e.g. style="--hero-pos: 70% 50%".
    A cover that is only a logo on a flat colour must not be cropped on wide screens:
-   set style="--hero-fit: contain; --hero-bg: <cover colour>" instead. */
-.page-project .hero-split__media img { object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); }
-.page-project .hero-split--glow .hero-split__text {
+   set style="--hero-fit: contain; --hero-bg: <cover colour>" instead.
+   Project-only components (client logo, gallery carousel, "more experiences" marquee)
+   live here; the accordion, quote card, carousel and arrow come from style.css. */
+
+/* ---------- Hero ---------- */
+.hero-split__media img { object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); }
+.hero-split--glow .hero-split__text {
   background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at 92% 48%, var(--glow-acqua)), var(--white);
 }
-.page-project .hero-split__text { padding: 3rem var(--gutter); }
-.page-project .hero-split__eyebrow {
-  font-size: 1.25rem; font-weight: 400; letter-spacing: 0; line-height: 1.2; margin-bottom: 0.7rem;
+.hero-split__text { padding: 3rem var(--gutter); }
+.hero-split__project-name {
+  --pn-size: 3.17rem;
+  --pn-weight: 300;
+  --pn-accent-size: 3.03rem;
+  --pn-accent-lh: 0.95;
+  margin-bottom: var(--space-2);
 }
-.page-project .hero-split__project-name {
-  font-size: 3.17rem; font-weight: 300; line-height: 1; margin-bottom: 1rem;
+.hero-split__tagline {
+  font-size: 1.85rem; line-height: 1.43; font-weight: 700; margin-bottom: 0.9rem;
 }
-.page-project .hero-split__project-name .italic-accent {
-  display: block; font-size: 3.03rem; font-weight: 400; line-height: 0.95;
-}
-.page-project .hero-split__tagline {
-  font-size: 1.85rem; line-height: 1.43; font-weight: 700; color: var(--ink);
-}
-.page-project .client-logo { padding: 42px 0 0; }
-.page-project .client-logo img { max-width: 300px; width: 300px; }
-.page-project main > .section { padding: 44px 0 64px; }
-.page-project .accordion { max-width: 900px; margin: 0 auto; gap: 16px; }
-.page-project .accordion__item {
-  border-radius: 50px; /* half the closed height: a pill when closed, same shape when open */
-}
-.page-project .accordion__trigger {
-  align-items: flex-start; padding: 30px 40px 0; font-size: 1.875rem; line-height: 1.2;
-}
-.page-project .accordion__trigger > span:first-child {
-  background: linear-gradient(90deg, #f7b9d8, #b5ecf8); -webkit-background-clip: text; background-clip: text;
-  color: transparent; -webkit-text-fill-color: transparent;
-}
-.page-project .accordion__icon {
-  font-size: 0; width: 30px; height: 40px; margin: -2px 0 -20px; background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 39V1M2 14L15 1l13 13'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 40' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M15 39V1M2 14L15 1l13 13'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-.page-project .accordion__item[data-open="false"] .accordion__icon { transform: rotate(180deg); }
-.page-project .accordion__panel-content {
-  padding: 9px 40px 36px; font-size: 0.9375rem; line-height: 1.4;
-}
-.page-project .accordion__panel-content p { max-width: 712px; margin: 0 0 1.4em; }
-.page-project .accordion__panel-content p:last-child { margin-bottom: 0; }
-.page-project .accordion__panel-content ul { margin-top: 4px; padding-left: 25px; font-size: 0.875rem; }
-.page-project .accordion__panel-content li { margin-bottom: 0; }
-.page-project .accordion { --accordion-closed-bg: linear-gradient(90deg, #f9c0dc, #b5ecf8); }
-.page-project .accordion__item[data-open="false"] .accordion__trigger { padding-bottom: 30px; }
-.page-project .gallery-carousel { max-width: none; margin: 34px 0 16px; padding: 0 78px; }
-.page-project .gallery-carousel .carousel__slide { padding: 0; }
-.page-project .gallery-carousel .carousel__dots { display: none; }
-.page-project .gallery-carousel .carousel__slide img { display: block; width: 100%; height: auto; aspect-ratio: 900 / 700; }
-.page-project .gallery-carousel .carousel__btn {
-  width: auto; height: auto; border: 0; background: none; border-radius: 0; color: var(--ink); margin-top: 0;
-}
-.page-project .gallery-carousel .carousel__btn:hover { background: none; color: var(--ink); margin-top: 0; }
-.page-project .gallery-carousel .carousel__btn--prev { left: -2px; }
-.page-project .gallery-carousel .carousel__btn--next { right: -2px; }
-.page-project .testimonial-card {
-  max-width: 898px; margin: 16px auto 0; padding: 39px 40px 41px; border: var(--line-hairline);
-  border-radius: 40px; background: var(--white);
-}
-.page-project .testimonial-card p:first-child {
-  font-size: 1.25rem; line-height: 1.4; font-style: italic; margin-bottom: 1.7rem;
-}
-.page-project .testimonial-card__author { color: var(--ink); font-size: 1.25rem; line-height: 1.4; }
-.page-project .testimonial-card__role { font-size: 1.25rem; line-height: 1.35; }
-/* Standalone photo carousel under the testimonial (Al Plan Hotel): 5:4 photos, arrows outside the image */
-.page-project .client-logo--wide img { max-width: 330px; width: 330px; }
+
+/* ---------- Client logo ---------- */
+.client-logo { display: flex; justify-content: center; padding: 42px 0 0; }
+.client-logo img { width: 300px; max-width: 300px; height: auto; }
+.client-logo--wide img { width: 330px; max-width: 330px; }
 /* Carrozzeria: a flat wordmark, so it needs twice the width to weigh as much as the Dentisti and Al Plan logos */
-.page-project .client-logo--xwide img { max-width: 600px; width: 600px; }
-.page-project .gallery-carousel--standalone { max-width: 900px; margin: 56px auto 0; padding: 0 117px; }
-.page-project .gallery-carousel--standalone .carousel__slide img { aspect-ratio: 5 / 4; object-fit: cover; }
+.client-logo--xwide img { width: 600px; max-width: 600px; }
+
+/* ---------- Content: accordion, gallery, testimonial ---------- */
+main > .section { padding: 44px 0 64px; }
+.accordion__panel-content p { max-width: 712px; margin: 0 0 1.4em; }
+.accordion__panel-content p:last-child { margin-bottom: 0; }
+.accordion__panel-content ul { margin-top: 4px; padding-left: 25px; font-size: 0.875rem; }
+
+/* Gallery inside an accordion panel: arrows sit in the side gutters */
+.gallery-carousel { max-width: none; margin: 34px 0 16px; padding: 0 78px; }
+.gallery-carousel .carousel__slide img { display: block; width: 100%; height: auto; aspect-ratio: 900 / 700; }
+.gallery-carousel .carousel__btn--prev { left: -2px; }
+.gallery-carousel .carousel__btn--next { right: -2px; }
+/* Standalone photo carousel under the testimonial (Al Plan Hotel): 5:4 photos, arrows outside the image */
+.gallery-carousel--standalone { max-width: 900px; margin: 56px auto 0; padding: 0 117px; }
+.gallery-carousel--standalone .carousel__slide img { aspect-ratio: 5 / 4; object-fit: cover; }
+
+.testimonial-card {
+  --quote-pad: 39px 40px 41px;
+  --quote-lh: 1.4;
+  --quote-gap: 1.7rem;
+  max-width: 898px;
+  margin: var(--space-2) auto 0;
+}
+.testimonial-card .quote-card__role { line-height: 1.35; }
 
 /* ---------- "Vedi le altre esperienze": slow marquee of the other projects ----------
    The track holds 3 identical sets (1 real + 2 aria-hidden) and slides by one set, so the loop is seamless
    as long as one set is not narrower than the screen. */
-.page-project main > .section.more-exp { padding: 56px 0 64px; border-top: var(--line-hairline); text-align: center; }
-.more-exp__eyebrow { color: var(--acqua); } /* single hook: the eyebrow text is replaced here later */
+main > .section.more-exp { padding: 56px 0 64px; border-top: var(--line-hairline); text-align: center; }
 .more-exp__head { padding: 0 var(--gutter); margin-bottom: 36px; }
-/* same title as the home sections (those rules are scoped to .page-home) */
-.page-project .more-exp .section-title { font-size: 2.5rem; font-weight: 700; line-height: 42px; }
-.page-project .more-exp .section-title .italic-accent { font-size: 1.05em; }
 /* Scroll container moved by main.js (auto-advance, swipe, wheel, mouse drag); no scrollbar.
    Hover does not pause it (it made the cards hard to follow). */
 .more-exp__marquee { overflow-x: auto; overflow-y: clip; scrollbar-width: none; overscroll-behavior-x: contain; cursor: grab; }
@@ -90,7 +65,7 @@
 .more-exp__marquee.is-dragging { cursor: grabbing; user-select: none; }
 .more-exp__marquee img { -webkit-user-drag: none; }
 .more-exp__track {
-  --card-w: 340px; --card-gap: 24px;
+  --card-w: 340px; --card-gap: var(--space-3);
   display: flex; width: max-content; margin: 0; padding: 0; list-style: none; text-align: left;
 }
 .more-exp__item { flex: none; width: var(--card-w); margin-right: var(--card-gap); }
@@ -98,74 +73,72 @@
   display: flex; flex-direction: column; height: 100%; border: var(--line-hairline); border-radius: var(--radius-lg);
   overflow: clip; background: var(--white); color: var(--ink);
 }
-.more-exp__card:hover, .more-exp__card:focus-visible { background: var(--grad-brand-soft, var(--white)); }
+.more-exp__card:hover, .more-exp__card:focus-visible { background: var(--grad-brand-soft); }
 .more-exp__media { display: block; aspect-ratio: 4 / 3; overflow: hidden; }
 .more-exp__media img { display: block; width: 100%; height: 100%; object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); object-position: var(--card-pos, 50% 25%); }
 .more-exp__body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 28px; text-align: center; }
-.more-exp__name { font-size: 2rem; font-weight: 400; line-height: 1.05; }
-.more-exp__name .italic-accent { display: block; font-size: 2.1rem; font-weight: 400; }
+.more-exp__name { --pn-size: 2rem; --pn-lh: 1.05; --pn-accent-size: 2.1rem; }
 .more-exp__desc { font-size: 1rem; line-height: 1.4; }
 @media (prefers-reduced-motion: reduce) {
   .more-exp__item[aria-hidden="true"] { display: none; }
 }
 
+/* ---------- Desktop ---------- */
 @media (min-width: 1024px) {
-  /* height: auto so the closing hairline sits below the 513px columns instead of under the photo */
-  .page-project .hero-split { min-height: 0; }
-  .page-project .hero-split__text { height: 513px; }
-  /* the photo is the right column, so the divider is on its left edge */
-  .page-project .hero-split__media { height: 513px; border-right: 0; border-left: var(--line-hairline); }
-  .page-project .hero-split__media img {
+  .hero-split__text { height: 513px; padding: 121px 4rem 0 68px; justify-content: flex-start; }
+  .hero-split__media { height: 513px; }
+  .hero-split__media img {
     width: calc(100% + 95px); height: 513px; max-width: none; margin: 0 0 0 -46px;
-    object-fit: var(--hero-fit, cover); object-position: var(--hero-pos, 50% 45.7%);
+    object-position: var(--hero-pos, 50% 45.7%);
   }
-  .page-project .hero-split__text { padding: 121px 4rem 0 68px; justify-content: flex-start; }
 }
 @media (min-width: 1025px) {
   /* full-bleed: text column keeps the design split, photo grows to the right edge */
-  .page-project .hero-split { grid-template-columns: calc(var(--bleed) + 512.5px) 1fr; }
-  .page-project .hero-split__text { padding-left: calc(var(--bleed) + 68px); }
-  .page-project .hero-split--glow .hero-split__text {
+  .hero-split { grid-template-columns: calc(var(--bleed) + 512.5px) 1fr; }
+  .hero-split__text { padding-left: calc(var(--bleed) + 68px); }
+  .hero-split--glow .hero-split__text {
     background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at calc(100% - 41px) 48%, var(--glow-acqua)), var(--white);
   }
 }
 @media (min-width: 1800px) {
-  .page-project .hero-split__media img { object-position: var(--hero-pos, 50% 31%); }
+  .hero-split__media img { object-position: var(--hero-pos, 50% 31%); }
 }
+
+/* ---------- Mobile ---------- */
 @media (max-width: 767px) {
-  .page-project .br-desk { display: none; }
-  .page-project .hero-split__media img { object-position: var(--hero-pos, 50% 50%); }
-  /* Mobile: glow enters from the right edge instead of sitting under the text */
-  .page-project .hero-split--glow .hero-split__text {
+  .br-desk { display: none; }
+  .hero-split__media img { object-position: var(--hero-pos, 50% 50%); }
+  /* glow enters from the right edge instead of sitting under the text */
+  .hero-split--glow .hero-split__text {
     background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at 100% 40%, var(--glow-acqua)), var(--white);
   }
-  .page-project .hero-split__project-name { font-size: 2.4rem; }
-  .page-project .hero-split__project-name .italic-accent { font-size: 2.3rem; }
-  .page-project .hero-split__tagline { font-size: 1.4rem; }
-  .page-project .client-logo img { width: 200px; max-width: 60%; }
-  .page-project .client-logo--wide img { width: 220px; max-width: 65%; }
-  .page-project .gallery-carousel--standalone { margin: 32px 0 0; }
-  .page-project .accordion__item { border-radius: 37px; }
-  .page-project .client-logo--xwide img { width: 300px; max-width: 80%; }
-  .page-project .more-exp .section-title { font-size: 1.7rem; line-height: 1.2; }
-  .more-exp__track { --card-w: 260px; --card-gap: 16px; }
-  .more-exp__name { font-size: 1.7rem; }
-  .more-exp__name .italic-accent { font-size: 1.8rem; }
-  .page-project .accordion__trigger { padding: 22px 20px 0; font-size: 1.4rem; gap: 0.5rem; }
-  .page-project .accordion__icon { width: 24px; height: 32px; margin-bottom: -12px; flex-shrink: 0; }
-  .page-project .accordion__item[data-open="false"] .accordion__trigger { padding-bottom: 22px; }
-  .page-project .accordion__panel-content { padding: 4px 20px 24px; }
-  /* Full-width slides: the arrows sit on the slide edges instead of in the side gutters */
-  .page-project .gallery-carousel { padding: 0; margin: 24px 0 8px; }
-  .page-project .gallery-carousel .carousel__viewport { padding: 0; }
-  .page-project .gallery-carousel .carousel__btn,
-  .page-project .gallery-carousel .carousel__btn:hover {
-    width: 36px; height: 36px; padding: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.85);
+  .hero-split__project-name { --pn-size: 2.4rem; --pn-accent-size: 2.3rem; }
+  .hero-split__tagline { font-size: 1.4rem; }
+  .client-logo img { width: 200px; max-width: 60%; }
+  .client-logo--wide img { width: 220px; max-width: 65%; }
+  .client-logo--xwide img { width: 300px; max-width: 80%; }
+
+  .accordion {
+    --accordion-title-size: 1.4rem;
+    --accordion-pt: 22px;
+    --accordion-px: 20px;
+    --accordion-gap-x: var(--space-1);
+    --accordion-icon-w: 26px;
+    --accordion-icon-h: 30px;
+    --accordion-body-pad: 4px 20px 24px;
   }
-  .page-project .gallery-carousel .carousel__btn--prev { left: 6px; }
-  .page-project .gallery-carousel .carousel__btn--next { right: 6px; }
-  .page-project .gallery-carousel .carousel__btn svg { width: 22px; }
-  .page-project .testimonial-card { padding: 28px 22px; border-radius: 28px; }
-  .page-project .testimonial-card p:first-child { font-size: 1.05rem; }
+
+  /* Full-width slides: the arrows sit on the slide edges, in a white disc */
+  .gallery-carousel { padding: 0; margin: 24px 0 8px; }
+  .gallery-carousel .carousel__btn {
+    width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 255, 255, 0.85);
+  }
+  .gallery-carousel .carousel__btn .arrow { --arrow-w: 22px; --arrow-h: 13.2px; }
+  .gallery-carousel .carousel__btn--prev { left: 6px; }
+  .gallery-carousel .carousel__btn--next { right: 6px; }
+  .testimonial-card { --quote-pad: 28px 22px; }
+  .testimonial-card .quote-card__quote { font-size: 1.05rem; }
+
+  .more-exp__track { --card-w: 260px; --card-gap: var(--space-2); }
+  .more-exp__name { --pn-size: 1.7rem; --pn-accent-size: 1.8rem; }
 }
-.page-project .gallery-carousel .carousel__btn svg * { vector-effect: non-scaling-stroke; } /* keeps the 2px line when the arrow is scaled down on mobile */
