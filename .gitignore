@@ -4,3 +4,5 @@ media/
 /design/
 /Sito web Elenia Bozzato.pdf
 /*.png
+node_modules
+dist
