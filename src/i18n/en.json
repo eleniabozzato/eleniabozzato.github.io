@@ -1,5 +1,4 @@
 {
-  "_status": "untranslated copy of it.json, translated in phase 4",
   "nav": {
     "label": "Main navigation",
     "brand": "Elenia Bozzato",
@@ -14,10 +13,10 @@
     "language": "Language"
   },
   "footer": {
-    "eyebrow": "Hai scrollato fino a qui?",
-    "title": "Conosciamoci <em-magenta>MEGLIO</em-magenta>",
-    "city": "Cordovado PN",
-    "legal": "Elenia Bozzato • P.IVA 04701970271 • Privacy Policy e Cookie Policy • © Copyright 2026"
+    "eyebrow": "Still scrolling?",
+    "title": "Let’s get to know<br>each other <em-magenta>BETTER</em-magenta>",
+    "city": "Cordovado (PN), Italy",
+    "legal": "Elenia Bozzato • VAT 04701970271 • Privacy Policy and Cookie Policy • © Copyright 2026"
   },
   "gallery": {
     "prev": "Previous image",
@@ -25,332 +24,332 @@
   },
   "services": {
     "direzione": {
-      "title": "Direzione e coordinamento del brand"
+      "title": "Brand direction and coordination"
     },
     "identity": {
-      "title": "Progettazione e sviluppo della brand identity"
+      "title": "Brand identity design and development"
     },
     "formazione": {
-      "title": "Formazione e consulenza strategica"
+      "title": "Strategic training and consulting"
     }
   },
   "moreExp": {
-    "eyebrow": "Ti è piaciuto questo progetto?",
-    "title": "Scopri le altre <em-magenta>ESPERIENZE</em-magenta>"
+    "eyebrow": "Did you like this project?",
+    "title": "Discover more <em-magenta>PROJECTS</em-magenta>"
   },
   "projectPage": {
     "accordion": {
-      "context": "Contesto",
-      "needs": "Esigenze",
-      "role": "Il mio intervento",
-      "activities": "Attività svolte",
-      "results": "Risultati ottenuti"
+      "context": "Context",
+      "needs": "Needs",
+      "role": "My role",
+      "activities": "What I did",
+      "results": "Results"
     }
   },
   "projects": {
     "dentisti": {
       "meta": {
         "title": "Dentisti Cordovado — Elenia Bozzato",
-        "description": "Direzione e coordinamento del brand per Dentisti Cordovado: comunicazione social, campagne e identità visiva dello studio."
+        "description": "Brand direction and coordination for Dentisti Cordovado: social media communication, campaigns and the visual identity of the practice."
       },
-      "tagline": "Direzione<br />e coordinamento<br />del brand",
-      "heroAlt": "I due dentisti dello studio Dentisti Cordovado",
-      "logoAlt": "Logo Dentisti Cordovado",
+      "tagline": "Brand direction<br />and coordination",
+      "heroAlt": "The two dentists of the Dentisti Cordovado practice",
+      "logoAlt": "Dentisti Cordovado logo",
       "context": [
-        "Dentisti Cordovado è uno studio dentistico giovane e in crescita, nato con l’obiettivo di offrire un servizio odontoiatrico moderno, tecnologico, professionale e vicino al paziente."
+        "Dentisti Cordovado is a young, growing dental practice. It was founded to offer a dental service that is modern, technological, professional and close to the patient."
       ],
       "needs": [
-        "Lo studio aveva bisogno di una figura di riferimento interna per la comunicazione, capace<br class=\"br-desk\" /> di comprendere il contesto odontoiatrico e tradurlo in una presenza coerente, riconoscibile e allineata all’identità dello studio."
+        "The practice needed an in-house point of reference for communication, someone able<br class=\"br-desk\" /> to understand the dental world and turn it into a presence that is consistent, recognisable and true to the practice’s identity."
       ],
       "role": [
-        "Sono entrata nel progetto come figura di riferimento per la comunicazione, occupandomi della direzione e del coordinamento del brand.",
-        "Seguo la comunicazione social in modo continuativo, definendo contenuti e materiali coerenti con il posizionamento dello studio."
+        "I joined the project as the point of reference for communication, looking after brand direction and coordination.",
+        "I follow the social media communication on an ongoing basis, defining content and materials that fit the practice’s positioning."
       ],
       "activities": [
-        "gestione e coordinamento della comunicazione social",
-        "realizzazione grafiche e materiali per campagne e iniziative",
-        "coordinamento shooting fotografici e video con il videomaker",
-        "supporto strategico alla gestione delle campagne ADV",
-        "supporto alla definizione dell’identità visiva degli ambienti dello studio"
+        "managing and coordinating social media communication",
+        "creating graphics and materials for campaigns and initiatives",
+        "coordinating photo and video shoots with the videomaker",
+        "strategic support for the management of ADV campaigns",
+        "supporting the definition of the visual identity of the practice’s spaces"
       ],
       "slides": [
-        "Mockup dei profili Instagram di Dentisti Cordovado su due smartphone",
-        "Locandina “Porte aperte ai più piccoli” dello studio, venerdì 17 aprile 2026",
-        "Diploma di eroina del sorriso con i denti protagonisti, pensato per i piccoli pazienti",
-        "Calendario “Hai lavato i denti?” per segnare lo spazzolamento durante la settimana"
+        "Mockup of the Dentisti Cordovado Instagram profiles on two smartphones",
+        "Poster “Open doors for the little ones” for the practice, Friday 17 April 2026",
+        "Smile hero diploma with teeth as the main characters, made for young patients",
+        "“Did you brush your teeth?” calendar to tick off brushing during the week"
       ],
       "results": [
-        "La comunicazione oggi è percepita come più coerente, riconoscibile e allineata all’identità dello studio.",
-        "Il cliente ha una percezione più chiara e soddisfacente del proprio brand e la comunicazione risulta più strutturata e di qualità.",
-        "Parallelamente, lo studio sta riscontrando un andamento positivo in termini di nuovi pazienti rispetto ai periodi di confronto precedenti."
+        "Communication is now seen as more consistent, recognisable and true to the practice’s identity.",
+        "The client has a clearer, more satisfying view of their own brand, and communication feels more structured and of higher quality.",
+        "At the same time, the practice is seeing a positive trend in new patients compared with previous periods."
       ],
       "testimonial": {
-        "quote": "“Professionale, creativa e sempre affidabile. Gestisce i social media<br class=\"br-desk\" /> con attenzione, idee fresche e grande puntualità. Ha migliorato la nostra<br class=\"br-desk\" /> comunicazione online rendendola più efficace e coerente. Collaborare<br class=\"br-desk\" /> con lei è davvero semplice e produttivo.”",
+        "quote": "“Professional, creative and always reliable. She manages our social media<br class=\"br-desk\" /> with care, fresh ideas and great punctuality. She has improved our<br class=\"br-desk\" /> online communication, making it more effective and consistent. Working<br class=\"br-desk\" /> with her is really easy and productive.”",
         "author": "Matteo",
         "role": "Dentisti Cordovado"
       },
-      "listAlt": "I due dentisti dello studio Dentisti Cordovado"
+      "listAlt": "The two dentists of the Dentisti Cordovado practice"
     },
     "alplan": {
       "meta": {
         "title": "Al Plan Hotel — Elenia Bozzato",
-        "description": "Direzione e coordinamento del brand per Al Plan Hotel, hotel a conduzione familiare in Val Badia: comunicazione, contenuti e coordinamento delle attività di marketing."
+        "description": "Brand direction and coordination for Al Plan Hotel, a family-run hotel in Val Badia: communication, content and coordination of marketing activities."
       },
-      "tagline": "Direzione<br />e coordinamento<br />del brand",
-      "heroAlt": "Veduta aerea dell’Al Plan Hotel in inverno, con la cabinovia e le montagne innevate",
-      "logoAlt": "Logo Al Plan Hotel, a mountain-moving hotel",
+      "tagline": "Brand direction<br />and coordination",
+      "heroAlt": "Aerial view of Al Plan Hotel in winter, with the gondola and the snowy mountains",
+      "logoAlt": "Al Plan Hotel logo, a mountain-moving hotel",
       "context": [
-        "Al Plan Hotel è un hotel a conduzione familiare a San Vigilio di Marebbe, in Val Badia, che unisce l’ospitalità di montagna alle passioni dei proprietari per il collezionismo, i motori e i mestieri di una volta.",
-        "Un luogo fuori dagli schemi, dove le camere a tema, gli oggetti storici esposti negli spazi comuni e la piscina panoramica sul tetto raccontano una storia fatta di passioni, ricerca e personalità. Con l’ampliamento e il passaggio alla categoria quattro stelle, l’hotel aveva arricchito la propria offerta, rendendo ancora più importante comunicarne l’unicità."
+        "Al Plan Hotel is a family-run hotel in San Vigilio di Marebbe, in Val Badia. It brings together mountain hospitality and the owners’ passion for collecting, motors and old crafts.",
+        "An unconventional place, where themed rooms, historic objects on display in the common areas and the panoramic rooftop pool tell a story of passion, research and personality. With the extension and the move to four stars, the hotel had widened its offer, which made it even more important to communicate what makes it unique."
       ],
       "needs": [
-        "La crescita della struttura aveva portato nuove opportunità, ma anche una maggiore complessità nella gestione della comunicazione.",
-        "Pur collaborando con agenzie specializzate nel settore alberghiero, la famiglia aveva bisogno di una figura di fiducia che la affiancasse nella gestione quotidiana del marketing, coordinasse le diverse attività e contribuisse a rendere la comunicazione più autentica e rappresentativa dell’identità dell’hotel.",
-        "L’obiettivo era valorizzare le peculiarità della struttura attraverso testi, immagini e messaggi capaci di trasmettere non soltanto i servizi offerti, ma anche la personalità della famiglia e l’esperienza che rende Al Plan Hotel diverso dagli altri."
+        "The growth of the hotel had brought new opportunities, but also more complexity in managing communication.",
+        "Although the family worked with agencies specialised in hotels, they needed a trusted person to support them in the daily management of marketing, coordinate the different activities and help make communication more authentic and true to the hotel’s identity.",
+        "The goal was to bring out what makes the hotel special through texts, images and messages that convey not only the services on offer, but also the personality of the family and the experience that makes Al Plan Hotel different from the others."
       ],
       "role": [
-        "Sono entrata nel progetto come consulente per la direzione e il coordinamento del brand, diventando un punto di riferimento per la famiglia nella gestione della comunicazione.",
-        "Lavoro sui contenuti e sui diversi punti di contatto con l’ospite, con l’obiettivo di rendere il linguaggio dell’hotel più caldo, personale e coerente con la sua identità. Affianco inoltre la famiglia nelle scelte comunicative e nella gestione delle attività, in sinergia con le agenzie che seguono gli aspetti più specialistici del marketing alberghiero."
+        "I joined the project as a consultant for brand direction and coordination, becoming a point of reference for the family in managing communication.",
+        "I work on content and on the different touchpoints with the guest, to make the hotel’s language warmer, more personal and more consistent with its identity. I also support the family in communication choices and in running activities, working together with the agencies that handle the more specialised sides of hotel marketing."
       ],
       "activities": [
-        "riscrittura delle descrizioni delle camere, per valorizzarne le peculiarità con un tono di voce autentico e distintivo",
-        "realizzazione delle planimetrie delle camere da integrare nel sito web",
-        "revisione dei testi delle e-mail automatiche lungo tutto il percorso dell’ospite, dall’offerta alla prenotazione, fino al soggiorno e al post stay",
-        "gestione delle risposte alle recensioni online, positive e negative, con attenzione al tono di voce e alla relazione con l’ospite",
-        "aggiornamento e ottimizzazione delle descrizioni e delle immagini sui portali turistici",
-        "consulenza continuativa sulle scelte di comunicazione, sui contenuti e sulla coerenza dei materiali",
-        "coordinamento e supporto alle attività di marketing, in collaborazione con le agenzie coinvolte"
+        "rewriting the room descriptions, to highlight their character with an authentic and distinctive tone of voice",
+        "creating the room floor plans for the website",
+        "reviewing the texts of the automatic emails along the whole guest journey, from the offer to the booking, the stay and the post-stay",
+        "replying to online reviews, positive and negative, with care for tone of voice and for the relationship with the guest",
+        "updating and optimising descriptions and images on travel portals",
+        "ongoing consulting on communication choices, content and the consistency of materials",
+        "coordinating and supporting marketing activities, together with the agencies involved"
       ],
       "results": [
-        "La comunicazione sta evolvendo verso un linguaggio più autentico e personale, maggiormente rappresentativo dell’identità della famiglia e dell’esperienza che Al Plan Hotel desidera offrire ai propri ospiti.",
-        "I diversi punti di contatto con il cliente vengono gestiti con maggiore coerenza e attenzione, mentre la famiglia può contare su una figura di riferimento stabile per confrontarsi sulle scelte comunicative e affrontare le attività quotidiane con maggiore continuità.",
-        "La collaborazione permette inoltre di integrare il supporto strategico e operativo con le competenze specialistiche delle agenzie, contribuendo a una gestione del marketing più coordinata e sostenibile."
+        "Communication is moving towards a more authentic and personal language, one that better represents the family’s identity and the experience Al Plan Hotel wants to offer its guests.",
+        "The different touchpoints with guests are handled with more consistency and care, and the family can rely on a stable point of reference to discuss communication choices and to carry out daily activities with more continuity.",
+        "The collaboration also makes it possible to combine strategic and operational support with the specialist skills of the agencies, which leads to more coordinated and sustainable marketing."
       ],
       "testimonial": {
-        "quote": "“Avere Elenia al nostro fianco ci permette di affrontare la comunicazione con maggiore serenità e organizzazione. Ha saputo comprendere la nostra realtà, la nostra storia e ciò che rende speciale il nostro hotel, aiutandoci a raccontarlo in modo più autentico. È una figura di riferimento affidabile, sempre disponibile al confronto, che ci supporta con attenzione e concretezza nelle tante attività quotidiane. Siamo molto soddisfatti della collaborazione.”",
-        "author": "Famiglia Trebo",
+        "quote": "“Having Elenia by our side lets us handle communication with more calm and organisation. She understood our reality, our story and what makes our hotel special, and helped us tell it in a more authentic way. She is a reliable point of reference, always open to discussion, who supports us with care and a practical mind in our many daily activities. We are very happy with the collaboration.”",
+        "author": "The Trebo family",
         "role": "Al Plan Hotel"
       },
       "slides": [
-        "Veduta aerea estiva dell’hotel, con il tetto e la piscina panoramica",
-        "Veduta aerea dell’hotel in inverno, con la cabinovia e le montagne innevate",
-        "Panorama sul paese di San Vigilio di Marebbe e sulle Dolomiti, con l’hotel in primo piano",
-        "Facciata dell’hotel con un vecchio fuoristrada parcheggiato davanti",
-        "Terrazza sul tetto vista dall’alto, con ombrelloni e piscina",
-        "Piscina panoramica sul tetto, con le montagne sullo sfondo",
-        "Due lattine di Coca-Cola nella sabbia, con l’hotel e le montagne sullo sfondo",
-        "Camera con letto matrimoniale, tende bordeaux e soffitto a cassettoni",
-        "Camera a tema con grande vetrata sulla valle e oggetti d’epoca",
-        "Scala a chiocciola e vetrina di oggetti storici in un’area comune",
-        "Cantina con botti e scaffali di vini",
-        "Sala con tavolo rotondo in pietra tra casse di vino e arcate in mattoni",
-        "Sala da pranzo con soffitto in legno, tovaglie rosse e vetrate sulla valle",
-        "Sala ristorante con soffitto a cassettoni e strumenti musicali alle pareti",
-        "Sala colazioni con buffet e lampade Tiffany",
-        "Sala ristorante con tavoli apparecchiati e lampade Tiffany",
-        "Sala giochi con tavolo da biliardo e luci verdi",
-        "Area relax con vasca idromassaggio, lettini in legno e sauna",
-        "Dessert su un piatto di vetro blu, a un tavolo apparecchiato",
-        "Terrazza con tavolini apparecchiati e fiori, con vista sul paese"
+        "Summer aerial view of the hotel, with the roof and the panoramic pool",
+        "Aerial view of the hotel in winter, with the gondola and the snowy mountains",
+        "View of the village of San Vigilio di Marebbe and the Dolomites, with the hotel in the foreground",
+        "Hotel facade with an old off-road vehicle parked in front",
+        "Rooftop terrace seen from above, with parasols and pool",
+        "Panoramic rooftop pool, with the mountains in the background",
+        "Two Coca-Cola cans in the sand, with the hotel and the mountains in the background",
+        "Room with a double bed, burgundy curtains and a coffered ceiling",
+        "Themed room with a large window over the valley and vintage objects",
+        "Spiral staircase and a display case of historic objects in a common area",
+        "Cellar with barrels and wine shelves",
+        "Room with a round stone table among wine crates and brick arches",
+        "Dining room with a wooden ceiling, red tablecloths and windows over the valley",
+        "Restaurant room with a coffered ceiling and musical instruments on the walls",
+        "Breakfast room with buffet and Tiffany lamps",
+        "Restaurant room with set tables and Tiffany lamps",
+        "Games room with a pool table and green lights",
+        "Relax area with a hot tub, wooden loungers and sauna",
+        "Dessert on a blue glass plate, on a set table",
+        "Terrace with set tables and flowers, overlooking the village"
       ],
-      "listAlt": "Veduta aerea invernale dell'Al Plan Hotel"
+      "listAlt": "Winter aerial view of Al Plan Hotel"
     },
     "carrozzeria": {
       "meta": {
         "title": "Carrozzeria Bozzato — Elenia Bozzato",
-        "description": "Direzione e coordinamento del brand per Carrozzeria Bozzato: rebranding, identità visiva, immagine coordinata, sito web e comunicazione social dell’azienda di famiglia."
+        "description": "Brand direction and coordination for Carrozzeria Bozzato: rebranding, visual identity, stationery, website and social media communication for the family business."
       },
-      "tagline": "Direzione<br />e coordinamento<br />del brand",
-      "heroAlt": "Sede della Carrozzeria Bozzato",
-      "logoAlt": "Logo Carrozzeria Bozzato",
+      "tagline": "Brand direction<br />and coordination",
+      "heroAlt": "Carrozzeria Bozzato headquarters",
+      "logoAlt": "Carrozzeria Bozzato logo",
       "context": [
-        "La Carrozzeria Bozzato è l’azienda di famiglia fondata da mio padre Ennio nel 1984.",
-        "Oltre ai servizi di carrozzeria, è specializzata in allestimenti personalizzati per la guida e il trasporto di persone con disabilità, con un forte orientamento alla qualità e alla cura del servizio."
+        "Carrozzeria Bozzato is the family business founded by my father Ennio in 1984.",
+        "Besides body shop services, it specialises in custom conversions for driving and transporting people with disabilities, with a strong focus on quality and care for the service."
       ],
       "needs": [
-        "Con l’evoluzione dell’azienda è emersa la necessità di costruire un’identità visiva e comunicativa più coerente, capace di rappresentare in modo chiaro entrambe le anime del brand e il suo posizionamento attuale."
+        "As the company evolved, it needed a more consistent visual and communication identity, one able to clearly represent both souls of the brand and its current positioning."
       ],
       "role": [
-        "Nel 2019 ho sviluppato il progetto di rebranding dell’azienda, a partire dal restyling del logo e dalla definizione dell’intera immagine coordinata, elaborata come parte del mio percorso di tesi.",
-        "Da allora seguo il brand in modo continuativo come figura di riferimento per la comunicazione, occupandomi della direzione e del coordinamento dell’identità nel tempo."
+        "In 2019 I developed the rebranding project for the company, starting from the restyling of the logo and the definition of the whole coordinated image, created as part of my thesis.",
+        "Since then I have followed the brand on an ongoing basis as the point of reference for communication, looking after the direction and coordination of its identity over time."
       ],
       "activities": [
-        "progettazione e restyling del logo aziendale",
-        "sviluppo del sistema di identità visiva",
-        "sviluppo immagine coordinata e materiali corporate",
-        "coordinamento della comunicazione visiva nel tempo",
-        "progettazione e sviluppo grafico del sito web aziendale",
-        "gestione continuativa della comunicazione social",
-        "supporto alla definizione dell’identità visiva degli uffici"
+        "design and restyling of the company logo",
+        "development of the visual identity system",
+        "development of stationery and corporate materials",
+        "coordination of visual communication over time",
+        "design and graphic development of the company website",
+        "ongoing management of social media communication",
+        "supporting the definition of the visual identity of the offices"
       ],
       "slides": [
-        "Il logo della Carrozzeria Bozzato prima e dopo il restyling",
-        "Biglietti da visita e carta intestata in blu e arancione con il nuovo marchio",
-        "Carta intestata e fogli aziendali con il marchio e il segno grafico in filigrana",
-        "Buste aziendali in blu, arancione e grigio con il logo Carrozzeria Bozzato",
-        "Due furgoni bianchi con la livrea blu e il nuovo logo",
-        "Pagine del manuale di immagine aziendale: marchio e applicazioni",
-        "Calendario con fotografie e illustrazioni del territorio, mese per mese",
-        "Il sito web della Carrozzeria Bozzato mostrato su un portatile",
-        "I profili Instagram della Carrozzeria Bozzato su due smartphone"
+        "The Carrozzeria Bozzato logo before and after the restyling",
+        "Business cards and letterhead in blue and orange with the new mark",
+        "Letterhead and company sheets with the mark and the graphic sign as a watermark",
+        "Company envelopes in blue, orange and grey with the Carrozzeria Bozzato logo",
+        "Two white vans with the blue livery and the new logo",
+        "Pages of the brand manual: mark and applications",
+        "Calendar with photographs and illustrations of the local area, month by month",
+        "The Carrozzeria Bozzato website shown on a laptop",
+        "The Carrozzeria Bozzato Instagram profiles on two smartphones"
       ],
       "results": [
-        "Il brand ha sviluppato un’identità più coerente e riconoscibile, allineata alla sua evoluzione e al suo posizionamento attuale.",
-        "La comunicazione oggi riflette in modo più fedele la realtà dell’azienda, contribuendo a una percezione più moderna, strutturata e professionale."
+        "The brand has developed a more consistent and recognisable identity, in line with its evolution and its current positioning.",
+        "Communication now reflects the reality of the company more faithfully, helping to create a more modern, structured and professional perception."
       ],
       "testimonial": {
-        "quote": "“Abbiamo iniziato a lavorare con Elenia sulla comunicazione della nostra carrozzeria quando era ancora all’università. Nel tempo ha seguito da vicino tutta l’evoluzione del progetto, crescendo insieme all’azienda e portando sempre più ordine e coerenza nella nostra immagine. Il restyling del brand è stato un passaggio importante per noi: ha dato una nuova identità alla Carrozzeria Bozzato, più chiara e rappresentativa di quello che siamo diventati negli anni. Oggi la comunicazione è più strutturata e riconoscibile, e la collaborazione con Elenia è diventata una presenza costante nel percorso di crescita dell’azienda. È un lavoro che è nato in famiglia, ma che nel tempo ha assunto un valore professionale sempre più solido.”",
+        "quote": "“We started working with Elenia on the communication of our body shop when she was still at university. Over time she has followed the whole evolution of the project closely, growing together with the company and bringing more and more order and consistency to our image. The restyling of the brand was an important step for us: it gave Carrozzeria Bozzato a new identity, clearer and more representative of what we have become over the years. Today communication is more structured and recognisable, and working with Elenia has become a constant presence in the company’s growth. It is work that was born in the family, but that over time has taken on an increasingly solid professional value.”",
         "author": "Ennio",
         "role": "Carrozzeria Bozzato"
       },
-      "listAlt": "Sede della Carrozzeria Bozzato"
+      "listAlt": "Carrozzeria Bozzato headquarters"
     },
     "perform": {
       "meta": {
         "title": "Perform Health — Elenia Bozzato",
-        "description": "Progettazione e sviluppo della brand identity di Perform Health, dal naming al sistema visivo e comunicativo, fino a sito web e materiali corporate."
+        "description": "Brand identity design and development for Perform Health, from naming to the visual and communication system, up to the website and corporate materials."
       },
-      "tagline": "Progettazione<br />e sviluppo della<br />brand identity",
-      "heroAlt": "Andrea e Mattia davanti al logo Perform Health",
+      "tagline": "Brand identity<br />design and<br />development",
+      "heroAlt": "Andrea and Mattia in front of the Perform Health logo",
       "context": [
-        "Perform Health è un progetto nato dall’iniziativa di Mattia e Andrea Cordenos, rispettivamente fisioterapista e preparatore atletico.",
-        "L’idea era chiara fin dall’inizio: costruire un servizio che integrasse fisioterapia, movimento, psicologia e nutrizione, con l’obiettivo di accompagnare le persone nel recupero dal dolore, nella prevenzione dell’inattività e nel miglioramento della performance fisica.",
-        "Il progetto partiva da una visione definita ma senza un’identità comunicativa strutturata."
+        "Perform Health is a project started by Mattia and Andrea Cordenos, a physiotherapist and an athletic trainer.",
+        "The idea was clear from the start: to build a service that brings together physiotherapy, movement, psychology and nutrition, to help people recover from pain, prevent inactivity and improve their physical performance.",
+        "The project started from a defined vision, but without a structured communication identity."
       ],
       "needs": [
-        "Il progetto necessitava della costruzione completa dell’identità di brand, a partire dal naming fino allo sviluppo del sistema visivo e comunicativo.",
-        "L’obiettivo era tradurre una visione già chiara in un’identità riconoscibile, coerente e applicabile a tutti i punti di contatto del brand."
+        "The project needed a complete brand identity, from naming to the development of the visual and communication system.",
+        "The goal was to turn an already clear vision into an identity that is recognisable, consistent and ready to use on every touchpoint of the brand."
       ],
       "role": [
-        "Sono entrata nel progetto nella fase iniziale di costruzione del brand, contribuendo allo sviluppo del naming e alla definizione dell’identità visiva e comunicativa.",
-        "Ho costruito il sistema di brand a partire dalle fondamenta, definendo anche il tono di voce e la linea comunicativa del progetto."
+        "I joined the project at the early stage of building the brand, contributing to the development of the naming and to the definition of the visual and communication identity.",
+        "I built the brand system from the ground up, also defining the tone of voice and the communication line of the project."
       ],
       "activities": [
-        "progettazione logo e identità visiva",
-        "definizione sistema cromatico e linguaggio grafico",
-        "sviluppo immagine coordinata e materiali corporate",
-        "progettazione sito web aziendale",
-        "supporto alla comunicazione visiva e contenutistica",
-        "accompagnamento continuativo nella comunicazione del brand"
+        "logo and visual identity design",
+        "definition of the colour system and graphic language",
+        "development of stationery and corporate materials",
+        "website design",
+        "support for visual and content communication",
+        "ongoing support in brand communication"
       ],
       "slides": [
-        "Il logo Perform Health in arancione e blu, con il payoff “fisioterapia & allenamento”",
-        "Biglietti da visita Perform Health in grigio con il logo arancione e blu e la figura di un atleta in corsa",
-        "Gift card Perform Health con il logo e la figura stilizzata dell’atleta",
-        "Il sito web di Perform Health mostrato su un portatile, con il titolo “Attiva corpo e mente”",
-        "La palestra di Perform Health, con strutture gialle per l’allenamento e pavimento in erba sintetica",
-        "Giacca stile college e maglietta blu con il logo Perform Health, pensate per staff e clienti"
+        "The Perform Health logo in orange and blue, with the payoff “physiotherapy & training”",
+        "Perform Health business cards in grey with the orange and blue logo and the figure of a running athlete",
+        "Perform Health gift card with the logo and the stylised figure of the athlete",
+        "The Perform Health website shown on a laptop, with the title “Activate body and mind”",
+        "The Perform Health gym, with yellow training structures and an artificial grass floor",
+        "College-style jacket and blue T-shirt with the Perform Health logo, made for staff and clients"
       ],
       "results": [
-        "Il brand ha acquisito un’identità chiara e riconoscibile, capace di rappresentare sia la dimensione professionale altamente specializzata sia l’approccio umano e accogliente del progetto.",
-        "Perform Health è oggi percepito come un ambiente strutturato ma vicino alle persone, con una comunicazione coerente con i valori fondativi del progetto."
+        "The brand has gained a clear, recognisable identity, able to express both its highly specialised professional side and the human, welcoming approach of the project.",
+        "Perform Health is now seen as a structured place that is close to people, with communication that is consistent with the founding values of the project."
       ],
       "testimonial": {
-        "quote": "“Abbiamo iniziato ad affidarci ad Elenia per la realizzazione del nostro logo aziendale ma ancor prima per la scelta del nome. Passaggio importante e fondamentale per la nascita di un progetto. Ci ha dato varie idee legate anche al significato che volevamo dare alla nostra azienda e nel logo ha introdotto dei colori che più si addicevano all’area di appartenenza lavorativa. E tutto questo lo ha fatto con un impegno e dedizione tale da aver, in poco tempo, sviluppato ciò che ora ci contraddistingue ogni giorno. E possiamo ritenerci totalmente soddisfatti. Da questo nome e questo logo è nato il nostro brand. E siamo ancora oggi riconoscenti per il lavoro fatto. E per questo motivo ci siamo affidati a lei per la realizzazione del nostro sito, per l’impaginazione di biglietti da visita e block notes, per la realizzazione di materiale pubblicitario (manifesti, vetrofanie, pubblicità online), il vestiario per lo staff e per i clienti e per il continuo supporto che ci dà per i contenuti social. La collaborazione con lei continua a essere fruttuosa e soddisfatta per la professionalità che ci mette sempre. E continueremo a lavorare con lei per altrettanti progetti.”",
-        "author": "Andrea e Mattia",
+        "quote": "“We first turned to Elenia for our company logo, and even before that for choosing the name. An important and essential step in the birth of a project. She gave us several ideas linked to the meaning we wanted to give our company, and in the logo she introduced colours that suited our field of work better. And she did all this with so much commitment and dedication that, in a short time, she developed what sets us apart every day. We can say we are completely satisfied. Our brand was born from this name and this logo. And we are still grateful today for the work she did. For this reason we also relied on her for our website, for the layout of business cards and notepads, for advertising material (posters, window decals, online ads), for clothing for staff and clients, and for the ongoing support she gives us with social content. Working with her continues to be fruitful and rewarding, thanks to the professionalism she always brings. And we will keep working with her on many more projects.”",
+        "author": "Andrea and Mattia",
         "role": "Perform Health"
       },
-      "listAlt": "Copertina progetto Perform Health"
+      "listAlt": "Perform Health project cover"
     },
     "pulicasa": {
       "meta": {
         "title": "Pulicasa — Elenia Bozzato",
-        "description": "Restyling del logo e revisione completa dell’identità visiva di Pulicasa, azienda di pulizie civili e industriali del Portogruarese, in occasione dei suoi 40 anni di attività."
+        "description": "Logo restyling and a complete review of the visual identity of Pulicasa, a cleaning company for homes and industry in the Portogruaro area, for its 40 years in business."
       },
-      "tagline": "Progettazione e sviluppo<br />della brand identity",
-      "heroAlt": "Il logo Pulicasa su sfondo azzurro",
+      "tagline": "Brand identity<br />design and development",
+      "heroAlt": "The Pulicasa logo on a light blue background",
       "context": [
-        "Pulicasa è un’azienda attiva nel settore delle pulizie civili e industriali nel territorio del Portogruarese da più di 40 anni."
+        "Pulicasa has been a cleaning company for homes and industry in the Portogruaro area for more than 40 years."
       ],
       "needs": [
-        "L’azienda disponeva di un’identità visiva ormai datata, non più coerente con l’evoluzione del servizio e con il posizionamento attuale.",
-        "Era inoltre necessario sviluppare un sistema grafico più riconoscibile e applicabile alle diverse attività di comunicazione e promozione."
+        "The company had a dated visual identity, no longer consistent with how the service had evolved or with its current positioning.",
+        "It also needed a more recognisable graphic system that could be applied to the different communication and promotion activities."
       ],
       "role": [
-        "In occasione dei 40 anni di attività dell’azienda, sono intervenuta con un progetto di restyling del logo e di revisione completa dell’identità visiva.",
-        "Ho tradotto il nuovo posizionamento del brand in un sistema grafico più chiaro, moderno e riconoscibile."
+        "For the company’s 40th anniversary, I stepped in with a logo restyling project and a complete review of the visual identity.",
+        "I turned the brand’s new positioning into a graphic system that is clearer, more modern and more recognisable."
       ],
       "activities": [
-        "restyling del logo aziendale",
-        "definizione della nuova identità visiva",
-        "applicazione dell’immagine coordinata su materiali promozionali"
+        "restyling of the company logo",
+        "definition of the new visual identity",
+        "applying the stationery and visual system to promotional materials"
       ],
       "slides": [
-        "Il logo Pulicasa prima e dopo il restyling",
-        "Biglietti da visita e pieghevoli in azzurro e rosso con il nuovo marchio",
-        "Carta intestata e materiali stampati per i 40 anni di attività",
-        "Furgone bianco con la livrea e il nuovo logo Pulicasa"
+        "The Pulicasa logo before and after the restyling",
+        "Business cards and leaflets in light blue and red with the new mark",
+        "Letterhead and printed materials for the 40 years in business",
+        "White van with the livery and the new Pulicasa logo"
       ],
       "results": [
-        "Pulicasa oggi dispone di un’identità visiva più chiara e immediatamente riconoscibile, coerente con il proprio settore e più efficace nella comunicazione verso il pubblico.",
-        "Il brand è ora leggibile al primo impatto e rappresenta in modo più attuale i servizi offerti."
+        "Pulicasa now has a visual identity that is clearer and immediately recognisable, fitting for its sector and more effective in communicating with the public.",
+        "The brand can now be read at first glance and represents the services it offers in a more up-to-date way."
       ],
       "testimonial": {
-        "quote": "“Ci siamo affidati ad Elenia per il restyling del nostro logo aziendale in vista dei 40 anni di attività. Elenia è una persona professionale, capace e solare. Ha saputo portare innovazione, chiarezza e modernità al nostro logo e a tutte le grafiche dell’azienda. Con Elenia ci sarà una collaborazione continua.”",
+        "quote": "“We turned to Elenia for the restyling of our company logo ahead of our 40 years in business. Elenia is professional, capable and sunny. She brought innovation, clarity and a modern touch to our logo and to all the company’s graphics. We will keep working with Elenia.”",
         "author": "Luca",
         "role": "Pulicasa"
       },
-      "listAlt": "Copertina progetto Pulicasa"
+      "listAlt": "Pulicasa project cover"
     },
     "paola": {
       "meta": {
         "title": "Paola Nadin, Consu.Lab — Elenia Bozzato",
-        "description": "Formazione e consulenza strategica per Consu.Lab di Paola Nadin: identità visiva, sito web e percorso formativo per rendere autonoma la comunicazione social."
+        "description": "Strategic training and consulting for Paola Nadin’s Consu.Lab: visual identity, website and a training path to make social media communication independent."
       },
-      "tagline": "Formazione<br />e consulenza<br />strategica",
-      "heroAlt": "Il marchio Consu.Lab bianco su sfondo marrone",
+      "tagline": "Strategic<br />training and<br />consulting",
+      "heroAlt": "The Consu.Lab mark in white on a brown background",
       "context": [
-        "Consulab è il progetto sviluppato da Paola Nadin, consulente direzionale, con l’obiettivo di strutturare un approccio più organizzato e riconoscibile alla propria attività professionale.",
-        "Il progetto nasce come evoluzione del suo lavoro di consulenza, con l’intenzione di creare una realtà più strutturata, anche attraverso una rete di professionisti a supporto delle aziende."
+        "Consulab is the project developed by Paola Nadin, a management consultant, to give her professional activity a more organised and recognisable approach.",
+        "The project grew out of her consulting work, with the aim of creating a more structured business, also through a network of professionals who support companies."
       ],
       "needs": [
-        "Il progetto aveva bisogno di un percorso completo di supporto strategico e formativo, sia nella definizione dell’identità visiva sia nella costruzione della comunicazione digitale.",
-        "In particolare, era necessario sviluppare un sito web coerente con il nuovo posizionamento e rendere la comunicazione social autonoma, ordinata e replicabile nel tempo."
+        "The project needed a complete path of strategic and training support, both for defining the visual identity and for building digital communication.",
+        "In particular, it needed a website consistent with the new positioning, and social media communication that is independent, orderly and repeatable over time."
       ],
       "role": [
-        "Sono intervenuta come figura di supporto strategico e formativo, affiancando la cliente nella definizione del nuovo posizionamento del progetto e nella traduzione della sua identità in strumenti concreti di comunicazione.",
-        "Ho guidato lo sviluppo del sistema visivo e del sito web, collaborando con lo sviluppatore e supervisionando la coerenza complessiva del progetto.",
-        "Parallelamente ho strutturato un percorso formativo per rendere la gestione della comunicazione social autonoma e sostenibile nel tempo."
+        "I stepped in as a strategic and training support, working alongside the client to define the new positioning of the project and to turn her identity into concrete communication tools.",
+        "I guided the development of the visual system and of the website, working with the developer and supervising the overall consistency of the project.",
+        "At the same time, I designed a training path to make the management of social media communication independent and sustainable over time."
       ],
       "activities": [
-        "sviluppo identità visiva del progetto Consulab",
-        "coordinamento del sistema grafico in coerenza con il brand personale",
-        "direzione creativa e supervisione sviluppo sito",
-        "definizione linee guida per contenuti e comunicazione digitale",
-        "progettazione layout social e rubriche grafiche",
-        "percorso formativo su gestione e strategia social media",
-        "supporto continuo nella fase di applicazione operativa"
+        "development of the visual identity of the Consulab project",
+        "coordination of the graphic system in line with the personal brand",
+        "creative direction and supervision of the website development",
+        "definition of guidelines for content and digital communication",
+        "design of social layouts and graphic content series",
+        "training path on social media management and strategy",
+        "ongoing support during the operational phase"
       ],
       "slides": [
-        "Il logo Consu.Lab di Paola Nadin in marrone, con il payoff “Un passo alla volta verso ciò che conta”",
-        "Biglietti da visita Consu.Lab di Paola Nadin, fronte e retro, in bianco e marrone con il marchio e un QR code",
-        "Il sito web di Consu.Lab mostrato su un portatile, con la fotografia di Paola Nadin",
-        "I profili Instagram di Consu.Lab su due smartphone, con la griglia dei post in tonalità marrone e rosa"
+        "The Consu.Lab logo by Paola Nadin in brown, with the payoff “One step at a time towards what matters”",
+        "Consu.Lab business cards by Paola Nadin, front and back, in white and brown with the mark and a QR code",
+        "The Consu.Lab website shown on a laptop, with the photograph of Paola Nadin",
+        "The Consu.Lab Instagram profiles on two smartphones, with the post grid in brown and pink tones"
       ],
       "results": [
-        "Consulab oggi dispone di un’identità chiara e coerente. La comunicazione è diventata più strutturata e autonoma, permettendo alla cliente di gestire in modo indipendente la propria presenza digitale.",
-        "Il progetto ha rafforzato la percezione di professionalità e chiarezza nel posizionamento verso aziende e potenziali clienti."
+        "Consulab now has a clear and consistent identity. Communication has become more structured and independent, which lets the client manage her digital presence on her own.",
+        "The project strengthened the perception of professionalism and clarity in how it is positioned towards companies and potential clients."
       ],
       "testimonial": {
-        "quote": "“Mi sono affidata a Elenia per il servizio di consulenza e ne sono rimasta entusiasta. Ha saputo cogliere con precisione la mia personalità, trasformandola in un logo e un’immagine digitale che mi rappresentano davvero. Professionale, attenta e sempre puntuale, Elenia ha rispettato i miei tempi e chiarito ogni mio dubbio con pazienza e concretezza. Ogni fase del lavoro è stata gestita con precisione ed efficacia, senza mai perdere tempo. Una vera professionista!”",
+        "quote": "“I relied on Elenia for the consulting service and I was delighted with it. She captured my personality precisely and turned it into a logo and a digital image that truly represent me. Professional, attentive and always on time, Elenia respected my timing and cleared up every doubt with patience and practicality. Every stage of the work was handled with precision and efficiency, without ever wasting time. A true professional!”",
         "author": "Paola",
         "role": "Consu.Lab"
       },
-      "listAlt": "Consu.Lab di Paola Nadin — Un passo alla volta verso ciò che conta"
+      "listAlt": "Paola Nadin’s Consu.Lab — One step at a time towards what matters"
     }
   },
-  "experienceLabel": "Esperienze",
-  "goToProject": "Vai al progetto",
+  "experienceLabel": "Projects",
+  "goToProject": "View project",
   "home": {
     "meta": {
       "title": "Elenia Bozzato — Brand Strategy &amp; Communication Design",
-      "description": "Guido aziende e professionisti a diventare brand riconoscibili attraverso una comunicazione strategica, coerente e costruita per crescere."
+      "description": "I help companies and professionals become recognisable brands through communication that is strategic, consistent and built to grow."
     },
     "hero": {
-      "badge": "Ciao! Sono Elenia",
-      "title": "Do identità<br>all’<em-acqua>ANIMA</em-acqua><br>del tuo brand",
-      "text": "Guido <strong>aziende</strong> e <strong>professionisti</strong> a diventare brand riconoscibili attraverso una comunicazione strategica, coerente e costruita per crescere.",
-      "imgAlt": "Elenia Bozzato sorridente, mano sul viso, completo rosa"
+      "badge": "Hi! I’m Elenia",
+      "title": "I give your<br>brand’s <em-acqua>SOUL</em-acqua><br>an identity",
+      "text": "I help <strong>companies</strong> and <strong>professionals</strong> become recognisable brands through communication that is strategic, consistent and built to grow.",
+      "imgAlt": "Elenia Bozzato smiling, hand on her face, in a pink suit"
     },
     "strip": [
       "BRAND STRATEGY",
@@ -360,178 +359,178 @@
       "REBRANDING"
     ],
     "question": {
-      "title": "La tua <em-acqua>COMUNICAZIONE</em-acqua> è frammentata?<br>\n        Ogni cosa sembra scollegata<br>e manca una <em-magenta>DIREZIONE CHIARA</em-magenta>?",
-      "text": "Entro nel tuo progetto come punto di riferimento per la comunicazione,<br>dando <strong>visione</strong>, <strong>ordine</strong> e <strong>coerenza</strong> a tutto ciò che il tuo brand esprime."
+      "title": "Does your <em-acqua>COMMUNICATION</em-acqua><br>feel fragmented?<br>\n        Does everything seem disconnected,<br>with no <em-magenta>CLEAR DIRECTION</em-magenta>?",
+      "text": "I step into your project as a point of reference for communication,<br>bringing <strong>vision</strong>, <strong>order</strong> and <strong>consistency</strong> to everything your brand expresses."
     },
     "about": {
-      "imgAlt": "Elenia Bozzato con un libro in testa e un laptop in mano",
-      "badge": "Mi racconto",
-      "title": "La <em-magenta>COMUNICAZIONE</em-magenta> <br>è sempre stata<br>il mio linguaggio:",
-      "p1": "prima con una matita, oggi attraverso strumenti digitali, ma con lo stesso approccio attento, sensibile e preciso.",
-      "p2": "Unisco <strong>visione strategica</strong> e <strong>ricerca estetica</strong><br>per trasformare i brand in identità chiare, autentiche e riconoscibili.",
-      "p3": "Lavoro con <strong>metodo</strong>, <strong>ascolto</strong> e <strong>direzione</strong>,<br>per costruire progetti solidi e risultati concreti nel tempo.",
-      "button": "Scopri chi sono"
+      "imgAlt": "Elenia Bozzato with a book on her head and a laptop in her hand",
+      "badge": "My story",
+      "title": "<em-magenta>COMMUNICATION</em-magenta> <br>has always been<br>my language:",
+      "p1": "first with a pencil, today with digital tools, but with the same careful, sensitive and precise approach.",
+      "p2": "I combine <strong>strategic vision</strong> and<br><strong>aesthetic research</strong> to turn brands into<br>clear, authentic and recognisable identities.",
+      "p3": "I work with <strong>method</strong>, <strong>listening</strong> and <strong>direction</strong>,<br>to build solid projects and results that last.",
+      "button": "More about me"
     },
     "services": {
-      "badge": "Servizi",
-      "title": "Come posso affiancarti<br>nella crescita del tuo <em-acqua>BRAND</em-acqua>"
+      "badge": "Services",
+      "title": "How I can support<br>the growth of your <em-acqua>BRAND</em-acqua>"
     },
     "reviews": {
-      "badge": "Recensioni",
-      "title": "Cosa dicono di <em-acqua>ME</em-acqua>",
-      "prev": "Recensione precedente",
-      "next": "Recensione successiva",
+      "badge": "Reviews",
+      "title": "What people say about <em-acqua>ME</em-acqua>",
+      "prev": "Previous review",
+      "next": "Next review",
       "items": [
         {
-          "quote": "“Elenia ha la capacità di dare forma ai sentimenti di un’azienda. Una professionista favolosa.”",
+          "quote": "“Elenia has the ability to give shape to the feelings of a company. A fabulous professional.”",
           "author": "Stefania",
-          "role": "Consulente della salute"
+          "role": "Health consultant"
         },
         {
-          "quote": "“Quando ho deciso di dare un'identità visiva alla mia attività, cercavo qualcosa che mi rappresentasse davvero: eleganza, semplicità e viaggi. Elenia è riuscita a captare tutto questo in un marchio che sento totalmente. Brava Elenia, creativa e professionale!”",
+          "quote": "“When I decided to give my business a visual identity, I was looking for something that truly represented me: elegance, simplicity and travel. Elenia managed to capture all of this in a mark that I feel completely mine. Well done Elenia, creative and professional!”",
           "author": "Debora"
         },
         {
-          "quote": "“Mi sono affidata a Elenia per il Brand Design e ne sono rimasta entusiasta. Ha saputo cogliere con precisione la mia personalità. Professionale, attenta e sempre puntuale. Una vera professionista!”",
+          "quote": "“I relied on Elenia for Brand Design and I was delighted. She captured my personality precisely. Professional, attentive and always on time. A true professional!”",
           "author": "Paola"
         },
         {
-          "quote": "“Elenia trasforma idee in identità visive chiare e memorabili. Competente, precisa e appassionata: una garanzia per chi cerca una Brand Identity davvero efficace. Grazie.”",
+          "quote": "“Elenia turns ideas into clear and memorable visual identities. Skilled, precise and passionate: a safe choice for anyone looking for a truly effective Brand Identity. Thank you.”",
           "author": "Lorena"
         },
         {
-          "quote": "“Puntuale e precisa! Elenia ha compreso pienamente le mie esigenze, intuendo anche ciò che non sono riuscito a spiegare bene. Una vera e propria partner.”",
+          "quote": "“On time and precise! Elenia fully understood my needs, and even sensed what I could not explain well. A real partner.”",
           "author": "Riccardo"
         }
       ],
-      "button": "Scopri cosa dicono di me"
+      "button": "Read my reviews"
     }
   },
   "about": {
     "meta": {
-      "title": "Chi sono — Elenia Bozzato",
-      "description": "Sono cresciuta dentro un'azienda: da lì ho imparato cosa significa avere un'impresa e oggi guardo i brand come persone, storie e idee."
+      "title": "About me — Elenia Bozzato",
+      "description": "I grew up inside a company. That is where I learned what running a business means, and today I see brands as people, stories and ideas."
     },
     "hero": {
-      "imgAlt": "Elenia Bozzato da bambina, con pennarelli colorati"
+      "imgAlt": "Elenia Bozzato as a child, with coloured markers"
     },
     "story": {
-      "badge": "Mi racconto",
-      "title": "Sono cresciuta dentro un’<em-acqua>AZIENDA</em-acqua>",
-      "p1": "Da bambina passavo i pomeriggi nell’ufficio della <strong>carrozzeria di famiglia</strong>, <br>tra giochi al computer, sorrisi ai clienti e disegni sparsi sulla scrivania.",
-      "p2": "Osservavo mio padre Ennio costruire la sua attività <strong>giorno dopo giorno</strong> <br>e seguivo mia madre Elisabetta nelle attività quotidiane dell’azienda.",
-      "subtitle": "È lì che ho imparato cosa significa <br>davvero avere un’<em-magenta>IMPRESA</em-magenta>:",
-      "tight": "le responsabilità, le difficoltà, le decisioni da prendere… ma soprattutto la <strong>passione</strong> <br>e la <strong>visione</strong> necessarie per costruire qualcosa di proprio.",
-      "p3": "Per questo oggi non vedo i brand solo come progetti, ma come <strong>persone</strong>, <strong>storie</strong> e <strong>idee</strong> <br>che cercano una forma chiara per essere raccontate nel modo giusto."
+      "badge": "My story",
+      "title": "I grew up inside a <em-acqua>COMPANY</em-acqua>",
+      "p1": "As a child I spent my afternoons in the office of the <strong>family body shop</strong>, <br>between computer games, smiles for customers and drawings scattered on the desk.",
+      "p2": "I watched my father Ennio build his business <strong>day after day</strong> <br>and followed my mother Elisabetta through the company’s daily work.",
+      "subtitle": "That’s where I learned <br>what running a <em-magenta>BUSINESS</em-magenta> really means:",
+      "tight": "the responsibilities, the difficulties, the decisions to make… but above all the <strong>passion</strong> <br>and the <strong>vision</strong> it takes to build something of your own.",
+      "p3": "That’s why today I don’t see brands only as projects, but as <strong>people</strong>, <strong>stories</strong> and <strong>ideas</strong> <br>looking for a clear form, so they can be told in the right way."
     },
     "split": {
-      "imgAlt": "Elenia Bozzato in completo rosa con un laptop sotto braccio",
-      "eyebrow": "Da sempre vivo <br>tra creatività e strategia",
-      "p1": "Disegnavo da bambina e continuo ancora oggi <br>a coltivare il mio <strong>lato artistico</strong> attraverso la cianotipia, <br>la pittura su vetro e tanti piccoli progetti creativi che <br>riempiono il mio tempo libero.",
-      "p2": "Accanto alla <strong>sensibilità creativa</strong> è cresciuta <br>però anche una parte profondamente <strong>strategica</strong>: <br>quando alle superiori ho incontrato il marketing <br>nei libri di economia, qualcosa si è acceso. <br>Ho capito che <strong>comunicazione</strong>, <strong>estetica</strong> e <strong>visione</strong> <br>potevano convivere nello stesso percorso, <br>ed è lì che ho scelto di approfondire il mondo <br>della comunicazione all’università.",
-      "lead": "Oggi questo equilibrio è ancora il cuore <br>del mio lavoro:",
-      "closing": "uno <em-magenta>SGUARDO CREATIVO</em-magenta> <br>capace di immaginare <br>e una <em-acqua>MENTE STRATEGICA</em-acqua> <br>capace di dare direzione."
+      "imgAlt": "Elenia Bozzato in a pink suit with a laptop under her arm",
+      "eyebrow": "I have always lived <br>between creativity and strategy",
+      "p1": "I drew as a child, and I still nurture <br>my <strong>artistic side</strong> through cyanotype, <br>glass painting and many small creative projects that <br>fill my free time.",
+      "p2": "Alongside my <strong>creative sensitivity</strong>, <br>a deeply <strong>strategic</strong> side grew too: <br>when I met marketing in my economics <br>books at school, something clicked. <br>I realised that <strong>communication</strong>, <strong>aesthetics</strong> and <strong>vision</strong> <br>could live on the same path, <br>and that is why I chose to study <br>communication at university.",
+      "lead": "Today this balance is still the heart <br>of my work:",
+      "closing": "a <em-magenta>CREATIVE EYE</em-magenta> <br>that can imagine <br>and a <em-acqua>STRATEGIC MIND</em-acqua> <br>that can give direction."
     },
     "values": {
-      "badge": "Valori",
+      "badge": "Values",
       "items": [
         {
-          "title": "LIBERTÀ",
-          "text": "Credo in un modo di lavorare libero, fluido e aperto alle idee, dove creatività <br>e visione possano esprimersi davvero."
+          "title": "FREEDOM",
+          "text": "I believe in a way of working that is free, fluid and open to ideas, where creativity <br>and vision can truly express themselves."
         },
         {
-          "title": "RISPETTO",
-          "text": "Ogni progetto nasce dall’ascolto. Per questo do valore alle persone, alle loro storie <br>e a ciò che desiderano costruire."
+          "title": "RESPECT",
+          "text": "Every project starts with listening. That is why I value people, their stories <br>and what they want to build."
         },
         {
-          "title": "ETICA",
-          "text": "Scelgo una comunicazione consapevole, trasparente e coerente con il valore reale <br>di ciò che raccontiamo."
+          "title": "ETHICS",
+          "text": "I choose communication that is aware, transparent and true to the real value <br>of what we talk about."
         },
         {
-          "title": "FIDUCIA",
-          "text": "Costruisco relazioni sincere e durature, in cui sentirsi accompagnati con chiarezza <br>e serenità in ogni fase del percorso."
+          "title": "TRUST",
+          "text": "I build sincere, lasting relationships, where you feel guided with clarity <br>and calm at every stage of the journey."
         }
       ],
       "vision": {
         "title": "Vision",
-        "text": "Credo nei brand che hanno qualcosa di vero <br>da raccontare. Il mio obiettivo è aiutarli a trovare <br>una voce chiara, riconoscibile e autentica, attraverso <br>una comunicazione capace di generare valore."
+        "text": "I believe in brands that have something true <br>to say. My goal is to help them find <br>a clear, recognisable and authentic voice, through <br>communication that creates value."
       },
       "mission": {
         "title": "Mission",
-        "text": "Creo percorsi di comunicazione su misura per dare <br>direzione ai brand e trasformare le idee in identità <br>coerenti, riconoscibili e durature. <br><br>Affianco aziende e professionisti con un approccio <br>strategico, umano e concreto, semplificando <br>la gestione della comunicazione e creando <br>un’esperienza di lavoro chiara, serena e autentica."
+        "text": "I create tailor-made communication paths to give <br>brands direction and turn ideas into identities <br>that are consistent, recognisable and lasting. <br><br>I work alongside companies and professionals with a <br>strategic, human and practical approach, making <br>communication easier to manage and creating <br>a way of working that is clear, calm and authentic."
       }
     }
   },
   "how": {
     "meta": {
-      "title": "Come lavoro — Elenia Bozzato",
-      "description": "Do direzione alla comunicazione dei brand, trasformando idee frammentate in identità chiare e coerenti."
+      "title": "How I work — Elenia Bozzato",
+      "description": "I give direction to the way brands communicate, turning fragmented ideas into clear, consistent identities."
     },
     "hero": {
-      "imgAlt": "Elenia Bozzato sorridente con il laptop in mano",
-      "title": "Il mio lavoro<br />è dare <em-acqua>DIREZIONE</em-acqua><br />alla comunicazione<br />dei brand,",
-      "lead": "trasformando idee frammentate <br />in <strong>identità chiare e coerenti</strong>.",
-      "p1": "Unisco visione strategica e sensibilità creativa <br />per costruire sistemi di comunicazione <strong>solidi</strong>, <br /><strong>leggibili</strong> e <strong>funzionali alla crescita</strong>.",
-      "roleTitle": "Il mio <em-magenta>RUOLO</em-magenta><br />nei progetti",
-      "p2": "Entro nelle aziende come <strong>figura di riferimento</strong> <br />per la comunicazione, con l’obiettivo di portare ordine, <br />chiarezza e coerenza nell’intero sistema <br />di comunicazione del brand.",
-      "p3": "Non mi occupo solo della parte visiva, ma <br />della <strong>direzione complessiva</strong> con cui un’azienda <br />si racconta e si posiziona."
+      "imgAlt": "Elenia Bozzato smiling with a laptop in her hand",
+      "title": "My job<br />is to give <em-acqua>DIRECTION</em-acqua><br />to the way<br />brands communicate,",
+      "lead": "turning fragmented ideas <br />into <strong>clear, consistent identities</strong>.",
+      "p1": "I combine strategic vision and creative sensitivity <br />to build communication systems that are <strong>solid</strong>, <br /><strong>easy to read</strong> and <strong>built for growth</strong>.",
+      "roleTitle": "My <em-magenta>ROLE</em-magenta><br />in projects",
+      "p2": "I step into companies as a <strong>point of reference</strong> <br />for communication, aiming to bring order, <br />clarity and consistency to the whole <br />communication system of the brand.",
+      "p3": "I don’t only look after the visual side, but the <br /><strong>overall direction</strong> in which a company <br />tells its story and positions itself."
     },
     "services": {
-      "badge": "Servizi",
-      "title": "Come posso affiancarti<br />nella crescita del tuo <em-magenta>BRAND</em-magenta>",
+      "badge": "Services",
+      "title": "How I can support<br />the growth of your <em-magenta>BRAND</em-magenta>",
       "items": {
         "direzione": {
           "paragraphs": [
-            "Mi occupo di definire e guidare la direzione della comunicazione, <br />garantendo coerenza tra tutti gli elementi visivi e strategici.",
-            "Coordino il lavoro in sinergia con il team interno o con professionisti esterni, <br />diventando un punto di riferimento unico per l’azienda."
+            "I define and guide the direction of communication, <br />making sure all visual and strategic elements work together.",
+            "I coordinate the work with the in-house team or with external professionals, <br />becoming a single point of reference for the company."
           ]
         },
         "identity": {
           "paragraphs": [
-            "Creo o rinnovo l’identità visiva, costruendo un sistema chiaro, riconoscibile e coerente <br />con i valori aziendali.",
-            "Ogni progetto viene sviluppato all’interno di una visione strategica coordinata che può includere:"
+            "I create or renew the visual identity, building a system that is clear, recognisable and in line <br />with the company’s values.",
+            "Every project is developed within a coordinated strategic vision that can include:"
           ],
           "list": [
-            "materiali editoriali",
-            "comunicazione pubblicitaria",
-            "eventi e allestimenti",
+            "editorial materials",
+            "advertising communication",
+            "events and installations",
             "web design",
             "social media"
           ]
         },
         "formazione": {
           "paragraphs": [
-            "Offro consulenze per portare chiarezza nella comunicazione e aiutare aziende <br />e professionisti a definire una direzione precisa per il proprio brand.",
-            "Percorsi pensati per fare ordine, prendere decisioni consapevoli <br />e rendere la comunicazione più efficace e autonoma nel tempo."
+            "I offer consulting to bring clarity to communication and help companies <br />and professionals define a precise direction for their brand.",
+            "Paths designed to put things in order, make informed decisions <br />and make communication more effective and independent over time."
           ]
         }
       }
     },
     "method": {
-      "badge": "Modalità di lavoro",
-      "title": "Ogni progetto è diverso, ma il punto <br />di partenza è sempre lo stesso: <em-acqua>ASCOLTARE</em-acqua>.",
-      "text": "Da lì costruisco un <strong>percorso chiaro</strong>, che unisce analisi, visione e scelte concrete, <br />per dare forma a una comunicazione coerente e funzionale agli obiettivi del brand."
+      "badge": "My approach",
+      "title": "Every project is different, but the starting <br />point is always the same: <em-acqua>LISTENING</em-acqua>.",
+      "text": "From there I build a <strong>clear path</strong> that combines analysis, vision and practical choices, <br />to shape communication that is consistent and works for the brand’s goals."
     }
   },
   "contact": {
     "meta": {
-      "title": "Contatti — Elenia Bozzato",
-      "description": "Hai un progetto da sviluppare o senti il bisogno di dare una direzione più chiara alla tua comunicazione? Conosciamoci."
+      "title": "Contact — Elenia Bozzato",
+      "description": "Do you have a project to develop, or do you feel the need to give your communication a clearer direction? Let’s meet."
     },
-    "imgAlt": "Elenia Bozzato sorridente con una borraccia rosa",
-    "title": "Se hai un progetto <br class=\"br-d\" />da sviluppare o senti <br class=\"br-d\" />il bisogno di dare <br class=\"br-d\" />una direzione più chiara <br class=\"br-d\" />alla tua comunicazione, <br class=\"br-d\" /><em-acqua>CONOSCIAMOCI</em-acqua>.",
-    "lead": "Ti risponderò il prima possibile <br class=\"br-d\" />per capire insieme come posso aiutarti.",
-    "subject": "Nuovo messaggio da eleniabozzato.com",
-    "honeypot": "Lascia vuoto",
-    "name": "Nome",
-    "email": "Mail",
-    "message": "Messaggio",
-    "submit": "Invia"
+    "imgAlt": "Elenia Bozzato smiling with a pink water bottle",
+    "title": "If you have a project <br class=\"br-d\" />to develop or feel <br class=\"br-d\" />the need to give <br class=\"br-d\" />clearer direction <br class=\"br-d\" />to your communication, <br class=\"br-d\" /><em-acqua>LET’S MEET</em-acqua>.",
+    "lead": "I will reply as soon as I can <br class=\"br-d\" />so we can see together how I can help.",
+    "subject": "New message from eleniabozzato.com",
+    "honeypot": "Leave empty",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Send"
   },
   "experience": {
     "meta": {
-      "title": "Esperienze — Elenia Bozzato",
-      "description": "Progetti di direzione brand, brand identity e consulenza strategica: Dentisti Cordovado, Al Plan Hotel, Carrozzeria Bozzato, Perform Health, Pulicasa, Consu.Lab, Paola Nadin."
+      "title": "Projects — Elenia Bozzato",
+      "description": "Brand direction, brand identity and strategic consulting projects: Dentisti Cordovado, Al Plan Hotel, Carrozzeria Bozzato, Perform Health, Pulicasa, Consu.Lab, Paola Nadin."
     }
   },
   "notFound": {

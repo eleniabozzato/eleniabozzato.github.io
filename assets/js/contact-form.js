@@ -20,9 +20,9 @@
       fillAll: "Compila tutti i campi prima di inviare.",
       badEmail: "Inserisci un indirizzo email valido.",
       needCheck: "Completa la verifica anti-spam.",
-      sending: S.sending,
+      sending: "Invio in corso…",
       sent: "Messaggio inviato! Ti risponderò il prima possibile.",
-      badResponse: S.badResponse,
+      badResponse: "Risposta non valida dal server (",
     },
     en: {
       fallback:
