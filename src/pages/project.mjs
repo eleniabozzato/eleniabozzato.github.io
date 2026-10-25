@@ -4,11 +4,11 @@ import { gallery } from '../partials/gallery.mjs';
 import { moreExp } from '../partials/more-exp.mjs';
 import { attr, projectName } from '../partials/util.mjs';
 
-export const layout = ({ t, project: p }) => ({
+export const layout = ({ t, project: p, pageFiles }) => ({
   title: t.projects[p.key].meta.title,
   description: t.projects[p.key].meta.description,
   css: 'progetto',
-  bodyAttrs: ' class="page-project" data-nav-current="esperienze.html"',
+  bodyAttrs: ` class="page-project" data-nav-current="${pageFiles.experience}"`,
 });
 
 const paragraphs = (list) => list.map((x) => `                  <p>${x}</p>`).join('\n');

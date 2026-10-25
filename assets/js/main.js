@@ -3,6 +3,14 @@
 (function () {
   "use strict";
 
+  // User-facing strings that JS creates, by page language (<html lang>).
+  const STRINGS = {
+    it: { toTop: "Torna su", goToReview: "Vai alla recensione " },
+    en: { toTop: "Back to top", goToReview: "Go to review " },
+  };
+  const lang = document.documentElement.lang;
+  const S = STRINGS[lang] || STRINGS.en;
+
   /* ---------- Mobile nav toggle ---------- */
   function initNav() {
     const toggle = document.querySelector(".nav__toggle");
@@ -23,7 +31,7 @@
     });
 
     // Close menu when a link is clicked (mobile)
-    menu.querySelectorAll(".nav__link").forEach(function (link) {
+    menu.querySelectorAll("a.nav__link").forEach(function (link) {
       link.addEventListener("click", function () {
         menu.setAttribute("data-open", "false");
         toggle.setAttribute("aria-expanded", "false");
@@ -32,13 +40,12 @@
     });
   }
 
-  /* ---------- Esperienze drop-down ----------
+  /* ---------- Nav drop-downs (Esperienze, language selector) ----------
      Desktop: opens on hover and on the chevron, closes on mouse leave (short delay),
      Escape, outside click and when focus leaves. Mobile: chevron toggles the sub-list. */
-  function initSubmenu() {
-    const item = document.querySelector(".nav__item--has-sub");
-    if (!item) return;
+  function initSubmenu(item) {
     const toggle = item.querySelector(".nav__sub-toggle");
+    const isLang = item.classList.contains("nav__item--lang");
     const desktop = window.matchMedia("(min-width: 768px)");
     let timer;
 
@@ -48,17 +55,31 @@
       toggle.setAttribute("aria-expanded", String(open));
     }
 
-    // Current project in the list, from the URL filename
-    const current = window.location.pathname.split("/").pop() || "index.html";
-    let onProject = false;
-    item.querySelectorAll(".nav__sublink").forEach(function (link) {
-      if (link.getAttribute("href") === current) {
-        link.setAttribute("aria-current", "page");
-        onProject = true;
-      }
-    });
-    // On a project page the mobile list starts open: sibling projects are one tap away.
-    if (onProject && !desktop.matches) setOpen(true);
+    if (isLang) {
+      // Remember the choice: English pages stop redirecting Italian browsers (see the script in <head>).
+      item.querySelectorAll("[data-lang]").forEach(function (link) {
+        link.addEventListener("click", function () {
+          try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+        });
+      });
+      // The label is a plain element: on mobile, tapping it opens the list like the chevron does.
+      const label = item.querySelector(".nav__link");
+      if (label) label.addEventListener("click", function () {
+        if (!desktop.matches) setOpen(item.getAttribute("data-open") !== "true");
+      });
+    } else {
+      // Current project in the list, from the URL filename
+      const current = window.location.pathname.split("/").pop() || "index.html";
+      let onProject = false;
+      item.querySelectorAll(".nav__sublink").forEach(function (link) {
+        if (link.getAttribute("href").split("/").pop() === current) {
+          link.setAttribute("aria-current", "page");
+          onProject = true;
+        }
+      });
+      // On a project page the mobile list starts open: sibling projects are one tap away.
+      if (onProject && !desktop.matches) setOpen(true);
+    }
 
     toggle.addEventListener("click", function () {
       setOpen(item.getAttribute("data-open") !== "true");
@@ -88,11 +109,12 @@
 
   /* ---------- Active nav link ---------- */
   function initActiveLink() {
-    // Project pages set <body data-nav-current="esperienze.html"> to highlight their section.
-    const current = document.body.dataset.navCurrent || (window.location.pathname.split("/").pop() || "index.html");
-    document.querySelectorAll(".nav__link").forEach(function (link) {
-      const href = link.getAttribute("href");
-      if (href === current || (current === "" && href === "index.html")) {
+    // Project pages set <body data-nav-current="<file of the Projects page>"> to highlight their section.
+    // Links are root-absolute ("/it/chi-sono.html", "/" for the home page): compare file names.
+    const file = function (path) { return path.split("/").pop() || "index.html"; };
+    const current = document.body.dataset.navCurrent || file(window.location.pathname);
+    document.querySelectorAll("a.nav__link").forEach(function (link) {
+      if (file(link.getAttribute("href")) === current) {
         link.setAttribute("aria-current", "page");
       }
     });
@@ -101,7 +123,7 @@
   /* ---------- Accordion ----------
      Items start closed and toggle independently (not single-open).
      A link to page.html#<item-id> opens that item and scrolls to it,
-     e.g. the home services pills linking into come-lavoro.html. */
+     e.g. the home services pills linking into the "How I work" page. */
   function setAccordionItem(item, open) {
     const trigger = item.querySelector(".accordion__trigger");
     item.setAttribute("data-open", String(open)); // CSS turns the arrow
@@ -148,7 +170,7 @@
           const dot = document.createElement("button");
           dot.type = "button";
           dot.className = "carousel__dot";
-          dot.setAttribute("aria-label", "Vai alla recensione " + (i + 1));
+          dot.setAttribute("aria-label", S.goToReview + (i + 1));
           dot.addEventListener("click", function () {
             goTo(i);
           });
@@ -197,7 +219,7 @@
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "to-top";
-    btn.setAttribute("aria-label", "Torna su");
+    btn.setAttribute("aria-label", S.toTop);
     btn.innerHTML =
       '<svg class="arrow arrow--up" viewBox="0 0 34 40" aria-hidden="true"><path d="M17 39V3M3 17L17 2l14 15"/></svg>';
     document.body.appendChild(btn);
@@ -213,7 +235,7 @@
   }
 
   // WhatsApp: the number is base64 in data-wa and decoded only on click, so it is not
-  // in the HTML as plain text for scrapers. Without JS the link falls back to contatti.html.
+  // in the HTML as plain text for scrapers. Without JS the link falls back to the contact page.
   function initWhatsApp() {
     document.querySelectorAll("[data-wa]").forEach(function (link) {
       link.addEventListener("click", function (event) {
@@ -306,7 +328,7 @@
     initWhatsApp();
     initNav();
     initActiveLink();
-    initSubmenu();
+    document.querySelectorAll(".nav__item--has-sub").forEach(initSubmenu);
     initAccordions();
     initCarousels();
     initMarquees();

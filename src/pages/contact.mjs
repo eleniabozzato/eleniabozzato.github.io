@@ -5,7 +5,7 @@ export const layout = ({ t }) => ({
   description: t.contact.meta.description,
   css: 'contatti',
   extra: ['<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>'],
-  scripts: ['<script src="assets/js/contact-form.js"></script>'],
+  scripts: ['<script src="/assets/js/contact-form.js"></script>'],
   footerCta: false,
 });
 
@@ -14,7 +14,7 @@ export default function contact({ t }) {
   return `  <main>
     <section class="contact-layout">
       <div class="contact-layout__media">
-        <img src="assets/img/contatti-elenia-borraccia-1600.webp" srcset="assets/img/contatti-elenia-borraccia-800.webp 800w, assets/img/contatti-elenia-borraccia-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.imgAlt}" width="1600" height="2400" />
+        <img src="/assets/img/contatti-elenia-borraccia-1600.webp" srcset="/assets/img/contatti-elenia-borraccia-800.webp 800w, /assets/img/contatti-elenia-borraccia-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.imgAlt}" width="1600" height="2400" />
       </div>
       <div class="contact-layout__form-wrap">
         <h1>${c.title}</h1>

@@ -4,7 +4,13 @@
 // Usage: npm run visual -- [--base <ref>] [--pages a,b] [--widths 390,1025] [--tolerance N] [--threshold N]
 //   --base       git ref to compare against. Default: $VISUAL_BASE, else HEAD, so the working tree is
 //                compared with the last commit.
-//   --pages      page names without .html, e.g. index,it/contatti (default: every .html in dist/)
+//   --pages      page names without .html, e.g. index,contatti (default: every .html in dist/).
+//                With --head-prefix, names are the base names (without the prefix).
+//   --head-prefix  compare the head pages under this folder with the base page of the same file name,
+//                e.g. `--head-prefix it/` compares dist/it/chi-sono.html with the base's chi-sono.html
+//                (used while the base still has the Italian site at its root). Other head pages are skipped.
+//   --ignore-header  do not count differences inside the header (it changes on purpose, e.g. the language
+//                selector). Differences below it still fail. The report always lists the rows that differ.
 //   --widths     viewport widths (default 390,1025,1440,2560)
 //   --tolerance  max differing pixels allowed per pair (default 0)
 //   --threshold  per-channel difference (0-255) above which a pixel counts as different (default 8)
@@ -31,6 +37,8 @@ const WIDTHS = opt('--widths', '390,1025,1440,2560').split(',').map(Number);
 const TOLERANCE = Number(opt('--tolerance', 0));
 const THRESHOLD = Number(opt('--threshold', 8));
 const ONLY = opt('--pages', '') ? opt('--pages').split(',').map((p) => p.replace(/\.html$/, '')) : null;
+const PREFIX = opt('--head-prefix', '');
+const IGNORE_HEADER = args.includes('--ignore-header');
 const BASE = opt('--base', process.env.VISUAL_BASE || 'HEAD');
 const OUT_DIR = path.join(ROOT, 'design/shots/visual');
 const HEAD_DIR = path.join(ROOT, 'dist');
@@ -71,7 +79,11 @@ const headSrv = await startServer(HEAD_DIR);
 const baseSrv = await startServer(baseDir);
 
 // 3. Page list: everything in head's dist, plus pages that only the base has (reported as removed).
-const headPages = listHtml(HEAD_DIR);
+// With a prefix, head pages are named by their base name; headFile() gives the real path back.
+const headFile = (page) => PREFIX + page;
+const headPages = listHtml(HEAD_DIR)
+  .filter((p) => !PREFIX || p.startsWith(PREFIX))
+  .map((p) => p.slice(PREFIX.length));
 const basePages = new Set(listHtml(baseDir));
 const pick = (p) => !ONLY || ONLY.includes(p);
 const pages = headPages.filter(pick);
@@ -83,7 +95,8 @@ const CSS = `*,*::before,*::after{animation:none!important;transition:none!impor
 .to-top{display:none!important}`;
 
 async function shot(browser, origin, page, width) {
-  const ctx = await browser.newContext({ viewport: { width, height: 900 }, deviceScaleFactor: 1, reducedMotion: 'reduce', locale: 'it-IT' });
+  // returns { png, headerBottom }: headerBottom is the page y (screenshot px) where the header ends
+  const ctx = await browser.newContext({ viewport: { width, height: 900 }, deviceScaleFactor: 1, reducedMotion: 'reduce', locale: 'en-US' });
   const p = await ctx.newPage();
   try {
     await p.emulateMedia({ reducedMotion: 'reduce' });
@@ -99,17 +112,18 @@ async function shot(browser, origin, page, width) {
       await Promise.all([...document.images].map((i) => i.decode().catch(() => {})));
     });
     await p.waitForTimeout(150);
-    return await p.screenshot({ fullPage: true });
+    const box = await p.locator('.site-header').first().boundingBox();
+    return { png: await p.screenshot({ fullPage: true }), headerBottom: box ? Math.ceil(box.y + box.height) : 0 };
   } finally { await ctx.close(); }
 }
 
-function compare(a, b) {
+function compare(a, b, skipTop = 0) {
   const A = PNG.sync.read(a), B = PNG.sync.read(b);
   // Different heights: still draw a diff over the larger canvas (rows missing on one side count as different).
   const W = Math.max(A.width, B.width), H = Math.max(A.height, B.height);
   const D = new PNG({ width: W, height: H });
   const sameSize = A.width === B.width && A.height === B.height;
-  let diff = 0;
+  let diff = 0, y0 = Infinity, y1 = -1;
   for (let y = 0; y < H; y++) {
     for (let x = 0; x < W; x++) {
       const o = (y * W + x) * 4;
@@ -118,14 +132,14 @@ function compare(a, b) {
       let d = 255;
       if (inA && inB) d = Math.max(Math.abs(A.data[oa] - B.data[ob]), Math.abs(A.data[oa + 1] - B.data[ob + 1]), Math.abs(A.data[oa + 2] - B.data[ob + 2]), Math.abs(A.data[oa + 3] - B.data[ob + 3]));
       if (d > THRESHOLD) {
-        if (sameSize) diff++;
+        if (y >= skipTop) { if (sameSize) diff++; y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
         D.data[o] = 255; D.data[o + 1] = 0; D.data[o + 2] = 255; D.data[o + 3] = 255;
       } else { // faded copy of the head pixel for context
         D.data[o] = D.data[o + 1] = D.data[o + 2] = 255 - (255 - B.data[ob]) * 0.25; D.data[o + 3] = 255;
       }
     }
   }
-  return { heightA: A.height, heightB: B.height, diff: sameSize ? diff : -1, D };
+  return { heightA: A.height, heightB: B.height, diff: sameSize ? diff : -1, rows: y1 < 0 ? '' : `${y0}-${y1}`, D };
 }
 
 const browser = await chromium.launch({
@@ -142,15 +156,15 @@ async function run({ page, w }) {
   if (!basePages.has(page)) { r.status = 'new'; r.note = 'not in base'; return; }
   const [base, head] = await Promise.all([
     shot(browser, `http://127.0.0.1:${baseSrv.port}`, page, w),
-    shot(browser, `http://127.0.0.1:${headSrv.port}`, page, w),
+    shot(browser, `http://127.0.0.1:${headSrv.port}`, headFile(page), w),
   ]);
-  const c = compare(base, head);
-  r.hBase = c.heightA; r.hHead = c.heightB; r.diff = c.diff;
+  const c = compare(base.png, head.png, IGNORE_HEADER ? Math.max(base.headerBottom, head.headerBottom) : 0);
+  r.hBase = c.heightA; r.hHead = c.heightB; r.diff = c.diff; r.rows = c.rows; r.header = head.headerBottom;
   if (c.diff === -1) { r.status = 'FAIL'; r.note = `height ${c.heightA} -> ${c.heightB}`; }
   else if (c.diff > TOLERANCE) { r.status = 'FAIL'; r.note = `${c.diff} px differ`; }
   if (r.status === 'FAIL') {
-    save(`${page}-${w}-base.png`, base);
-    save(`${page}-${w}-head.png`, head);
+    save(`${page}-${w}-base.png`, base.png);
+    save(`${page}-${w}-head.png`, head.png);
     if (c.D) save(`${page}-${w}-diff.png`, PNG.sync.write(c.D));
   }
 }
@@ -164,9 +178,9 @@ await headSrv.close(); await baseSrv.close();
 // 5. Report.
 results.sort((a, b) => (a.page === b.page ? a.w - b.w : a.page < b.page ? -1 : 1));
 const pad = (s, n) => String(s).padEnd(n);
-console.log(`\n${pad('page', 24)}${pad('width', 7)}${pad('height', 14)}${pad('diff px', 9)}status`);
-for (const r of results) console.log(`${pad(r.page, 24)}${pad(r.w, 7)}${pad(r.hHead ?? '-', 14)}${pad(r.diff ?? '-', 9)}${r.status}${r.note ? '  ' + r.note : ''}`);
-for (const p of removed) console.log(`${pad(p, 24)}${pad('-', 7)}${pad('-', 14)}${pad('-', 9)}FAIL  page exists in base but not in head`);
+console.log(`\n${pad('page', 24)}${pad('width', 7)}${pad('height', 14)}${pad('diff px', 9)}${pad('rows (header ends)', 22)}status`);
+for (const r of results) console.log(`${pad(r.page, 24)}${pad(r.w, 7)}${pad(r.hHead ?? '-', 14)}${pad(r.diff ?? '-', 9)}${pad(r.rows ? `${r.rows} (${r.header})` : '-', 22)}${r.status}${r.note ? '  ' + r.note : ''}`);
+for (const p of removed) console.log(`${pad(p, 24)}${pad('-', 7)}${pad('-', 14)}${pad('-', 9)}${pad('-', 22)}FAIL  page exists in base but not in head`);
 const failed = results.filter((r) => r.status === 'FAIL').length + removed.length;
 const isNew = results.filter((r) => r.status === 'new').length;
 console.log(`\nBase ${BASE}: ${results.length} pairs, ${failed} failed, ${isNew} new (not compared).` + (failed ? ` Images: ${path.relative(ROOT, OUT_DIR)}/` : ''));

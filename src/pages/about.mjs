@@ -16,7 +16,7 @@ export default function about({ t }) {
   return `  <main class="cs">
     <!-- HERO full-bleed photo -->
     <section class="cs-hero">
-      <img src="assets/img/chi-sono-elenia-bambina-1600.webp" srcset="assets/img/chi-sono-elenia-bambina-800.webp 800w, assets/img/chi-sono-elenia-bambina-1600.webp 1600w" sizes="100vw" alt="${c.hero.imgAlt}" width="1600" height="899" />
+      <img src="/assets/img/chi-sono-elenia-bambina-1600.webp" srcset="/assets/img/chi-sono-elenia-bambina-800.webp 800w, /assets/img/chi-sono-elenia-bambina-1600.webp 1600w" sizes="100vw" alt="${c.hero.imgAlt}" width="1600" height="899" />
     </section>
 
     <!-- MI RACCONTO -->
@@ -33,7 +33,7 @@ export default function about({ t }) {
     <!-- CREATIVITÀ E STRATEGIA -->
     <section class="cs-split">
       <div class="cs-split__media">
-        <img src="assets/img/chi-sono-elenia-laptop-1600.webp" srcset="assets/img/chi-sono-elenia-laptop-800.webp 800w, assets/img/chi-sono-elenia-laptop-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.split.imgAlt}" width="1600" height="2400" loading="lazy" />
+        <img src="/assets/img/chi-sono-elenia-laptop-1600.webp" srcset="/assets/img/chi-sono-elenia-laptop-800.webp 800w, /assets/img/chi-sono-elenia-laptop-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.split.imgAlt}" width="1600" height="2400" loading="lazy" />
       </div>
       <div class="cs-split__text">
         <h2 class="badge badge--acqua badge--block cs-eyebrow">${c.split.eyebrow}</h2>

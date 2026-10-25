@@ -9,7 +9,8 @@
     "how": "Come lavoro",
     "experience": "Esperienze",
     "showProjects": "Mostra i progetti",
-    "contact": "Contatti"
+    "contact": "Contatti",
+    "language": "Lingua"
   },
   "footer": {
     "eyebrow": "Hai scrollato fino a qui?",
@@ -531,5 +532,15 @@
       "title": "Esperienze — Elenia Bozzato",
       "description": "Progetti di direzione brand, brand identity e consulenza strategica: Dentisti Cordovado, Al Plan Hotel, Carrozzeria Bozzato, Perform Health, Pulicasa, Consu.Lab, Paola Nadin."
     }
+  },
+  "notFound": {
+    "meta": {
+      "title": "Pagina non trovata — Elenia Bozzato",
+      "description": "La pagina che cerchi non esiste o è stata spostata."
+    },
+    "eyebrow": "Errore 404",
+    "title": "Questa pagina <em-magenta>NON ESISTE</em-magenta>",
+    "text": "Il link potrebbe essere vecchio oppure contenere un errore.",
+    "button": "Torna alla home"
   }
 }

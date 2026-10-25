@@ -25,7 +25,7 @@ export default function how({ t }) {
     <!-- HERO -->
     <section class="hero-split cl-hero">
       <div class="hero-split__media">
-        <img src="assets/img/come-lavoro-elenia-1600.webp" srcset="assets/img/come-lavoro-elenia-800.webp 800w, assets/img/come-lavoro-elenia-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.hero.imgAlt}" width="1600" height="2400" />
+        <img src="/assets/img/come-lavoro-elenia-1600.webp" srcset="/assets/img/come-lavoro-elenia-800.webp 800w, /assets/img/come-lavoro-elenia-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.hero.imgAlt}" width="1600" height="2400" />
       </div>
       <div class="hero-split__text">
         <h1>${c.hero.title}</h1>

@@ -58,7 +58,7 @@ export default function home({ t, href, projects }) {
           <p>${c.hero.text}</p>
         </div>
         <div class="hero__media">
-          <img src="assets/img/home-hero-elenia.webp" srcset="assets/img/home-hero-elenia-600.webp 612w, assets/img/home-hero-elenia.webp 960w" sizes="(max-width: 767px) 327px, 516px" alt="${c.hero.imgAlt}" width="960" height="952" />
+          <img src="/assets/img/home-hero-elenia.webp" srcset="/assets/img/home-hero-elenia-600.webp 612w, /assets/img/home-hero-elenia.webp 960w" sizes="(max-width: 767px) 327px, 516px" alt="${c.hero.imgAlt}" width="960" height="952" />
         </div>
       </div>
     </section>
@@ -80,7 +80,7 @@ ${strip(c.strip)}
     <section class="split-section">
       <div class="split">
         <div class="split__media">
-          <img src="assets/img/home-elenia-libro-1600.webp" srcset="assets/img/home-elenia-libro-800.webp 800w, assets/img/home-elenia-libro-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.about.imgAlt}" width="1600" height="2400" loading="lazy" />
+          <img src="/assets/img/home-elenia-libro-1600.webp" srcset="/assets/img/home-elenia-libro-800.webp 800w, /assets/img/home-elenia-libro-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.about.imgAlt}" width="1600" height="2400" loading="lazy" />
         </div>
         <div class="split__text">
           <span class="badge badge--acqua">${c.about.badge}</span>

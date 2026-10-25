@@ -462,6 +462,10 @@ textarea:focus-visible,
   font-size: var(--fs-body);
   color: var(--ink);
 }
+/* Language selector: the label is not a link, the whole row opens the list. */
+.nav__link--lang {
+  cursor: pointer;
+}
 
 @media (min-width: 768px) {
   .nav__item--has-sub {
@@ -484,6 +488,12 @@ textarea:focus-visible,
   .nav__sublink {
     padding: 0.625rem 0.875rem;
     white-space: nowrap;
+  }
+  /* Language selector sits at the right edge: open the panel leftwards so it stays on screen. */
+  .nav__item--lang .nav__sub {
+    left: auto;
+    right: -0.5rem;
+    min-width: 150px;
   }
 }
 

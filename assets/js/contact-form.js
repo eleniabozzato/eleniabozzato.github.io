@@ -1,20 +1,46 @@
 // Elenia Bozzato — contact-form.js
-// Handles the contatti.html form: validation, Cloudflare Turnstile check, fetch submit to PostTo.
+// Handles the contact form: validation, Cloudflare Turnstile check, fetch submit to PostTo.
 // The endpoint is the form's `action` (https://postto.dev/api/v1/send/<token>), so the form
 // still works as a plain HTML POST if this script fails to load.
 // PostTo docs: https://postto.dev/docs (reserved fields _hp / cf-turnstile-response, JSON via Accept header).
 (function () {
   "use strict";
 
-  const FALLBACK_ERROR =
-    "Si è verificato un errore nell'invio. Riprova più tardi o scrivimi direttamente a hello@eleniabozzato.com.";
-
-  // PostTo error codes (https://postto.dev/docs/response-format) → messages for the visitor
-  const ERROR_MESSAGES = {
-    turnstile_failed: "La verifica anti-spam non è andata a buon fine. Riprova.",
-    rate_limited: "Hai inviato troppi messaggi in poco tempo. Attendi un momento e riprova.",
-    empty_submission: "Compila tutti i campi prima di inviare.",
+  // Messages by page language (<html lang>). PostTo error codes (https://postto.dev/docs/response-format)
+  // map to codes.* ; anything else gets `fallback`.
+  const STRINGS = {
+    it: {
+      fallback:
+        "Si è verificato un errore nell'invio. Riprova più tardi o scrivimi direttamente a hello@eleniabozzato.com.",
+      codes: {
+        turnstile_failed: "La verifica anti-spam non è andata a buon fine. Riprova.",
+        rate_limited: "Hai inviato troppi messaggi in poco tempo. Attendi un momento e riprova.",
+        empty_submission: "Compila tutti i campi prima di inviare.",
+      },
+      fillAll: "Compila tutti i campi prima di inviare.",
+      badEmail: "Inserisci un indirizzo email valido.",
+      needCheck: "Completa la verifica anti-spam.",
+      sending: S.sending,
+      sent: "Messaggio inviato! Ti risponderò il prima possibile.",
+      badResponse: S.badResponse,
+    },
+    en: {
+      fallback:
+        "Something went wrong while sending. Please try again later or write to me directly at hello@eleniabozzato.com.",
+      codes: {
+        turnstile_failed: "The anti-spam check failed. Please try again.",
+        rate_limited: "You have sent too many messages in a short time. Please wait a moment and try again.",
+        empty_submission: "Please fill in all the fields before sending.",
+      },
+      fillAll: "Please fill in all the fields before sending.",
+      badEmail: "Please enter a valid email address.",
+      needCheck: "Please complete the anti-spam check.",
+      sending: "Sending…",
+      sent: "Message sent! I will reply as soon as I can.",
+      badResponse: "Invalid response from the server (",
+    },
   };
+  const S = STRINGS[document.documentElement.lang] || STRINGS.en;
 
   document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("#contact-form");
@@ -51,18 +77,18 @@
       const token = String(data.get("cf-turnstile-response") || "");
 
       if (!name || !email || !message) {
-        setStatus("Compila tutti i campi prima di inviare.", "error");
+        setStatus(S.fillAll, "error");
         return;
       }
 
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
-        setStatus("Inserisci un indirizzo email valido.", "error");
+        setStatus(S.badEmail, "error");
         return;
       }
 
       if (!token) {
-        setStatus("Completa la verifica anti-spam.", "error");
+        setStatus(S.needCheck, "error");
         return;
       }
 
@@ -72,7 +98,7 @@
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.textContent = "Invio in corso…";
+        submitBtn.textContent = S.sending;
       }
       setStatus("", null);
 
@@ -90,7 +116,7 @@
             })
             .then(function (body) {
               if (!response.ok) {
-                const error = new Error(body.message || "Risposta non valida dal server (" + response.status + ")");
+                const error = new Error(body.message || S.badResponse + response.status + ")");
                 error.code = body.error;
                 throw error;
               }
@@ -98,13 +124,13 @@
             });
         })
         .then(function () {
-          setStatus("Messaggio inviato! Ti risponderò il prima possibile.", "success");
+          setStatus(S.sent, "success");
           form.reset();
           resetTurnstile();
         })
         .catch(function (err) {
-          console.error("Errore invio form contatti:", err);
-          setStatus(ERROR_MESSAGES[err.code] || FALLBACK_ERROR, "error");
+          console.error("Contact form error:", err);
+          setStatus(S.codes[err.code] || S.fallback, "error");
           resetTurnstile();
         })
         .finally(function () {

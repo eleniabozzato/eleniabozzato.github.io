@@ -1,0 +1,547 @@
+{
+  "_status": "untranslated copy of it.json, translated in phase 4",
+  "nav": {
+    "label": "Main navigation",
+    "brand": "Elenia Bozzato",
+    "brandAlt": "Elenia Bozzato",
+    "openMenu": "Open menu",
+    "home": "Home",
+    "about": "About me",
+    "how": "How I work",
+    "experience": "Projects",
+    "showProjects": "Show projects",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "footer": {
+    "eyebrow": "Hai scrollato fino a qui?",
+    "title": "Conosciamoci <em-magenta>MEGLIO</em-magenta>",
+    "city": "Cordovado PN",
+    "legal": "Elenia Bozzato • P.IVA 04701970271 • Privacy Policy e Cookie Policy • © Copyright 2026"
+  },
+  "gallery": {
+    "prev": "Previous image",
+    "next": "Next image"
+  },
+  "services": {
+    "direzione": {
+      "title": "Direzione e coordinamento del brand"
+    },
+    "identity": {
+      "title": "Progettazione e sviluppo della brand identity"
+    },
+    "formazione": {
+      "title": "Formazione e consulenza strategica"
+    }
+  },
+  "moreExp": {
+    "eyebrow": "Ti è piaciuto questo progetto?",
+    "title": "Scopri le altre <em-magenta>ESPERIENZE</em-magenta>"
+  },
+  "projectPage": {
+    "accordion": {
+      "context": "Contesto",
+      "needs": "Esigenze",
+      "role": "Il mio intervento",
+      "activities": "Attività svolte",
+      "results": "Risultati ottenuti"
+    }
+  },
+  "projects": {
+    "dentisti": {
+      "meta": {
+        "title": "Dentisti Cordovado — Elenia Bozzato",
+        "description": "Direzione e coordinamento del brand per Dentisti Cordovado: comunicazione social, campagne e identità visiva dello studio."
+      },
+      "tagline": "Direzione<br />e coordinamento<br />del brand",
+      "heroAlt": "I due dentisti dello studio Dentisti Cordovado",
+      "logoAlt": "Logo Dentisti Cordovado",
+      "context": [
+        "Dentisti Cordovado è uno studio dentistico giovane e in crescita, nato con l’obiettivo di offrire un servizio odontoiatrico moderno, tecnologico, professionale e vicino al paziente."
+      ],
+      "needs": [
+        "Lo studio aveva bisogno di una figura di riferimento interna per la comunicazione, capace<br class=\"br-desk\" /> di comprendere il contesto odontoiatrico e tradurlo in una presenza coerente, riconoscibile e allineata all’identità dello studio."
+      ],
+      "role": [
+        "Sono entrata nel progetto come figura di riferimento per la comunicazione, occupandomi della direzione e del coordinamento del brand.",
+        "Seguo la comunicazione social in modo continuativo, definendo contenuti e materiali coerenti con il posizionamento dello studio."
+      ],
+      "activities": [
+        "gestione e coordinamento della comunicazione social",
+        "realizzazione grafiche e materiali per campagne e iniziative",
+        "coordinamento shooting fotografici e video con il videomaker",
+        "supporto strategico alla gestione delle campagne ADV",
+        "supporto alla definizione dell’identità visiva degli ambienti dello studio"
+      ],
+      "slides": [
+        "Mockup dei profili Instagram di Dentisti Cordovado su due smartphone",
+        "Locandina “Porte aperte ai più piccoli” dello studio, venerdì 17 aprile 2026",
+        "Diploma di eroina del sorriso con i denti protagonisti, pensato per i piccoli pazienti",
+        "Calendario “Hai lavato i denti?” per segnare lo spazzolamento durante la settimana"
+      ],
+      "results": [
+        "La comunicazione oggi è percepita come più coerente, riconoscibile e allineata all’identità dello studio.",
+        "Il cliente ha una percezione più chiara e soddisfacente del proprio brand e la comunicazione risulta più strutturata e di qualità.",
+        "Parallelamente, lo studio sta riscontrando un andamento positivo in termini di nuovi pazienti rispetto ai periodi di confronto precedenti."
+      ],
+      "testimonial": {
+        "quote": "“Professionale, creativa e sempre affidabile. Gestisce i social media<br class=\"br-desk\" /> con attenzione, idee fresche e grande puntualità. Ha migliorato la nostra<br class=\"br-desk\" /> comunicazione online rendendola più efficace e coerente. Collaborare<br class=\"br-desk\" /> con lei è davvero semplice e produttivo.”",
+        "author": "Matteo",
+        "role": "Dentisti Cordovado"
+      },
+      "listAlt": "I due dentisti dello studio Dentisti Cordovado"
+    },
+    "alplan": {
+      "meta": {
+        "title": "Al Plan Hotel — Elenia Bozzato",
+        "description": "Direzione e coordinamento del brand per Al Plan Hotel, hotel a conduzione familiare in Val Badia: comunicazione, contenuti e coordinamento delle attività di marketing."
+      },
+      "tagline": "Direzione<br />e coordinamento<br />del brand",
+      "heroAlt": "Veduta aerea dell’Al Plan Hotel in inverno, con la cabinovia e le montagne innevate",
+      "logoAlt": "Logo Al Plan Hotel, a mountain-moving hotel",
+      "context": [
+        "Al Plan Hotel è un hotel a conduzione familiare a San Vigilio di Marebbe, in Val Badia, che unisce l’ospitalità di montagna alle passioni dei proprietari per il collezionismo, i motori e i mestieri di una volta.",
+        "Un luogo fuori dagli schemi, dove le camere a tema, gli oggetti storici esposti negli spazi comuni e la piscina panoramica sul tetto raccontano una storia fatta di passioni, ricerca e personalità. Con l’ampliamento e il passaggio alla categoria quattro stelle, l’hotel aveva arricchito la propria offerta, rendendo ancora più importante comunicarne l’unicità."
+      ],
+      "needs": [
+        "La crescita della struttura aveva portato nuove opportunità, ma anche una maggiore complessità nella gestione della comunicazione.",
+        "Pur collaborando con agenzie specializzate nel settore alberghiero, la famiglia aveva bisogno di una figura di fiducia che la affiancasse nella gestione quotidiana del marketing, coordinasse le diverse attività e contribuisse a rendere la comunicazione più autentica e rappresentativa dell’identità dell’hotel.",
+        "L’obiettivo era valorizzare le peculiarità della struttura attraverso testi, immagini e messaggi capaci di trasmettere non soltanto i servizi offerti, ma anche la personalità della famiglia e l’esperienza che rende Al Plan Hotel diverso dagli altri."
+      ],
+      "role": [
+        "Sono entrata nel progetto come consulente per la direzione e il coordinamento del brand, diventando un punto di riferimento per la famiglia nella gestione della comunicazione.",
+        "Lavoro sui contenuti e sui diversi punti di contatto con l’ospite, con l’obiettivo di rendere il linguaggio dell’hotel più caldo, personale e coerente con la sua identità. Affianco inoltre la famiglia nelle scelte comunicative e nella gestione delle attività, in sinergia con le agenzie che seguono gli aspetti più specialistici del marketing alberghiero."
+      ],
+      "activities": [
+        "riscrittura delle descrizioni delle camere, per valorizzarne le peculiarità con un tono di voce autentico e distintivo",
+        "realizzazione delle planimetrie delle camere da integrare nel sito web",
+        "revisione dei testi delle e-mail automatiche lungo tutto il percorso dell’ospite, dall’offerta alla prenotazione, fino al soggiorno e al post stay",
+        "gestione delle risposte alle recensioni online, positive e negative, con attenzione al tono di voce e alla relazione con l’ospite",
+        "aggiornamento e ottimizzazione delle descrizioni e delle immagini sui portali turistici",
+        "consulenza continuativa sulle scelte di comunicazione, sui contenuti e sulla coerenza dei materiali",
+        "coordinamento e supporto alle attività di marketing, in collaborazione con le agenzie coinvolte"
+      ],
+      "results": [
+        "La comunicazione sta evolvendo verso un linguaggio più autentico e personale, maggiormente rappresentativo dell’identità della famiglia e dell’esperienza che Al Plan Hotel desidera offrire ai propri ospiti.",
+        "I diversi punti di contatto con il cliente vengono gestiti con maggiore coerenza e attenzione, mentre la famiglia può contare su una figura di riferimento stabile per confrontarsi sulle scelte comunicative e affrontare le attività quotidiane con maggiore continuità.",
+        "La collaborazione permette inoltre di integrare il supporto strategico e operativo con le competenze specialistiche delle agenzie, contribuendo a una gestione del marketing più coordinata e sostenibile."
+      ],
+      "testimonial": {
+        "quote": "“Avere Elenia al nostro fianco ci permette di affrontare la comunicazione con maggiore serenità e organizzazione. Ha saputo comprendere la nostra realtà, la nostra storia e ciò che rende speciale il nostro hotel, aiutandoci a raccontarlo in modo più autentico. È una figura di riferimento affidabile, sempre disponibile al confronto, che ci supporta con attenzione e concretezza nelle tante attività quotidiane. Siamo molto soddisfatti della collaborazione.”",
+        "author": "Famiglia Trebo",
+        "role": "Al Plan Hotel"
+      },
+      "slides": [
+        "Veduta aerea estiva dell’hotel, con il tetto e la piscina panoramica",
+        "Veduta aerea dell’hotel in inverno, con la cabinovia e le montagne innevate",
+        "Panorama sul paese di San Vigilio di Marebbe e sulle Dolomiti, con l’hotel in primo piano",
+        "Facciata dell’hotel con un vecchio fuoristrada parcheggiato davanti",
+        "Terrazza sul tetto vista dall’alto, con ombrelloni e piscina",
+        "Piscina panoramica sul tetto, con le montagne sullo sfondo",
+        "Due lattine di Coca-Cola nella sabbia, con l’hotel e le montagne sullo sfondo",
+        "Camera con letto matrimoniale, tende bordeaux e soffitto a cassettoni",
+        "Camera a tema con grande vetrata sulla valle e oggetti d’epoca",
+        "Scala a chiocciola e vetrina di oggetti storici in un’area comune",
+        "Cantina con botti e scaffali di vini",
+        "Sala con tavolo rotondo in pietra tra casse di vino e arcate in mattoni",
+        "Sala da pranzo con soffitto in legno, tovaglie rosse e vetrate sulla valle",
+        "Sala ristorante con soffitto a cassettoni e strumenti musicali alle pareti",
+        "Sala colazioni con buffet e lampade Tiffany",
+        "Sala ristorante con tavoli apparecchiati e lampade Tiffany",
+        "Sala giochi con tavolo da biliardo e luci verdi",
+        "Area relax con vasca idromassaggio, lettini in legno e sauna",
+        "Dessert su un piatto di vetro blu, a un tavolo apparecchiato",
+        "Terrazza con tavolini apparecchiati e fiori, con vista sul paese"
+      ],
+      "listAlt": "Veduta aerea invernale dell'Al Plan Hotel"
+    },
+    "carrozzeria": {
+      "meta": {
+        "title": "Carrozzeria Bozzato — Elenia Bozzato",
+        "description": "Direzione e coordinamento del brand per Carrozzeria Bozzato: rebranding, identità visiva, immagine coordinata, sito web e comunicazione social dell’azienda di famiglia."
+      },
+      "tagline": "Direzione<br />e coordinamento<br />del brand",
+      "heroAlt": "Sede della Carrozzeria Bozzato",
+      "logoAlt": "Logo Carrozzeria Bozzato",
+      "context": [
+        "La Carrozzeria Bozzato è l’azienda di famiglia fondata da mio padre Ennio nel 1984.",
+        "Oltre ai servizi di carrozzeria, è specializzata in allestimenti personalizzati per la guida e il trasporto di persone con disabilità, con un forte orientamento alla qualità e alla cura del servizio."
+      ],
+      "needs": [
+        "Con l’evoluzione dell’azienda è emersa la necessità di costruire un’identità visiva e comunicativa più coerente, capace di rappresentare in modo chiaro entrambe le anime del brand e il suo posizionamento attuale."
+      ],
+      "role": [
+        "Nel 2019 ho sviluppato il progetto di rebranding dell’azienda, a partire dal restyling del logo e dalla definizione dell’intera immagine coordinata, elaborata come parte del mio percorso di tesi.",
+        "Da allora seguo il brand in modo continuativo come figura di riferimento per la comunicazione, occupandomi della direzione e del coordinamento dell’identità nel tempo."
+      ],
+      "activities": [
+        "progettazione e restyling del logo aziendale",
+        "sviluppo del sistema di identità visiva",
+        "sviluppo immagine coordinata e materiali corporate",
+        "coordinamento della comunicazione visiva nel tempo",
+        "progettazione e sviluppo grafico del sito web aziendale",
+        "gestione continuativa della comunicazione social",
+        "supporto alla definizione dell’identità visiva degli uffici"
+      ],
+      "slides": [
+        "Il logo della Carrozzeria Bozzato prima e dopo il restyling",
+        "Biglietti da visita e carta intestata in blu e arancione con il nuovo marchio",
+        "Carta intestata e fogli aziendali con il marchio e il segno grafico in filigrana",
+        "Buste aziendali in blu, arancione e grigio con il logo Carrozzeria Bozzato",
+        "Due furgoni bianchi con la livrea blu e il nuovo logo",
+        "Pagine del manuale di immagine aziendale: marchio e applicazioni",
+        "Calendario con fotografie e illustrazioni del territorio, mese per mese",
+        "Il sito web della Carrozzeria Bozzato mostrato su un portatile",
+        "I profili Instagram della Carrozzeria Bozzato su due smartphone"
+      ],
+      "results": [
+        "Il brand ha sviluppato un’identità più coerente e riconoscibile, allineata alla sua evoluzione e al suo posizionamento attuale.",
+        "La comunicazione oggi riflette in modo più fedele la realtà dell’azienda, contribuendo a una percezione più moderna, strutturata e professionale."
+      ],
+      "testimonial": {
+        "quote": "“Abbiamo iniziato a lavorare con Elenia sulla comunicazione della nostra carrozzeria quando era ancora all’università. Nel tempo ha seguito da vicino tutta l’evoluzione del progetto, crescendo insieme all’azienda e portando sempre più ordine e coerenza nella nostra immagine. Il restyling del brand è stato un passaggio importante per noi: ha dato una nuova identità alla Carrozzeria Bozzato, più chiara e rappresentativa di quello che siamo diventati negli anni. Oggi la comunicazione è più strutturata e riconoscibile, e la collaborazione con Elenia è diventata una presenza costante nel percorso di crescita dell’azienda. È un lavoro che è nato in famiglia, ma che nel tempo ha assunto un valore professionale sempre più solido.”",
+        "author": "Ennio",
+        "role": "Carrozzeria Bozzato"
+      },
+      "listAlt": "Sede della Carrozzeria Bozzato"
+    },
+    "perform": {
+      "meta": {
+        "title": "Perform Health — Elenia Bozzato",
+        "description": "Progettazione e sviluppo della brand identity di Perform Health, dal naming al sistema visivo e comunicativo, fino a sito web e materiali corporate."
+      },
+      "tagline": "Progettazione<br />e sviluppo della<br />brand identity",
+      "heroAlt": "Andrea e Mattia davanti al logo Perform Health",
+      "context": [
+        "Perform Health è un progetto nato dall’iniziativa di Mattia e Andrea Cordenos, rispettivamente fisioterapista e preparatore atletico.",
+        "L’idea era chiara fin dall’inizio: costruire un servizio che integrasse fisioterapia, movimento, psicologia e nutrizione, con l’obiettivo di accompagnare le persone nel recupero dal dolore, nella prevenzione dell’inattività e nel miglioramento della performance fisica.",
+        "Il progetto partiva da una visione definita ma senza un’identità comunicativa strutturata."
+      ],
+      "needs": [
+        "Il progetto necessitava della costruzione completa dell’identità di brand, a partire dal naming fino allo sviluppo del sistema visivo e comunicativo.",
+        "L’obiettivo era tradurre una visione già chiara in un’identità riconoscibile, coerente e applicabile a tutti i punti di contatto del brand."
+      ],
+      "role": [
+        "Sono entrata nel progetto nella fase iniziale di costruzione del brand, contribuendo allo sviluppo del naming e alla definizione dell’identità visiva e comunicativa.",
+        "Ho costruito il sistema di brand a partire dalle fondamenta, definendo anche il tono di voce e la linea comunicativa del progetto."
+      ],
+      "activities": [
+        "progettazione logo e identità visiva",
+        "definizione sistema cromatico e linguaggio grafico",
+        "sviluppo immagine coordinata e materiali corporate",
+        "progettazione sito web aziendale",
+        "supporto alla comunicazione visiva e contenutistica",
+        "accompagnamento continuativo nella comunicazione del brand"
+      ],
+      "slides": [
+        "Il logo Perform Health in arancione e blu, con il payoff “fisioterapia & allenamento”",
+        "Biglietti da visita Perform Health in grigio con il logo arancione e blu e la figura di un atleta in corsa",
+        "Gift card Perform Health con il logo e la figura stilizzata dell’atleta",
+        "Il sito web di Perform Health mostrato su un portatile, con il titolo “Attiva corpo e mente”",
+        "La palestra di Perform Health, con strutture gialle per l’allenamento e pavimento in erba sintetica",
+        "Giacca stile college e maglietta blu con il logo Perform Health, pensate per staff e clienti"
+      ],
+      "results": [
+        "Il brand ha acquisito un’identità chiara e riconoscibile, capace di rappresentare sia la dimensione professionale altamente specializzata sia l’approccio umano e accogliente del progetto.",
+        "Perform Health è oggi percepito come un ambiente strutturato ma vicino alle persone, con una comunicazione coerente con i valori fondativi del progetto."
+      ],
+      "testimonial": {
+        "quote": "“Abbiamo iniziato ad affidarci ad Elenia per la realizzazione del nostro logo aziendale ma ancor prima per la scelta del nome. Passaggio importante e fondamentale per la nascita di un progetto. Ci ha dato varie idee legate anche al significato che volevamo dare alla nostra azienda e nel logo ha introdotto dei colori che più si addicevano all’area di appartenenza lavorativa. E tutto questo lo ha fatto con un impegno e dedizione tale da aver, in poco tempo, sviluppato ciò che ora ci contraddistingue ogni giorno. E possiamo ritenerci totalmente soddisfatti. Da questo nome e questo logo è nato il nostro brand. E siamo ancora oggi riconoscenti per il lavoro fatto. E per questo motivo ci siamo affidati a lei per la realizzazione del nostro sito, per l’impaginazione di biglietti da visita e block notes, per la realizzazione di materiale pubblicitario (manifesti, vetrofanie, pubblicità online), il vestiario per lo staff e per i clienti e per il continuo supporto che ci dà per i contenuti social. La collaborazione con lei continua a essere fruttuosa e soddisfatta per la professionalità che ci mette sempre. E continueremo a lavorare con lei per altrettanti progetti.”",
+        "author": "Andrea e Mattia",
+        "role": "Perform Health"
+      },
+      "listAlt": "Copertina progetto Perform Health"
+    },
+    "pulicasa": {
+      "meta": {
+        "title": "Pulicasa — Elenia Bozzato",
+        "description": "Restyling del logo e revisione completa dell’identità visiva di Pulicasa, azienda di pulizie civili e industriali del Portogruarese, in occasione dei suoi 40 anni di attività."
+      },
+      "tagline": "Progettazione e sviluppo<br />della brand identity",
+      "heroAlt": "Il logo Pulicasa su sfondo azzurro",
+      "context": [
+        "Pulicasa è un’azienda attiva nel settore delle pulizie civili e industriali nel territorio del Portogruarese da più di 40 anni."
+      ],
+      "needs": [
+        "L’azienda disponeva di un’identità visiva ormai datata, non più coerente con l’evoluzione del servizio e con il posizionamento attuale.",
+        "Era inoltre necessario sviluppare un sistema grafico più riconoscibile e applicabile alle diverse attività di comunicazione e promozione."
+      ],
+      "role": [
+        "In occasione dei 40 anni di attività dell’azienda, sono intervenuta con un progetto di restyling del logo e di revisione completa dell’identità visiva.",
+        "Ho tradotto il nuovo posizionamento del brand in un sistema grafico più chiaro, moderno e riconoscibile."
+      ],
+      "activities": [
+        "restyling del logo aziendale",
+        "definizione della nuova identità visiva",
+        "applicazione dell’immagine coordinata su materiali promozionali"
+      ],
+      "slides": [
+        "Il logo Pulicasa prima e dopo il restyling",
+        "Biglietti da visita e pieghevoli in azzurro e rosso con il nuovo marchio",
+        "Carta intestata e materiali stampati per i 40 anni di attività",
+        "Furgone bianco con la livrea e il nuovo logo Pulicasa"
+      ],
+      "results": [
+        "Pulicasa oggi dispone di un’identità visiva più chiara e immediatamente riconoscibile, coerente con il proprio settore e più efficace nella comunicazione verso il pubblico.",
+        "Il brand è ora leggibile al primo impatto e rappresenta in modo più attuale i servizi offerti."
+      ],
+      "testimonial": {
+        "quote": "“Ci siamo affidati ad Elenia per il restyling del nostro logo aziendale in vista dei 40 anni di attività. Elenia è una persona professionale, capace e solare. Ha saputo portare innovazione, chiarezza e modernità al nostro logo e a tutte le grafiche dell’azienda. Con Elenia ci sarà una collaborazione continua.”",
+        "author": "Luca",
+        "role": "Pulicasa"
+      },
+      "listAlt": "Copertina progetto Pulicasa"
+    },
+    "paola": {
+      "meta": {
+        "title": "Paola Nadin, Consu.Lab — Elenia Bozzato",
+        "description": "Formazione e consulenza strategica per Consu.Lab di Paola Nadin: identità visiva, sito web e percorso formativo per rendere autonoma la comunicazione social."
+      },
+      "tagline": "Formazione<br />e consulenza<br />strategica",
+      "heroAlt": "Il marchio Consu.Lab bianco su sfondo marrone",
+      "context": [
+        "Consulab è il progetto sviluppato da Paola Nadin, consulente direzionale, con l’obiettivo di strutturare un approccio più organizzato e riconoscibile alla propria attività professionale.",
+        "Il progetto nasce come evoluzione del suo lavoro di consulenza, con l’intenzione di creare una realtà più strutturata, anche attraverso una rete di professionisti a supporto delle aziende."
+      ],
+      "needs": [
+        "Il progetto aveva bisogno di un percorso completo di supporto strategico e formativo, sia nella definizione dell’identità visiva sia nella costruzione della comunicazione digitale.",
+        "In particolare, era necessario sviluppare un sito web coerente con il nuovo posizionamento e rendere la comunicazione social autonoma, ordinata e replicabile nel tempo."
+      ],
+      "role": [
+        "Sono intervenuta come figura di supporto strategico e formativo, affiancando la cliente nella definizione del nuovo posizionamento del progetto e nella traduzione della sua identità in strumenti concreti di comunicazione.",
+        "Ho guidato lo sviluppo del sistema visivo e del sito web, collaborando con lo sviluppatore e supervisionando la coerenza complessiva del progetto.",
+        "Parallelamente ho strutturato un percorso formativo per rendere la gestione della comunicazione social autonoma e sostenibile nel tempo."
+      ],
+      "activities": [
+        "sviluppo identità visiva del progetto Consulab",
+        "coordinamento del sistema grafico in coerenza con il brand personale",
+        "direzione creativa e supervisione sviluppo sito",
+        "definizione linee guida per contenuti e comunicazione digitale",
+        "progettazione layout social e rubriche grafiche",
+        "percorso formativo su gestione e strategia social media",
+        "supporto continuo nella fase di applicazione operativa"
+      ],
+      "slides": [
+        "Il logo Consu.Lab di Paola Nadin in marrone, con il payoff “Un passo alla volta verso ciò che conta”",
+        "Biglietti da visita Consu.Lab di Paola Nadin, fronte e retro, in bianco e marrone con il marchio e un QR code",
+        "Il sito web di Consu.Lab mostrato su un portatile, con la fotografia di Paola Nadin",
+        "I profili Instagram di Consu.Lab su due smartphone, con la griglia dei post in tonalità marrone e rosa"
+      ],
+      "results": [
+        "Consulab oggi dispone di un’identità chiara e coerente. La comunicazione è diventata più strutturata e autonoma, permettendo alla cliente di gestire in modo indipendente la propria presenza digitale.",
+        "Il progetto ha rafforzato la percezione di professionalità e chiarezza nel posizionamento verso aziende e potenziali clienti."
+      ],
+      "testimonial": {
+        "quote": "“Mi sono affidata a Elenia per il servizio di consulenza e ne sono rimasta entusiasta. Ha saputo cogliere con precisione la mia personalità, trasformandola in un logo e un’immagine digitale che mi rappresentano davvero. Professionale, attenta e sempre puntuale, Elenia ha rispettato i miei tempi e chiarito ogni mio dubbio con pazienza e concretezza. Ogni fase del lavoro è stata gestita con precisione ed efficacia, senza mai perdere tempo. Una vera professionista!”",
+        "author": "Paola",
+        "role": "Consu.Lab"
+      },
+      "listAlt": "Consu.Lab di Paola Nadin — Un passo alla volta verso ciò che conta"
+    }
+  },
+  "experienceLabel": "Esperienze",
+  "goToProject": "Vai al progetto",
+  "home": {
+    "meta": {
+      "title": "Elenia Bozzato — Brand Strategy &amp; Communication Design",
+      "description": "Guido aziende e professionisti a diventare brand riconoscibili attraverso una comunicazione strategica, coerente e costruita per crescere."
+    },
+    "hero": {
+      "badge": "Ciao! Sono Elenia",
+      "title": "Do identità<br>all’<em-acqua>ANIMA</em-acqua><br>del tuo brand",
+      "text": "Guido <strong>aziende</strong> e <strong>professionisti</strong> a diventare brand riconoscibili attraverso una comunicazione strategica, coerente e costruita per crescere.",
+      "imgAlt": "Elenia Bozzato sorridente, mano sul viso, completo rosa"
+    },
+    "strip": [
+      "BRAND STRATEGY",
+      "BRAND IDENTITY",
+      "ART DIRECTION",
+      "COMMUNICATION MANAGEMENT",
+      "REBRANDING"
+    ],
+    "question": {
+      "title": "La tua <em-acqua>COMUNICAZIONE</em-acqua> è frammentata?<br>\n        Ogni cosa sembra scollegata<br>e manca una <em-magenta>DIREZIONE CHIARA</em-magenta>?",
+      "text": "Entro nel tuo progetto come punto di riferimento per la comunicazione,<br>dando <strong>visione</strong>, <strong>ordine</strong> e <strong>coerenza</strong> a tutto ciò che il tuo brand esprime."
+    },
+    "about": {
+      "imgAlt": "Elenia Bozzato con un libro in testa e un laptop in mano",
+      "badge": "Mi racconto",
+      "title": "La <em-magenta>COMUNICAZIONE</em-magenta> <br>è sempre stata<br>il mio linguaggio:",
+      "p1": "prima con una matita, oggi attraverso strumenti digitali, ma con lo stesso approccio attento, sensibile e preciso.",
+      "p2": "Unisco <strong>visione strategica</strong> e <strong>ricerca estetica</strong><br>per trasformare i brand in identità chiare, autentiche e riconoscibili.",
+      "p3": "Lavoro con <strong>metodo</strong>, <strong>ascolto</strong> e <strong>direzione</strong>,<br>per costruire progetti solidi e risultati concreti nel tempo.",
+      "button": "Scopri chi sono"
+    },
+    "services": {
+      "badge": "Servizi",
+      "title": "Come posso affiancarti<br>nella crescita del tuo <em-acqua>BRAND</em-acqua>"
+    },
+    "reviews": {
+      "badge": "Recensioni",
+      "title": "Cosa dicono di <em-acqua>ME</em-acqua>",
+      "prev": "Recensione precedente",
+      "next": "Recensione successiva",
+      "items": [
+        {
+          "quote": "“Elenia ha la capacità di dare forma ai sentimenti di un’azienda. Una professionista favolosa.”",
+          "author": "Stefania",
+          "role": "Consulente della salute"
+        },
+        {
+          "quote": "“Quando ho deciso di dare un'identità visiva alla mia attività, cercavo qualcosa che mi rappresentasse davvero: eleganza, semplicità e viaggi. Elenia è riuscita a captare tutto questo in un marchio che sento totalmente. Brava Elenia, creativa e professionale!”",
+          "author": "Debora"
+        },
+        {
+          "quote": "“Mi sono affidata a Elenia per il Brand Design e ne sono rimasta entusiasta. Ha saputo cogliere con precisione la mia personalità. Professionale, attenta e sempre puntuale. Una vera professionista!”",
+          "author": "Paola"
+        },
+        {
+          "quote": "“Elenia trasforma idee in identità visive chiare e memorabili. Competente, precisa e appassionata: una garanzia per chi cerca una Brand Identity davvero efficace. Grazie.”",
+          "author": "Lorena"
+        },
+        {
+          "quote": "“Puntuale e precisa! Elenia ha compreso pienamente le mie esigenze, intuendo anche ciò che non sono riuscito a spiegare bene. Una vera e propria partner.”",
+          "author": "Riccardo"
+        }
+      ],
+      "button": "Scopri cosa dicono di me"
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "Chi sono — Elenia Bozzato",
+      "description": "Sono cresciuta dentro un'azienda: da lì ho imparato cosa significa avere un'impresa e oggi guardo i brand come persone, storie e idee."
+    },
+    "hero": {
+      "imgAlt": "Elenia Bozzato da bambina, con pennarelli colorati"
+    },
+    "story": {
+      "badge": "Mi racconto",
+      "title": "Sono cresciuta dentro un’<em-acqua>AZIENDA</em-acqua>",
+      "p1": "Da bambina passavo i pomeriggi nell’ufficio della <strong>carrozzeria di famiglia</strong>, <br>tra giochi al computer, sorrisi ai clienti e disegni sparsi sulla scrivania.",
+      "p2": "Osservavo mio padre Ennio costruire la sua attività <strong>giorno dopo giorno</strong> <br>e seguivo mia madre Elisabetta nelle attività quotidiane dell’azienda.",
+      "subtitle": "È lì che ho imparato cosa significa <br>davvero avere un’<em-magenta>IMPRESA</em-magenta>:",
+      "tight": "le responsabilità, le difficoltà, le decisioni da prendere… ma soprattutto la <strong>passione</strong> <br>e la <strong>visione</strong> necessarie per costruire qualcosa di proprio.",
+      "p3": "Per questo oggi non vedo i brand solo come progetti, ma come <strong>persone</strong>, <strong>storie</strong> e <strong>idee</strong> <br>che cercano una forma chiara per essere raccontate nel modo giusto."
+    },
+    "split": {
+      "imgAlt": "Elenia Bozzato in completo rosa con un laptop sotto braccio",
+      "eyebrow": "Da sempre vivo <br>tra creatività e strategia",
+      "p1": "Disegnavo da bambina e continuo ancora oggi <br>a coltivare il mio <strong>lato artistico</strong> attraverso la cianotipia, <br>la pittura su vetro e tanti piccoli progetti creativi che <br>riempiono il mio tempo libero.",
+      "p2": "Accanto alla <strong>sensibilità creativa</strong> è cresciuta <br>però anche una parte profondamente <strong>strategica</strong>: <br>quando alle superiori ho incontrato il marketing <br>nei libri di economia, qualcosa si è acceso. <br>Ho capito che <strong>comunicazione</strong>, <strong>estetica</strong> e <strong>visione</strong> <br>potevano convivere nello stesso percorso, <br>ed è lì che ho scelto di approfondire il mondo <br>della comunicazione all’università.",
+      "lead": "Oggi questo equilibrio è ancora il cuore <br>del mio lavoro:",
+      "closing": "uno <em-magenta>SGUARDO CREATIVO</em-magenta> <br>capace di immaginare <br>e una <em-acqua>MENTE STRATEGICA</em-acqua> <br>capace di dare direzione."
+    },
+    "values": {
+      "badge": "Valori",
+      "items": [
+        {
+          "title": "LIBERTÀ",
+          "text": "Credo in un modo di lavorare libero, fluido e aperto alle idee, dove creatività <br>e visione possano esprimersi davvero."
+        },
+        {
+          "title": "RISPETTO",
+          "text": "Ogni progetto nasce dall’ascolto. Per questo do valore alle persone, alle loro storie <br>e a ciò che desiderano costruire."
+        },
+        {
+          "title": "ETICA",
+          "text": "Scelgo una comunicazione consapevole, trasparente e coerente con il valore reale <br>di ciò che raccontiamo."
+        },
+        {
+          "title": "FIDUCIA",
+          "text": "Costruisco relazioni sincere e durature, in cui sentirsi accompagnati con chiarezza <br>e serenità in ogni fase del percorso."
+        }
+      ],
+      "vision": {
+        "title": "Vision",
+        "text": "Credo nei brand che hanno qualcosa di vero <br>da raccontare. Il mio obiettivo è aiutarli a trovare <br>una voce chiara, riconoscibile e autentica, attraverso <br>una comunicazione capace di generare valore."
+      },
+      "mission": {
+        "title": "Mission",
+        "text": "Creo percorsi di comunicazione su misura per dare <br>direzione ai brand e trasformare le idee in identità <br>coerenti, riconoscibili e durature. <br><br>Affianco aziende e professionisti con un approccio <br>strategico, umano e concreto, semplificando <br>la gestione della comunicazione e creando <br>un’esperienza di lavoro chiara, serena e autentica."
+      }
+    }
+  },
+  "how": {
+    "meta": {
+      "title": "Come lavoro — Elenia Bozzato",
+      "description": "Do direzione alla comunicazione dei brand, trasformando idee frammentate in identità chiare e coerenti."
+    },
+    "hero": {
+      "imgAlt": "Elenia Bozzato sorridente con il laptop in mano",
+      "title": "Il mio lavoro<br />è dare <em-acqua>DIREZIONE</em-acqua><br />alla comunicazione<br />dei brand,",
+      "lead": "trasformando idee frammentate <br />in <strong>identità chiare e coerenti</strong>.",
+      "p1": "Unisco visione strategica e sensibilità creativa <br />per costruire sistemi di comunicazione <strong>solidi</strong>, <br /><strong>leggibili</strong> e <strong>funzionali alla crescita</strong>.",
+      "roleTitle": "Il mio <em-magenta>RUOLO</em-magenta><br />nei progetti",
+      "p2": "Entro nelle aziende come <strong>figura di riferimento</strong> <br />per la comunicazione, con l’obiettivo di portare ordine, <br />chiarezza e coerenza nell’intero sistema <br />di comunicazione del brand.",
+      "p3": "Non mi occupo solo della parte visiva, ma <br />della <strong>direzione complessiva</strong> con cui un’azienda <br />si racconta e si posiziona."
+    },
+    "services": {
+      "badge": "Servizi",
+      "title": "Come posso affiancarti<br />nella crescita del tuo <em-magenta>BRAND</em-magenta>",
+      "items": {
+        "direzione": {
+          "paragraphs": [
+            "Mi occupo di definire e guidare la direzione della comunicazione, <br />garantendo coerenza tra tutti gli elementi visivi e strategici.",
+            "Coordino il lavoro in sinergia con il team interno o con professionisti esterni, <br />diventando un punto di riferimento unico per l’azienda."
+          ]
+        },
+        "identity": {
+          "paragraphs": [
+            "Creo o rinnovo l’identità visiva, costruendo un sistema chiaro, riconoscibile e coerente <br />con i valori aziendali.",
+            "Ogni progetto viene sviluppato all’interno di una visione strategica coordinata che può includere:"
+          ],
+          "list": [
+            "materiali editoriali",
+            "comunicazione pubblicitaria",
+            "eventi e allestimenti",
+            "web design",
+            "social media"
+          ]
+        },
+        "formazione": {
+          "paragraphs": [
+            "Offro consulenze per portare chiarezza nella comunicazione e aiutare aziende <br />e professionisti a definire una direzione precisa per il proprio brand.",
+            "Percorsi pensati per fare ordine, prendere decisioni consapevoli <br />e rendere la comunicazione più efficace e autonoma nel tempo."
+          ]
+        }
+      }
+    },
+    "method": {
+      "badge": "Modalità di lavoro",
+      "title": "Ogni progetto è diverso, ma il punto <br />di partenza è sempre lo stesso: <em-acqua>ASCOLTARE</em-acqua>.",
+      "text": "Da lì costruisco un <strong>percorso chiaro</strong>, che unisce analisi, visione e scelte concrete, <br />per dare forma a una comunicazione coerente e funzionale agli obiettivi del brand."
+    }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contatti — Elenia Bozzato",
+      "description": "Hai un progetto da sviluppare o senti il bisogno di dare una direzione più chiara alla tua comunicazione? Conosciamoci."
+    },
+    "imgAlt": "Elenia Bozzato sorridente con una borraccia rosa",
+    "title": "Se hai un progetto <br class=\"br-d\" />da sviluppare o senti <br class=\"br-d\" />il bisogno di dare <br class=\"br-d\" />una direzione più chiara <br class=\"br-d\" />alla tua comunicazione, <br class=\"br-d\" /><em-acqua>CONOSCIAMOCI</em-acqua>.",
+    "lead": "Ti risponderò il prima possibile <br class=\"br-d\" />per capire insieme come posso aiutarti.",
+    "subject": "Nuovo messaggio da eleniabozzato.com",
+    "honeypot": "Lascia vuoto",
+    "name": "Nome",
+    "email": "Mail",
+    "message": "Messaggio",
+    "submit": "Invia"
+  },
+  "experience": {
+    "meta": {
+      "title": "Esperienze — Elenia Bozzato",
+      "description": "Progetti di direzione brand, brand identity e consulenza strategica: Dentisti Cordovado, Al Plan Hotel, Carrozzeria Bozzato, Perform Health, Pulicasa, Consu.Lab, Paola Nadin."
+    }
+  },
+  "notFound": {
+    "meta": {
+      "title": "Page not found — Elenia Bozzato",
+      "description": "The page you are looking for does not exist or has moved."
+    },
+    "eyebrow": "Error 404",
+    "title": "This page <em-magenta>DOES NOT EXIST</em-magenta>",
+    "text": "The link may be old or contain a mistake.",
+    "button": "Back to home"
+  }
+}
