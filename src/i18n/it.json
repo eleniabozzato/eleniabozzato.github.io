@@ -18,7 +18,37 @@
     "city": "Cordovado PN",
     "legal": "Elenia Bozzato • P.IVA 04701970271",
     "privacy": "Privacy Policy e Cookie Policy",
-    "copyright": "© Copyright 2026"
+    "copyright": "© Copyright 2026",
+    "links": {
+      "blog": "Approfondimenti",
+      "blogLabel": "Approfondimenti",
+      "all": "Tutti gli articoli",
+      "projects": "Progetti",
+      "projectsLabel": "Progetti"
+    }
+  },
+  "blog": {
+    "eyebrow": "Approfondimenti",
+    "readingTime": "min di lettura",
+    "project": "Il progetto",
+    "projects": "I progetti",
+    "related": "Leggi anche",
+    "readMore": "Leggi l\u2019articolo",
+    "breadcrumb": "Percorso",
+    "themes": {
+      "direzione": "Direzione del brand",
+      "rebranding": "Rebranding",
+      "identity": "Brand identity",
+      "professionisti": "Professionisti"
+    },
+    "index": {
+      "meta": {
+        "title": "Approfondimenti su brand e comunicazione \u2014 Elenia Bozzato",
+        "description": "Articoli su direzione del brand, rebranding, brand identity e comunicazione per piccole imprese e professionisti, con esempi da progetti reali."
+      },
+      "title": "<em-magenta>APPROFONDIMENTI</em-magenta>",
+      "intro": "Brevi guide su brand e comunicazione per piccole imprese e professionisti, con esempi dai progetti che ho seguito."
+    }
   },
   "gallery": {
     "prev": "Immagine precedente",

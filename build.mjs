@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEFAULT_LANG, SITE_URL, absoluteUrl, langs, linkHelpers, oldUrls, outPath, pageFiles, routes, urlPath } from './src/data/pages.mjs';
 import { projects } from './src/data/projects.mjs';
+import { articleFile, loadArticles } from './src/data/articles.mjs';
 import { head } from './src/partials/head.mjs';
 import { header } from './src/partials/header.mjs';
 import { footer } from './src/partials/footer.mjs';
@@ -48,12 +49,17 @@ const loadTexts = (lang) =>
   expandDeep(JSON.parse(fs.readFileSync(path.join(SRC, 'i18n', `${lang}.json`), 'utf8')));
 
 /* ── page wrapper: <head>, header, footer and scripts around a template's <main> ── */
-function page({ lang, t, href, layout, main, route }) {
-  const alternates = langs.map((l) => ({ lang: l, path: urlPath(l, route.files[l]), url: absoluteUrl(l, route.files[l]) }));
+function page({ lang, t, href, layout, main, route, footerLinks = null }) {
+  // Blog pages have no English version: the language selector sends English to the home page.
+  const alternates = route.blog
+    ? [{ lang: 'en', path: urlPath('en', 'index.html') }, { lang: 'it', path: urlPath('it', route.files.it) }]
+    : langs.map((l) => ({ lang: l, path: urlPath(l, route.files[l]), url: absoluteUrl(l, route.files[l]) }));
   const indexed = route.id !== 'notfound';
   // English pages send first-time Italian browsers to the same page under /it/ (see partials/head.mjs).
   const redirectTo = lang === DEFAULT_LANG ? urlPath('it', route.files.it) : null;
-  const seo = indexed
+  const seo = route.blog
+    ? layout.seo
+    : indexed
     ? {
         canonical: absoluteUrl(lang, route.files[lang]),
         alternates,
@@ -65,7 +71,7 @@ function page({ lang, t, href, layout, main, route }) {
   return `${headHtml}<body${layout.bodyAttrs || ''}>
 ${header({ t, href, projects, lang, alternates })}
 ${main}
-${footer({ t, href, cta: layout.footerCta !== false })}
+${footer({ t, href, cta: layout.footerCta !== false, links: footerLinks })}
   <script src="/assets/js/main.js"></script>
 ${(layout.scripts || []).map((s) => `  ${s}\n`).join('')}</body>
 </html>
@@ -92,7 +98,7 @@ function stub(to) {
 }
 
 /* ── sitemap: every indexed page in both languages, with hreflang alternates ── */
-function sitemap(all) {
+function sitemap(all, blogRoutes) {
   const entries = [];
   for (const route of all.filter((r) => r.id !== 'notfound')) {
     const alts = [
@@ -101,6 +107,8 @@ function sitemap(all) {
     ].join('\n');
     for (const l of langs) entries.push(`  <url>\n    <loc>${absoluteUrl(l, route.files[l])}</loc>\n${alts}\n  </url>`);
   }
+  // Blog (Italian only): no alternates.
+  for (const r of blogRoutes) entries.push(`  <url>\n    <loc>${absoluteUrl('it', r.files.it)}</loc>\n  </url>`);
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${entries.join('\n')}
@@ -114,31 +122,59 @@ async function build() {
   fs.mkdirSync(OUT, { recursive: true });
 
   const all = routes(projects);
+  const articles = loadArticles(projects);
+  // Blog routes (Italian only): the index, then one per article. Always built, even with no articles.
+  const blogRoutes = [
+    { id: 'blog', blog: true, files: { it: 'blog/index.html' } },
+    ...articles.map((a) => ({ id: `article:${a.slug}`, blog: true, article: a, files: { it: articleFile(a.slug) } })),
+  ];
+  // Footer link lists (Italian pages): 3 articles picked by context, plus the six projects.
+  const footerLinks = (route) => {
+    const pick = (list) => [...new Set(list)].slice(0, 3);
+    let list = articles.slice(0, 3);
+    if (route.article) list = route.article.related.map((s) => articles.find((x) => x.slug === s)).filter(Boolean);
+    else if (route.project) {
+      const own = articles.filter((a) => a.projectKeys.includes(route.project.key));
+      list = pick([...own, ...articles]);
+    }
+    return { articles: list.slice(0, 3), projects };
+  };
   const projectMod = await import('./src/pages/project.mjs');
 
   for (const lang of langs) {
     const t = loadTexts(lang);
     const href = linkHelpers(lang);
-    const ctx = { t, lang, href, projects, pageFiles: pageFiles[lang] };
+    const ctx = { t, lang, href, projects, articles, pageFiles: pageFiles[lang] };
 
     for (const route of all) {
       // Static pages: src/pages/<id>.mjs. Project pages share one template.
       const mod = route.project ? projectMod : await import(`./src/pages/${route.id}.mjs`);
       const c = route.project ? { ...ctx, project: route.project } : ctx;
-      const html = page({ lang, t, href, route, layout: mod.layout(c), main: mod.default(c) });
+      const footerLinksFor = lang === 'it' ? footerLinks(route) : null;
+      const html = page({ lang, t, href, route, layout: mod.layout(c), main: mod.default(c), footerLinks: footerLinksFor });
       writeFile(outPath(lang, route.files[lang]), html);
+    }
+
+    // Blog pages: Italian only.
+    if (lang === 'it') {
+      for (const route of blogRoutes) {
+        const mod = await import(`./src/pages/${route.article ? 'article' : 'blog'}.mjs`);
+        const c = route.article ? { ...ctx, article: route.article } : ctx;
+        const html = page({ lang, t, href, route, layout: mod.layout(c), main: mod.default(c), footerLinks: footerLinks(route) });
+        writeFile(outPath(lang, route.files.it), html);
+      }
     }
   }
 
   for (const [file, to] of Object.entries(oldUrls)) writeFile(file, stub(to));
-  writeFile('sitemap.xml', sitemap(all));
+  writeFile('sitemap.xml', sitemap(all, blogRoutes));
   writeFile('robots.txt', `User-agent: *\nDisallow:\n\nSitemap: ${SITE_URL}/sitemap.xml\n`);
 
   copyDir(path.join(ROOT, 'assets'), path.join(OUT, 'assets'));
   if (fs.existsSync(path.join(ROOT, 'CNAME'))) fs.copyFileSync(path.join(ROOT, 'CNAME'), path.join(OUT, 'CNAME'));
   writeFile('.nojekyll', '');
   const count = (d) => fs.readdirSync(d).filter((f) => f.endsWith('.html')).length;
-  console.log(`Built ${count(OUT)} root pages (en + stubs) and ${count(path.join(OUT, 'it'))} Italian pages -> dist/`);
+  console.log(`Built ${count(OUT)} root pages (en + stubs) and ${count(path.join(OUT, 'it'))} Italian pages (incl. blog: ${blogRoutes.length - 1} articles) -> dist/`);
 }
 
 await build();

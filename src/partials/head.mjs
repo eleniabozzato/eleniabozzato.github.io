@@ -1,5 +1,6 @@
 // <head> shared by every page. `css` is the page-specific stylesheet, `extra` any additional tags.
 // `seo` = { canonical, alternates: [{ lang, url }], defaultUrl, locale, redirectTo } (on the 404 page only `redirectTo` is set: no canonical or hreflang).
+// `seo.og` = [[property, content], ...] adds Open Graph tags after og:locale.
 // `redirectTo` is set on English pages only: the first script in <head> sends first-time Italian
 // browsers to the same page under /it/. A stored choice (localStorage.lang) stops it.
 const LOCALE = { en: 'en_US', it: 'it_IT' };
@@ -10,11 +11,14 @@ export function head({ lang, title, description, css, extra = [], seo, noindex }
     ? `  <script>var l;try{l=localStorage.lang}catch(e){}if(!l&&/^it/i.test((navigator.languages&&navigator.languages[0])||navigator.language||""))location.replace("${seo.redirectTo}"+location.search+location.hash)</script>\n`
     : '';
   const robots = noindex ? `  <meta name="robots" content="noindex" />\n` : '';
+  // Pages without a translation (blog) pass no `alternates`: canonical and og:locale only.
+  const alternates = seo?.alternates
+    ? `${seo.alternates.map((a) => `  <link rel="alternate" hreflang="${a.lang}" href="${a.url}" />\n`).join('')}  <link rel="alternate" hreflang="x-default" href="${seo.defaultUrl}" />\n`
+    : '';
   const links = seo?.canonical
     ? `  <link rel="canonical" href="${seo.canonical}" />
-${seo.alternates.map((a) => `  <link rel="alternate" hreflang="${a.lang}" href="${a.url}" />\n`).join('')}  <link rel="alternate" hreflang="x-default" href="${seo.defaultUrl}" />
-  <meta property="og:locale" content="${LOCALE[lang]}" />
-`
+${alternates}  <meta property="og:locale" content="${LOCALE[lang]}" />
+${(seo.og || []).map(([k, v]) => `  <meta property="${k}" content="${v}" />\n`).join('')}`
     : '';
   return `<!doctype html>
 <html lang="${lang}">

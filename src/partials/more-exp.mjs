@@ -4,17 +4,23 @@ import { projectName } from './util.mjs';
 
 const COPIES = 3;
 
-function card({ t, href, p, hidden }) {
+// The project card (also used by the blog articles): <a class="more-exp__card"> with photo, name and service.
+export function projectCard({ t, href, p, hidden = false, pad = 14 }) {
   const c = p.card;
+  const sp = ' '.repeat(pad);
   const style = c.style ? ` style="${c.style}"` : '';
+  return `${sp}<a class="more-exp__card" href="${href.project(p)}"${hidden ? ' tabindex="-1"' : ''}>
+${sp}  <span class="more-exp__media"><img src="${c.src}" srcset="${c.srcset}" sizes="340px" alt="" width="${c.width}" height="${c.height}"${style} loading="lazy" /></span>
+${sp}  <span class="more-exp__body">
+${sp}    <span class="project-name more-exp__name">${projectName(p)}</span>
+${sp}    <span class="more-exp__desc">${t.services[p.service].title}</span>
+${sp}  </span>
+${sp}</a>`;
+}
+
+function card({ t, href, p, hidden }) {
   return `            <li class="more-exp__item"${hidden ? ' aria-hidden="true"' : ''}>
-              <a class="more-exp__card" href="${href.project(p)}"${hidden ? ' tabindex="-1"' : ''}>
-                <span class="more-exp__media"><img src="${c.src}" srcset="${c.srcset}" sizes="340px" alt="" width="${c.width}" height="${c.height}"${style} loading="lazy" /></span>
-                <span class="more-exp__body">
-                  <span class="project-name more-exp__name">${projectName(p)}</span>
-                  <span class="more-exp__desc">${t.services[p.service].title}</span>
-                </span>
-              </a>
+${projectCard({ t, href, p, hidden })}
             </li>`;
 }
 
