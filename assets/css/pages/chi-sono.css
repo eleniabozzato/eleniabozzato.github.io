@@ -1,0 +1,101 @@
+/* ---------- Page: chi-sono ---------- */
+.cs { font-size: 15px; line-height: 1.4; }
+.cs .badge { --badge-size: 19px; }
+.cs-badge { --badge-lh: 1.2; --badge-gap: 0; text-align: center; }
+.cs-eyebrow { --badge-lh: 20px; --badge-gap: 22px; }
+
+/* Hero: full-width childhood photo */
+.cs-hero { border-bottom: var(--line-hairline); aspect-ratio: 1025 / 523; }
+.cs-hero img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Story */
+.cs-story {
+  padding: 34px var(--gutter) 52px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse calc(270px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 0% 55%, var(--glow-acqua)),
+    radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(340px * var(--glow-scale)) at 100% 50%, var(--glow-rosa));
+}
+.cs-story p { margin: 0 auto 21px; max-width: 760px; }
+.cs-h2 { font-size: 29.5px; font-weight: 800; line-height: 1.2; margin: 9px 0 12px; }
+.cs-h2 .italic-accent, .cs-h3 .italic-accent { font-size: 1.15em; font-weight: 400; }
+.cs-h3 { font-size: 30px; font-weight: 800; line-height: 28px; margin: 40px 0 0; }
+.cs-story__tight { margin-top: 4px; }
+
+/* Split: photo left, text right */
+.cs-split { display: grid; grid-template-columns: 1fr 1fr; border-top: var(--line-hairline); border-bottom: var(--line-hairline); }
+.cs-split__media { border-right: var(--line-hairline); min-height: 583px; position: relative; }
+.cs-split__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 29%; }
+.cs-split__text {
+  padding: 34px 44px 26px;
+  background: radial-gradient(ellipse calc(270px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 0% 52%, var(--glow-rosa));
+}
+.cs-split__text p { margin: 0 0 21px; }
+.cs-split__text p.cs-split__lead { margin-bottom: 2px; }
+.cs-split__text strong { font-weight: 700; }
+.cs-split__text p.cs-split__closing { margin: 0; font-size: 29px; font-weight: 800; line-height: 30px; }
+.cs-split__closing .italic-accent { font-size: 1.08em; font-weight: 400; }
+
+/* Values: accordion + vision / mission cards */
+.cs-values { padding: 50px var(--gutter) 57px; }
+.cs-accordion {
+  --accordion-max-w: 898px;
+  --accordion-gap: 18px;
+  --accordion-pt: 32px;
+  --accordion-pb-closed: 29px;
+  --accordion-px: 39px;
+  --accordion-pr: 38px;
+  --accordion-icon-dy: -3px;
+  --accordion-body-pad: 0 39px 32px;
+  --accordion-body-lh: 21px;
+  margin: 24px auto 0;
+}
+.cs-accordion .accordion__panel-content p { margin-top: 5px; }
+.cs-vm { max-width: 896px; margin: 18px auto 0; display: flex; flex-direction: column; gap: 18px; }
+.cs-card { border: var(--line-hairline); border-radius: 46px; padding: 32px 39px 31px; }
+.cs-card__title {
+  display: inline-block; font-size: 30px; font-weight: 700; line-height: 1.2; text-transform: uppercase; margin: 0 0 3px;
+  background: var(--grad-title); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.cs-card p { font-size: 30px; line-height: 42px; }
+
+/* Wide screens: hero stays full width but keeps the mockup height (523px) */
+@media (min-width: 768px) {
+  .cs-hero { aspect-ratio: auto; height: 523px; }
+  .cs-hero img { object-position: 50% 26%; }
+}
+
+@media (max-width: 767px) {
+  /* childhood photo: square, the girl (about 47% across the frame) centred */
+  .cs-hero { aspect-ratio: 1 / 1; }
+  .cs-hero img { object-position: 44% 50%; }
+  /* glows alternate (acqua high on the left, pink low on the right) instead of facing each other */
+  .cs-story {
+    background:
+      radial-gradient(ellipse calc(270px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 0% 22%, var(--glow-acqua)),
+      radial-gradient(ellipse calc(300px * var(--glow-scale)) calc(340px * var(--glow-scale)) at 100% 78%, var(--glow-rosa));
+  }
+  .cs-accordion {
+    --accordion-gap: var(--space-2);
+    --accordion-title-size: 22px;
+    --accordion-pt: 22px;
+    --accordion-pb-closed: 22px;
+    --accordion-px: 24px;
+    --accordion-pr: 22px;
+    --accordion-icon-w: 26px;
+    --accordion-icon-h: 30px;
+    --accordion-icon-dy: 0px;
+    --accordion-body-pad: 0 24px 24px;
+  }
+  .cs-split { grid-template-columns: 1fr; }
+  .cs-split__media { min-height: 0; aspect-ratio: 1 / 1; border-right: 0; border-bottom: var(--line-hairline); }
+  .cs-split__media img { object-position: 50% 8%; }
+  .cs-split__text { padding: 28px var(--gutter); }
+  .cs-story br, .cs-split__text br, .cs-accordion br, .cs-card br { display: none; }
+  .cs-h2 { font-size: 24px; }
+  .cs-h3 { font-size: 22px; line-height: 1.25; }
+  .cs-split__text p.cs-split__closing { font-size: 22px; line-height: 1.3; }
+  .cs-card { border-radius: 28px; padding: 22px 24px; }
+  .cs-card__title { font-size: 22px; }
+  .cs-card p { font-size: 18px; line-height: 1.6; }
+}

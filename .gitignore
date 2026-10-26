@@ -1,2 +1,8 @@
 media/
 .DS_Store
+# Design references and screenshots: local only, too heavy to publish on GitHub Pages
+/design/
+/Sito web Elenia Bozzato.pdf
+/*.png
+node_modules
+dist

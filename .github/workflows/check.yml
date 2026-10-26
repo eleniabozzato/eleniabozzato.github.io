@@ -1,0 +1,22 @@
+# Build and link checks only. The visual diff stays a local gate (`make visual`): main still holds
+# the old Mobirise site, so a diff against it would always fail.
+name: Check
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [redesign-2026]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node build.mjs
+      - run: node tools/links.mjs --no-build

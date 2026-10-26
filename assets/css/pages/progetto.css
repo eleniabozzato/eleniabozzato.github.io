@@ -1,0 +1,144 @@
+/* ---------- Page: progetto (case-study template, shared by all project pages) ----------
+   Per-project hero crop: set --hero-pos on the hero <img> (style attribute), e.g. style="--hero-pos: 70% 50%".
+   A cover that is only a logo on a flat colour must not be cropped on wide screens:
+   set style="--hero-fit: contain; --hero-bg: <cover colour>" instead.
+   Project-only components (client logo, gallery carousel, "more experiences" marquee)
+   live here; the accordion, quote card, carousel and arrow come from style.css. */
+
+/* ---------- Hero ---------- */
+.hero-split__media img { object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); }
+.hero-split--glow .hero-split__text {
+  background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at 92% 48%, var(--glow-acqua)), var(--white);
+}
+.hero-split__text { padding: 3rem var(--gutter); }
+.hero-split__project-name {
+  --pn-size: 3.17rem;
+  --pn-weight: 300;
+  --pn-accent-size: 3.03rem;
+  --pn-accent-lh: 0.95;
+  margin-bottom: var(--space-2);
+}
+.hero-split__tagline {
+  font-size: 1.85rem; line-height: 1.43; font-weight: 700; margin-bottom: 0.9rem;
+}
+
+/* ---------- Client logo ---------- */
+.client-logo { display: flex; justify-content: center; padding: 42px 0 0; }
+.client-logo img { width: 300px; max-width: 300px; height: auto; }
+.client-logo--wide img { width: 330px; max-width: 330px; }
+/* Carrozzeria: a flat wordmark, so it needs twice the width to weigh as much as the Dentisti and Al Plan logos */
+.client-logo--xwide img { width: 600px; max-width: 600px; }
+
+/* ---------- Content: accordion, gallery, testimonial ---------- */
+main > .section { padding: 44px 0 64px; }
+.accordion__panel-content p { max-width: 712px; margin: 0 0 1.4em; }
+.accordion__panel-content p:last-child { margin-bottom: 0; }
+.accordion__panel-content ul { margin-top: 4px; padding-left: 25px; font-size: 0.875rem; }
+
+/* Gallery inside an accordion panel: arrows sit in the side gutters */
+.gallery-carousel { max-width: none; margin: 34px 0 16px; padding: 0 78px; }
+.gallery-carousel .carousel__slide img { display: block; width: 100%; height: auto; aspect-ratio: 900 / 700; }
+.gallery-carousel .carousel__btn--prev { left: -2px; }
+.gallery-carousel .carousel__btn--next { right: -2px; }
+/* Standalone photo carousel under the testimonial (Al Plan Hotel): 5:4 photos, arrows outside the image */
+.gallery-carousel--standalone { max-width: 900px; margin: 56px auto 0; padding: 0 117px; }
+.gallery-carousel--standalone .carousel__slide img { aspect-ratio: 5 / 4; object-fit: cover; }
+
+.testimonial-card {
+  --quote-pad: 39px 40px 41px;
+  --quote-lh: 1.4;
+  --quote-gap: 1.7rem;
+  max-width: 898px;
+  margin: var(--space-2) auto 0;
+}
+.testimonial-card .quote-card__role { line-height: 1.35; }
+
+/* ---------- "Vedi le altre esperienze": slow marquee of the other projects ----------
+   The track holds 3 identical sets (1 real + 2 aria-hidden) and slides by one set, so the loop is seamless
+   as long as one set is not narrower than the screen. */
+main > .section.more-exp { padding: 56px 0 64px; border-top: var(--line-hairline); text-align: center; }
+.more-exp__head { padding: 0 var(--gutter); margin-bottom: 36px; }
+/* Scroll container moved by main.js (auto-advance, swipe, wheel, mouse drag); no scrollbar.
+   Hover does not pause it (it made the cards hard to follow). */
+.more-exp__marquee { overflow-x: auto; overflow-y: clip; scrollbar-width: none; overscroll-behavior-x: contain; cursor: grab; }
+.more-exp__marquee::-webkit-scrollbar { display: none; }
+.more-exp__marquee.is-dragging { cursor: grabbing; user-select: none; }
+.more-exp__marquee img { -webkit-user-drag: none; }
+.more-exp__track {
+  --card-w: 340px; --card-gap: var(--space-3);
+  display: flex; width: max-content; margin: 0; padding: 0; list-style: none; text-align: left;
+}
+.more-exp__item { flex: none; width: var(--card-w); margin-right: var(--card-gap); }
+.more-exp__card {
+  display: flex; flex-direction: column; height: 100%; border: var(--line-hairline); border-radius: var(--radius-lg);
+  overflow: clip; background: var(--white); color: var(--ink);
+}
+.more-exp__card:hover, .more-exp__card:focus-visible { background: var(--grad-brand-soft); }
+.more-exp__media { display: block; aspect-ratio: 4 / 3; overflow: hidden; }
+.more-exp__media img { display: block; width: 100%; height: 100%; object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); object-position: var(--card-pos, 50% 25%); }
+.more-exp__body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 28px; text-align: center; }
+.more-exp__name { --pn-size: 2rem; --pn-lh: 1.05; --pn-accent-size: 2.1rem; }
+.more-exp__desc { font-size: 1rem; line-height: 1.4; }
+@media (prefers-reduced-motion: reduce) {
+  .more-exp__item[aria-hidden="true"] { display: none; }
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 1024px) {
+  .hero-split__text { height: 513px; padding: 121px 4rem 0 68px; justify-content: flex-start; }
+  .hero-split__media { height: 513px; }
+  .hero-split__media img {
+    width: calc(100% + 95px); height: 513px; max-width: none; margin: 0 0 0 -46px;
+    object-position: var(--hero-pos, 50% 45.7%);
+  }
+}
+@media (min-width: 1025px) {
+  /* full-bleed: text column keeps the design split, photo grows to the right edge */
+  .hero-split { grid-template-columns: calc(var(--bleed) + 512.5px) 1fr; }
+  .hero-split__text { padding-left: calc(var(--bleed) + 68px); }
+  .hero-split--glow .hero-split__text {
+    background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at calc(100% - 41px) 48%, var(--glow-acqua)), var(--white);
+  }
+}
+@media (min-width: 1800px) {
+  .hero-split__media img { object-position: var(--hero-pos, 50% 31%); }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+  .br-desk { display: none; }
+  .hero-split__media img { object-position: var(--hero-pos, 50% 50%); }
+  /* glow enters from the right edge instead of sitting under the text */
+  .hero-split--glow .hero-split__text {
+    background: radial-gradient(ellipse calc(240px * var(--glow-scale)) calc(290px * var(--glow-scale)) at 100% 40%, var(--glow-acqua)), var(--white);
+  }
+  .hero-split__project-name { --pn-size: 2.4rem; --pn-accent-size: 2.3rem; }
+  .hero-split__tagline { font-size: 1.4rem; }
+  .client-logo img { width: 200px; max-width: 60%; }
+  .client-logo--wide img { width: 220px; max-width: 65%; }
+  .client-logo--xwide img { width: 300px; max-width: 80%; }
+
+  .accordion {
+    --accordion-title-size: 1.4rem;
+    --accordion-pt: 22px;
+    --accordion-px: 20px;
+    --accordion-gap-x: var(--space-1);
+    --accordion-icon-w: 26px;
+    --accordion-icon-h: 30px;
+    --accordion-body-pad: 4px 20px 24px;
+  }
+
+  /* Full-width slides: the arrows sit on the slide edges, in a white disc */
+  .gallery-carousel { padding: 0; margin: 24px 0 8px; }
+  .gallery-carousel .carousel__btn {
+    width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 255, 255, 0.85);
+  }
+  .gallery-carousel .carousel__btn .arrow { --arrow-w: 22px; --arrow-h: 13.2px; }
+  .gallery-carousel .carousel__btn--prev { left: 6px; }
+  .gallery-carousel .carousel__btn--next { right: 6px; }
+  .testimonial-card { --quote-pad: 28px 22px; }
+  .testimonial-card .quote-card__quote { font-size: 1.05rem; }
+
+  .more-exp__track { --card-w: 260px; --card-gap: var(--space-2); }
+  .more-exp__name { --pn-size: 1.7rem; --pn-accent-size: 1.8rem; }
+}

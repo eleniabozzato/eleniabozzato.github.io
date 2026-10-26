@@ -1,0 +1,336 @@
+// Elenia Bozzato — main.js
+// Nav mobile toggle, active nav link, accordion, reviews carousel.
+(function () {
+  "use strict";
+
+  // User-facing strings that JS creates, by page language (<html lang>).
+  const STRINGS = {
+    it: { toTop: "Torna su", goToReview: "Vai alla recensione " },
+    en: { toTop: "Back to top", goToReview: "Go to review " },
+  };
+  const lang = document.documentElement.lang;
+  const S = STRINGS[lang] || STRINGS.en;
+
+  /* ---------- Mobile nav toggle ---------- */
+  function initNav() {
+    const toggle = document.querySelector(".nav__toggle");
+    const menu = document.querySelector(".nav__menu");
+    if (!toggle || !menu) return;
+
+    // Lock scroll on <html>, not <body>: overflow on body (with html non-visible) makes body its
+    // own scroll container, which resets scroll to 0 and takes the sticky header with it.
+    function lockScroll(lock) {
+      document.documentElement.style.overflow = lock ? "hidden" : "";
+    }
+
+    toggle.addEventListener("click", function () {
+      const isOpen = menu.getAttribute("data-open") === "true";
+      menu.setAttribute("data-open", String(!isOpen));
+      toggle.setAttribute("aria-expanded", String(!isOpen));
+      lockScroll(!isOpen);
+    });
+
+    // Close menu when a link is clicked (mobile)
+    menu.querySelectorAll("a.nav__link").forEach(function (link) {
+      link.addEventListener("click", function () {
+        menu.setAttribute("data-open", "false");
+        toggle.setAttribute("aria-expanded", "false");
+        lockScroll(false);
+      });
+    });
+  }
+
+  /* ---------- Nav drop-downs (Esperienze, language selector) ----------
+     Desktop: opens on hover and on the chevron, closes on mouse leave (short delay),
+     Escape, outside click and when focus leaves. Mobile: chevron toggles the sub-list. */
+  function initSubmenu(item) {
+    const toggle = item.querySelector(".nav__sub-toggle");
+    const isLang = item.classList.contains("nav__item--lang");
+    const desktop = window.matchMedia("(min-width: 768px)");
+    let timer;
+
+    function setOpen(open) {
+      clearTimeout(timer);
+      item.setAttribute("data-open", String(open));
+      toggle.setAttribute("aria-expanded", String(open));
+    }
+
+    if (isLang) {
+      // Remember the choice: English pages stop redirecting Italian browsers (see the script in <head>).
+      item.querySelectorAll("[data-lang]").forEach(function (link) {
+        link.addEventListener("click", function () {
+          try { localStorage.setItem("lang", link.dataset.lang); } catch (e) {}
+        });
+      });
+      // The label is a plain element: on mobile, tapping it opens the list like the chevron does.
+      const label = item.querySelector(".nav__link");
+      if (label) label.addEventListener("click", function () {
+        if (!desktop.matches) setOpen(item.getAttribute("data-open") !== "true");
+      });
+    } else {
+      // Current project in the list, from the URL filename
+      const current = window.location.pathname.split("/").pop() || "index.html";
+      let onProject = false;
+      item.querySelectorAll(".nav__sublink").forEach(function (link) {
+        if (link.getAttribute("href").split("/").pop() === current) {
+          link.setAttribute("aria-current", "page");
+          onProject = true;
+        }
+      });
+      // On a project page the mobile list starts open: sibling projects are one tap away.
+      if (onProject && !desktop.matches) setOpen(true);
+    }
+
+    toggle.addEventListener("click", function () {
+      setOpen(item.getAttribute("data-open") !== "true");
+    });
+    item.addEventListener("pointerenter", function (e) {
+      if (desktop.matches && e.pointerType === "mouse") setOpen(true);
+    });
+    item.addEventListener("pointerleave", function (e) {
+      if (!desktop.matches || e.pointerType !== "mouse") return;
+      clearTimeout(timer);
+      timer = setTimeout(function () { setOpen(false); }, 200);
+    });
+    item.addEventListener("focusout", function (e) {
+      if (desktop.matches && !item.contains(e.relatedTarget)) setOpen(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape" || item.getAttribute("data-open") !== "true") return;
+      const hadFocus = item.contains(document.activeElement);
+      setOpen(false);
+      if (hadFocus) toggle.focus();
+    });
+    document.addEventListener("click", function (e) {
+      if (desktop.matches && !item.contains(e.target)) setOpen(false);
+    });
+    desktop.addEventListener("change", function () { setOpen(false); });
+  }
+
+  /* ---------- Active nav link ---------- */
+  function initActiveLink() {
+    // Project pages set <body data-nav-current="<file of the Projects page>"> to highlight their section.
+    // Links are root-absolute ("/it/chi-sono.html", "/" for the home page): compare file names.
+    const file = function (path) { return path.split("/").pop() || "index.html"; };
+    const current = document.body.dataset.navCurrent || file(window.location.pathname);
+    document.querySelectorAll("a.nav__link").forEach(function (link) {
+      if (file(link.getAttribute("href")) === current) {
+        link.setAttribute("aria-current", "page");
+      }
+    });
+  }
+
+  /* ---------- Accordion ----------
+     Items start closed and toggle independently (not single-open).
+     A link to page.html#<item-id> opens that item and scrolls to it,
+     e.g. the home services pills linking into the "How I work" page. */
+  function setAccordionItem(item, open) {
+    const trigger = item.querySelector(".accordion__trigger");
+    item.setAttribute("data-open", String(open)); // CSS turns the arrow
+    if (trigger) trigger.setAttribute("aria-expanded", String(open));
+  }
+
+  function openAccordionFromHash() {
+    if (!window.location.hash) return;
+    const item = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    if (!item || !item.classList.contains("accordion__item")) return;
+    setAccordionItem(item, true);
+    item.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function initAccordions() {
+    document.querySelectorAll(".accordion__item").forEach(function (item) {
+      const trigger = item.querySelector(".accordion__trigger");
+      if (!trigger) return;
+      trigger.addEventListener("click", function () {
+        setAccordionItem(item, item.getAttribute("data-open") !== "true");
+      });
+    });
+    openAccordionFromHash();
+    window.addEventListener("hashchange", openAccordionFromHash);
+  }
+
+  /* ---------- Reviews / gallery carousel ---------- */
+  function initCarousels() {
+    document.querySelectorAll(".carousel").forEach(function (carousel) {
+      const track = carousel.querySelector(".carousel__track");
+      const slides = carousel.querySelectorAll(".carousel__slide");
+      const prevBtn = carousel.querySelector(".carousel__btn--prev");
+      const nextBtn = carousel.querySelector(".carousel__btn--next");
+      const dotsWrap = carousel.querySelector(".carousel__dots");
+      if (!track || slides.length === 0) return;
+
+      let index = 0;
+
+      // Build dots
+      let dots = [];
+      if (dotsWrap) {
+        dotsWrap.innerHTML = "";
+        slides.forEach(function (_, i) {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "carousel__dot";
+          dot.setAttribute("aria-label", S.goToReview + (i + 1));
+          dot.addEventListener("click", function () {
+            goTo(i);
+          });
+          dotsWrap.appendChild(dot);
+        });
+        dots = dotsWrap.querySelectorAll(".carousel__dot");
+      }
+
+      function update() {
+        // --slide-gap (optional, on the track) is the flex gap between slides
+        track.style.transform = "translateX(calc(" + -index + " * (100% + var(--slide-gap, 0px))))";
+        // Opt-in: size the viewport to the active slide (slides have different lengths)
+        if (carousel.classList.contains("carousel--auto-height")) {
+          const viewport = carousel.querySelector(".carousel__viewport");
+          const card = slides[index].firstElementChild;
+          if (viewport && card) viewport.style.height = card.offsetHeight + "px";
+        }
+        dots.forEach(function (dot, i) {
+          dot.setAttribute("aria-current", String(i === index));
+        });
+      }
+
+      function goTo(i) {
+        index = (i + slides.length) % slides.length;
+        update();
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", function () {
+          goTo(index - 1);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener("click", function () {
+          goTo(index + 1);
+        });
+      }
+
+      update();
+      window.addEventListener("resize", update);
+    });
+  }
+
+  // Back-to-top: markup is injected so it stays identical on every page.
+  function initToTop() {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "to-top";
+    btn.setAttribute("aria-label", S.toTop);
+    btn.innerHTML =
+      '<svg class="arrow arrow--up" viewBox="0 0 34 40" aria-hidden="true"><path d="M17 39V3M3 17L17 2l14 15"/></svg>';
+    document.body.appendChild(btn);
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    function toggle() {
+      btn.classList.toggle("is-visible", window.scrollY > window.innerHeight);
+    }
+    btn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: reduce.matches ? "auto" : "smooth" });
+    });
+    window.addEventListener("scroll", toggle, { passive: true });
+    toggle();
+  }
+
+  // WhatsApp: the number is base64 in data-wa and decoded only on click, so it is not
+  // in the HTML as plain text for scrapers. Without JS the link falls back to the contact page.
+  function initWhatsApp() {
+    document.querySelectorAll("[data-wa]").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        const number = atob(link.dataset.wa).replace(/\D/g, "");
+        window.open("https://wa.me/" + number, "_blank", "noopener");
+      });
+    });
+  }
+
+  // "More experiences" marquee: a scroll container that also drifts by itself. Markup holds one
+  // visible set plus two aria-hidden copies; passing the 2nd set jumps back one set width, which
+  // is invisible. User input (swipe, wheel, drag, focus) pauses the drift for a while.
+  function initMarquees() {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const SPEED = 30;   // px per second
+    const RESUME = 2000; // ms after the last input
+    document.querySelectorAll(".more-exp__marquee").forEach(function (box) {
+      const track = box.querySelector(".more-exp__track");
+      if (!track) return;
+      track.querySelectorAll('[aria-hidden="true"] a').forEach(function (a) { a.tabIndex = -1; });
+      let paused = false, timer = 0, pos = 0, last = 0, dragging = false, moved = false, startX = 0, startLeft = 0;
+      const setW = function () { return track.scrollWidth / 3; };
+      const wrap = function (x) {
+        const w = setW();
+        if (!w || reduce.matches) return x;
+        while (x >= 2 * w) x -= w;
+        while (x < 1) x += w;
+        return x;
+      };
+      const pause = function () { paused = true; clearTimeout(timer); };
+      const later = function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () { pos = box.scrollLeft; paused = false; }, RESUME);
+      };
+      if (!reduce.matches) { box.scrollLeft = pos = setW(); }
+
+      function tick(now) {
+        const dt = Math.min(now - last, 100); last = now;
+        if (!paused && !dragging && !reduce.matches) {
+          pos = wrap(pos + SPEED * dt / 1000);
+          box.scrollLeft = pos;
+        }
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(function (now) { last = now; tick(now); });
+
+      // keep the loop seamless while the user scrolls, drags or swipes backwards
+      box.addEventListener("scroll", function () {
+        const x = box.scrollLeft, y = wrap(x);
+        if (y !== x) { box.scrollLeft = y; if (dragging) startLeft += y - x; pos = y; }
+      }, { passive: true });
+      box.addEventListener("touchstart", pause, { passive: true });
+      box.addEventListener("touchend", later, { passive: true });
+      box.addEventListener("touchcancel", later, { passive: true });
+      box.addEventListener("wheel", function (e) {
+        if (e.shiftKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) { pause(); later(); }
+      }, { passive: true });
+      box.addEventListener("focusin", pause);
+      box.addEventListener("focusout", later);
+
+      // mouse drag (touch and pen scroll natively); a drag must not open the card
+      box.addEventListener("pointerdown", function (e) {
+        if (e.pointerType !== "mouse" || e.button !== 0) return;
+        pause(); dragging = true; moved = false; startX = e.clientX; startLeft = box.scrollLeft;
+      });
+      box.addEventListener("pointermove", function (e) {
+        if (!dragging) return;
+        const dx = e.clientX - startX;
+        if (!moved && Math.abs(dx) > 5) {
+          moved = true; box.classList.add("is-dragging"); box.setPointerCapture(e.pointerId);
+        }
+        if (moved) box.scrollLeft = startLeft - dx;
+      });
+      const end = function () {
+        if (!dragging) return;
+        dragging = false; box.classList.remove("is-dragging"); later();
+      };
+      box.addEventListener("pointerup", end);
+      box.addEventListener("pointercancel", end);
+      box.addEventListener("dragstart", function (e) { e.preventDefault(); });
+      box.addEventListener("click", function (e) {
+        if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; }
+      }, true);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initToTop();
+    initWhatsApp();
+    initNav();
+    initActiveLink();
+    document.querySelectorAll(".nav__item--has-sub").forEach(initSubmenu);
+    initAccordions();
+    initCarousels();
+    initMarquees();
+  });
+})();

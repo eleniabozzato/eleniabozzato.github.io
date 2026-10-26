@@ -1,0 +1,982 @@
+/* =========================================================================
+   Elenia Bozzato — shared styles
+
+   Contents
+   1. Fonts
+   2. Design tokens (:root)
+   3. Reset and base elements
+   4. Layout (container, section, bleed)
+   5. Typography (italic accent, badge, section title, project name)
+   6. Components
+      6.1  Button
+      6.2  Arrow icon
+      6.3  Nav and Esperienze drop-down
+      6.4  Hero split
+      6.5  Accordion
+      6.6  Carousel
+      6.7  Quote card
+      6.8  Footer
+      6.9  Back-to-top
+   Page files (assets/css/pages/*.css) only hold what is specific to one page:
+   layout, copy sizes and per-component overrides set through custom properties.
+
+   Media queries: each component keeps its own desktop (min-width: 1024px / 1025px)
+   and mobile (max-width: 767px) rules right after its base rules, so one component
+   reads top to bottom in one place. There is no block of responsive rules at the end.
+   ========================================================================= */
+
+/* ---------- 1. Fonts ---------- */
+@font-face {
+  font-family: "Bauer Bodoni";
+  src: url("../fonts/bauer-bodoni.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- 2. Design tokens ---------- */
+:root {
+  /* Colour */
+  --magenta: #f7007f;
+  --acqua: #0cc0df;
+  --ink: #000000;
+  --white: #ffffff;
+  --icon-dark: #1c1c2e;
+  --grad-brand: linear-gradient(90deg, #f9c3de, #b6ecf8);
+  --grad-brand-soft: linear-gradient(90deg, rgba(245, 35, 125, 0.12), rgba(12, 193, 224, 0.12));
+  --grad-social: linear-gradient(90deg, #f6c3de, #b8e6f4);
+  --grad-title: linear-gradient(90deg, #f7b9d8, #b5ecf8); /* gradient text: accordion and card titles */
+
+  /* Soft glows (Canva spec: very blurred acqua and pink circles). Use as the colour
+     stops of a radial-gradient. The stops follow the bell-shaped fade measured on
+     the PDF, so the ellipse has no visible edge. Multiply glow sizes by
+     --glow-scale, which shrinks them on mobile. */
+  --glow-acqua: rgb(187 242 253) 0%, rgb(187 242 253 / 0.9) 20%, rgb(187 242 253 / 0.68) 40%, rgb(187 242 253 / 0.42) 60%, rgb(187 242 253 / 0.2) 80%, rgb(187 242 253 / 0) 100%;
+  --glow-rosa: rgb(251 200 221) 0%, rgb(251 200 221 / 0.9) 20%, rgb(251 200 221 / 0.68) 40%, rgb(251 200 221 / 0.42) 60%, rgb(251 200 221 / 0.2) 80%, rgb(251 200 221 / 0) 100%;
+  --glow-scale: 1;
+
+  /* Type */
+  --font-ui: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Bauer Bodoni", "Bodoni Moda", Georgia, serif;
+  --fs-display: 2.5rem;    /* section titles, project names, home question */
+  --fs-title: 1.875rem;    /* pill cards, accordion titles */
+  --fs-lead: 1.25rem;      /* eyebrows, descriptions, quotes */
+  --fs-body: 0.9375rem;    /* running text, nav links */
+  --lh-lead: 28px;         /* line height that goes with --fs-lead on desktop */
+  --lh-body-mobile: 1.4;   /* body copy on mobile = home split text (21px / 15px) */
+
+  /* Line: the one stroke width for dividers, borders and icon strokes */
+  --line: #000000;
+  --line-w: 2px;
+  --line-hairline: var(--line-w) solid var(--line);
+
+  /* Spacing scale (only the steps that repeat) */
+  --space-1: 0.5rem;       /* 8px  */
+  --space-2: 1rem;         /* 16px: gap between accordion items, form fields, mobile cards */
+  --space-3: 1.5rem;       /* 24px: gap between marquee cards and carousel slides */
+  --space-4: 2.5rem;       /* 40px */
+  --section-y: 3.25rem;    /* vertical padding of a section */
+
+  /* Radii */
+  --radius-pill: 999px;
+  --radius-lg: 32px;       /* project cards */
+  --radius-md: 20px;       /* drop-down panel */
+  --radius-card: 40px;     /* quote cards */
+  --radius-accordion: 50px; /* half the closed height: a pill closed, same shape open */
+
+  --shadow-soft: 0 12px 40px rgba(17, 17, 17, 0.08);
+
+  /* Motion */
+  --dur-fast: 0.2s;
+  --dur-base: 0.3s;
+  --dur-slow: 0.55s;       /* accordion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Stacking */
+  --z-behind: -1;
+  --z-raised: 2;
+  --z-to-top: 40;
+  --z-header: 100;
+
+  /* Component sizes */
+  --btn-h: 45px;
+  --social-size: 76px;
+  --to-top-size: 48px;
+  --to-top-offset: 16px;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: clamp(1.25rem, 6.15vw, 5rem);
+  --nav-h: 116px;
+}
+
+/* The page is designed at 1025px and zoomed up to 1440px by assets/js/scale.js.
+   Past that the zoom stops and the layout gets wider than the design: content
+   stays centred at the design width, while backgrounds, lines and edge images
+   run full-bleed. Full-bleed blocks pad their content with --bleed-pad
+   (percentages resolve against the block's own parent, so use it on blocks
+   that span the full page width). Fixed px gutter so it zooms with the page. */
+@media (min-width: 1025px) {
+  :root {
+    --design-w: 1025px;
+    --container: 1025px;
+    --gutter: 63px;
+    --bleed: max(0px, calc((100% - var(--design-w)) / 2));
+    --bleed-pad: calc(var(--bleed) + var(--gutter));
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --nav-h: 68px;
+    --glow-scale: 0.6;
+    --radius-accordion: 37px;
+    --social-size: 64px;
+  }
+}
+
+/* ---------- 3. Reset and base elements ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip; /* off-canvas mobile menu must not widen the page */
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-ui);
+  color: var(--ink);
+  background: var(--white);
+  overflow-x: clip; /* clip, not hidden: hidden makes body a scroll container and breaks the sticky header */
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.accordion__trigger:focus-visible {
+  outline: 3px solid var(--acqua);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- 4. Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.section {
+  padding: var(--section-y) 0;
+}
+.section__head {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3rem;
+}
+@media (max-width: 767px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+}
+
+/* ---------- 5. Typography ---------- */
+/* Headline accent word: <span class="italic-accent italic-accent--magenta|--acqua">WORD</span> */
+.italic-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+.italic-accent--magenta { color: var(--magenta); }
+.italic-accent--acqua { color: var(--acqua); }
+
+/* Eyebrow above a title. Sizes come from custom properties, so a page tunes one
+   badge without restyling it. --block turns it into a block-level line. */
+.badge {
+  display: inline-block;
+  font-size: var(--badge-size, var(--fs-lead));
+  font-weight: 400;
+  line-height: var(--badge-lh, 1.35);
+  text-transform: uppercase;
+  color: var(--magenta);
+  margin-bottom: var(--badge-gap, 0.75rem);
+}
+.badge--acqua { color: var(--acqua); }
+.badge--block { display: block; }
+
+.section-title {
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: 42px;
+}
+.section-title .italic-accent { font-size: 1.05em; }
+.section-title--lg { line-height: 48px; }
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 1.7rem;
+    line-height: 1.2;
+  }
+}
+
+/* Project name: a regular-weight line plus the accent word on its own line.
+   Used by the home and Esperienze cards, the "more experiences" cards and the project hero. */
+.project-name {
+  font-size: var(--pn-size, var(--fs-display));
+  font-weight: var(--pn-weight, 400);
+  line-height: var(--pn-lh, 1);
+}
+.project-name .italic-accent {
+  display: block;
+  font-size: var(--pn-accent-size, 1em);
+  line-height: var(--pn-accent-lh, inherit);
+}
+
+/* ---------- 6.1 Button ----------
+   Brand gradient and black border by default; white on hover and focus. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  justify-content: center;
+  height: var(--btn-h);
+  padding: 0 1.35rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  border: var(--line-hairline);
+  background: var(--grad-social);
+  color: var(--ink);
+  transition: transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease, background var(--dur-fast) ease, color var(--dur-fast) ease;
+  white-space: nowrap;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+.btn:hover,
+.btn:focus-visible {
+  background: var(--white);
+}
+
+/* ---------- 6.2 Arrow icon ----------
+   One inline SVG for every arrow on the site. The stroke is non-scaling, so it is
+   --line-w at any size (a scaled viewBox would thin it). Draw the path in the
+   viewBox and size the icon with --arrow-w / --arrow-h.
+     <svg class="arrow arrow--right" viewBox="0 0 40 24"><path d="M1 12h37M27 1l11 11-11 11"/></svg>
+     <svg class="arrow arrow--up" viewBox="0 0 34 40"><path d="M17 39V3M3 17L17 2l14 15"/></svg> */
+.arrow {
+  flex-shrink: 0;
+  width: var(--arrow-w);
+  height: var(--arrow-h);
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.arrow path {
+  stroke-width: var(--line-w);
+  vector-effect: non-scaling-stroke;
+}
+.arrow--right { --arrow-w: 40px; --arrow-h: 24px; }
+.arrow--up { --arrow-w: 34px; --arrow-h: 40px; }
+
+/* ---------- 6.3 Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: var(--white);
+  border-bottom: var(--line-hairline);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--nav-h) - 1px);
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-weight: 700;
+  font-size: var(--fs-lead);
+  color: var(--ink);
+}
+.nav__brand img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: var(--space-1);
+  flex-direction: column;
+  gap: 5px;
+}
+.nav__toggle span {
+  display: block;
+  width: 26px;
+  height: var(--line-w);
+  background: var(--ink);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 1.375rem;
+}
+
+.nav__link {
+  position: relative;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  color: var(--ink);
+  padding-bottom: 2px;
+}
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--line-w);
+  background: var(--magenta);
+  transform: scaleX(0);
+  transition: transform var(--dur-fast) ease;
+}
+.nav__link:hover::after {
+  transform: scaleX(1);
+}
+.nav__link[aria-current="page"] {
+  color: var(--magenta);
+  font-weight: 700;
+}
+.nav__link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Esperienze drop-down: chevron toggle + project list. Closed = visibility: hidden,
+   so the links leave the tab order. */
+.nav__item--has-sub {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.nav__sub-toggle {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.nav__sub-toggle::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: var(--line-w) solid currentColor;
+  border-bottom: var(--line-w) solid currentColor;
+  transform: translate(-50%, -70%) rotate(45deg);
+  transition: transform var(--dur-fast) ease;
+}
+.nav__sub-toggle[aria-expanded="true"]::before {
+  transform: translate(-50%, -30%) rotate(-135deg);
+}
+.nav__sub-toggle:hover,
+.nav__sub-toggle:focus-visible,
+.nav__sublink:hover,
+.nav__sublink:focus-visible,
+.nav__sublink[aria-current="page"] {
+  color: var(--magenta);
+}
+.nav__sublink[aria-current="page"] {
+  font-weight: 700;
+}
+.nav__sub {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.18s ease, visibility 0s linear 0.18s;
+}
+.nav__item--has-sub[data-open="true"] .nav__sub {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+.nav__sublink {
+  display: block;
+  font-size: var(--fs-body);
+  color: var(--ink);
+}
+/* Language selector: the label is not a link, the whole row opens the list. */
+.nav__link--lang {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .nav__item--has-sub {
+    position: relative;
+    align-self: stretch; /* the hover area reaches the header line, so the panel is not left behind */
+  }
+  .nav__sub {
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    z-index: 1;
+    min-width: 230px;
+    margin-top: var(--space-1);
+    padding: var(--space-1);
+    background: var(--white);
+    border: var(--line-hairline);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+  }
+  .nav__sublink {
+    padding: 0.625rem 0.875rem;
+    white-space: nowrap;
+  }
+  /* Language selector sits at the right edge: open the panel leftwards so it stays on screen. */
+  .nav__item--lang .nav__sub {
+    left: auto;
+    right: -0.5rem;
+    min-width: 150px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav__toggle { display: none; }
+}
+
+@media (max-width: 767px) {
+  .nav__menu {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    padding: var(--space-3) var(--gutter);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform var(--dur-base) ease, visibility 0s linear var(--dur-base);
+    overflow-y: auto;
+  }
+  .nav__menu[data-open="true"] {
+    transform: translateX(0);
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  .nav__link {
+    display: block;
+    width: 100%;
+    padding: var(--space-2) 0;
+    border-bottom: var(--line-w) solid rgba(17, 17, 17, 0.06);
+    font-size: 1.05rem;
+  }
+  .nav__toggle {
+    display: flex;
+  }
+  .nav__menu > li {
+    width: 100%;
+  }
+  .nav__item--has-sub {
+    flex-wrap: wrap;
+    gap: 0;
+    border-bottom: var(--line-w) solid rgba(17, 17, 17, 0.06);
+  }
+  .nav__item--has-sub > .nav__link {
+    flex: 1;
+    width: auto;
+    border-bottom: none;
+  }
+  .nav__sub-toggle {
+    width: 48px;
+    height: 48px;
+  }
+  .nav__sub {
+    display: none;
+    flex-basis: 100%;
+    padding: 0 0 var(--space-1) var(--space-2);
+    visibility: visible;
+    opacity: 1;
+  }
+  .nav__item--has-sub[data-open="true"] .nav__sub {
+    display: block;
+  }
+  .nav__sublink {
+    padding: 0.8125rem 0;
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__sub,
+  .nav__sub-toggle::before {
+    transition: none;
+  }
+}
+
+/* ---------- 6.4 Hero split ----------
+   Photo and text side by side from 1024px, stacked below. The photo may come first
+   or last in the markup: its divider line sits on the side facing the text.
+   Used by Come lavoro and the project pages. */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--white);
+  border-bottom: var(--line-hairline);
+}
+.hero-split__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.hero-split__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-split__text {
+  padding: var(--space-4) var(--gutter);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero-split__eyebrow {
+  --badge-lh: 1.2;
+  --badge-gap: 0.7rem;
+}
+
+@media (min-width: 1024px) {
+  .hero-split {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-split__media {
+    aspect-ratio: auto;
+  }
+  .hero-split__media:first-child { border-right: var(--line-hairline); }
+  .hero-split__media:last-child { border-left: var(--line-hairline); }
+}
+
+/* ---------- 6.5 Accordion ----------
+   Items start closed. A closed item shows the brand gradient; opening fades it
+   out while the panel grows, the title shifts from ink to gradient text and the
+   content slides in. Pages set the numbers through custom properties:
+     --accordion-max-w, --accordion-gap          list
+     --accordion-radius                          item shape (default: a pill)
+     --accordion-pt, --accordion-px, --accordion-pr, --accordion-pb-closed, --accordion-gap-x
+                                                 trigger padding and the gap to the icon
+     --accordion-title-size, --accordion-title-lh, --accordion-title-ls, --accordion-title-grad
+     --accordion-title-open-opacity              title gradient text and its look when open
+     --accordion-closed-bg                       gradient behind a closed item
+     --accordion-icon-w, --accordion-icon-h, --accordion-icon-dy, --accordion-icon-mb
+                                                 arrow size, nudge and the height it adds to the row
+     --accordion-body-pad, --accordion-body-size, --accordion-body-lh
+                                                 panel text
+   Keep `overflow: clip` on the item, never `hidden`: a scroll container would
+   ignore scroll-margin-top and break the sticky header. */
+.accordion {
+  --accordion-speed: var(--dur-slow);
+  --accordion-icon-dy: -2px; /* the arrow sits 2px above the title's first line */
+  display: flex;
+  flex-direction: column;
+  gap: var(--accordion-gap, var(--space-2));
+  max-width: var(--accordion-max-w, 900px);
+  margin: 0 auto;
+}
+.accordion__item {
+  position: relative;
+  isolation: isolate;
+  scroll-margin-top: calc(var(--nav-h) + 24px); /* deep links land below the sticky header */
+  border: var(--line-hairline);
+  border-radius: var(--accordion-radius, var(--radius-accordion));
+  overflow: clip;
+  background: var(--white);
+}
+.accordion__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-behind);
+  background: var(--accordion-closed-bg, linear-gradient(90deg, #f9c0dc, #b5ecf8));
+  opacity: 0;
+  transition: opacity var(--accordion-speed) ease;
+}
+.accordion__item[data-open="false"]::before {
+  opacity: 1;
+}
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--accordion-gap-x, var(--space-2));
+  padding: var(--accordion-pt, 30px) var(--accordion-pr, var(--accordion-px, 40px)) 0 var(--accordion-px, 40px);
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: var(--accordion-title-size, var(--fs-title));
+  font-weight: 700;
+  line-height: var(--accordion-title-lh, 1.2);
+  letter-spacing: var(--accordion-title-ls, normal);
+  cursor: pointer;
+  transition: padding var(--accordion-speed) var(--ease-out);
+}
+.accordion__item[data-open="false"] .accordion__trigger {
+  padding-bottom: var(--accordion-pb-closed, var(--accordion-pt, 30px));
+}
+/* Title: gradient text when open (the ink colour fades to transparent to reveal the
+   clipped gradient). The fill follows `color` because -webkit-text-fill-color does not animate. */
+.accordion__trigger > span:first-child {
+  background: var(--accordion-title-grad, var(--grad-title));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: currentColor;
+  color: transparent;
+  opacity: var(--accordion-title-open-opacity, 1);
+  transition: color var(--accordion-speed) ease, opacity var(--accordion-speed) ease;
+}
+.accordion__item[data-open="false"] .accordion__trigger > span:first-child {
+  color: var(--ink);
+  opacity: 1;
+}
+/* Arrow: points up when open, down when closed */
+.accordion__icon {
+  --arrow-w: var(--accordion-icon-w, 34px);
+  --arrow-h: var(--accordion-icon-h, 40px);
+  color: var(--ink);
+  margin-top: var(--accordion-icon-dy);
+  margin-bottom: var(--accordion-icon-mb, calc(-1 * (var(--accordion-icon-dy) + var(--arrow-h)))); /* default: adds no height to the row */
+  transition: transform var(--accordion-speed) var(--ease-out);
+}
+.accordion__item[data-open="false"] .accordion__icon {
+  transform: rotate(180deg);
+}
+.accordion__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--accordion-speed) var(--ease-out);
+}
+.accordion__item[data-open="true"] .accordion__panel {
+  grid-template-rows: 1fr;
+}
+.accordion__panel-inner {
+  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 0s linear var(--accordion-speed);
+}
+.accordion__item[data-open="true"] .accordion__panel-inner {
+  visibility: visible;
+  transition-delay: 0s;
+}
+.accordion__panel-content {
+  padding: var(--accordion-body-pad, 9px 40px 36px);
+  font-size: var(--accordion-body-size, var(--fs-body));
+  line-height: var(--accordion-body-lh, 1.4);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity var(--dur-base) ease, transform var(--accordion-speed) var(--ease-out);
+}
+.accordion__item[data-open="true"] .accordion__panel-content {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.12s;
+}
+.accordion__panel-content ul {
+  list-style: disc;
+}
+@media (prefers-reduced-motion: reduce) {
+  .accordion { --accordion-speed: 0s; }
+  .accordion__item[data-open="true"] .accordion__panel-content { transition-delay: 0s; }
+}
+
+/* ---------- 6.6 Carousel ----------
+   Slide track moved by main.js; arrows are .arrow icons inside the buttons.
+   The prev arrow is the next arrow mirrored. */
+.carousel {
+  position: relative;
+}
+.carousel__viewport {
+  overflow: hidden;
+}
+.carousel__track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.carousel__slide {
+  flex: 0 0 100%;
+}
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: var(--z-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+}
+.carousel__btn--prev { left: 0; }
+.carousel__btn--next { right: 0; }
+.carousel__btn--prev .arrow { transform: scaleX(-1); }
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+}
+.carousel__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(17, 17, 17, 0.15);
+  padding: 0;
+}
+.carousel__dot[aria-current="true"] {
+  background: var(--magenta);
+  width: 22px;
+  border-radius: var(--radius-pill);
+  transition: width var(--dur-fast) ease;
+}
+
+/* ---------- 6.7 Quote card ----------
+   Review (home) and testimonial (project pages): a bordered rounded card with an italic
+   quote, the author and a role line. Pages set the padding, the text size and the gap. */
+.quote-card {
+  padding: var(--quote-pad, 42px 50px 44px);
+  border: var(--line-hairline);
+  border-radius: var(--quote-radius, var(--radius-card));
+  background: var(--white);
+  text-align: center;
+  font-size: var(--quote-size, var(--fs-lead));
+  line-height: var(--quote-lh, var(--lh-lead));
+}
+.quote-card__quote {
+  font-style: italic;
+  margin: 0 auto var(--quote-gap, 27px);
+}
+.quote-card__author {
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .quote-card {
+    --quote-radius: 28px;
+  }
+}
+
+/* ---------- 6.8 Footer ---------- */
+.site-footer {
+  background:
+    radial-gradient(ellipse calc(280px * var(--glow-scale)) calc(230px * var(--glow-scale)) at 100% 0%, var(--glow-rosa)),
+    radial-gradient(ellipse calc(560px * var(--glow-scale)) calc(240px * var(--glow-scale)) at 50% 100%, var(--glow-acqua)),
+    var(--white);
+  border-top: var(--line-hairline);
+}
+.footer-cta {
+  text-align: center;
+  padding: 3.5rem 0 0;
+}
+.footer-cta__eyebrow {
+  --badge-gap: var(--space-1);
+}
+.footer-cta__title {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.footer-main {
+  max-width: none;
+  padding: 1.7rem 0 0;
+}
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.75rem;
+  margin-bottom: 3.05rem;
+  text-align: center;
+}
+.footer-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 6rem;
+  margin-right: 3rem; /* mockup centres the contacts ~24px left of the page axis */
+}
+.footer-contact__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+}
+.footer-contact__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  flex-shrink: 0;
+  color: var(--ink);
+}
+.footer-contact__icon svg {
+  width: 70px;
+  height: 70px;
+  stroke-width: var(--line-w);
+}
+/* non-scaling: the stroke stays at --line-w whatever the viewBox scale */
+.footer-contact__icon svg * { vector-effect: non-scaling-stroke; }
+.footer-social {
+  display: flex;
+  gap: 4.5rem;
+  align-items: center;
+  justify-content: center;
+}
+/* Round gradient button, shared with the back-to-top button: white and lifted on hover/focus */
+.footer-social__link,
+.to-top {
+  border-radius: 50%;
+  background: var(--grad-social);
+  border: var(--line-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-dark);
+  transition: transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease, background var(--dur-fast) ease;
+}
+.footer-social__link:hover,
+.footer-social__link:focus-visible,
+.to-top:hover,
+.to-top:focus-visible {
+  background: var(--white);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+.footer-social__link {
+  width: var(--social-size);
+  height: var(--social-size);
+}
+.footer-social__link svg {
+  width: 24px;
+  height: 24px;
+}
+.footer-legal {
+  border-top: var(--line-hairline);
+  margin: 0 calc(50% - 50vw);
+  padding: 1.9rem var(--gutter);
+  text-align: center;
+  font-size: var(--fs-body);
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+@media (max-width: 767px) {
+  .footer-cta__title { font-size: 2rem; }
+  .footer-contact { margin-right: 0; gap: 1.5rem 2rem; }
+  .footer-social { gap: var(--space-3); }
+  .footer-legal { font-size: 0.7rem; }
+}
+
+/* ---------- 6.9 Back-to-top (button injected by main.js on every page) ---------- */
+.to-top {
+  position: fixed;
+  right: var(--to-top-offset);
+  bottom: var(--to-top-offset);
+  z-index: var(--z-to-top);
+  width: var(--to-top-size);
+  height: var(--to-top-size);
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform var(--dur-fast) ease, box-shadow var(--dur-fast) ease, background var(--dur-fast) ease, visibility 0s linear 0.25s;
+}
+.to-top .arrow {
+  --arrow-w: 18px;
+  --arrow-h: 21px;
+}
+.to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+.to-top:hover,
+.to-top:focus-visible {
+  transform: translateY(-3px);
+}
+@media (min-width: 1024px) {
+  .to-top {
+    --to-top-size: 64px;
+    --to-top-offset: 32px;
+  }
+  .to-top .arrow {
+    --arrow-w: 24px;
+    --arrow-h: 28px;
+  }
+}
+@media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
