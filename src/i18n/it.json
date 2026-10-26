@@ -388,19 +388,23 @@
         },
         {
           "quote": "“Quando ho deciso di dare un'identità visiva alla mia attività, cercavo qualcosa che mi rappresentasse davvero: eleganza, semplicità e viaggi. Elenia è riuscita a captare tutto questo in un marchio che sento totalmente. Brava Elenia, creativa e professionale!”",
-          "author": "Debora"
+          "author": "Debora",
+          "role": "Travel Planner"
         },
         {
           "quote": "“Mi sono affidata a Elenia per il Brand Design e ne sono rimasta entusiasta. Ha saputo cogliere con precisione la mia personalità. Professionale, attenta e sempre puntuale. Una vera professionista!”",
-          "author": "Paola"
+          "author": "Paola",
+          "role": "Consulente direzionale"
         },
         {
           "quote": "“Elenia trasforma idee in identità visive chiare e memorabili. Competente, precisa e appassionata: una garanzia per chi cerca una Brand Identity davvero efficace. Grazie.”",
-          "author": "Lorena"
+          "author": "Lorena",
+          "role": "Process Facilitator"
         },
         {
           "quote": "“Puntuale e precisa! Elenia ha compreso pienamente le mie esigenze, intuendo anche ciò che non sono riuscito a spiegare bene. Una vera e propria partner.”",
-          "author": "Riccardo"
+          "author": "Riccardo",
+          "role": "Psicologo del lavoro"
         }
       ],
       "button": "Scopri cosa dicono di me"
