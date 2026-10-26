@@ -15,11 +15,11 @@ build: ## Build the static site into dist/
 start: ## Build and serve dist/ on http://localhost:8080 (also on the LAN)
 	@npm run --silent serve
 
-identity: ## Check that dist/it/ matches the hand-written Italian pages (outside head and header)
+identity: ## Compare dist/it/ with the old hand-written Italian pages (optional; text changes make it fail)
 	@node tools/identity.mjs
 
 visual: ## Screenshot every page and compare with a base ref (BASE=<ref>, default HEAD)
 	@node tools/visual.mjs $(if $(BASE),--base $(BASE),) $(ARGS)
 
-check: ## Build, identity check and internal links check (dist/ in both languages)
+check: ## Build and check internal links (dist/ in both languages)
 	@npm run --silent check

@@ -6,7 +6,7 @@
     "build": "node build.mjs",
     "serve": "node build.mjs && node tools/serve.mjs dist 8080",
     "visual": "node tools/visual.mjs",
-    "check": "node build.mjs && node tools/identity.mjs --no-build && node tools/links.mjs --no-build",
+    "check": "node build.mjs && node tools/links.mjs --no-build",
     "check:identity": "node tools/identity.mjs",
     "check:links": "node tools/links.mjs"
   },

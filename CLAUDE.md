@@ -37,13 +37,13 @@ make dependencies   # once: npm install + Chromium for Playwright
 make build          # src/ -> dist/
 make start          # build + serve dist/ on http://localhost:8080 (bound to 0.0.0.0, so a phone on the LAN can open it)
 make visual         # before every commit that touches src/ or assets/
-make check          # build + identity of dist/it/ with the old hand-written pages + internal links
+make check          # build + internal links
 make help           # list all targets
 ```
 
 `docker compose up` also serves `dist/` on port 8080, but run `make build` first. Any other static server pointed at `dist/` works too.
 
-- **Identity check (`make identity`).** `dist/it/<page>.html` must match the hand-written page at `135726a` byte for byte, except the `<head>` and the header (both change by design). It undoes the root-absolute URLs before comparing. If you change `<body>` markup on purpose, say so in the commit.
+- **Identity check (`make identity`).** Optional, not part of `make check`. It compares `dist/it/<page>.html` with the hand-written page at `135726a` byte for byte, except the `<head>` and the header, and undoes the root-absolute URLs before comparing. It proved that the generator reproduced the old pages. Since then the texts have changed on purpose (e.g. the reviewers' roles on the home page), so it fails on those pages; use it only to see what moved in `<body>` markup. `make visual` is the regression gate.
 - **Visual check (`make visual`, same as `npm run visual`).** It builds the current tree and a base ref, screenshots every page in `dist/` at 390, 1025, 1440 and 2560, and compares them pixel by pixel. It fails on any difference above the noise threshold or if a page height changes. Failing pairs are saved to `design/shots/visual/<page>-<width>-{base,head,diff}.png`. There are no baseline images in the repo.
 - **Base.** The default base is `HEAD`: the working tree is compared with the last commit. Pick another with `make visual BASE=<ref>` or `VISUAL_BASE=<ref>`. For speed: `make visual ARGS="--pages index,contatti --widths 390,1025"`. Other options: `--head-prefix it/` (compare `dist/it/<page>` with the base's root page of the same name, for a base that still has the Italian site at its root), `--ignore-header` (do not count differences inside the header), `--tolerance <px>` and `--threshold <0-255>`.
 - **Intended visual changes** are expected to make the check fail. List them (page, width, what changed) in the commit message, so the next person can tell them from regressions.
