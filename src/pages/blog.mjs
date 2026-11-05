@@ -1,6 +1,6 @@
-// Blog index (Italian only): /it/blog/. Articles grouped by theme, in `order`.
+// Blog index (Italian only): /it/blog/. All articles in one list, in `order`.
 import { SITE_URL } from '../data/pages.mjs';
-import { THEMES, articleUrl, blogIndexUrl } from '../data/articles.mjs';
+import { articleUrl, blogIndexUrl } from '../data/articles.mjs';
 import { blogCards } from '../partials/blog-card.mjs';
 import { escAttr, jsonLd } from '../partials/util.mjs';
 
@@ -44,17 +44,11 @@ export const layout = ({ t, articles }) => {
 
 export default function blog({ t, href, articles }) {
   const b = t.blog;
-  const sections = THEMES.map((theme) => ({ theme, list: articles.filter((a) => a.theme === theme) }))
-    .filter((s) => s.list.length)
-    .map(
-      (s) => `    <section class="blog-block blog-theme" aria-labelledby="theme-${s.theme}">
+  const list = `    <section class="blog-block blog-list" aria-label="${b.index.listLabel}">
       <div class="container">
-        <h2 class="blog-block__title" id="theme-${s.theme}">${b.themes[s.theme]}</h2>
-${blogCards({ t, href, articles: s.list, mod: 'blog-cards--2', pad: 8 })}
+${blogCards({ t, href, articles, mod: 'blog-cards--2', pad: 8 })}
       </div>
-    </section>`,
-    )
-    .join('\n');
+    </section>`;
   return `  <main>
     <header class="blog-head">
       <div class="container">
@@ -63,7 +57,7 @@ ${blogCards({ t, href, articles: s.list, mod: 'blog-cards--2', pad: 8 })}
       </div>
     </header>
 
-${sections}
+${list}
   </main>
 `;
 }

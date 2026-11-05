@@ -11,7 +11,6 @@ import { pageFiles, urlPath } from './pages.mjs';
 const DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'articles', 'it');
 const warn = (m) => console.warn(`warning: articles: ${m}`);
 
-export const THEMES = ['direzione', 'rebranding', 'identity', 'professionisti'];
 export const WORDS_PER_MIN = 200;
 
 const KEYWORD = /<em-(acqua|magenta)>([\s\S]*?)<\/em-\1>/g;
@@ -35,10 +34,9 @@ function parseFile(file, projects) {
     if (!kv) throw new Error(`bad front matter line "${line}"`);
     fm[kv[1]] = kv[2].trim();
   }
-  for (const k of ['order', 'slug', 'title', 'short', 'description', 'theme', 'date']) if (!fm[k]) throw new Error(`missing "${k}"`);
+  for (const k of ['order', 'slug', 'title', 'short', 'description', 'date']) if (!fm[k]) throw new Error(`missing "${k}"`);
   const slug = file.replace(/\.md$/, '');
   if (fm.slug !== slug) throw new Error(`slug "${fm.slug}" differs from file name`);
-  if (!THEMES.includes(fm.theme)) throw new Error(`unknown theme "${fm.theme}"`);
   if (!Number.isFinite(Number(fm.order))) throw new Error('order is not a number');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(fm.date)) throw new Error('date must be YYYY-MM-DD');
   const list = (v) => (v ? v.split(',').map((x) => x.trim()).filter(Boolean) : []);
@@ -55,7 +53,7 @@ export function loadArticles(projects) {
       const { fm, slug, body, list, projectKeys } = parseFile(file, projects);
       const a = {
         order: Number(fm.order), slug, titleRaw: fm.title, title: expandTitle(fm.title), titlePlain: plainTitle(fm.title),
-        short: fm.short, description: fm.description, theme: fm.theme, date: fm.date,
+        short: fm.short, description: fm.description, date: fm.date,
         projectKeys: list(fm.projects), related: list(fm.related), body,
       };
       if (a.short.length > 32) warn(`${file}: "short" is ${a.short.length} characters (max 32)`);
@@ -89,9 +87,3 @@ export function loadArticles(projects) {
   }
   return articles;
 }
-
-const MONTHS = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
-export const formatDate = (iso) => {
-  const [y, m, d] = iso.split('-').map(Number);
-  return `${d} ${MONTHS[m - 1]} ${y}`;
-};

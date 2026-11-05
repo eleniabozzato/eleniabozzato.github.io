@@ -32,8 +32,7 @@ a.blog-head__eyebrow:hover, a.blog-head__eyebrow:focus-visible { text-decoration
 /* ---------- Blocks after the text: project, related articles ---------- */
 .blog-block { padding: 3.25rem 0 3.5rem; border-top: var(--line-hairline); }
 .blog-block__title { margin-bottom: 1.75rem; font-size: 1.5rem; font-weight: 700; line-height: 1.3; text-align: center; }
-.blog-theme { padding: 2.75rem 0 3rem; }
-.blog-theme__title, .blog-theme .blog-block__title { text-align: left; }
+.blog-list { padding: 2.75rem 0 3rem; }
 .blog-head + .blog-block { margin-top: 1.5rem; }
 
 .blog-projects { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); }
@@ -47,7 +46,6 @@ a.blog-head__eyebrow:hover, a.blog-head__eyebrow:focus-visible { text-decoration
   border: var(--line-hairline); border-radius: var(--radius-lg); background: var(--white); color: var(--ink);
 }
 .blog-card:hover, .blog-card:focus-visible { background: var(--grad-brand-soft); }
-.blog-card__theme { --badge-size: 0.8rem; --badge-gap: 0; }
 .blog-card__title { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
 .blog-card__title .italic-accent { font-size: 1.05em; }
 .blog-card__desc { font-size: 0.875rem; line-height: 1.5; color: rgb(0 0 0 / 0.75); }

@@ -35,19 +35,14 @@
     "related": "Leggi anche",
     "readMore": "Leggi l\u2019articolo",
     "breadcrumb": "Percorso",
-    "themes": {
-      "direzione": "Direzione del brand",
-      "rebranding": "Rebranding",
-      "identity": "Brand identity",
-      "professionisti": "Professionisti"
-    },
     "index": {
       "meta": {
         "title": "Approfondimenti su brand e comunicazione \u2014 Elenia Bozzato",
         "description": "Articoli su direzione del brand, rebranding, brand identity e comunicazione per piccole imprese e professionisti, con esempi da progetti reali."
       },
       "title": "<em-magenta>APPROFONDIMENTI</em-magenta>",
-      "intro": "Brevi guide su brand e comunicazione per piccole imprese e professionisti, con esempi dai progetti che ho seguito."
+      "intro": "Brevi guide su brand e comunicazione per piccole imprese e professionisti, con esempi dai progetti che ho seguito.",
+      "listLabel": "Tutti gli articoli"
     }
   },
   "gallery": {

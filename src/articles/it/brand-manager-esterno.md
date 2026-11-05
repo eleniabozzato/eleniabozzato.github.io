@@ -3,70 +3,48 @@ order: 1
 slug: brand-manager-esterno
 title: Cosa fa un <em-magenta>BRAND MANAGER</em-magenta> esterno per una piccola impresa
 short: Cosa fa un brand manager esterno
-description: Cosa fa un brand manager esterno in una piccola impresa: direzione della comunicazione, coordinamento di agenzie e fornitori, coerenza su ogni canale.
-theme: direzione
+description: Cosa fa un brand manager esterno in una piccola impresa: è il punto di riferimento che dà direzione alla comunicazione e coordina chi lavora al brand.
 projects: dentisti, alplan
-related: comunicazione-frammentata, comunicazione-studio-dentistico, quando-fare-rebranding
+related: comunicazione-frammentata, comunicazione-hotel-familiare
 date: 2026-11-04
 ---
 
-Un brand manager esterno è una persona che non fa parte dell’azienda, ma si occupa con continuità della direzione della sua comunicazione. Decide con te come il brand si racconta, poi controlla che ogni materiale e ogni canale lo faccia nello stesso modo. In una piccola impresa serve soprattutto a questo: dare un punto di riferimento a chi la comunicazione l’ha sempre fatta un po’ per volta.
+Un brand manager esterno è una figura di riferimento che dà direzione alla comunicazione di un’azienda e coordina chi la realizza. Non entra in organico, ma lavora come se fosse parte del team.
 
-## Che cosa significa davvero brand manager esterno?
+## Che cosa fa, in concreto
 
-Nelle aziende grandi il brand manager è un ruolo interno, con un team. Nelle piccole imprese e negli studi professionali spesso non c’è nessuno che abbia questo compito. La comunicazione la seguono il titolare, un collaboratore, un’agenzia, un fotografo, ciascuno per la sua parte.
+Decide con te dove vuole andare il brand: cosa dire, a chi, con quale tono. Poi controlla che ogni scelta vada in quella direzione, dal logo ai social, dal sito ai materiali stampati.
 
-Il brand manager esterno entra in quel punto. Non sostituisce chi già lavora, e non si occupa solo della parte grafica. Si occupa della **direzione complessiva** con cui l’azienda si racconta e si posiziona.
+Non produce tutto da solo. Coordina chi produce: fotografi, sviluppatori, agenzie, stampatori. Il suo lavoro è tenere insieme i pezzi.
 
-È il modo in cui io intendo il mio lavoro: entrare come figura di riferimento per la comunicazione, per portare ordine, chiarezza e coerenza nel sistema del brand.
+Su questo ruolo ho costruito la mia [direzione del brand](page:how#direzione-brand).
 
-## Quali attività rientrano nel suo lavoro?
+## In che cosa è diverso da un’agenzia
 
-Dipende dal progetto, ma il cuore è sempre lo stesso. Parto dall’ascolto: capire chi sei, che cosa fai, chi vuoi raggiungere. Poi definisco la direzione e la traduco in scelte concrete.
+Un’agenzia di solito esegue un servizio: una campagna, un sito, un piano social. Il brand manager guarda l’insieme e nel tempo.
 
-In pratica può voler dire:
+Non sono in alternativa. Con Al Plan Hotel, per esempio, il mio lavoro è affiancare la famiglia e dialogare con le agenzie che seguono il marketing alberghiero. Ognuno fa la sua parte, con una regia sola.
 
-- decidere il tono di voce e verificare che testi e risposte lo rispettino;
-- coordinare chi produce i materiali, cioè grafici, fotografi, videomaker, agenzie;
-- seguire la comunicazione social in modo continuativo;
-- curare l’identità visiva e la sua applicazione nel tempo;
-- essere il contatto stabile per le scelte di tutti i giorni.
+## Come si lavora insieme
 
-Non sono compiti separati. Funzionano perché li tiene insieme una sola persona che conosce il brand.
+Si parte dall’ascolto: capire l’azienda, la sua storia, le persone. Poi si definisce la direzione e la si traduce in scelte concrete. Infine si coordina chi realizza.
 
-## In che cosa è diverso da un’agenzia o da un freelance?
+La decisione finale resta tua. Il brand manager propone, spiega i motivi e tiene il filo del progetto. Non sostituisce il titolare e non lo mette da parte.
 
-Un’agenzia, o un grafico freelance, di solito produce: un logo, un sito, una campagna. È un lavoro prezioso, e spesso serve. Il brand manager esterno fa un passo prima e uno dopo. Prima decide che cosa va prodotto e perché. Dopo controlla che ciò che è stato prodotto sia usato bene.
+## Quando può servire a una piccola impresa
 
-Per questo lavora con gli altri professionisti, non al posto loro. Se hai già un’agenzia o un videomaker, la sua figura serve a tenere insieme i contributi. Se non ne hai, aiuta a scegliere chi coinvolgere e in quale ordine.
+Una piccola impresa spesso non ha un reparto marketing. Le decisioni sulla comunicazione ricadono sul titolare, tra mille altre cose.
 
-## Come lavora con lo studio dentistico e con l’hotel?
+Una persona esterna porta tre cose:
 
-Due progetti mi aiutano a spiegarlo, perché sono molto diversi tra loro.
+- uno sguardo da fuori, che vede cosa chi è dentro non nota più;
+- continuità, perché segue il brand nel tempo e non solo per un progetto;
+- un interlocutore unico, invece di tanti fornitori che non si parlano.
 
-Con [Dentisti Cordovado](project:dentisti), uno studio giovane e in crescita, sono entrata come figura di riferimento per la comunicazione. Mi occupo di direzione e coordinamento del brand e seguo i social in modo continuativo. Realizzo grafiche e materiali per campagne e iniziative, coordino gli shooting con il videomaker, supporto la gestione delle campagne ADV e l’identità visiva degli ambienti dello studio.
+Un ruolo esterno ha bisogno di tempo per conoscere l’azienda: per questo il primo passo è capire il contesto.
 
-Con [Al Plan Hotel](project:alplan), un hotel a conduzione familiare in Val Badia, la situazione era un’altra. La famiglia collaborava già con agenzie specializzate nel settore alberghiero. Aveva bisogno di qualcuno che la affiancasse nel marketing quotidiano, coordinasse le attività e rendesse la comunicazione più autentica. Lavoro sui testi e sui punti di contatto con l’ospite, in sinergia con le agenzie.
+Se non sei sicuro di averne bisogno, parti dai [segnali di una comunicazione frammentata](article:comunicazione-frammentata).
 
-Il ruolo è lo stesso, il perimetro cambia. Per questo non esiste un pacchetto uguale per tutti.
+Vedi il ruolo applicato in [Dentisti Cordovado](project:dentisti).
 
-## Quando ha senso rivolgersi a un brand manager esterno?
-
-Secondo me ha senso quando riconosci uno di questi segnali:
-
-1. hai più persone che comunicano per te, ma nessuno decide la linea;
-2. i materiali nuovi non sembrano sempre usciti dalla stessa azienda;
-3. le scelte di comunicazione restano ferme perché nessuno ha il tempo di prenderle;
-4. l’azienda è cresciuta e l’immagine è rimasta quella di prima.
-
-Se ti riconosci nel primo o nel secondo punto, leggi anche [come ritrovare una direzione quando la comunicazione è frammentata](article:comunicazione-frammentata). Se è il quarto, può servirti [capire se è il momento di un rebranding](article:quando-fare-rebranding).
-
-Un limite va detto. Un brand manager esterno non è una soluzione magica e non può inventare ciò che nel brand non c’è. Parte da quello che l’azienda è davvero. Se lo è, lo aiuto a renderlo chiaro. È anche per questo che credo nei brand che hanno qualcosa di vero da raccontare.
-
-## Che cosa cambia nella pratica?
-
-Quello che di solito cambia è la qualità del lavoro quotidiano, più che un effetto spettacolare. La comunicazione diventa più coerente e più leggibile. Chi lavora con te sa a chi chiedere e che cosa deve rispettare.
-
-Nel caso dello studio dentistico, la comunicazione oggi è percepita come più coerente, riconoscibile e allineata all’identità dello studio. Nel caso dell’hotel, i diversi punti di contatto con l’ospite sono gestiti con più attenzione, e la famiglia ha una figura stabile con cui confrontarsi. Sono risultati concreti, ma non li prometto come regola: ogni progetto ha il suo ritmo.
-
-Se vuoi capire se un brand manager esterno può servire alla tua attività, [scrivimi](page:contact). Ne parliamo senza impegno, partendo da ciò che hai oggi. Puoi anche vedere come imposto il lavoro di [direzione del brand](page:how#direzione-brand).
+Se vuoi capire se fa per te, [scrivimi](page:contact).

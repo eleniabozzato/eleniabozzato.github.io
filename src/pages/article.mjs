@@ -1,6 +1,6 @@
 // Blog article page (Italian only): /it/blog/<slug>.html, built from src/articles/it/<slug>.md.
 import { SITE_URL } from '../data/pages.mjs';
-import { articleUrl, blogIndexUrl, formatDate } from '../data/articles.mjs';
+import { articleUrl, blogIndexUrl } from '../data/articles.mjs';
 import { blogCards } from '../partials/blog-card.mjs';
 import { projectCard } from '../partials/more-exp.mjs';
 import { escAttr, jsonLd } from '../partials/util.mjs';
@@ -95,7 +95,7 @@ ${blogCards({ t, href, articles: related, pad: 8 })}
       <div class="container">
         <a class="badge badge--acqua blog-head__eyebrow" href="${href.blog()}">${b.eyebrow}</a>
         <h1 class="section-title blog-head__title">${a.title}</h1>
-        <p class="blog-head__meta"><time datetime="${a.date}">${formatDate(a.date)}</time> <span aria-hidden="true">\u00b7</span> ${a.minutes} ${b.readingTime}</p>
+        <p class="blog-head__meta">${a.minutes} ${b.readingTime}</p>
       </div>
     </header>
 
