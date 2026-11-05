@@ -1,0 +1,328 @@
+/* ---------- Page: home ----------
+   Desktop matches the Canva mockup. Mobile only stacks the blocks.
+   Sections in page order: header glow, hero, strip, question, split, services,
+   experiences grid, reviews. */
+
+/* The home header has a glow: one ellipse centred on the header/hero line, drawn half
+   in each element so the two halves meet at the hairline. */
+body { --glow-header-hero: ellipse calc(190px * var(--glow-scale)) calc(200px * var(--glow-scale)); }
+.site-header {
+  background: radial-gradient(var(--glow-header-hero) at 100% 100%, var(--glow-acqua)), var(--white);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  isolation: isolate; /* keeps the photo glow (z-index: -1) above this background */
+  overflow: hidden;
+  background: radial-gradient(var(--glow-header-hero) at 100% 0%, var(--glow-acqua)), var(--white);
+}
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr 505px;
+  align-items: start;
+  height: 510px;
+}
+.hero__content { padding-top: 82px; }
+.hero__content .badge { --badge-gap: 12px; }
+.hero__content h1 {
+  font-size: 3.125rem;
+  line-height: 50.5px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.hero__content h1 .italic-accent { font-size: 1.04em; }
+.hero__content p {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  max-width: 320px;
+}
+/* Photo box matches the PDF: x 443–948 at 1025px, so it starts 14px left of the column */
+.hero__media { margin: 0 14px 0 -14px; position: relative; }
+/* The photo is 960px wide but the column is 940px of it: the extra 20px on the
+   right keep the loose hair strands uncut. */
+.hero__media img { width: calc(100% * 960 / 940); max-width: none; height: auto; object-fit: cover; }
+/* Pink glow behind the cut-out photo. It sits on the photo (not on .hero) so it
+   follows the photo when the layout stacks on mobile. Centre: 77px into the
+   column, 400px down, as measured on the PDF. */
+.hero__media::before {
+  content: "";
+  position: absolute;
+  z-index: var(--z-behind);
+  left: -403px;
+  top: -20px;
+  width: 960px;
+  height: 840px;
+  background: radial-gradient(closest-side, var(--glow-rosa));
+  pointer-events: none;
+}
+
+/* ---------- Strip: horizontal marquee of services ---------- */
+.strip {
+  background: var(--grad-brand);
+  border-top: var(--line-hairline);
+  border-bottom: var(--line-hairline);
+  overflow: hidden;
+}
+.strip__track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  gap: 0.55rem;
+  align-items: center;
+  height: 50px;
+  font-size: var(--fs-lead);
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: strip-marquee 28s linear infinite;
+}
+.strip__dot {
+  color: var(--magenta);
+}
+@keyframes strip-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); } /* track holds 4 identical sets; 2 sets > widest screen */
+}
+@media (prefers-reduced-motion: reduce) {
+  .strip__track { animation: none; }
+}
+
+/* ---------- Question ---------- */
+.question {
+  text-align: center;
+  padding: 56px var(--gutter);
+  max-width: none;
+}
+.question h2 {
+  font-size: var(--fs-display);
+  font-weight: 400;
+  line-height: 47px;
+  margin: 0 auto 27px;
+}
+.question h2 .italic-accent { font-size: 1.12em; }
+.question p {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+/* ---------- Split: photo and text ("Mi racconto") ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 556px;
+  border-top: var(--line-hairline);
+  border-bottom: var(--line-hairline);
+  overflow: hidden;
+  background: var(--white);
+}
+.split__media {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border-bottom: var(--line-hairline);
+}
+.split__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+  transform: scale(1.3);
+  transform-origin: 74% 41%;
+}
+.split__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  background:
+    radial-gradient(ellipse calc(270px * var(--glow-scale)) calc(300px * var(--glow-scale)) at 0% 55%, var(--glow-acqua)),
+    var(--white);
+}
+.split__text .badge { --badge-gap: 10px; }
+.split__text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 33px;
+  margin-bottom: 19px;
+}
+.split__text h2 .italic-accent { font-size: 1.075em; }
+.split__text p {
+  font-size: var(--fs-body);
+  line-height: 21px;
+  margin-bottom: 21px;
+  max-width: 365px;
+}
+.split__text .btn {
+  margin-top: 5px;
+  align-self: flex-start;
+}
+@media (min-width: 1024px) {
+  .split { grid-template-columns: 1fr 1fr; }
+  .split__media {
+    aspect-ratio: auto;
+    border-bottom: 0;
+    border-right: var(--line-hairline);
+  }
+}
+
+/* ---------- Services: pill cards linking into Come lavoro ---------- */
+.section--servizi { padding: 47px 0 69px; }
+.section__head { margin-bottom: 33px; max-width: none; }
+.pill-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin: 0 auto;
+}
+/* Like .btn: brand gradient by default, white on hover/focus */
+.pill-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  height: 97px;
+  padding: 0 39px;
+  border-radius: var(--radius-pill);
+  border: var(--line-hairline);
+  background: var(--grad-brand);
+  font-weight: 700;
+  font-size: var(--fs-title);
+  transition: box-shadow var(--dur-fast) ease, transform var(--dur-fast) ease, background var(--dur-fast) ease;
+}
+.pill-card:hover,
+.pill-card:focus-visible {
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+/* ---------- Experiences grid: 2 columns, glows straddle the row lines ---------- */
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: var(--line-hairline);
+  border-bottom: var(--line-hairline);
+  isolation: isolate;
+}
+.exp-grid__cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  height: 384px;
+  padding: 54px 24px 59px;
+  border-bottom: var(--line-hairline);
+}
+.exp-grid__cell:nth-child(odd) { border-right: var(--line-hairline); }
+.exp-grid__cell:nth-last-child(-n + 2) { border-bottom: 0; }
+/* Wide screens: keep cell content where the 1025px design puts it. Percent padding
+   resolves against the half-width grid track, so (100% - design-w/2) is the bleed. */
+@media (min-width: 1025px) {
+  .exp-grid__cell:nth-child(odd) { padding-left: calc(24px + max(0px, 100% - var(--design-w) / 2)); }
+  .exp-grid__cell:nth-child(even) { padding-right: calc(24px + max(0px, 100% - var(--design-w) / 2)); }
+}
+.exp-grid__cell .badge { --badge-gap: 19px; }
+.exp-grid__title {
+  /* always two lines tall, so a one-line name (PULICASA) stays aligned with its row */
+  --pn-lh: 35px;
+  --pn-accent-size: 0.97em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 70px;
+  margin-bottom: 28px;
+}
+.exp-grid__desc {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  max-width: 290px;
+}
+.exp-grid__cell .btn { margin-top: auto; flex-shrink: 0; }
+/* Glows are pseudo-elements centred on the bottom line of a cell, so each one straddles a row
+   separator (half above, half below). They sit behind the cell content (z-index -1) and the
+   cells are transparent, so the hairlines stay on top. Cell 6 keeps a corner glow: it is the
+   last row, so there is no line to cross. */
+.exp-grid__cell::after {
+  --gx: calc(300px * var(--glow-scale)); --gy: calc(330px * var(--glow-scale));
+  content: "";
+  position: absolute; left: 0; right: 0; top: calc(100% - var(--gy)); height: calc(var(--gy) * 2);
+  z-index: var(--z-behind); pointer-events: none;
+}
+.exp-grid__cell:nth-child(2)::after { background: radial-gradient(ellipse var(--gx) var(--gy) at 100% 50%, var(--glow-rosa)); }
+.exp-grid__cell:nth-child(3)::after { --gx: calc(340px * var(--glow-scale)); background: radial-gradient(ellipse var(--gx) var(--gy) at 0% 50%, var(--glow-acqua)); }
+.exp-grid__cell:nth-child(6) { background: radial-gradient(ellipse calc(340px * var(--glow-scale)) calc(320px * var(--glow-scale)) at 100% 100%, var(--glow-rosa)); }
+
+/* ---------- Reviews carousel ---------- */
+.section--reviews { padding: 56px 0 62px; }
+.section--reviews .section__head { margin-bottom: 38px; }
+.carousel__viewport { margin: 0 78px; }
+.carousel__slide { padding: 0; }
+/* same gap as the "Scopri le altre esperienze" marquee cards (progetto.css --card-gap) */
+.carousel__track { --slide-gap: var(--space-3); gap: var(--slide-gap); }
+.carousel__dots { display: none; }
+.carousel__btn--prev { left: 6px; }
+.carousel__btn--next { right: 6px; }
+.quote-card__quote {
+  max-width: 660px;
+}
+.section-cta-center {
+  text-align: center;
+  margin-top: 39px;
+}
+
+/* ---------- Mobile (<768px): minimal stacking, no redesign ---------- */
+@media (max-width: 767px) {
+  .hero__inner { grid-template-columns: 1fr; height: auto; }
+  .hero__content { padding: var(--space-4) 0 var(--space-3); }
+  .hero__content h1 { font-size: 2.2rem; line-height: 1.1; }
+  .hero__media { margin: 0 auto; max-width: 320px; }
+  .hero__media::before { left: 50%; top: 55%; width: 460px; height: 440px; transform: translate(-50%, -50%); }
+  .hero__content p,
+  .question p,
+  .exp-grid__desc { line-height: var(--lh-body-mobile); }
+
+  .strip__track { height: 44px; font-size: 1rem; gap: var(--space-1); }
+
+  .question { padding: var(--space-4) var(--gutter); }
+  .question h2 { font-size: 1.6rem; line-height: 1.3; }
+  .question p { font-size: 1rem; }
+
+  .split { min-height: 0; }
+  .split__media { min-height: 380px; }
+  /* the subject sits right of centre in the photo: zoom in enough to centre her face (no empty edge) */
+  .split__media img { transform: scale(1.7); transform-origin: 82% 32%; }
+  .split__text { padding: var(--space-4) var(--gutter); }
+  .split__text h2 { font-size: 1.6rem; line-height: 1.2; }
+
+  .section--servizi { padding: var(--space-4) 0; }
+  .pill-grid { gap: var(--space-2); } /* = Come lavoro accordion gap */
+  .pill-card { height: auto; min-height: 72px; padding: 1rem 1.25rem; font-size: 1.05rem; line-height: 1.25; }
+
+  .exp-grid { grid-template-columns: 1fr; }
+  .exp-grid__cell { height: auto; padding: var(--space-4) var(--gutter); }
+  .exp-grid__cell:nth-child(odd) { border-right: 0; }
+  .exp-grid__cell:nth-last-child(2) { border-bottom: var(--line-hairline); }
+  .exp-grid__cell .btn { margin-top: var(--space-3); }
+  .exp-grid__title { --pn-size: 2rem; }
+  /* Stacked cells: one glow on each line between cells, alternating right/left. */
+  .exp-grid__cell::after { --gx: 200px; --gy: 170px; }
+  .exp-grid__cell:nth-child(n)::after { background: none; }
+  .exp-grid__cell:nth-child(odd):not(:last-child)::after { background: radial-gradient(ellipse var(--gx) var(--gy) at 92% 50%, var(--glow-rosa)); }
+  .exp-grid__cell:nth-child(even):not(:last-child)::after { background: radial-gradient(ellipse var(--gx) var(--gy) at 8% 50%, var(--glow-acqua)); }
+  .exp-grid__cell:nth-child(6) { background: none; }
+
+  .section--reviews { padding: var(--space-4) 0; }
+  .carousel__viewport { margin: 0 2.25rem; }
+  .carousel__track { --slide-gap: var(--space-2); } /* = mobile marquee --card-gap */
+  .carousel__btn .arrow { --arrow-w: 28px; --arrow-h: 16.8px; }
+  .carousel__btn--prev { left: 0; }
+  .carousel__btn--next { right: 0; }
+  .quote-card { --quote-pad: 1.5rem 1.25rem; --quote-size: 1rem; --quote-lh: var(--lh-body-mobile); }
+}

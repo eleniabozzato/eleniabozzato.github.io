@@ -1,8 +1,9 @@
+# Serves the built site. Run `make build` first: dist/ is generated and not in git.
 services:
   web:
     image: caddy:2-alpine
     ports:
       - "8080:80"
     volumes:
-      - .:/srv:ro
+      - ./dist:/srv:ro
     command: caddy file-server --root /srv --listen :80

@@ -1,8 +1,5 @@
+# Builds dist/ and publishes it with GitHub Pages (Settings > Pages > Source: GitHub Actions).
 name: Deploy site
-
-# Publishes the site with GitHub Actions instead of "Deploy from a branch".
-# For now it uploads the repository root as it is (the current static site).
-# The redesign replaces this step with `node build.mjs` and uploads dist/.
 
 on:
   push:
@@ -23,10 +20,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node build.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
 
   deploy:
     needs: build

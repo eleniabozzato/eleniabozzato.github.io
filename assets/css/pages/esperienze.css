@@ -1,0 +1,85 @@
+/* ---------- Page: esperienze ----------
+   Two-column grid of square photo cards. The row lines run to the screen edges while the
+   cards stay at design width, then fill the screen above 1025px. */
+.exp-page-grid { overflow-x: clip; }
+/* the last row already draws the closing line: skip the footer's own to avoid a double stroke */
+.page-esperienze + .site-footer { border-top: 0; }
+
+.exp-photo-grid { position: relative; }
+.exp-photo-grid__cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: var(--line-hairline);
+}
+.exp-photo-grid__media {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.exp-photo-grid__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* subjects stay in frame in the square crop */
+/* same framing as the Dentisti hero, which shows the photo 607px wide in a 512px column */
+.exp-photo-grid__media img[src*="dentisti"] { object-position: 50% 45.7%; transform: scale(1.185); }
+.exp-photo-grid__media img[src*="al-plan"] { object-position: 50% 50%; }
+.exp-photo-grid__media img[src*="carrozzeria"] { object-position: 50% 50%; }
+.exp-photo-grid__media img[src*="consulab"] { object-position: 50% 50%; }
+.exp-photo-grid__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 54px 32px 59px;
+  text-align: center;
+}
+.exp-photo-grid .badge { --badge-lh: 30px; --badge-gap: 17px; }
+.exp-photo-grid__title {
+  /* always two lines tall, so a one-line name (PULICASA) stays aligned with its row */
+  --pn-lh: 34px;
+  --pn-accent-size: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 68px;
+}
+.exp-photo-grid__desc {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  margin: 29px 0 auto;
+  padding-bottom: 26px;
+  max-width: 280px;
+}
+
+@media (min-width: 640px) {
+  .exp-photo-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  /* each row line is a 4000px bar that reaches the screen edge on its side */
+  .exp-photo-grid__cell::after {
+    content: ""; position: absolute; bottom: calc(-1 * var(--line-w)); height: var(--line-w); width: 4000px; background: var(--line); pointer-events: none;
+  }
+  .exp-photo-grid__cell:nth-child(odd)::after { right: 100%; }
+  .exp-photo-grid__cell:nth-child(even)::after { left: 100%; }
+  /* the vertical divider is an overlay, not a border: both columns keep the same width, so the same square height */
+  .exp-photo-grid__cell:nth-child(even)::before {
+    content: ""; position: absolute; z-index: 1; left: 0; top: 0; bottom: 0; width: var(--line-w); background: var(--line); pointer-events: none;
+  }
+}
+@media (max-width: 639px) {
+  .exp-photo-grid__title { --pn-size: 2rem; --pn-accent-size: 2.1rem; }
+}
+
+/* Wide screens: the grid runs full-bleed so each image fills its whole cell, edge to edge.
+   The image keeps the design square's height (512.5px), so it gets wider, not taller. */
+@media (min-width: 1025px) {
+  .exp-photo-grid__media { aspect-ratio: auto; height: 512.5px; }
+}
+/* Above 1440px the cell gets wider than tall: no zoom, and frame higher so the heads stay in */
+@media (min-width: 1441px) {
+  .exp-photo-grid__media img[src*="dentisti"] { object-position: 50% 28%; transform: none; }
+}

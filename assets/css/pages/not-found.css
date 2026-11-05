@@ -1,0 +1,24 @@
+/* 404 page: one centred message between the header and the footer. */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: var(--section-y) var(--gutter);
+  text-align: center;
+}
+.not-found h1 {
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: var(--space-2);
+}
+.not-found p {
+  font-size: var(--fs-lead);
+  margin-bottom: var(--space-4);
+}
+@media (max-width: 767px) {
+  .not-found h1 { font-size: 1.75rem; }
+  .not-found p { font-size: 1rem; }
+}
