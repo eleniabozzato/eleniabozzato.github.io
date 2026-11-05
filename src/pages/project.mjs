@@ -37,6 +37,16 @@ export default function project({ t, href, projects, project: p }) {
       ? `\n\n        <!-- GALLERIA FOTOGRAFICA -->\n${gallery({ t, slides: p.gallery.slides, alts: c.slides, mod: 'gallery-carousel--standalone', pad: 8 })}`
       : '';
 
+  // Optional: a project without a client quote simply has no card.
+  const testimonial = c.testimonial
+    ? `        <!-- TESTIMONIAL -->
+        <div class="quote-card testimonial-card">
+          <p class="quote-card__quote">${c.testimonial.quote}</p>
+          <p class="quote-card__author">${c.testimonial.author}</p>
+          <p class="quote-card__role">${c.testimonial.role}</p>
+        </div>`
+    : '';
+
   const activities = `                  <ul>\n${c.activities.map((x) => `                    <li>${x}</li>`).join('\n')}\n                  </ul>${inlineGallery}`;
   const items = [
     [names.context, paragraphs(c.context)],
@@ -68,12 +78,7 @@ ${logo}    <!-- ACCORDION BLOCCHI -->
 ${items}
         </div>
 
-        <!-- TESTIMONIAL -->
-        <div class="quote-card testimonial-card">
-          <p class="quote-card__quote">${c.testimonial.quote}</p>
-          <p class="quote-card__author">${c.testimonial.author}</p>
-          <p class="quote-card__role">${c.testimonial.role}</p>
-        </div>${standaloneGallery}
+${testimonial}${standaloneGallery}
       </div>
     </section>
 ${moreExp({ t, href, projects, current: p })}  </main>

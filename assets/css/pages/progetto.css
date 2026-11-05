@@ -40,7 +40,7 @@ main > .section { padding: 44px 0 64px; }
 .gallery-carousel .carousel__slide img { display: block; width: 100%; height: auto; aspect-ratio: 900 / 700; }
 .gallery-carousel .carousel__btn--prev { left: -2px; }
 .gallery-carousel .carousel__btn--next { right: -2px; }
-/* Standalone photo carousel under the testimonial (Al Plan Hotel): 5:4 photos, arrows outside the image */
+/* Standalone photo carousel at the end of the content (Al Plan Hotel): 5:4 photos, arrows outside the image */
 .gallery-carousel--standalone { max-width: 900px; margin: 56px auto 0; padding: 0 117px; }
 .gallery-carousel--standalone .carousel__slide img { aspect-ratio: 5 / 4; object-fit: cover; }
 
