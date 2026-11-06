@@ -14,6 +14,7 @@ export const pageFiles = {
     how: 'how-i-work.html',
     experience: 'experience.html',
     contact: 'contact.html',
+    privacy: 'privacy.html',
     notfound: '404.html',
   },
   it: {
@@ -22,6 +23,7 @@ export const pageFiles = {
     how: 'come-lavoro.html',
     experience: 'esperienze.html',
     contact: 'contatti.html',
+    privacy: 'privacy.html',
     notfound: '404.html',
   },
 };

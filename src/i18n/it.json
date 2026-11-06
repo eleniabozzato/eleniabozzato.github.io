@@ -16,7 +16,9 @@
     "eyebrow": "Hai scrollato fino a qui?",
     "title": "Conosciamoci <em-magenta>MEGLIO</em-magenta>",
     "city": "Cordovado PN",
-    "legal": "Elenia Bozzato • P.IVA 04701970271 • Privacy Policy e Cookie Policy • © Copyright 2026"
+    "legal": "Elenia Bozzato • P.IVA 04701970271",
+    "privacy": "Privacy Policy e Cookie Policy",
+    "copyright": "© Copyright 2026"
   },
   "gallery": {
     "prev": "Immagine precedente",
@@ -524,7 +526,248 @@
     "name": "Nome",
     "email": "Mail",
     "message": "Messaggio",
-    "submit": "Invia"
+    "submit": "Invia",
+    "privacyNote": "Inviando il messaggio i tuoi dati saranno usati solo per risponderti. Leggi l’{link}.",
+    "privacyLink": "informativa privacy"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy e Cookie Policy — Elenia Bozzato",
+      "description": "Come vengono trattati i dati personali di chi visita eleniabozzato.com o mi scrive, e quali cookie usa il sito."
+    },
+    "eyebrow": "Informativa",
+    "title": "Privacy e <em-magenta>COOKIE</em-magenta> Policy",
+    "updated": "Versione del 6 novembre 2026",
+    "intro": [
+      "Questa informativa spiega come tratto i dati personali di chi visita <strong>www.eleniabozzato.com</strong> (“il Sito”) o mi contatta attraverso di esso, ai sensi dell’art. 13 del Regolamento (UE) 2016/679 (“GDPR”), del D.Lgs. 196/2003 (“Codice Privacy”) e delle Linee guida del Garante sui cookie del 10 giugno 2021."
+    ],
+    "summary": {
+      "title": "In breve",
+      "items": [
+        "Non uso strumenti di statistica, pubblicità o profilazione, quindi non ti chiedo alcun consenso e non vedi banner.",
+        "Se mi scrivi dal modulo di contatto o via email, uso i tuoi dati solo per risponderti.",
+        "I fornitori che ospitano il Sito, ricevono i messaggi e lo proteggono dallo spam trattano il tuo indirizzo IP per farlo funzionare.",
+        "Il Sito ricorda nel tuo browser solo la lingua che hai scelto.",
+        "Puoi chiedermi in ogni momento di vedere, correggere o cancellare i tuoi dati scrivendo a <a href=\"mailto:hello@eleniabozzato.com\">hello@eleniabozzato.com</a>."
+      ]
+    },
+    "tocLabel": "Indice",
+    "sections": [
+      {
+        "id": "titolare",
+        "title": "Chi tratta i tuoi dati",
+        "body": [
+          "Titolare del trattamento è:",
+          "<strong>Elenia Bozzato</strong><br>Via Suzzolins 27/A – 33075 Cordovado (PN), Italia<br>P.IVA 04701970271<br>Email: <a href=\"mailto:hello@eleniabozzato.com\">hello@eleniabozzato.com</a>",
+          "Non è stato nominato un Responsabile della protezione dei dati (DPO), perché non ricorrono i casi in cui l’art. 37 del GDPR lo rende obbligatorio. Per qualsiasi domanda puoi scrivere all’indirizzo indicato sopra."
+        ]
+      },
+      {
+        "id": "trattamenti",
+        "title": "Quali dati, perché e per quanto tempo",
+        "body": [
+          {
+            "table": {
+              "head": [
+                "Quando",
+                "Dati",
+                "Finalità e base giuridica",
+                "Conservazione"
+              ],
+              "rows": [
+                [
+                  "Visiti il Sito",
+                  "Indirizzo IP, data e ora, pagina richiesta, browser e sistema operativo",
+                  "Mostrarti le pagine, garantirne velocità e sicurezza, prevenire abusi.<br><em>Legittimo interesse</em> a offrire un sito funzionante e sicuro (art. 6.1.f GDPR).",
+                  "Per i tempi tecnici dei fornitori di hosting e rete (sez. 4). Io non accedo a questi log."
+                ],
+                [
+                  "Le pagine caricano i caratteri tipografici",
+                  "Indirizzo IP e browser, inviati a Google Fonts",
+                  "Mostrare il Sito con i caratteri della mia identità visiva (Poppins e Bodoni Moda).<br><em>Legittimo interesse</em> (art. 6.1.f GDPR).",
+                  "Secondo la policy di Google (sez. 4)."
+                ],
+                [
+                  "Apri la pagina Contatti",
+                  "Indirizzo IP, browser e segnali tecnici del dispositivo, analizzati da Cloudflare Turnstile",
+                  "Verificare che il modulo sia usato da una persona e non da un programma automatico.<br><em>Legittimo interesse</em> a proteggere il Sito dallo spam (art. 6.1.f GDPR).",
+                  "Per i tempi tecnici di Cloudflare (sez. 4)."
+                ],
+                [
+                  "Mi scrivi dal modulo o via email",
+                  "Nome, email, testo del messaggio ed eventuali altri dati che decidi di condividere; per il modulo anche l’indirizzo IP",
+                  "Rispondere alla tua richiesta e, se lo chiedi, preparare un preventivo.<br><em>Misure precontrattuali</em> adottate su tua richiesta (art. 6.1.b GDPR).",
+                  "Fino a 24 mesi dall’ultimo contatto. La copia sul servizio del modulo è cancellata automaticamente dopo 7 giorni. Se ne nasce un incarico, i dati necessari sono conservati per la durata del rapporto e poi per 10 anni per obblighi fiscali (art. 6.1.c GDPR)."
+                ],
+                [
+                  "Scegli la lingua del Sito",
+                  "La lingua scelta (“it” o “en”), salvata solo nel tuo browser",
+                  "Mostrarti il Sito nella lingua che hai scelto.<br>Servizio da te richiesto (art. 122 Codice Privacy).",
+                  "Finché non cancelli i dati del sito dal browser."
+                ],
+                [
+                  "Serve tutelare un diritto",
+                  "I dati sopra indicati strettamente necessari",
+                  "Difendere i miei diritti in sede giudiziaria o rispondere a richieste delle autorità.<br><em>Legittimo interesse</em> (art. 6.1.f) e <em>obbligo legale</em> (art. 6.1.c GDPR).",
+                  "Per la durata del procedimento."
+                ]
+              ]
+            }
+          },
+          "I dati non sono usati per newsletter o comunicazioni promozionali, non sono venduti né ceduti a terzi e non sono oggetto di profilazione o di decisioni automatizzate (art. 22 GDPR)."
+        ]
+      },
+      {
+        "id": "conferimento",
+        "title": "Sei obbligato a fornirli?",
+        "body": [
+          "I dati di navigazione sono trasmessi automaticamente dal tuo browser e servono a visualizzare il Sito. Scrivermi è invece del tutto facoltativo: nome, email e messaggio servono per risponderti, e senza di essi non potrò farlo.",
+          "Ti chiedo di non inviare dati particolari (ad esempio sulla salute) o dati di altre persone che non sei autorizzato a condividere, se non strettamente necessari per la tua richiesta."
+        ]
+      },
+      {
+        "id": "destinatari",
+        "title": "A chi vengono comunicati",
+        "body": [
+          "I dati sono trattati da me personalmente e, per quanto necessario, dai seguenti fornitori. Non vengono diffusi.",
+          {
+            "table": {
+              "head": [
+                "Fornitore",
+                "Cosa fa",
+                "Ruolo",
+                "Dove"
+              ],
+              "rows": [
+                [
+                  "GitHub, Inc. – GitHub Pages (<a href=\"https://docs.github.com/it/site-policy/privacy-policies/github-general-privacy-statement\" target=\"_blank\" rel=\"noopener\">privacy</a>)",
+                  "Ospita il Sito e lo distribuisce tramite la rete Fastly. Registra l’indirizzo IP dei visitatori per sicurezza.",
+                  "Titolare autonomo",
+                  "USA"
+                ],
+                [
+                  "Cloudflare, Inc. (<a href=\"https://www.cloudflare.com/it-it/privacypolicy/\" target=\"_blank\" rel=\"noopener\">privacy</a>, <a href=\"https://www.cloudflare.com/turnstile-privacy-policy/\" target=\"_blank\" rel=\"noopener\">Turnstile</a>)",
+                  "Gestisce il dominio, protegge e velocizza il Sito e, con Turnstile, il modulo di contatto.",
+                  "Responsabile del trattamento (titolare autonomo solo per migliorare il rilevamento dei bot)",
+                  "USA"
+                ],
+                [
+                  "Lindgaard.net – PostTo (<a href=\"https://postto.dev/privacy\" target=\"_blank\" rel=\"noopener\">privacy</a>)",
+                  "Riceve i messaggi del modulo di contatto e me li inoltra via email.",
+                  "Responsabile del trattamento",
+                  "Norvegia (SEE), server in Germania"
+                ],
+                [
+                  "Namecheap, Inc. – Private Email (<a href=\"https://www.namecheap.com/legal/general/privacy-policy/\" target=\"_blank\" rel=\"noopener\">privacy</a>)",
+                  "Gestisce la mia casella di posta.",
+                  "Responsabile del trattamento",
+                  "USA"
+                ],
+                [
+                  "Google LLC – Google Fonts (<a href=\"https://policies.google.com/privacy?hl=it\" target=\"_blank\" rel=\"noopener\">privacy</a>)",
+                  "Fornisce i caratteri tipografici delle pagine.",
+                  "Titolare autonomo",
+                  "USA"
+                ]
+              ]
+            }
+          },
+          "Se nasce un incarico, i dati necessari possono essere comunicati al mio commercialista per gli adempimenti fiscali. I dati possono infine essere comunicati alle autorità quando lo richiede la legge."
+        ]
+      },
+      {
+        "id": "trasferimenti",
+        "title": "Trasferimenti fuori dall’Unione Europea",
+        "body": [
+          "Alcuni fornitori hanno sede negli Stati Uniti. Il trasferimento avviene sulla base della decisione di adeguatezza della Commissione europea del 10 luglio 2023 (<em>EU-U.S. Data Privacy Framework</em>) per i fornitori certificati, e negli altri casi delle Clausole contrattuali standard approvate dalla Commissione (art. 46 GDPR). La Norvegia fa parte dello Spazio Economico Europeo e offre le stesse tutele dell’UE. Puoi chiedermi maggiori informazioni sulle garanzie adottate."
+        ]
+      },
+      {
+        "id": "link-esterni",
+        "title": "WhatsApp e social network",
+        "body": [
+          "Nel Sito trovi semplici link al mio WhatsApp e ai miei profili Instagram e LinkedIn. Non sono widget o pulsanti “mi piace”: finché non ci clicchi, nessun dato viene inviato a queste piattaforme. Dopo il clic sei sul loro servizio e si applicano le rispettive informative. Se mi scrivi su WhatsApp, vedrò il tuo numero di telefono e il nome del tuo profilo."
+        ]
+      },
+      {
+        "id": "portfolio",
+        "title": "Persone e lavori nel portfolio",
+        "body": [
+          "I progetti nel portfolio e le recensioni sono pubblicati con l’accordo dei rispettivi clienti. Se compari in un’immagine o in una recensione e preferisci che venga rimossa o resa non riconoscibile, scrivimi: provvederò senza ritardo."
+        ]
+      },
+      {
+        "id": "cookie",
+        "title": "Cookie Policy",
+        "body": [
+          "I cookie sono piccoli file di testo che un sito salva nel tuo browser. Il Sito <strong>non usa cookie o altri strumenti per statistiche, pubblicità o profilazione</strong> e non imposta cookie propri. Possono essere presenti solo questi strumenti tecnici:",
+          {
+            "table": {
+              "head": [
+                "Nome",
+                "Di chi",
+                "A cosa serve",
+                "Durata"
+              ],
+              "rows": [
+                [
+                  "lang (memoria locale del browser)",
+                  "Sito",
+                  "Ricorda la lingua che hai scelto dal menu.",
+                  "Finché non la cancelli"
+                ],
+                [
+                  "__cf_bm",
+                  "Cloudflare",
+                  "Distingue i visitatori dai bot, solo quando necessario.",
+                  "30 minuti"
+                ],
+                [
+                  "cf_clearance",
+                  "Cloudflare",
+                  "Ricorda che hai superato un controllo di sicurezza.",
+                  "30 minuti"
+                ],
+                [
+                  "Turnstile (cf_chl_*, dati tecnici)",
+                  "Cloudflare",
+                  "Solo nella pagina Contatti: verifica che il modulo sia usato da una persona.",
+                  "Sessione"
+                ]
+              ]
+            }
+          },
+          "Google Fonts non imposta cookie, ma riceve il tuo indirizzo IP quando il browser scarica i caratteri (sez. 2).",
+          "Sono strumenti tecnici necessari al funzionamento e alla sicurezza del Sito o a un servizio che hai chiesto tu: ai sensi dell’art. 122 del Codice Privacy e delle Linee guida del Garante non serve il tuo consenso, e per questo il Sito non mostra banner. Se in futuro userò strumenti che richiedono il consenso, te lo chiederò prima di attivarli.",
+          "Puoi vedere, bloccare o cancellare cookie e dati dei siti dalle impostazioni del browser: <a href=\"https://support.google.com/chrome/answer/95647?hl=it\" target=\"_blank\" rel=\"noopener\">Chrome</a>, <a href=\"https://support.mozilla.org/it/kb/Eliminare%20i%20cookie\" target=\"_blank\" rel=\"noopener\">Firefox</a>, <a href=\"https://support.apple.com/it-it/guide/safari/sfri11471/mac\" target=\"_blank\" rel=\"noopener\">Safari</a>, <a href=\"https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09\" target=\"_blank\" rel=\"noopener\">Edge</a>. Bloccare i cookie di sicurezza può impedire l’invio del modulo di contatto."
+        ]
+      },
+      {
+        "id": "diritti",
+        "title": "I tuoi diritti",
+        "body": [
+          "In base agli artt. 15–22 del GDPR puoi in ogni momento:",
+          "<ul><li>sapere se tratto tuoi dati e riceverne copia;</li><li>farli correggere o aggiornare;</li><li>chiederne la cancellazione;</li><li>chiedere la limitazione del trattamento;</li><li>riceverli in un formato strutturato o farli trasmettere ad altri (portabilità);</li><li>opporti al trattamento basato sul legittimo interesse, per motivi legati alla tua situazione.</li></ul>",
+          "Scrivi a <a href=\"mailto:hello@eleniabozzato.com\">hello@eleniabozzato.com</a>: la richiesta è gratuita e ti risponderò entro un mese (prorogabile di due mesi nei casi complessi, avvisandoti).",
+          "Se ritieni che il trattamento violi la normativa, puoi proporre reclamo al <a href=\"https://www.garanteprivacy.it\" target=\"_blank\" rel=\"noopener\">Garante per la protezione dei dati personali</a> (Piazza Venezia 11, 00187 Roma) o all’autorità di controllo del Paese UE in cui vivi o lavori."
+        ]
+      },
+      {
+        "id": "altro",
+        "title": "Altre informazioni",
+        "body": [
+          "<strong>Sicurezza.</strong> Il Sito è servito solo tramite connessione cifrata (HTTPS) e i messaggi del modulo sono conservati cifrati dal fornitore. Adotto misure adeguate per proteggere i dati che ricevo.",
+          "<strong>Minori.</strong> Il Sito non è rivolto a minori di 14 anni e non raccolgo consapevolmente i loro dati."
+        ]
+      },
+      {
+        "id": "modifiche",
+        "title": "Modifiche a questa informativa",
+        "body": [
+          "Posso aggiornare questa informativa, ad esempio se cambiano i servizi usati dal Sito o la normativa. La versione in vigore è sempre su questa pagina, con la data in alto. In caso di modifiche rilevanti lo segnalerò in modo evidente sul Sito."
+        ]
+      }
+    ]
   },
   "experience": {
     "meta": {

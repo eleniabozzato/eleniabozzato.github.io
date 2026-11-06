@@ -41,7 +41,7 @@ ${band}    <div class="footer-main container">
           </a>
         </div>
       </div>
-      <p class="footer-legal">${f.legal}</p>
+      <p class="footer-legal">${f.legal} • <a href="${href.page('privacy')}">${f.privacy}</a> • ${f.copyright}</p>
     </div>
   </footer>
 `;

@@ -9,8 +9,9 @@ export const layout = ({ t }) => ({
   footerCta: false,
 });
 
-export default function contact({ t }) {
+export default function contact({ t, href }) {
   const c = t.contact;
+  const privacyNote = c.privacyNote.replace('{link}', `<a href="${href.page('privacy')}">${c.privacyLink}</a>`);
   return `  <main>
     <section class="contact-layout">
       <div class="contact-layout__media">
@@ -44,7 +45,10 @@ export default function contact({ t }) {
 
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAEXuN4r8L4k5cfyu" data-action="contact" data-appearance="interaction-only"></div>
 
-          <button type="submit" class="btn">${c.submit}</button>
+          <div class="contact-form__submit">
+            <button type="submit" class="btn">${c.submit}</button>
+            <p class="form-privacy">${privacyNote}</p>
+          </div>
           <p class="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
