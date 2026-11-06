@@ -1,0 +1,87 @@
+/* Privacy and cookie policy: one readable column of legal text, with a summary box,
+   a table of contents and tables that scroll sideways on small screens. */
+.legal {
+  max-width: calc(820px + 2 * var(--gutter));
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+.legal h1 {
+  font-size: var(--fs-display);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: var(--space-2) 0 var(--space-1);
+}
+.legal h2 {
+  font-size: var(--fs-lead);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: var(--space-4) 0 var(--space-2);
+}
+.legal p,
+.legal ul,
+.legal ol { margin-bottom: var(--space-2); }
+.legal ul,
+.legal ol { padding-left: 1.25rem; }
+.legal ul { list-style: disc; }
+.legal ol { list-style: decimal; }
+.legal li { margin-bottom: 0.25rem; }
+.legal a:not(.btn) {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--magenta);
+  text-underline-offset: 3px;
+}
+.legal a:not(.btn):hover { color: var(--magenta); }
+
+.legal__updated {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.legal__summary {
+  background: var(--grad-brand-soft);
+  border: var(--line-hairline);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin: var(--space-4) 0;
+}
+.legal__summary h2 { margin-top: 0; }
+.legal__summary ul { margin-bottom: 0; }
+
+.legal__toc ol { columns: 2; column-gap: var(--space-4); }
+.legal__toc li { break-inside: avoid; }
+
+/* the sticky header must not cover a section opened from the table of contents */
+.legal__section { scroll-margin-top: calc(var(--nav-h) + var(--space-2)); }
+
+.legal__table {
+  overflow-x: auto;
+  margin-bottom: var(--space-2);
+  border-top: var(--line-hairline);
+}
+.legal__table table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+.legal__table th,
+.legal__table td {
+  padding: 0.6rem 0.75rem 0.6rem 0;
+  border-bottom: 1px solid rgb(0 0 0 / 0.15);
+  text-align: left;
+  vertical-align: top;
+}
+.legal__table th { font-weight: 600; }
+
+@media (max-width: 767px) {
+  .legal h1 { font-size: 1.75rem; }
+  .legal h2 { font-size: 1.1rem; }
+  .legal { line-height: var(--lh-body-mobile); }
+  .legal__summary { padding: var(--space-2); }
+  .legal__toc ol { columns: 1; }
+}

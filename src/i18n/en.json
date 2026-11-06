@@ -16,7 +16,9 @@
     "eyebrow": "Still scrolling?",
     "title": "Let’s get to know<br>each other <em-magenta>BETTER</em-magenta>",
     "city": "Cordovado (PN), Italy",
-    "legal": "Elenia Bozzato • VAT 04701970271 • Privacy Policy and Cookie Policy • © Copyright 2026"
+    "legal": "Elenia Bozzato • VAT 04701970271",
+    "privacy": "Privacy Policy and Cookie Policy",
+    "copyright": "© Copyright 2026"
   },
   "gallery": {
     "prev": "Previous image",
@@ -524,7 +526,248 @@
     "name": "Name",
     "email": "Email",
     "message": "Message",
-    "submit": "Send"
+    "submit": "Send",
+    "privacyNote": "Your details will only be used to reply to your message. Read the {link}.",
+    "privacyLink": "privacy notice"
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy and Cookie Policy — Elenia Bozzato",
+      "description": "How personal data of visitors to eleniabozzato.com and of people who write to me is handled, and which cookies the site uses."
+    },
+    "eyebrow": "Privacy notice",
+    "title": "Privacy and <em-magenta>COOKIE</em-magenta> Policy",
+    "updated": "Version of 6 November 2026",
+    "intro": [
+      "This notice explains how I process the personal data of people who visit <strong>www.eleniabozzato.com</strong> (“the Site”) or contact me through it, under Article 13 of Regulation (EU) 2016/679 (“GDPR”), Italian Legislative Decree 196/2003 (“Privacy Code”) and the Italian Data Protection Authority’s cookie guidelines of 10 June 2021. The Italian version prevails in case of doubt."
+    ],
+    "summary": {
+      "title": "In short",
+      "items": [
+        "I use no analytics, advertising or profiling tools, so I do not ask for consent and you see no banner.",
+        "If you write to me through the contact form or by email, I only use your details to reply.",
+        "The providers that host the Site, receive the messages and protect it from spam process your IP address to make it work.",
+        "The Site only remembers, in your browser, the language you chose.",
+        "You can ask me at any time to see, correct or delete your data by writing to <a href=\"mailto:hello@eleniabozzato.com\">hello@eleniabozzato.com</a>."
+      ]
+    },
+    "tocLabel": "Contents",
+    "sections": [
+      {
+        "id": "titolare",
+        "title": "Who processes your data",
+        "body": [
+          "The data controller is:",
+          "<strong>Elenia Bozzato</strong><br>Via Suzzolins 27/A – 33075 Cordovado (PN), Italy<br>VAT 04701970271<br>Email: <a href=\"mailto:hello@eleniabozzato.com\">hello@eleniabozzato.com</a>",
+          "No Data Protection Officer (DPO) has been appointed, because none of the cases in which Article 37 GDPR requires one applies. For any question, write to the address above."
+        ]
+      },
+      {
+        "id": "trattamenti",
+        "title": "What data, why and for how long",
+        "body": [
+          {
+            "table": {
+              "head": [
+                "When",
+                "Data",
+                "Purpose and legal basis",
+                "Retention"
+              ],
+              "rows": [
+                [
+                  "You visit the Site",
+                  "IP address, date and time, requested page, browser and operating system",
+                  "Show you the pages, keep them fast and secure, prevent abuse.<br><em>Legitimate interest</em> in offering a working, secure site (Art. 6(1)(f) GDPR).",
+                  "For the technical periods of the hosting and network providers (section 4). I do not access these logs."
+                ],
+                [
+                  "The pages load their fonts",
+                  "IP address and browser, sent to Google Fonts",
+                  "Show the Site with the typefaces of my visual identity (Poppins and Bodoni Moda).<br><em>Legitimate interest</em> (Art. 6(1)(f) GDPR).",
+                  "According to Google’s policy (section 4)."
+                ],
+                [
+                  "You open the Contact page",
+                  "IP address, browser and technical device signals, checked by Cloudflare Turnstile",
+                  "Make sure the form is used by a person and not by an automated program.<br><em>Legitimate interest</em> in protecting the Site from spam (Art. 6(1)(f) GDPR).",
+                  "For Cloudflare’s technical periods (section 4)."
+                ],
+                [
+                  "You write to me through the form or by email",
+                  "Name, email, message and any other details you choose to share; for the form, also the IP address",
+                  "Reply to your request and, if you ask, prepare a quote.<br><em>Pre-contractual steps</em> taken at your request (Art. 6(1)(b) GDPR).",
+                  "Up to 24 months from the last contact. The copy on the form service is deleted automatically after 7 days. If it leads to a job, the necessary data is kept for the duration of the relationship and then for 10 years for tax obligations (Art. 6(1)(c) GDPR)."
+                ],
+                [
+                  "You choose the Site language",
+                  "The chosen language (“it” or “en”), stored only in your browser",
+                  "Show you the Site in the language you chose.<br>A service you requested (Art. 122 Privacy Code).",
+                  "Until you clear the site data in your browser."
+                ],
+                [
+                  "A right needs protecting",
+                  "Only the data above that is strictly necessary",
+                  "Defend my rights in court or answer requests from the authorities.<br><em>Legitimate interest</em> (Art. 6(1)(f)) and <em>legal obligation</em> (Art. 6(1)(c) GDPR).",
+                  "For the duration of the proceedings."
+                ]
+              ]
+            }
+          },
+          "Your data is not used for newsletters or marketing, is not sold or passed on to third parties and is not used for profiling or automated decisions (Art. 22 GDPR)."
+        ]
+      },
+      {
+        "id": "conferimento",
+        "title": "Do you have to provide it?",
+        "body": [
+          "Browsing data is sent automatically by your browser and is needed to display the Site. Writing to me is entirely optional: your name, email and message are needed to reply, and without them I cannot.",
+          "Please do not send special categories of data (for example about health) or data about other people that you are not allowed to share, unless it is strictly necessary for your request."
+        ]
+      },
+      {
+        "id": "destinatari",
+        "title": "Who receives it",
+        "body": [
+          "I process the data myself and, where needed, through the following providers. It is never made public.",
+          {
+            "table": {
+              "head": [
+                "Provider",
+                "What it does",
+                "Role",
+                "Where"
+              ],
+              "rows": [
+                [
+                  "GitHub, Inc. – GitHub Pages (<a href=\"https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement\" target=\"_blank\" rel=\"noopener\">privacy</a>)",
+                  "Hosts the Site and delivers it through the Fastly network. Logs visitors’ IP addresses for security.",
+                  "Independent controller",
+                  "USA"
+                ],
+                [
+                  "Cloudflare, Inc. (<a href=\"https://www.cloudflare.com/privacypolicy/\" target=\"_blank\" rel=\"noopener\">privacy</a>, <a href=\"https://www.cloudflare.com/turnstile-privacy-policy/\" target=\"_blank\" rel=\"noopener\">Turnstile</a>)",
+                  "Runs the domain, protects and speeds up the Site and, with Turnstile, the contact form.",
+                  "Processor (independent controller only to improve bot detection)",
+                  "USA"
+                ],
+                [
+                  "Lindgaard.net – PostTo (<a href=\"https://postto.dev/privacy\" target=\"_blank\" rel=\"noopener\">privacy</a>)",
+                  "Receives the contact form messages and forwards them to me by email.",
+                  "Processor",
+                  "Norway (EEA), servers in Germany"
+                ],
+                [
+                  "Namecheap, Inc. – Private Email (<a href=\"https://www.namecheap.com/legal/general/privacy-policy/\" target=\"_blank\" rel=\"noopener\">privacy</a>)",
+                  "Runs my mailbox.",
+                  "Processor",
+                  "USA"
+                ],
+                [
+                  "Google LLC – Google Fonts (<a href=\"https://policies.google.com/privacy?hl=en\" target=\"_blank\" rel=\"noopener\">privacy</a>)",
+                  "Serves the typefaces of the pages.",
+                  "Independent controller",
+                  "USA"
+                ]
+              ]
+            }
+          },
+          "If a job follows, the necessary data may be shared with my accountant for tax purposes. Data may also be disclosed to the authorities when the law requires it."
+        ]
+      },
+      {
+        "id": "trasferimenti",
+        "title": "Transfers outside the European Union",
+        "body": [
+          "Some providers are based in the United States. Transfers rely on the European Commission’s adequacy decision of 10 July 2023 (<em>EU-U.S. Data Privacy Framework</em>) for certified providers, and otherwise on the Standard Contractual Clauses approved by the Commission (Art. 46 GDPR). Norway is part of the European Economic Area and offers the same protection as the EU. You can ask me for more information on the safeguards in place."
+        ]
+      },
+      {
+        "id": "link-esterni",
+        "title": "WhatsApp and social networks",
+        "body": [
+          "The Site has plain links to my WhatsApp and to my Instagram and LinkedIn profiles. They are not widgets or “like” buttons: until you click them, no data is sent to these platforms. After the click you are on their service and their own privacy notices apply. If you message me on WhatsApp, I will see your phone number and profile name."
+        ]
+      },
+      {
+        "id": "portfolio",
+        "title": "People and work in the portfolio",
+        "body": [
+          "The projects in the portfolio and the reviews are published with the agreement of the clients concerned. If you appear in an image or a review and would like it removed or made unrecognisable, write to me and I will do it without delay."
+        ]
+      },
+      {
+        "id": "cookie",
+        "title": "Cookie Policy",
+        "body": [
+          "Cookies are small text files that a website stores in your browser. The Site <strong>uses no cookies or other tools for analytics, advertising or profiling</strong> and sets no cookies of its own. Only these technical tools may be present:",
+          {
+            "table": {
+              "head": [
+                "Name",
+                "Set by",
+                "Purpose",
+                "Duration"
+              ],
+              "rows": [
+                [
+                  "lang (browser local storage)",
+                  "Site",
+                  "Remembers the language you chose in the menu.",
+                  "Until you clear it"
+                ],
+                [
+                  "__cf_bm",
+                  "Cloudflare",
+                  "Tells visitors from bots, only when needed.",
+                  "30 minutes"
+                ],
+                [
+                  "cf_clearance",
+                  "Cloudflare",
+                  "Remembers that you passed a security check.",
+                  "30 minutes"
+                ],
+                [
+                  "Turnstile (cf_chl_*, technical data)",
+                  "Cloudflare",
+                  "Contact page only: checks that the form is used by a person.",
+                  "Session"
+                ]
+              ]
+            }
+          },
+          "Google Fonts sets no cookies, but receives your IP address when your browser downloads the fonts (section 2).",
+          "These are technical tools needed for the Site to work and stay secure, or for a service you asked for: under Article 122 of the Privacy Code and the Authority’s guidelines your consent is not required, which is why the Site shows no banner. If I ever use tools that need consent, I will ask for it before turning them on.",
+          "You can view, block or delete cookies and site data in your browser settings: <a href=\"https://support.google.com/chrome/answer/95647?hl=en\" target=\"_blank\" rel=\"noopener\">Chrome</a>, <a href=\"https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox\" target=\"_blank\" rel=\"noopener\">Firefox</a>, <a href=\"https://support.apple.com/guide/safari/sfri11471/mac\" target=\"_blank\" rel=\"noopener\">Safari</a>, <a href=\"https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09\" target=\"_blank\" rel=\"noopener\">Edge</a>. Blocking security cookies may stop the contact form from being sent."
+        ]
+      },
+      {
+        "id": "diritti",
+        "title": "Your rights",
+        "body": [
+          "Under Articles 15–22 GDPR you can at any time:",
+          "<ul><li>find out whether I process your data and get a copy;</li><li>have it corrected or updated;</li><li>have it deleted;</li><li>have its processing restricted;</li><li>receive it in a structured format or have it sent to someone else (portability);</li><li>object to processing based on legitimate interest, for reasons relating to your situation.</li></ul>",
+          "Write to <a href=\"mailto:hello@eleniabozzato.com\">hello@eleniabozzato.com</a>: requests are free and I will reply within one month (extendable by two months for complex requests, in which case I will let you know).",
+          "If you believe the processing breaks the law, you can lodge a complaint with the Italian <a href=\"https://www.garanteprivacy.it/web/garante-privacy-en\" target=\"_blank\" rel=\"noopener\">Data Protection Authority</a> (Garante per la protezione dei dati personali, Piazza Venezia 11, 00187 Rome) or with the supervisory authority of the EU country where you live or work."
+        ]
+      },
+      {
+        "id": "altro",
+        "title": "Other information",
+        "body": [
+          "<strong>Security.</strong> The Site is served only over an encrypted connection (HTTPS) and form messages are stored encrypted by the provider. I take appropriate measures to protect the data I receive.",
+          "<strong>Children.</strong> The Site is not aimed at children under 14 and I do not knowingly collect their data."
+        ]
+      },
+      {
+        "id": "modifiche",
+        "title": "Changes to this notice",
+        "body": [
+          "I may update this notice, for example if the services used by the Site or the law change. The current version is always on this page, with its date at the top. If the changes are significant I will point them out clearly on the Site."
+        ]
+      }
+    ]
   },
   "experience": {
     "meta": {

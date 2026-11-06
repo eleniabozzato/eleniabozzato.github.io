@@ -75,6 +75,23 @@
 }
 .form-status[data-state="error"] { color: #c0165c; }
 .form-status[data-state="success"] { color: #0a8f5b; }
+/* send button with the privacy note beside it (below it on narrow screens) */
+.contact-form__submit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+}
+.form-privacy {
+  flex: 1 1 14rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+.form-privacy a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 
 @media (max-width: 767px) {
   /* square photo, legs cropped */

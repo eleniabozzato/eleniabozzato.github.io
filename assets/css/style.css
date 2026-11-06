@@ -933,6 +933,12 @@ textarea:focus-visible,
   text-transform: uppercase;
   color: var(--ink);
 }
+.footer-legal a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer-legal a:hover { color: var(--magenta); }
 @media (max-width: 767px) {
   .footer-cta__title { font-size: 2rem; }
   .footer-contact { margin-right: 0; gap: 1.5rem 2rem; }
