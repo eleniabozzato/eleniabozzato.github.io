@@ -1,5 +1,5 @@
 ---
-order: 13
+order: 12
 slug: gestire-social-in-autonomia
 title: Come gestire i <em-acqua>SOCIAL</em-acqua> in autonomia, senza improvvisare
 short: Gestire i social in autonomia

@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 9
 slug: logo-e-brand-identity
 title: <em-magenta>LOGO</em-magenta> e brand identity: la differenza e cosa deve contenere un progetto
 short: Logo e brand identity

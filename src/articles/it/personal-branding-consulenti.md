@@ -1,5 +1,5 @@
 ---
-order: 12
+order: 11
 slug: personal-branding-consulenti
 title: <em-magenta>PERSONAL BRANDING</em-magenta> per consulenti e liberi professionisti: da dove partire
 short: Personal branding professionisti

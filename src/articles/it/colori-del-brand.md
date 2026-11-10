@@ -1,5 +1,5 @@
 ---
-order: 11
+order: 10
 slug: colori-del-brand
 title: I <em-acqua>COLORI</em-acqua> del brand: cosa c’è di vero nella psicologia del colore
 short: I colori del brand

@@ -5,7 +5,7 @@ title: Comunicazione per uno <em-magenta>STUDIO DENTISTICO</em-magenta>: cosa si
 short: Comunicare uno studio dentistico
 description: Comunicazione e marketing per uno studio dentistico: cosa permettono le regole sulla pubblicità sanitaria e quali contenuti costruiscono fiducia nei pazienti.
 projects: dentisti
-related: shooting-fotografico-aziendale, brand-manager-esterno
+related: tono-di-voce-brand, brand-manager-esterno
 date: 2026-11-04
 ---
 
@@ -65,4 +65,4 @@ Anche le campagne pubblicitarie online sono possibili, con gli stessi limiti di 
 
 Nello studio dentistico che seguo come figura di riferimento per la comunicazione, oggi il brand è percepito come più coerente e riconoscibile, e lo studio registra un andamento positivo di nuovi pazienti rispetto ai periodi precedenti. Non lo attribuisco solo alla comunicazione: è un insieme di fattori. Ma una comunicazione ordinata rende visibile il lavoro che lo studio già fa bene.
 
-Le foto del team sono uno dei contenuti più preziosi per uno studio: come si prepara uno shooting che serva davvero lo racconto in [dietro le quinte di uno shooting aziendale](article:shooting-fotografico-aziendale). Se invece ti serve qualcuno che segua la comunicazione dello studio con continuità, leggi [che cosa fa un brand manager esterno](article:brand-manager-esterno).
+Perché il tono conti così tanto in un contesto sanitario lo spiego in [che cos’è il tono di voce di un brand](article:tono-di-voce-brand). Se invece ti serve qualcuno che segua la comunicazione dello studio con continuità, leggi [che cosa fa un brand manager esterno](article:brand-manager-esterno).

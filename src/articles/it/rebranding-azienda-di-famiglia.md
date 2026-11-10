@@ -1,5 +1,5 @@
 ---
-order: 8
+order: 7
 slug: rebranding-azienda-di-famiglia
 title: <em-acqua>REBRANDING</em-acqua> di un’azienda di famiglia: rinnovare senza perdere la storia
 short: Rebranding azienda di famiglia

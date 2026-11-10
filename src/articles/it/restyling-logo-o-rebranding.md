@@ -1,5 +1,5 @@
 ---
-order: 9
+order: 8
 slug: restyling-logo-o-rebranding
 title: Restyling del logo o <em-magenta>REBRANDING</em-magenta>? I segnali e come scegliere
 short: Restyling o rebranding

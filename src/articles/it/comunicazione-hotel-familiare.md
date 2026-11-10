@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 6
 slug: comunicazione-hotel-familiare
 title: Comunicazione per un <em-acqua>HOTEL</em-acqua> a conduzione familiare: tutto il percorso dell’ospite
 short: Comunicazione hotel familiare
