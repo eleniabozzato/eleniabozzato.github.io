@@ -2,7 +2,7 @@
 import { SITE_URL } from '../data/pages.mjs';
 import { articleUrl, blogIndexUrl } from '../data/articles.mjs';
 import { blogCards } from '../partials/blog-card.mjs';
-import { projectCard } from '../partials/more-exp.mjs';
+import { projectMarquee } from '../partials/more-exp.mjs';
 import { escAttr, jsonLd } from '../partials/util.mjs';
 
 const FALLBACK_IMAGE = '/assets/img/home-hero-elenia.webp';
@@ -64,19 +64,14 @@ export default function article({ t, href, projects, articles, article: a }) {
   const mine = a.projectKeys.map((k) => projects.find((p) => p.key === k)).filter(Boolean);
   const related = a.related.map((s) => articles.find((x) => x.slug === s)).filter(Boolean);
 
-  const projectBlock = mine.length
-    ? `
-    <!-- IL PROGETTO -->
-    <section class="blog-block" aria-labelledby="blog-projects-title">
-      <div class="container">
-        <h2 class="blog-block__title" id="blog-projects-title">${mine.length > 1 ? b.projects : b.project}</h2>
-        <ul class="blog-projects">
-${mine.map((p) => `          <li>\n${projectCard({ t, href, p, pad: 12 })}\n          </li>`).join('\n')}
-        </ul>
-      </div>
-    </section>
-`
-    : '';
+  // Every project, the article's own first: the reader links the first card to the text. No visible
+  // heading on purpose (the article never names the client); the label is for screen readers only.
+  const list = [...mine, ...projects.filter((p) => !mine.includes(p))];
+  const projectBlock = `
+    <!-- PROGETTI -->
+    <section class="blog-block blog-block--projects" aria-label="${b.projects}">
+${projectMarquee({ t, href, list })}    </section>
+`;
   const relatedBlock = related.length
     ? `
     <!-- LEGGI ANCHE -->

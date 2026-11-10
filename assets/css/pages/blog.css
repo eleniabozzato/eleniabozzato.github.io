@@ -35,8 +35,6 @@ a.blog-head__eyebrow:hover, a.blog-head__eyebrow:focus-visible { text-decoration
 .blog-list { padding: 2.75rem 0 3rem; }
 .blog-head + .blog-block { margin-top: 1.5rem; }
 
-.blog-projects { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); }
-.blog-projects > li { width: 340px; max-width: 100%; }
 
 /* ---------- Article cards ---------- */
 .blog-cards { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
@@ -69,5 +67,4 @@ a.blog-head__eyebrow:hover, a.blog-head__eyebrow:focus-visible { text-decoration
   .blog-block { padding: 2.5rem 0 2.75rem; }
   .blog-cards { grid-template-columns: 1fr; }
   .blog-card { padding: 1.5rem 1.4rem 1.3rem; }
-  .blog-projects > li { width: 260px; }
 }

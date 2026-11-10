@@ -4,7 +4,7 @@ import { projectName } from './util.mjs';
 
 const COPIES = 3;
 
-// The project card (also used by the blog articles): <a class="more-exp__card"> with photo, name and service.
+// The project card: <a class="more-exp__card"> with photo, name and service.
 export function projectCard({ t, href, p, hidden = false, pad = 14 }) {
   const c = p.card;
   const sp = ' '.repeat(pad);
@@ -24,21 +24,26 @@ ${projectCard({ t, href, p, hidden })}
             </li>`;
 }
 
+// The looping track alone: one real set of cards and COPIES-1 aria-hidden copies (main.js moves it).
+export function projectMarquee({ t, href, list }) {
+  const items = [];
+  for (let i = 0; i < COPIES; i++) for (const p of list) items.push(card({ t, href, p, hidden: i > 0 }));
+  return `      <div class="more-exp__marquee">
+        <ul class="more-exp__track">
+${items.join('\n')}
+        </ul>
+      </div>
+`;
+}
+
 export function moreExp({ t, href, projects, current }) {
   const others = projects.filter((p) => p.key !== current.key);
-  const items = [];
-  for (let i = 0; i < COPIES; i++) for (const p of others) items.push(card({ t, href, p, hidden: i > 0 }));
   return `    <!-- ALTRE ESPERIENZE -->
     <section class="section more-exp" aria-labelledby="more-exp-title">
       <div class="section__head more-exp__head">
         <span class="badge badge--acqua">${t.moreExp.eyebrow}</span>
         <h2 class="section-title" id="more-exp-title">${t.moreExp.title}</h2>
       </div>
-      <div class="more-exp__marquee">
-        <ul class="more-exp__track">
-${items.join('\n')}
-        </ul>
-      </div>
-    </section>
+${projectMarquee({ t, href, list: others })}    </section>
 `;
 }

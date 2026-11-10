@@ -1027,8 +1027,8 @@ textarea:focus-visible,
 @media (prefers-reduced-motion: reduce) { .to-top { transition: none; } }
 
 /* ---------- 6.10 Project card ----------
-   Photo, project name and service. Used by the "more experiences" marquee (project pages)
-   and by the project block of the blog articles. The parent sets --card-pos / --hero-fit on the photo. */
+   Photo, project name and service. Used by the project marquee below (project pages and
+   blog articles). The parent sets --card-pos / --hero-fit on the photo. */
 .more-exp__card {
   display: flex; flex-direction: column; height: 100%; border: var(--line-hairline); border-radius: var(--radius-lg);
   overflow: clip; background: var(--white); color: var(--ink);
@@ -1039,6 +1039,24 @@ textarea:focus-visible,
 .more-exp__body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 28px; text-align: center; }
 .more-exp__name { --pn-size: 2rem; --pn-lh: 1.05; --pn-accent-size: 2.1rem; }
 .more-exp__desc { font-size: 1rem; line-height: 1.4; }
+/* Marquee of project cards (project pages, blog articles). The track holds 3 identical sets
+   (1 real + 2 aria-hidden) and slides by one set, so the loop is seamless as long as one set
+   is not narrower than the screen. */
+/* Scroll container moved by main.js (auto-advance, swipe, wheel, mouse drag); no scrollbar.
+   Hover does not pause it (it made the cards hard to follow). */
+.more-exp__marquee { overflow-x: auto; overflow-y: clip; scrollbar-width: none; overscroll-behavior-x: contain; cursor: grab; }
+.more-exp__marquee::-webkit-scrollbar { display: none; }
+.more-exp__marquee.is-dragging { cursor: grabbing; user-select: none; }
+.more-exp__marquee img { -webkit-user-drag: none; }
+.more-exp__track {
+  --card-w: 340px; --card-gap: var(--space-3);
+  display: flex; width: max-content; margin: 0; padding: 0; list-style: none; text-align: left;
+}
+.more-exp__item { flex: none; width: var(--card-w); margin-right: var(--card-gap); }
+@media (prefers-reduced-motion: reduce) {
+  .more-exp__item[aria-hidden="true"] { display: none; }
+}
 @media (max-width: 767px) {
   .more-exp__name { --pn-size: 1.7rem; --pn-accent-size: 1.8rem; }
+  .more-exp__track { --card-w: 260px; --card-gap: var(--space-2); }
 }
