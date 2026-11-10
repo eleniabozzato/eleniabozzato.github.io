@@ -2,6 +2,7 @@
 order: 8
 slug: restyling-logo-o-rebranding
 title: Restyling del logo o <em-magenta>REBRANDING</em-magenta>? I segnali e come scegliere
+seo: Restyling del logo o rebranding? Come scegliere
 short: Restyling o rebranding
 description: Restyling del logo o rebranding completo? La differenza, i segnali che è il momento di intervenire e cinque domande per scegliere senza sprecare budget.
 projects: pulicasa, carrozzeria

@@ -2,6 +2,7 @@
 order: 2
 slug: posizionamento-brand
 title: Che cos’è il <em-magenta>POSIZIONAMENTO</em-magenta> di un brand, e perché viene prima del logo
+seo: Posizionamento di un brand: cos’è e perché conta
 short: Il posizionamento di un brand
 description: Che cos’è il posizionamento di un brand, perché viene prima di logo e social e come si riconosce un’azienda che non ne ha uno. Spiegato con esempi reali.
 projects: alplan, carrozzeria, paola

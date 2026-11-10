@@ -2,6 +2,7 @@
 order: 10
 slug: colori-del-brand
 title: I <em-acqua>COLORI</em-acqua> del brand: cosa c’è di vero nella psicologia del colore
+seo: Psicologia del colore nel branding: cosa è vero
 short: I colori del brand
 description: Psicologia del colore nel branding: cosa dicono gli studi, quali miti circolano e come si scelgono davvero i colori di un brand, con esempi da progetti reali.
 projects: perform, pulicasa, carrozzeria

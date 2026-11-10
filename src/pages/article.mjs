@@ -14,7 +14,7 @@ const imageOf = (a, projects) => {
 
 export const layout = ({ article: a, projects, t }) => {
   const url = SITE_URL + articleUrl(a.slug);
-  const title = `${a.titlePlain} \u2014 Elenia Bozzato`;
+  const title = `${a.seoTitle} \u2014 Elenia Bozzato`; // short for search results; the H1 keeps the full title
   const image = imageOf(a, projects);
   const person = { '@type': 'Person', name: 'Elenia Bozzato', url: `${SITE_URL}/` };
   return {

@@ -2,6 +2,7 @@
 order: 7
 slug: rebranding-azienda-di-famiglia
 title: <em-acqua>REBRANDING</em-acqua> di un’azienda di famiglia: rinnovare senza perdere la storia
+seo: Rebranding di un’azienda di famiglia
 short: Rebranding azienda di famiglia
 description: Rebranding di un’azienda di famiglia e passaggio generazionale: cosa tenere, cosa cambiare e come coinvolgere chi l’ha fondata. Un caso vissuto da dentro.
 projects: carrozzeria

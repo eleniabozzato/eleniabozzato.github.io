@@ -2,6 +2,7 @@
 order: 9
 slug: logo-e-brand-identity
 title: <em-magenta>LOGO</em-magenta> e brand identity: la differenza e cosa deve contenere un progetto
+seo: Logo e brand identity: qual è la differenza
 short: Logo e brand identity
 description: Logo e brand identity non sono la stessa cosa: cosa comprende un’identità di marca, cosa deve contenere un manuale e come capire se ti basta un logo.
 projects: perform, carrozzeria

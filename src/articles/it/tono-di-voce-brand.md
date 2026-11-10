@@ -2,6 +2,7 @@
 order: 3
 slug: tono-di-voce-brand
 title: Che cos’è il <em-acqua>TONO DI VOCE</em-acqua> di un brand (e perché non è solo come scrivi)
+seo: Tono di voce di un brand: cos’è e come si definisce
 short: Il tono di voce di un brand
 description: Che cos’è il tono di voce di un brand, perché conta quanto il logo, dove si nasconde nei testi di tutti i giorni e come si riconosce un tono incoerente.
 projects: alplan, dentisti, perform

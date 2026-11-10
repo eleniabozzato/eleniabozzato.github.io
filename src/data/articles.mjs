@@ -54,9 +54,10 @@ export function loadArticles(projects) {
       const { fm, slug, body, list, projectKeys } = parseFile(file, projects);
       const a = {
         order: Number(fm.order), slug, titleRaw: fm.title, title: expandTitle(fm.title), titlePlain: plainTitle(fm.title),
-        short: fm.short, description: fm.description, date: fm.date,
+        short: fm.short, seoTitle: fm.seo || plainTitle(fm.title), description: fm.description, date: fm.date,
         projectKeys: list(fm.projects), related: list(fm.related), body,
       };
+      if (a.seoTitle.length > 52) warn(`${file}: "seo" is ${a.seoTitle.length} characters (max 52)`);
       if (a.short.length > 32) warn(`${file}: "short" is ${a.short.length} characters (max 32)`);
       if (a.description.length < 120 || a.description.length > 170) warn(`${file}: description is ${a.description.length} characters (aim for 140-160)`);
       if ((fm.title.match(KEYWORD) || []).length !== 1) warn(`${file}: the title needs exactly one accent span`);

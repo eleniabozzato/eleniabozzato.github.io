@@ -2,6 +2,7 @@
 order: 1
 slug: brand-manager-esterno
 title: <em-magenta>BRAND MANAGER</em-magenta> esterno: cosa fa per una piccola impresa e quando serve
+seo: Brand manager esterno: cosa fa e quando serve
 short: Brand manager esterno
 description: Cosa fa un brand manager esterno in una piccola impresa, in cosa è diverso da agenzia e social media manager, e come capire se ti serve davvero.
 projects: dentisti, alplan

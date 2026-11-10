@@ -2,6 +2,7 @@
 order: 11
 slug: personal-branding-consulenti
 title: <em-magenta>PERSONAL BRANDING</em-magenta> per consulenti e liberi professionisti: da dove partire
+seo: Personal branding per liberi professionisti
 short: Personal branding professionisti
 description: Personal branding per consulenti e liberi professionisti: quando il brand coincide con te, come renderlo riconoscibile e come farlo crescere oltre la tua persona.
 projects: paola

@@ -2,6 +2,7 @@
 order: 6
 slug: comunicazione-hotel-familiare
 title: Comunicazione per un <em-acqua>HOTEL</em-acqua> a conduzione familiare: tutto il percorso dell’ospite
+seo: Comunicazione per hotel a conduzione familiare
 short: Comunicazione hotel familiare
 description: Comunicazione per un hotel a conduzione familiare: descrizioni delle camere, e-mail automatiche, portali e recensioni, per raccontare la famiglia in ogni passaggio.
 projects: alplan

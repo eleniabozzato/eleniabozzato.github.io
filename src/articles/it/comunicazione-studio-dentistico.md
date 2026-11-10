@@ -2,6 +2,7 @@
 order: 5
 slug: comunicazione-studio-dentistico
 title: Comunicazione per uno <em-magenta>STUDIO DENTISTICO</em-magenta>: cosa si può fare e cosa funziona
+seo: Comunicazione per studi dentistici: regole e idee
 short: Comunicare uno studio dentistico
 description: Comunicazione e marketing per uno studio dentistico: cosa permettono le regole sulla pubblicità sanitaria e quali contenuti costruiscono fiducia nei pazienti.
 projects: dentisti

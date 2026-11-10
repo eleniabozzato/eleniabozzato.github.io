@@ -2,6 +2,7 @@
 order: 12
 slug: gestire-social-in-autonomia
 title: Come gestire i <em-acqua>SOCIAL</em-acqua> in autonomia, senza improvvisare
+seo: Come gestire i social aziendali in autonomia
 short: Gestire i social in autonomia
 description: Come gestire i social della tua azienda in autonomia: linee guida, rubriche, modelli grafici e un calendario sostenibile. Cosa deve darti una buona formazione.
 projects: paola

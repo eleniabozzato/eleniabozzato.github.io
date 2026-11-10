@@ -2,6 +2,7 @@
 order: 4
 slug: coordinare-fornitori-comunicazione
 title: Grafico, fotografo, agenzia: come <em-acqua>COORDINARE</em-acqua> chi lavora alla tua comunicazione
+seo: Come coordinare i fornitori della comunicazione
 short: Coordinare i fornitori
 description: Grafico, fotografo, agenzia web e social: cinque strumenti semplici per coordinare i fornitori della comunicazione e far parlare il brand con una sola voce.
 projects: alplan, dentisti
