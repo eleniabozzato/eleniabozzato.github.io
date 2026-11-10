@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 9
 slug: restyling-logo-o-rebranding
 title: Restyling del logo o <em-magenta>REBRANDING</em-magenta>? I segnali e come scegliere
 short: Restyling o rebranding
@@ -34,7 +34,7 @@ Se ti riconosci nei primi due punti, probabilmente basta un restyling. Se ti ric
 
 ## Un anniversario come occasione: un caso
 
-Un’azienda di pulizie civili e industriali del Portogruarese mi ha chiesto di intervenire in vista dei suoi 40 anni di attività. L’identità visiva era ormai datata e non più coerente con l’evoluzione del servizio. Il nome, la reputazione e il territorio, invece, erano solidi.
+[Un’azienda di pulizie civili e industriali del Portogruarese](project:pulicasa) mi ha chiesto di intervenire in vista dei suoi 40 anni di attività. L’identità visiva era ormai datata e non più coerente con l’evoluzione del servizio. Il nome, la reputazione e il territorio, invece, erano solidi.
 
 La scelta è stata un restyling del logo, con una revisione completa dell’identità visiva: un sistema grafico più chiaro, applicato a biglietti, pieghevoli, carta intestata, materiali per l’anniversario e mezzi aziendali. Oggi il marchio si legge al primo impatto e rappresenta in modo più attuale i servizi offerti. Il cliente l’ha riassunto così: «Ha saputo portare innovazione, chiarezza e modernità al nostro logo e a tutte le grafiche dell’azienda».
 
@@ -42,7 +42,7 @@ L’anniversario, in questi casi, aiuta: dà un motivo al cambiamento e lo rende
 
 ## Quando serve un rebranding vero
 
-Il rebranding diventa necessario quando l’immagine non è solo vecchia, ma sbagliata rispetto a ciò che l’azienda è diventata. Mi è successo con un’azienda che, oltre al servizio storico, aveva sviluppato una specializzazione nuova e importante. L’immagine raccontava solo la prima. Lì non bastava ridisegnare il logo: bisognava decidere come raccontare entrambe le anime. Ne parlo in [rebranding di un’azienda di famiglia](article:rebranding-azienda-di-famiglia).
+Il rebranding diventa necessario quando l’immagine non è solo vecchia, ma sbagliata rispetto a ciò che l’azienda è diventata. Mi è successo con [un’azienda di famiglia](project:carrozzeria) che, oltre al servizio storico, aveva sviluppato una specializzazione nuova e importante. L’immagine raccontava solo la prima. Lì non bastava ridisegnare il logo: bisognava decidere come raccontare entrambe le anime. Ne parlo in [rebranding di un’azienda di famiglia](article:rebranding-azienda-di-famiglia).
 
 ## Cinque domande per scegliere
 

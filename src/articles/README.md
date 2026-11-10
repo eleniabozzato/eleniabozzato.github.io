@@ -43,7 +43,8 @@ No raw HTML in the body, no images in the body.
 
 ## Writing rules (SEO)
 
-- **Never name the client** in the text, and no `project:` links: describe it ("uno studio dentistico che seguo"). The project marquee at the end lets the reader connect the two. The build warns if a body contains a client name or a `project:` link.
+- **Never name the client** in the text: describe it and link the project with that description as anchor, e.g. `[uno studio dentistico che seguo](project:dentisti)`. The project marquee at the end repeats the link. The build warns if a body contains a client name.
+- **Teach, don't replace the consultation.** Explain how the work is done and why (culture of the field), enough to spark curiosity and show the method; leave the decision on the reader's own case to a conversation.
 - **One search query per article**, different from every other article (no two articles on the same query). Put it in the title, the first paragraph and the description.
 - **Open with the answer** in two or three sentences, then go deeper.
 - **Only real facts.** Cases, quotes and results come from the project texts in `src/i18n/it.json`. No invented numbers or anecdotes; an invented example must say so.

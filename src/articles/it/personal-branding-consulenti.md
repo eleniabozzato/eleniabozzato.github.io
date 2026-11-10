@@ -1,11 +1,11 @@
 ---
-order: 10
+order: 12
 slug: personal-branding-consulenti
 title: <em-magenta>PERSONAL BRANDING</em-magenta> per consulenti e liberi professionisti: da dove partire
 short: Personal branding professionisti
 description: Personal branding per consulenti e liberi professionisti: quando il brand coincide con te, come renderlo riconoscibile e come farlo crescere oltre la tua persona.
 projects: paola
-related: gestire-social-in-autonomia, come-scegliere-nome-brand
+related: posizionamento-brand, gestire-social-in-autonomia
 date: 2026-11-04
 ---
 
@@ -29,7 +29,7 @@ Se le risposte sono vaghe, nessuna grafica le renderà chiare.
 
 ## Il caso di una consulente direzionale
 
-Una consulente direzionale voleva dare una struttura più organizzata e riconoscibile alla propria attività. L’idea era far evolvere il lavoro individuale in un progetto con un nome proprio, sostenuto da una rete di professionisti a supporto delle aziende.
+[Una consulente direzionale](project:paola) voleva dare una struttura più organizzata e riconoscibile alla propria attività. L’idea era far evolvere il lavoro individuale in un progetto con un nome proprio, sostenuto da una rete di professionisti a supporto delle aziende.
 
 Qui c’era un passaggio delicato: il progetto doveva avere un’identità sua, ma restare coerente con il brand personale della consulente. I clienti dovevano riconoscere lei, e allo stesso tempo percepire una realtà più ampia.
 
@@ -50,8 +50,6 @@ Oggi la consulente gestisce in modo indipendente la propria presenza digitale. I
 - **Usa il tuo nome** se il valore è legato a te, se lavori da solo e se non prevedi di crescere con altri.
 - **Crea un nome di progetto** se vuoi coinvolgere altri professionisti, se un giorno il progetto potrebbe funzionare senza di te, o se il tuo nome è difficile da ricordare.
 - **Tieni entrambi**, come nel caso sopra, se vuoi una realtà più ampia senza perdere la fiducia legata alla persona. Serve però un sistema visivo che li colleghi.
-
-Se scegli un nome nuovo, segui un metodo: ne parlo in [come scegliere il nome di un brand](article:come-scegliere-nome-brand).
 
 ## Gli strumenti essenziali
 

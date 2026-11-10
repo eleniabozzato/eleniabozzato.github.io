@@ -1,11 +1,11 @@
 ---
-order: 4
+order: 7
 slug: comunicazione-hotel-familiare
 title: Comunicazione per un <em-acqua>HOTEL</em-acqua> a conduzione familiare: tutto il percorso dell’ospite
 short: Comunicazione hotel familiare
 description: Comunicazione per un hotel a conduzione familiare: descrizioni delle camere, e-mail automatiche, portali e recensioni, per raccontare la famiglia in ogni passaggio.
 projects: alplan
-related: rispondere-recensioni-negative, coordinare-fornitori-comunicazione
+related: tono-di-voce-brand, coordinare-fornitori-comunicazione
 date: 2026-11-04
 ---
 
@@ -15,7 +15,7 @@ Un hotel a conduzione familiare ha un vantaggio che le catene non possono copiar
 
 Molti hotel di famiglia si descrivono con le stesse parole: accoglienza, relax, panorama, cucina tipica. Sono vere, ma le usano tutti, quindi non aiutano l’ospite a scegliere.
 
-Quello che distingue un hotel familiare è quasi sempre altrove: le passioni dei proprietari, la storia dell’edificio, un modo particolare di trattare gli ospiti. In un hotel delle Dolomiti che seguo, per esempio, la famiglia ha portato negli spazi comuni le sue passioni per il collezionismo, i motori e i mestieri di una volta. Ci sono camere a tema, oggetti storici esposti, una piscina panoramica sul tetto. Il lavoro di comunicazione è partito da lì: far emergere la personalità della famiglia, non solo l’elenco dei servizi.
+Quello che distingue un hotel familiare è quasi sempre altrove: le passioni dei proprietari, la storia dell’edificio, un modo particolare di trattare gli ospiti. In [un hotel delle Dolomiti che seguo](project:alplan), per esempio, la famiglia ha portato negli spazi comuni le sue passioni per il collezionismo, i motori e i mestieri di una volta. Ci sono camere a tema, oggetti storici esposti, una piscina panoramica sul tetto. Il lavoro di comunicazione è partito da lì: far emergere la personalità della famiglia, non solo l’elenco dei servizi.
 
 ## Il percorso dell’ospite, un passaggio alla volta
 
@@ -47,7 +47,7 @@ Nell’hotel che seguo ho rivisto i testi delle e-mail automatiche lungo tutto q
 
 ## Le recensioni sono comunicazione
 
-Per un hotel le recensioni online pesano quanto il sito. Rispondere a tutte, positive e negative, con il tono della famiglia, è uno dei lavori più utili e meno costosi. Ho scritto una guida pratica su [come rispondere alle recensioni negative](article:rispondere-recensioni-negative).
+Per un hotel le recensioni online pesano quanto il sito. Chi sceglie legge anche le risposte, e da quelle capisce come la famiglia tratta gli ospiti quando qualcosa va storto. Per questo rispondere a tutte, positive e negative, con lo stesso tono del sito, è uno dei lavori più utili e meno costosi. Perché il tono conti così tanto lo spiego in [che cos’è il tono di voce di un brand](article:tono-di-voce-brand).
 
 ## Famiglia e agenzie: chi fa cosa
 

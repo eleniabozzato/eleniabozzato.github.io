@@ -1,11 +1,11 @@
 ---
-order: 9
+order: 10
 slug: logo-e-brand-identity
 title: <em-magenta>LOGO</em-magenta> e brand identity: la differenza e cosa deve contenere un progetto
 short: Logo e brand identity
 description: Logo e brand identity non sono la stessa cosa: cosa comprende un’identità di marca, cosa deve contenere un manuale e come capire se ti basta un logo.
 projects: perform, carrozzeria
-related: come-scegliere-nome-brand, restyling-logo-o-rebranding
+related: colori-del-brand, restyling-logo-o-rebranding
 date: 2026-11-04
 ---
 
@@ -45,11 +45,11 @@ Le voci principali sono queste. Non tutti i progetti le richiedono tutte, ma con
 
 Il manuale di immagine coordinata raccoglie tutto questo in un documento che chiunque può usare: un grafico nuovo, una tipografia, un’agenzia. Un buon manuale, secondo me, è breve e pieno di esempi. Deve rispondere a domande pratiche: che versione del logo uso su uno sfondo scuro? Quanto spazio lascio intorno? Che cosa non devo mai fare?
 
-Nel rebranding di un’azienda di famiglia che ho seguito, il manuale raccoglie il marchio e le sue applicazioni, e i materiali vanno dalla carta intestata alla livrea dei furgoni. Serve proprio a questo: far sì che il furgone dipinto oggi e il biglietto stampato tra cinque anni sembrino della stessa azienda.
+Nel [rebranding di un’azienda di famiglia](project:carrozzeria) che ho seguito, il manuale raccoglie il marchio e le sue applicazioni, e i materiali vanno dalla carta intestata alla livrea dei furgoni. Serve proprio a questo: far sì che il furgone dipinto oggi e il biglietto stampato tra cinque anni sembrino della stessa azienda.
 
 ## Un caso: costruire l’identità da zero
 
-Quando un progetto nasce da zero, l’ordine conta. Per un centro che unisce fisioterapia e allenamento, siamo partiti dal nome. Poi sono arrivati il logo, il sistema di colori, il linguaggio grafico, il tono di voce e la linea comunicativa. Solo dopo sono arrivate le applicazioni: biglietti da visita, gift card, sito, abbigliamento per staff e clienti, materiali pubblicitari.
+Quando un progetto nasce da zero, l’ordine conta. Per [un centro che unisce fisioterapia e allenamento](project:perform), siamo partiti dal nome. Poi sono arrivati il logo, il sistema di colori, il linguaggio grafico, il tono di voce e la linea comunicativa. Solo dopo sono arrivate le applicazioni: biglietti da visita, gift card, sito, abbigliamento per staff e clienti, materiali pubblicitari.
 
 Il risultato è un’identità che tiene insieme due anime: la competenza specialistica e l’approccio umano. Senza il sistema, ogni materiale avrebbe raccontato solo una delle due.
 
@@ -68,4 +68,4 @@ Ti serve una brand identity completa, invece, quando:
 
 Raccogli sul tavolo tutto quello che la tua azienda ha prodotto nell’ultimo anno: stampati, foto dei mezzi, screenshot di sito e social. Se sembra tutto della stessa azienda, hai già un’identità, magari solo da mettere per iscritto. Se no, il logo non è il problema.
 
-Se la tua identità esiste ma è invecchiata, leggi [restyling del logo o rebranding](article:restyling-logo-o-rebranding). Se stai partendo da zero, comincia da [come scegliere il nome di un brand](article:come-scegliere-nome-brand). Il servizio è descritto in [progettazione della brand identity](page:how#brand-identity).
+Se la tua identità esiste ma è invecchiata, leggi [restyling del logo o rebranding](article:restyling-logo-o-rebranding). Se ti incuriosisce come si scelgono i colori, leggi [i colori del brand: cosa c’è di vero nella psicologia del colore](article:colori-del-brand). Il servizio è descritto in [progettazione della brand identity](page:how#brand-identity).

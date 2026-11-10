@@ -5,7 +5,7 @@ title: <em-magenta>BRAND MANAGER</em-magenta> esterno: cosa fa per una piccola i
 short: Brand manager esterno
 description: Cosa fa un brand manager esterno in una piccola impresa, in cosa è diverso da agenzia e social media manager, e come capire se ti serve davvero.
 projects: dentisti, alplan
-related: coordinare-fornitori-comunicazione, comunicazione-studio-dentistico
+related: posizionamento-brand, coordinare-fornitori-comunicazione
 date: 2026-11-04
 ---
 
@@ -32,7 +32,7 @@ Non serve per forza una persona diversa per ogni ruolo. Io, per esempio, in alcu
 
 ## Che cosa fa, in concreto, ogni mese
 
-La parte strategica si vede poco, quindi provo a renderla concreta. In uno studio dentistico che seguo in modo continuativo, il lavoro mensile comprende:
+La parte strategica si vede poco, quindi provo a renderla concreta. In [uno studio dentistico che seguo in modo continuativo](project:dentisti), il lavoro mensile comprende:
 
 - decidere i temi del mese e il tono con cui raccontarli;
 - preparare grafiche e materiali per campagne e iniziative, comprese quelle per i pazienti più piccoli;
@@ -40,7 +40,7 @@ La parte strategica si vede poco, quindi provo a renderla concreta. In uno studi
 - dare supporto strategico sulle campagne pubblicitarie online;
 - seguire l’identità visiva anche negli ambienti dello studio, non solo sullo schermo.
 
-In un hotel a conduzione familiare, invece, il lavoro è diverso. La famiglia collabora già con agenzie specializzate nel marketing alberghiero. Il mio ruolo è fare da punto di riferimento: riscrivere i testi con un tono più personale, rivedere le e-mail automatiche agli ospiti, rispondere alle recensioni, e fare in modo che il lavoro delle agenzie e quello della famiglia vadano nella stessa direzione.
+In [un hotel a conduzione familiare](project:alplan), invece, il lavoro è diverso. La famiglia collabora già con agenzie specializzate nel marketing alberghiero. Il mio ruolo è fare da punto di riferimento: riscrivere i testi con un tono più personale, rivedere le e-mail automatiche agli ospiti, rispondere alle recensioni, e fare in modo che il lavoro delle agenzie e quello della famiglia vadano nella stessa direzione.
 
 Due aziende, due elenchi diversi. Lo stesso ruolo.
 

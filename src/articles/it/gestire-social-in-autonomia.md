@@ -1,5 +1,5 @@
 ---
-order: 11
+order: 13
 slug: gestire-social-in-autonomia
 title: Come gestire i <em-acqua>SOCIAL</em-acqua> in autonomia, senza improvvisare
 short: Gestire i social in autonomia
@@ -48,7 +48,7 @@ Una volta al mese, guarda che cosa ha funzionato: quali contenuti hanno ricevuto
 
 ## Come funziona un percorso di formazione
 
-Un esempio concreto. Per una consulente direzionale ho prima costruito l’identità visiva del suo progetto, poi definito le linee guida per i contenuti, progettato i layout social e le rubriche grafiche. Solo dopo è arrivata la formazione vera e propria: un percorso su gestione e strategia social, seguito da un supporto continuo nella fase in cui ha iniziato a pubblicare da sola.
+Un esempio concreto. Per [una consulente direzionale](project:paola) ho prima costruito l’identità visiva del suo progetto, poi definito le linee guida per i contenuti, progettato i layout social e le rubriche grafiche. Solo dopo è arrivata la formazione vera e propria: un percorso su gestione e strategia social, seguito da un supporto continuo nella fase in cui ha iniziato a pubblicare da sola.
 
 Oggi gestisce in modo indipendente la propria presenza digitale. Il punto non era insegnarle a usare un’app. Era darle un sistema che non dipende da me.
 

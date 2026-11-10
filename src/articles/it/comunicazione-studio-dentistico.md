@@ -1,11 +1,11 @@
 ---
-order: 3
+order: 5
 slug: comunicazione-studio-dentistico
 title: Comunicazione per uno <em-magenta>STUDIO DENTISTICO</em-magenta>: cosa si può fare e cosa funziona
 short: Comunicare uno studio dentistico
 description: Comunicazione e marketing per uno studio dentistico: cosa permettono le regole sulla pubblicità sanitaria e quali contenuti costruiscono fiducia nei pazienti.
 projects: dentisti
-related: brand-manager-esterno, rispondere-recensioni-negative
+related: shooting-fotografico-aziendale, brand-manager-esterno
 date: 2026-11-04
 ---
 
@@ -38,7 +38,7 @@ Come si svolge una prima visita. Che cosa succede in sala d’attesa. Come vengo
 
 ### I più piccoli
 
-È l’area dove ho visto le idee più efficaci. In uno studio che seguo abbiamo creato una giornata a porte aperte dedicata ai bambini, un diploma da «eroina del sorriso» per i piccoli pazienti e un calendario per segnare lo spazzolamento durante la settimana. Non vendono nulla. Raccontano uno studio dove i bambini si sentono a loro agio, e i genitori lo notano.
+È l’area dove ho visto le idee più efficaci. In [uno studio che seguo](project:dentisti) abbiamo creato una giornata a porte aperte dedicata ai bambini, un diploma da «eroina del sorriso» per i piccoli pazienti e un calendario per segnare lo spazzolamento durante la settimana. Non vendono nulla. Raccontano uno studio dove i bambini si sentono a loro agio, e i genitori lo notano.
 
 ### Gli ambienti
 
@@ -65,4 +65,4 @@ Anche le campagne pubblicitarie online sono possibili, con gli stessi limiti di 
 
 Nello studio dentistico che seguo come figura di riferimento per la comunicazione, oggi il brand è percepito come più coerente e riconoscibile, e lo studio registra un andamento positivo di nuovi pazienti rispetto ai periodi precedenti. Non lo attribuisco solo alla comunicazione: è un insieme di fattori. Ma una comunicazione ordinata rende visibile il lavoro che lo studio già fa bene.
 
-Un’ultima cosa: anche le recensioni online sono comunicazione, e per uno studio sanitario valgono doppio. Ne parlo in [come rispondere alle recensioni negative](article:rispondere-recensioni-negative). Se invece ti serve qualcuno che segua la comunicazione dello studio con continuità, leggi [che cosa fa un brand manager esterno](article:brand-manager-esterno).
+Le foto del team sono uno dei contenuti più preziosi per uno studio: come si prepara uno shooting che serva davvero lo racconto in [dietro le quinte di uno shooting aziendale](article:shooting-fotografico-aziendale). Se invece ti serve qualcuno che segua la comunicazione dello studio con continuità, leggi [che cosa fa un brand manager esterno](article:brand-manager-esterno).

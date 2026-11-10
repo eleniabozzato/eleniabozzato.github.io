@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 8
 slug: rebranding-azienda-di-famiglia
 title: <em-acqua>REBRANDING</em-acqua> di un’azienda di famiglia: rinnovare senza perdere la storia
 short: Rebranding azienda di famiglia
@@ -13,7 +13,7 @@ Il rebranding di un’azienda di famiglia funziona quando parte da ciò che va c
 
 ## Un caso che conosco da dentro
 
-Ne parlo con cognizione di causa, perché uno dei primi rebranding che ho seguito è stato quello dell’azienda in cui sono cresciuta: la carrozzeria fondata da mio padre nel 1984. Da bambina passavo i pomeriggi nel suo ufficio. Anni dopo, nel 2019, il progetto di rebranding è diventato la mia tesi.
+Ne parlo con cognizione di causa, perché uno dei primi rebranding che ho seguito è stato quello dell’azienda in cui sono cresciuta: [la carrozzeria fondata da mio padre nel 1984](project:carrozzeria). Da bambina passavo i pomeriggi nel suo ufficio. Anni dopo, nel 2019, il progetto di rebranding è diventato la mia tesi.
 
 Nel tempo l’azienda era cambiata. Oltre ai servizi di carrozzeria si era specializzata in allestimenti per la guida e il trasporto di persone con disabilità. L’immagine però era rimasta quella degli inizi, e non raccontava questa seconda anima. Il lavoro è partito dal restyling del logo ed è arrivato all’intera immagine coordinata: carta intestata, biglietti, buste, furgoni, sito, social, fino agli uffici.
 

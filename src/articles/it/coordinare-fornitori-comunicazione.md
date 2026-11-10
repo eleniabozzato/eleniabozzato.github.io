@@ -1,11 +1,11 @@
 ---
-order: 2
+order: 4
 slug: coordinare-fornitori-comunicazione
 title: Grafico, fotografo, agenzia: come <em-acqua>COORDINARE</em-acqua> chi lavora alla tua comunicazione
 short: Coordinare i fornitori
 description: Grafico, fotografo, agenzia web e social: cinque strumenti semplici per coordinare i fornitori della comunicazione e far parlare il brand con una sola voce.
 projects: alplan, dentisti
-related: brand-manager-esterno, logo-e-brand-identity
+related: brand-manager-esterno, tono-di-voce-brand
 date: 2026-11-04
 ---
 
@@ -15,7 +15,7 @@ Per coordinare i fornitori della comunicazione servono due cose: una persona che
 
 Quando la comunicazione di un’azienda sembra scollegata, la tentazione è dare la colpa a chi l’ha prodotta. Di solito non è così. Il fotografo ha fatto belle foto, l’agenzia un buon sito, il grafico un volantino curato. Il problema è che nessuno di loro sapeva che cosa stavano facendo gli altri.
 
-Lo vedo bene in un hotel a conduzione familiare che seguo. La famiglia lavora con agenzie specializzate nel settore alberghiero, e lavorano bene. Ma la crescita della struttura aveva portato più canali, più testi, più persone coinvolte. Serviva qualcuno che tenesse insieme il lavoro delle agenzie e la voce della famiglia, che è la vera ragione per cui gli ospiti scelgono quell’hotel.
+Lo vedo bene in [un hotel a conduzione familiare che seguo](project:alplan). La famiglia lavora con agenzie specializzate nel settore alberghiero, e lavorano bene. Ma la crescita della struttura aveva portato più canali, più testi, più persone coinvolte. Serviva qualcuno che tenesse insieme il lavoro delle agenzie e la voce della famiglia, che è la vera ragione per cui gli ospiti scelgono quell’hotel.
 
 ## Cinque strumenti per lavorare con una sola voce
 
