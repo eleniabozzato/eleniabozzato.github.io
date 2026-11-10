@@ -1,11 +1,12 @@
 // Blog article page (Italian only): /it/blog/<slug>.html, built from src/articles/it/<slug>.md.
-import { SITE_URL } from '../data/pages.mjs';
+import { SITE_URL, absoluteUrl, pageFiles } from '../data/pages.mjs';
+import { OG_IMAGE, author } from '../data/schema.mjs';
 import { articleUrl, blogIndexUrl } from '../data/articles.mjs';
 import { blogCards } from '../partials/blog-card.mjs';
 import { projectMarquee } from '../partials/more-exp.mjs';
 import { escAttr, jsonLd } from '../partials/util.mjs';
 
-const FALLBACK_IMAGE = '/assets/img/home-hero-elenia.webp';
+const FALLBACK_IMAGE = OG_IMAGE;
 
 const imageOf = (a, projects) => {
   const p = projects.find((x) => x.key === a.projectKeys[0]);
@@ -16,7 +17,7 @@ export const layout = ({ article: a, projects, t }) => {
   const url = SITE_URL + articleUrl(a.slug);
   const title = `${a.seoTitle} \u2014 Elenia Bozzato`; // short for search results; the H1 keeps the full title
   const image = imageOf(a, projects);
-  const person = { '@type': 'Person', name: 'Elenia Bozzato', url: `${SITE_URL}/` };
+  const person = author(absoluteUrl('it', pageFiles.it.about));
   return {
     title: escAttr(title),
     description: escAttr(a.description),
@@ -28,6 +29,7 @@ export const layout = ({ article: a, projects, t }) => {
         ['og:title', escAttr(title)],
         ['og:description', escAttr(a.description)],
         ['og:type', 'article'],
+        ['og:site_name', 'Elenia Bozzato'],
         ['og:url', url],
         ['og:image', image],
         ['article:published_time', a.date],
@@ -43,6 +45,9 @@ export const layout = ({ article: a, projects, t }) => {
         dateModified: a.date,
         inLanguage: 'it',
         author: person,
+        publisher: person,
+        isPartOf: { '@type': 'Blog', name: t.blog.eyebrow, url: SITE_URL + blogIndexUrl() },
+        wordCount: a.words,
         image,
         mainEntityOfPage: { '@type': 'WebPage', '@id': url },
       }),

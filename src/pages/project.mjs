@@ -67,7 +67,7 @@ export default function project({ t, href, projects, project: p }) {
         <p class="hero-split__tagline">${c.tagline}</p>
       </div>
       <div class="hero-split__media">
-        <img src="${h.src}" srcset="${h.srcset}" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.heroAlt}" width="${h.width}" height="${h.height}"${attr('style', h.style)} />
+        <img fetchpriority="high" src="${h.src}" srcset="${h.srcset}" sizes="(min-width: 768px) 50vw, 100vw" alt="${c.heroAlt}" width="${h.width}" height="${h.height}"${attr('style', h.style)} />
       </div>
     </section>
 

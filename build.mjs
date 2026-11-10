@@ -5,11 +5,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEFAULT_LANG, SITE_URL, absoluteUrl, langs, linkHelpers, oldUrls, outPath, pageFiles, routes, urlPath } from './src/data/pages.mjs';
-import { projects } from './src/data/projects.mjs';
+import { projects, services } from './src/data/projects.mjs';
 import { articleFile, loadArticles } from './src/data/articles.mjs';
 import { head } from './src/partials/head.mjs';
 import { header } from './src/partials/header.mjs';
 import { footer } from './src/partials/footer.mjs';
+import { OG_IMAGE, breadcrumbs, homeGraph, profileGraph } from './src/data/schema.mjs';
+import { jsonLd } from './src/partials/util.mjs';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SRC = path.join(ROOT, 'src');
@@ -48,8 +50,37 @@ const expandDeep = (v) =>
 const loadTexts = (lang) =>
   expandDeep(JSON.parse(fs.readFileSync(path.join(SRC, 'i18n', `${lang}.json`), 'utf8')));
 
+/* ── Open Graph and structured data for the static and project pages (blog pages set their own) ── */
+// i18n strings are already HTML, so only quotes need escaping inside an attribute.
+const q = (s) => s.replace(/"/g, '&quot;');
+function openGraph({ layout, url, route }) {
+  const image = route.project ? route.project.card.src : OG_IMAGE;
+  return [
+    ['og:type', 'website'],
+    ['og:site_name', 'Elenia Bozzato'],
+    ['og:title', q(layout.title)],
+    ['og:description', q(layout.description)],
+    ['og:url', url],
+    ['og:image', SITE_URL + image],
+  ];
+}
+function structuredData({ lang, t, route, url }) {
+  const home = absoluteUrl(lang, pageFiles[lang].home);
+  const about = absoluteUrl(lang, pageFiles[lang].about);
+  if (route.id === 'home') {
+    return [jsonLd(homeGraph({ lang, t, homeUrl: home, aboutUrl: about, services: services.map((x) => t.services[x.key].title) }))];
+  }
+  if (route.id === 'about') return [jsonLd(profileGraph({ lang, url, aboutUrl: about }))];
+  if (route.project) {
+    const exp = absoluteUrl(lang, pageFiles[lang].experience);
+    return [jsonLd(breadcrumbs([[t.nav.home, home], [t.nav.experience, exp], [route.project.navName, url]]))];
+  }
+  return [];
+}
+
 /* ── page wrapper: <head>, header, footer and scripts around a template's <main> ── */
 function page({ lang, t, href, layout, main, route, footerLinks = null }) {
+  // `layout` is reassigned below to add structured data.
   // Blog pages have no English version: the language selector sends English to the home page.
   const alternates = route.blog
     ? [{ lang: 'en', path: urlPath('en', 'index.html') }, { lang: 'it', path: urlPath('it', route.files.it) }]
@@ -67,6 +98,10 @@ function page({ lang, t, href, layout, main, route, footerLinks = null }) {
         redirectTo,
       }
     : { redirectTo };
+  if (!route.blog && indexed) {
+    seo.og = openGraph({ layout, url: seo.canonical, route });
+    layout = { ...layout, extra: [...(layout.extra || []), ...structuredData({ lang, t, route, url: seo.canonical })] };
+  }
   const headHtml = head({ lang, ...layout, seo, noindex: !indexed });
   return `${headHtml}<body${layout.bodyAttrs || ''}>
 ${header({ t, href, projects, lang, alternates })}

@@ -88,7 +88,8 @@ export function loadArticles(projects) {
   for (const a of articles) {
     a.related = a.related.filter((s) => (bySlug.has(s) && s !== a.slug) || (warn(`${a.slug}.md: related "${s}" not found`), false));
     a.html = markdown(a.body, resolver(`${a.slug}.md`));
-    a.minutes = Math.max(1, Math.ceil(plainText(a.html).split(/\s+/).filter(Boolean).length / WORDS_PER_MIN));
+    a.words = plainText(a.html).split(/\s+/).filter(Boolean).length;
+    a.minutes = Math.max(1, Math.ceil(a.words / WORDS_PER_MIN));
   }
   return articles;
 }

@@ -18,7 +18,7 @@ export function head({ lang, title, description, css, extra = [], seo, noindex }
   const links = seo?.canonical
     ? `  <link rel="canonical" href="${seo.canonical}" />
 ${alternates}  <meta property="og:locale" content="${LOCALE[lang]}" />
-${(seo.og || []).map(([k, v]) => `  <meta property="${k}" content="${v}" />\n`).join('')}`
+${(seo.og || []).map(([k, v]) => `  <meta property="${k}" content="${v}" />\n`).join('')}${seo.og ? '  <meta name="twitter:card" content="summary_large_image" />\n' : ''}`
     : '';
   return `<!doctype html>
 <html lang="${lang}">

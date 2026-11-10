@@ -1,5 +1,6 @@
 // Blog index (Italian only): /it/blog/. All articles in one list, in `order`.
-import { SITE_URL } from '../data/pages.mjs';
+import { SITE_URL, absoluteUrl, pageFiles } from '../data/pages.mjs';
+import { OG_IMAGE, author, breadcrumbs } from '../data/schema.mjs';
 import { articleUrl, blogIndexUrl } from '../data/articles.mjs';
 import { blogCards } from '../partials/blog-card.mjs';
 import { escAttr, jsonLd } from '../partials/util.mjs';
@@ -18,8 +19,9 @@ export const layout = ({ t, articles }) => {
         ['og:title', escAttr(m.title)],
         ['og:description', escAttr(m.description)],
         ['og:type', 'website'],
+        ['og:site_name', 'Elenia Bozzato'],
         ['og:url', url],
-        ['og:image', `${SITE_URL}/assets/img/home-hero-elenia.webp`],
+        ['og:image', SITE_URL + OG_IMAGE],
       ],
     },
     extra: [
@@ -30,7 +32,7 @@ export const layout = ({ t, articles }) => {
         description: m.description,
         url,
         inLanguage: 'it',
-        author: { '@type': 'Person', name: 'Elenia Bozzato', url: `${SITE_URL}/` },
+        author: author(absoluteUrl('it', pageFiles.it.about)),
         blogPost: articles.map((a) => ({
           '@type': 'BlogPosting',
           headline: a.titlePlain,
@@ -38,6 +40,7 @@ export const layout = ({ t, articles }) => {
           datePublished: a.date,
         })),
       }),
+      jsonLd(breadcrumbs([['Home', `${SITE_URL}/it/`], [t.blog.eyebrow, url]])),
     ],
   };
 };
