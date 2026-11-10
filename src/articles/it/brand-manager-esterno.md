@@ -70,6 +70,6 @@ Di solito si parte così:
 
 ## Che risultati aspettarsi
 
-Qui conviene essere prudenti. Un brand manager non garantisce un numero di clienti, e diffido di chi lo promette. Quello che può cambiare, e che ho visto cambiare, è la percezione. Nello studio dentistico la comunicazione oggi è percepita come più coerente e riconoscibile. Il cliente me l’ha descritta così: «Ha migliorato la nostra comunicazione online rendendola più efficace e coerente». Lo studio registra anche un andamento positivo di nuovi pazienti rispetto ai periodi precedenti. Io lo leggo come l’effetto di più fattori insieme, di cui la comunicazione è uno.
+Qui conviene essere prudenti. Un brand manager non garantisce un numero di clienti, e diffido di chi lo promette. Quello che può cambiare, e che ho visto cambiare, è la percezione. Nello studio dentistico la comunicazione oggi è percepita come più coerente e riconoscibile. Il cliente l’ha scritto così: «Ha migliorato la nostra comunicazione online rendendola più efficace e coerente». Lo studio registra anche un andamento positivo di nuovi pazienti rispetto ai periodi precedenti. Io lo leggo come l’effetto di più fattori insieme, di cui la comunicazione è uno.
 
 Se ti riconosci nei punti sopra, il passo successivo è capire [come coordinare chi già lavora alla tua comunicazione](article:coordinare-fornitori-comunicazione). Il servizio è descritto in [direzione e coordinamento del brand](page:how#direzione-brand).
