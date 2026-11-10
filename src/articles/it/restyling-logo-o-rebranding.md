@@ -1,48 +1,61 @@
 ---
-order: 8
+order: 7
 slug: restyling-logo-o-rebranding
-title: Restyling del logo o <em-magenta>REBRANDING</em-magenta> completo? Come scegliere
-short: Restyling del logo o rebranding
-description: Restyling del logo o rebranding completo? Come capire quanto serve cambiare, quali domande farti prima di decidere e cosa conservare di ciò che già funziona.
-projects: pulicasa
-related: logo-e-brand-identity, quando-fare-rebranding
+title: Restyling del logo o <em-magenta>REBRANDING</em-magenta>? I segnali e come scegliere
+short: Restyling o rebranding
+description: Restyling del logo o rebranding completo? La differenza, i segnali che è il momento di intervenire e cinque domande per scegliere senza sprecare budget.
+projects: pulicasa, carrozzeria
+related: rebranding-azienda-di-famiglia, logo-e-brand-identity
 date: 2026-11-04
 ---
 
-Scegli il restyling se il posizionamento regge e l’immagine è solo datata. Scegli il rebranding se è cambiato ciò che sei o a chi parli.
+Il restyling aggiorna l’aspetto del logo e dell’immagine, ma lascia intatta l’identità: chi sei, che cosa offri, a chi parli. Il rebranding rimette in discussione anche quella. Se l’azienda è la stessa ma l’immagine è invecchiata, basta quasi sempre un restyling. Se l’azienda è cambiata, il restyling da solo non basta.
 
-## Che cosa cambia tra i due
+## La differenza, senza tecnicismi
 
-Il **restyling** aggiorna la forma: logo, colori, caratteri. Il **rebranding** rivede anche la sostanza: posizionamento, messaggio, voce. I confini sono sfumati, e un restyling fatto bene richiede comunque qualche domanda di fondo.
+Un paragone semplice: il restyling è rinnovare la facciata di una casa. Il rebranding è ripensare come viene usata.
 
-## Le domande per decidere
+- **Restyling**: logo ridisegnato ma riconoscibile, colori e caratteri aggiornati, materiali rifatti con regole più chiare. Il nome e il posizionamento restano.
+- **Rebranding**: si parte dalla strategia. Posizionamento, messaggio, a volte il nome. L’immagine visiva arriva dopo, come conseguenza.
 
-Parti da queste:
+Nella pratica i confini sono sfumati. Molti progetti sono un restyling con qualche decisione strategica in più. Ma chiarire da dove si parte evita di spendere troppo, o troppo poco.
 
-- Il servizio è cambiato rispetto a quando è nato il logo?
-- Il posizionamento di oggi è lo stesso di allora?
-- Il problema è l’aspetto, o è che l’azienda dice cose diverse in punti diversi?
-- Il sistema grafico si applica con facilità, o va reinventato ogni volta?
-- Chi ti conosce si riconosce ancora? E chi non ti conosce ti capisce subito?
+## I segnali che è il momento di intervenire
 
-Se le risposte indicano soprattutto un’immagine vecchia, basta un restyling. Se emergono incoerenze più profonde, guarda anche il resto, a partire dai [cinque segnali di un rebranding](article:quando-fare-rebranding).
+Non c’è un’età giusta per un logo. Ci sono segnali. Questi sono quelli che vedo più spesso.
 
-Un logo vecchio non è, da solo, un problema. Lo diventa quando non racconta più il servizio com’è oggi.
+1. **Il logo non funziona in piccolo.** Su un profilo social o su una favicon diventa una macchia illeggibile.
+2. **Ogni materiale ha colori diversi.** Il furgone, il sito e i biglietti da visita sembrano di tre aziende diverse.
+3. **L’immagine racconta l’azienda di dieci anni fa.** Nel frattempo sono arrivati servizi nuovi, clienti nuovi, una nuova sede.
+4. **Ti vergogni un po’ a dare il biglietto da visita.** Sembra banale, ma è un segnale onesto.
+5. **Sta arrivando un momento importante**: un anniversario, un ampliamento, un passaggio generazionale.
 
-Due scenari di fantasia, per fissare l’idea. Un’attività con un logo di vent’anni fa, ma un messaggio chiaro e coerente: probabilmente basta un restyling. Un’attività con un logo recente, ma che oggi offre servizi diversi e li racconta in modi diversi: cambiare il logo non risolve, serve una revisione più ampia.
+Se ti riconosci nei primi due punti, probabilmente basta un restyling. Se ti riconosci nel terzo, valuta un rebranding.
 
-## Che cosa conservare
+## Un anniversario come occasione: un caso
 
-Un rinnovamento ben fatto non cancella. Aiuta ragionare in tre parti:
+Un’azienda di pulizie civili e industriali del Portogruarese mi ha chiesto di intervenire in vista dei suoi 40 anni di attività. L’identità visiva era ormai datata e non più coerente con l’evoluzione del servizio. Il nome, la reputazione e il territorio, invece, erano solidi.
 
-1. **Ciò che resta:** valori, storia, ciò che i clienti già apprezzano.
-2. **Ciò che si aggiorna:** segno, colori, linguaggio grafico.
-3. **Ciò che si aggiunge:** regole di applicazione e materiali che mancavano.
+La scelta è stata un restyling del logo, con una revisione completa dell’identità visiva: un sistema grafico più chiaro, applicato a biglietti, pieghevoli, carta intestata, materiali per l’anniversario e mezzi aziendali. Oggi il marchio si legge al primo impatto e rappresenta in modo più attuale i servizi offerti. Il cliente l’ha riassunto così: «Ha saputo portare innovazione, chiarezza e modernità al nostro logo e a tutte le grafiche dell’azienda».
 
-Più cambi, più il brand è nuovo ma meno è familiare. Meno cambi, più rimandi i problemi.
+L’anniversario, in questi casi, aiuta: dà un motivo al cambiamento e lo rende facile da comunicare a clienti e collaboratori.
 
-Il mio caso di restyling è [Pulicasa](project:pulicasa).
+## Quando serve un rebranding vero
 
-Per capire cosa include un’identità, vedi [Logo e brand identity](article:logo-e-brand-identity).
+Il rebranding diventa necessario quando l’immagine non è solo vecchia, ma sbagliata rispetto a ciò che l’azienda è diventata. Mi è successo con un’azienda che, oltre al servizio storico, aveva sviluppato una specializzazione nuova e importante. L’immagine raccontava solo la prima. Lì non bastava ridisegnare il logo: bisognava decidere come raccontare entrambe le anime. Ne parlo in [rebranding di un’azienda di famiglia](article:rebranding-azienda-di-famiglia).
 
-Se vuoi un parere sul tuo caso, [scrivimi](page:contact).
+## Cinque domande per scegliere
+
+1. I clienti di oggi sono gli stessi di quando è nato il logo?
+2. I servizi che offri oggi sono raccontati dall’immagine attuale?
+3. Il nome funziona ancora, o crea confusione?
+4. Che cosa perderesti se il logo cambiasse del tutto?
+5. Su quanti materiali andrà applicato il nuovo marchio, e con quale budget?
+
+L’ultima domanda è pratica, ma decisiva. Un cambio di immagine si paga anche dopo: insegne, mezzi, stampati, sito. Un restyling ben fatto permette spesso di sostituire i materiali per gradi, man mano che finiscono.
+
+## Un consiglio sul metodo
+
+Qualunque sia la scelta, chiedi di vedere il prima e il dopo affiancati, applicati a materiali reali: un biglietto, un furgone, un profilo social. Il logo su sfondo bianco convince sempre. È sul furgone che si capisce se funziona.
+
+Per capire che cosa entra in un progetto completo, leggi [la differenza tra logo e brand identity](article:logo-e-brand-identity). Il servizio è descritto in [progettazione della brand identity](page:how#brand-identity).

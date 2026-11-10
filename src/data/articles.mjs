@@ -46,6 +46,7 @@ function parseFile(file, projects) {
 export function loadArticles(projects) {
   if (!fs.existsSync(DIR)) return [];
   const samples = process.env.BLOG_SAMPLES === '1';
+  const clientNames = [...projects.map((p) => p.navName), 'Al Plan', 'Consulab', 'Consu.Lab'];
   const articles = [];
   for (const file of fs.readdirSync(DIR).filter((f) => f.endsWith('.md')).sort()) {
     if (file.startsWith('_') && !samples) continue;
@@ -60,6 +61,9 @@ export function loadArticles(projects) {
       if (a.description.length < 120 || a.description.length > 170) warn(`${file}: description is ${a.description.length} characters (aim for 140-160)`);
       if ((fm.title.match(KEYWORD) || []).length !== 1) warn(`${file}: the title needs exactly one accent span`);
       for (const k of a.projectKeys) if (!projectKeys.has(k)) { warn(`${file}: unknown project "${k}"`); }
+      // The text never names a client: the project marquee at the end of the page does that.
+      if (/\]\(project:/.test(body)) warn(`${file}: no project: links in the text, list the project in "projects"`);
+      for (const n of clientNames) if (body.toLowerCase().includes(n.toLowerCase())) warn(`${file}: the text names the client "${n}"`);
       a.projectKeys = a.projectKeys.filter((k) => projectKeys.has(k));
       articles.push(a);
     } catch (e) {

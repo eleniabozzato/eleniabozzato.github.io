@@ -1,41 +1,71 @@
 ---
-order: 7
+order: 9
 slug: logo-e-brand-identity
-title: <em-magenta>LOGO</em-magenta> e brand identity non sono la stessa cosa
+title: <em-magenta>LOGO</em-magenta> e brand identity: la differenza e cosa deve contenere un progetto
 short: Logo e brand identity
-description: Il logo è un segno, la brand identity è un sistema. Ecco la differenza tra logo e brand identity, cosa include e perché conviene progettarli insieme.
-projects: perform
-related: restyling-logo-o-rebranding, personal-branding-consulenti
+description: Logo e brand identity non sono la stessa cosa: cosa comprende un’identità di marca, cosa deve contenere un manuale e come capire se ti basta un logo.
+projects: perform, carrozzeria
+related: come-scegliere-nome-brand, restyling-logo-o-rebranding
 date: 2026-11-04
 ---
 
-Il logo è il segno che ti identifica. La brand identity è il sistema di cui il logo fa parte: tutto ciò che rende riconoscibile il brand, anche senza il logo.
+Il logo è il segno che identifica un’azienda. La brand identity è tutto il sistema che le dà un’immagine riconoscibile: logo, colori, caratteri, immagini, tono di voce e le regole per usarli insieme. Un logo senza identità funziona finché è da solo su uno sfondo bianco. Appena va su un sito, un furgone e un post, servono le regole.
 
-## Il logo è un segno
+## Il logo è una parte, non il tutto
 
-È il simbolo, il nome scritto in un certo modo, o i due insieme. Serve a dire «questo sono io» in poco spazio. Da solo non basta a farti riconoscere in tutto ciò che fai.
+Un esempio pratico. Due aziende possono avere un buon logo. La prima lo usa con colori diversi a seconda di chi prepara il materiale, foto prese da archivi diversi, testi scritti ogni volta con un tono nuovo. La seconda ha poche regole chiare e le applica sempre. Dopo un anno, si riconosce solo la seconda.
 
-## La brand identity è un sistema
+La differenza non è nel logo. È nel sistema.
 
-Comprende il logo e anche:
+## Cosa comprende una brand identity
 
-- colori e caratteri;
-- stile delle immagini e delle grafiche;
-- tono di voce e modo di scrivere;
-- regole di applicazione su sito, social, materiali stampati, ambienti.
+Le voci principali sono queste. Non tutti i progetti le richiedono tutte, ma conviene sapere che esistono.
 
-Un esempio semplice. Se togli il logo da un volantino ma lo riconosci lo stesso, c’è una identità. Se senza logo non si capisce di chi sia, c’è solo il logo.
+### La parte visiva
 
-Ecco perché il logo, per quanto curato, non risolve la coerenza. Dice chi sei in un punto. La identità dice come ti comporti in tutti gli altri: come scrivi un’e-mail, come impagini un listino, quali foto scegli.
+- **logo** nelle sue versioni: principale, orizzontale, verticale, ridotta, a un colore;
+- **palette cromatica** con i codici per la stampa e per lo schermo;
+- **caratteri tipografici** per titoli e testi;
+- **elementi grafici** di supporto: forme, pattern, icone, illustrazioni;
+- **stile fotografico**: che cosa si fotografa, con quale luce, con quali persone.
 
-## Perché conviene progettarli insieme
+### La parte verbale
 
-Un logo disegnato da solo può essere bello ma difficile da usare: non funziona su fondi colorati, non si legge in piccolo, non si abbina ai testi. Quando logo e sistema nascono insieme, ogni elemento è pensato per stare con gli altri.
+- **tono di voce**: come parla il brand, con esempi di frasi giuste e sbagliate;
+- **messaggi chiave**: le due o tre cose che il brand deve sempre comunicare;
+- **payoff**, se serve: la frase breve che accompagna il logo.
 
-Progettare un sistema richiede più decisioni all’inizio, ma ogni materiale futuro costa meno fatica.
+### Le applicazioni
 
-Con Perform Health abbiamo lavorato così, dal nome in poi: [Perform Health](project:perform).
+- immagine coordinata: biglietti, carta intestata, buste, firma e-mail;
+- sito e profili social;
+- mezzi aziendali, insegne, abbigliamento, ambienti.
 
-Se hai già un logo e ti chiedi quanto cambiare, leggi [Restyling del logo o rebranding completo](article:restyling-logo-o-rebranding).
+## Cosa deve contenere un manuale
 
-Se vuoi costruire una identità, [scrivimi](page:contact).
+Il manuale di immagine coordinata raccoglie tutto questo in un documento che chiunque può usare: un grafico nuovo, una tipografia, un’agenzia. Un buon manuale, secondo me, è breve e pieno di esempi. Deve rispondere a domande pratiche: che versione del logo uso su uno sfondo scuro? Quanto spazio lascio intorno? Che cosa non devo mai fare?
+
+Nel rebranding di un’azienda di famiglia che ho seguito, il manuale raccoglie il marchio e le sue applicazioni, e i materiali vanno dalla carta intestata alla livrea dei furgoni. Serve proprio a questo: far sì che il furgone dipinto oggi e il biglietto stampato tra cinque anni sembrino della stessa azienda.
+
+## Un caso: costruire l’identità da zero
+
+Quando un progetto nasce da zero, l’ordine conta. Per un centro che unisce fisioterapia e allenamento, siamo partiti dal nome. Poi sono arrivati il logo, il sistema di colori, il linguaggio grafico, il tono di voce e la linea comunicativa. Solo dopo sono arrivate le applicazioni: biglietti da visita, gift card, sito, abbigliamento per staff e clienti, materiali pubblicitari.
+
+Il risultato è un’identità che tiene insieme due anime: la competenza specialistica e l’approccio umano. Senza il sistema, ogni materiale avrebbe raccontato solo una delle due.
+
+## Ti basta un logo?
+
+A volte sì. Te lo dico onestamente. Se stai iniziando un’attività piccola, con pochi materiali e budget limitato, un logo ben fatto con due colori e un carattere definiti può bastare per partire. L’importante è che sia progettato pensando a dove andrà usato.
+
+Ti serve una brand identity completa, invece, quando:
+
+1. più persone o fornitori producono materiali per te;
+2. il brand compare su tanti supporti diversi: sito, social, mezzi, ambienti;
+3. devi comunicare un posizionamento preciso rispetto ai concorrenti;
+4. vuoi che l’immagine regga nel tempo, anche quando cambiano i collaboratori.
+
+## Il segnale più semplice
+
+Raccogli sul tavolo tutto quello che la tua azienda ha prodotto nell’ultimo anno: stampati, foto dei mezzi, screenshot di sito e social. Se sembra tutto della stessa azienda, hai già un’identità, magari solo da mettere per iscritto. Se no, il logo non è il problema.
+
+Se la tua identità esiste ma è invecchiata, leggi [restyling del logo o rebranding](article:restyling-logo-o-rebranding). Se stai partendo da zero, comincia da [come scegliere il nome di un brand](article:come-scegliere-nome-brand). Il servizio è descritto in [progettazione della brand identity](page:how#brand-identity).

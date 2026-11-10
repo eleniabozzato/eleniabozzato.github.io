@@ -12,7 +12,7 @@ title: Cosa fa un <em-magenta>BRAND MANAGER</em-magenta> esterno per una piccola
 short: Cosa fa un brand manager esterno
 description: 140–160 caratteri, con le parole che la gente cerca, scritto per il risultato di Google.
 projects: dentisti, alplan
-related: comunicazione-frammentata, quando-fare-rebranding
+related: coordinare-fornitori-comunicazione, comunicazione-studio-dentistico
 date: 2026-11-04
 ---
 
@@ -27,7 +27,7 @@ Testo...
 - `title`: the H1. Exactly ONE accent span, `<em-magenta>…</em-magenta>` or `<em-acqua>…</em-acqua>`, around the UPPERCASE key words (same style as the site headlines). In the `<title>` tag and JSON-LD the build strips the tags and writes the words in normal case — so write the accent words in UPPERCASE in the source anyway.
 - `short`: ≤ 32 characters, plain text, used in the footer and in compact links.
 - `description`: meta description, plain text, 140–160 characters, no quotes.
-- `projects`: comma-separated project keys from `src/data/projects.mjs` (`dentisti, alplan, carrozzeria, perform, pulicasa, paola`), or empty.
+- `projects`: comma-separated project keys from `src/data/projects.mjs` (`dentisti, alplan, carrozzeria, perform, pulicasa, paola`), or empty. The page ends with a marquee of all projects, these first and with no heading.
 - `related`: 2–3 slugs of other articles (cross links "Leggi anche").
 - `date`: always `2026-11-04` (go-live). Not shown on the page; used only in the JSON-LD, `article:published_time` and the sitemap.
 
@@ -36,10 +36,20 @@ Testo...
 Paragraphs, `## ` and `### ` headings (no `#`: the H1 is the title), `- ` bullet lists, `1. ` numbered lists, `**bold**`, `*italic*`, `> ` blockquote (one paragraph), links `[text](target)`.
 Link targets — never write a file name by hand:
 - `page:home|about|how|experience|contact` → static pages (Italian versions),
-- `project:<key>` → a project page, e.g. `project:dentisti`,
 - `article:<slug>` → another article,
 - `page:how#<anchor>` works for the "Come lavoro" accordion items: `direzione-brand`, `brand-identity`, `formazione-consulenza`.
 - External links: full `https://` URL (avoid unless essential).
-No raw HTML in the body, no images in the body (the template adds the project card).
+No raw HTML in the body, no images in the body.
 
-Theme labels for the blog index: direzione = "Direzione del brand", rebranding = "Rebranding", identity = "Brand identity", professionisti = "Professionisti".
+## Writing rules (SEO)
+
+- **Never name the client** in the text, and no `project:` links: describe it ("uno studio dentistico che seguo"). The project marquee at the end lets the reader connect the two. The build warns if a body contains a client name or a `project:` link.
+- **One search query per article**, different from every other article (no two articles on the same query). Put it in the title, the first paragraph and the description.
+- **Open with the answer** in two or three sentences, then go deeper.
+- **Only real facts.** Cases, quotes and results come from the project texts in `src/i18n/it.json`. No invented numbers or anecdotes; an invented example must say so.
+- **Something only Elenia can say** in every article: a real case, a checklist or a clear opinion. Generic advice alone is not enough.
+- **Vary the structure.** Not every H2 is a question; endings differ.
+- **Local:** Friuli Venezia Giulia and Veneto, at most once or twice per article and only where it is natural.
+- **Links:** 2–3 `article:` links and, where it fits, one `page:how#<anchor>` to the matching service.
+- Length: about 650–900 words.
+

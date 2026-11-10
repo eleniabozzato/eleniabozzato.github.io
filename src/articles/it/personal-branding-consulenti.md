@@ -1,45 +1,72 @@
 ---
-order: 9
+order: 10
 slug: personal-branding-consulenti
 title: <em-magenta>PERSONAL BRANDING</em-magenta> per consulenti e liberi professionisti: da dove partire
-short: Personal branding per consulenti
-description: Personal branding per consulenti e liberi professionisti: da dove partire per costruire un’identità chiara, coerente con la tua personalità e il tuo lavoro.
+short: Personal branding professionisti
+description: Personal branding per consulenti e liberi professionisti: quando il brand coincide con te, come renderlo riconoscibile e come farlo crescere oltre la tua persona.
 projects: paola
-related: autonomia-social, primo-incontro-brand
+related: gestire-social-in-autonomia, come-scegliere-nome-brand
 date: 2026-11-04
 ---
 
-Il personal branding parte da te, non dagli strumenti. Prima di scegliere un logo o un profilo social, devi sapere chi sei come professionista e a chi vuoi parlare.
+Per un consulente o un libero professionista il personal branding non è mettersi in mostra. È rendere chiaro, prima ancora del primo incontro, come lavori, per chi e perché sceglierti. Si parte dal posizionamento, poi si costruiscono pochi strumenti coerenti: un’identità visiva, un sito, una presenza social che puoi gestire da solo.
 
-## Parti da tre domande
+## Quando il brand sei tu
 
-Rispondi per iscritto, in poche righe:
+Un’azienda può cambiare logo, sede e collaboratori. Un professionista no: il brand coincide con la persona. Questo è un vantaggio, perché i clienti di un consulente comprano soprattutto fiducia in una persona. Ma è anche un rischio: se la comunicazione è confusa, sembra confuso il professionista.
 
-1. **Che cosa faccio, e per chi?** Una frase, non un elenco di servizi.
-2. **Che cosa mi rende diverso?** Il modo di lavorare, l’esperienza, i valori. Spesso è qualcosa che dai per scontato.
-3. **Come voglio essere percepito?** Rigoroso, vicino, creativo. Scegli due o tre aggettivi e verifica che siano veri.
+Il personal branding serve a togliere questa confusione. Non a inventare un personaggio.
 
-Quando un consulente lavora da solo, la sua persona è il brand. Per questo l’identità deve somigliarti: se ti sta stretta, non la userai.
+## Da dove partire: tre domande
 
-## Poi il minimo che serve
+Prima di pensare a logo e social, scrivi la risposta a queste domande, in poche righe:
 
-Non servono dieci strumenti. Parti da pochi elementi stabili:
+1. **Che problema risolvi, e per chi?** Non «faccio consulenza», ma per quale tipo di cliente e in quale momento.
+2. **Come lavori?** Il metodo è spesso ciò che distingue due professionisti con le stesse competenze.
+3. **Che cosa vuoi che la gente dica di te?** Due o tre parole. Diventano il tono di tutto il resto.
 
-- un nome e un modo di presentarti, uguali ovunque;
-- una veste visiva semplice, con colori e caratteri che userai davvero;
-- una foto professionale e una breve biografia;
-- un solo luogo dove si trova il tuo lavoro, di solito un sito.
+Se le risposte sono vaghe, nessuna grafica le renderà chiare.
 
-Parti da un punto semplice, da affinare nel tempo.
+## Il caso di una consulente direzionale
 
-Un controllo finale: mostra il tuo materiale a due persone che ti conoscono e a una che non ti conosce. Chiedi a tutte cosa hanno capito di te. Se le risposte non coincidono, c’è ancora da lavorare sul messaggio.
+Una consulente direzionale voleva dare una struttura più organizzata e riconoscibile alla propria attività. L’idea era far evolvere il lavoro individuale in un progetto con un nome proprio, sostenuto da una rete di professionisti a supporto delle aziende.
 
-Il tempo gioca a tuo favore: un’identità semplice e usata con costanza si rafforza ogni mese, mentre una complicata si abbandona presto.
+Qui c’era un passaggio delicato: il progetto doveva avere un’identità sua, ma restare coerente con il brand personale della consulente. I clienti dovevano riconoscere lei, e allo stesso tempo percepire una realtà più ampia.
 
-## Un esempio
+Il lavoro ha seguito questo ordine:
 
-Con [Consulab](project:paola) il lavoro è partito proprio dal posizionamento, in coerenza con il brand personale della consulente.
+- definizione del nuovo posizionamento;
+- identità visiva del progetto, coordinata con il brand personale;
+- direzione creativa del sito web, in collaborazione con lo sviluppatore;
+- linee guida per i contenuti, layout social e rubriche grafiche;
+- un percorso formativo per gestire i social in autonomia.
 
-Per sapere cosa portare a un primo confronto, leggi [Come prepararsi al primo incontro](article:primo-incontro-brand).
+Oggi la consulente gestisce in modo indipendente la propria presenza digitale. Il progetto ha rafforzato la percezione di professionalità verso aziende e potenziali clienti. Lei lo ha descritto così: «Ha saputo cogliere con precisione la mia personalità, trasformandola in un logo e un’immagine digitale che mi rappresentano davvero».
 
-Se vuoi cominciare, [scrivimi](page:contact).
+## Personale o con un nome proprio?
+
+È una delle scelte più importanti per un professionista. Non c’è una risposta giusta, ma ci sono criteri.
+
+- **Usa il tuo nome** se il valore è legato a te, se lavori da solo e se non prevedi di crescere con altri.
+- **Crea un nome di progetto** se vuoi coinvolgere altri professionisti, se un giorno il progetto potrebbe funzionare senza di te, o se il tuo nome è difficile da ricordare.
+- **Tieni entrambi**, come nel caso sopra, se vuoi una realtà più ampia senza perdere la fiducia legata alla persona. Serve però un sistema visivo che li colleghi.
+
+Se scegli un nome nuovo, segui un metodo: ne parlo in [come scegliere il nome di un brand](article:come-scegliere-nome-brand).
+
+## Gli strumenti essenziali
+
+Un professionista non ha bisogno di tutto. Ha bisogno di poche cose fatte bene e coerenti:
+
+- **un’identità visiva semplice**: logo o marchio nominale, due o tre colori, un carattere;
+- **una foto professionale vera**, che ti assomiglia nei giorni normali;
+- **un sito essenziale**: chi sei, come lavori, per chi, come contattarti;
+- **un profilo LinkedIn allineato al sito**, se lavori con aziende;
+- **una presenza social sostenibile**: meglio un canale curato che tre abbandonati.
+
+## L’errore più comune
+
+Copiare il tono dei grandi nomi del settore. Funziona per loro perché è il loro. Un consulente che parla come un guru di internet perde proprio ciò che i clienti cercano: una persona affidabile, con un metodo chiaro.
+
+Il personal branding migliore, secondo me, è quello in cui il primo incontro conferma ciò che il cliente aveva già capito online. Nessuna sorpresa, in un senso o nell’altro.
+
+Se il tuo dubbio è come tenere i social con costanza senza delegarli, leggi [come gestire i social in autonomia](article:gestire-social-in-autonomia). Il percorso è descritto in [formazione e consulenza](page:how#formazione-consulenza).
