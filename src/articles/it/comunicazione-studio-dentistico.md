@@ -39,7 +39,7 @@ Come si svolge una prima visita. Che cosa succede in sala d’attesa. Come vengo
 
 ### I più piccoli
 
-È l’area dove ho visto le idee più efficaci. In [uno studio che seguo](project:dentisti) abbiamo creato una giornata a porte aperte dedicata ai bambini, un diploma da «eroina del sorriso» per i piccoli pazienti e un calendario per segnare lo spazzolamento durante la settimana. Non vendono nulla. Raccontano uno studio dove i bambini si sentono a loro agio, e i genitori lo notano.
+È l’area dove ho visto le idee più efficaci. In [uno studio che seguo](project:dentisti) abbiamo creato una giornata a porte aperte dedicata ai bambini, un diploma da «eroe del sorriso» o «eroina del sorriso» per i piccoli pazienti e un calendario per segnare lo spazzolamento durante la settimana. Non vendono nulla. Raccontano uno studio dove i bambini si sentono a loro agio, e i genitori lo notano.
 
 ### Gli ambienti
 
