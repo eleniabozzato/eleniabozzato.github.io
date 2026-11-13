@@ -52,6 +52,16 @@ main > .section { padding: 44px 0 64px; }
   margin: var(--space-2) auto 0;
 }
 .testimonial-card .quote-card__role { line-height: 1.35; }
+/* Long testimonial (main.js): closed, the quote shows its first lines and fades out */
+.testimonial-card--long .quote-card__quote p { margin: 0; }
+.testimonial-card--long .quote-card__quote p + p { margin-top: 1em; }
+.testimonial-card--long[data-open="false"] .quote-card__quote {
+  max-height: calc(var(--quote-lh) * 6em);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(#000 50%, transparent);
+  mask-image: linear-gradient(#000 50%, transparent);
+}
+.testimonial-card__more { margin: 0 auto var(--quote-gap); }
 
 /* ---------- "Vedi le altre esperienze": slow marquee of the other projects ----------
    The marquee itself is in style.css 6.10. */
@@ -113,5 +123,6 @@ main > .section.more-exp { padding: 56px 0 64px; border-top: var(--line-hairline
   .gallery-carousel .carousel__btn--next { right: 6px; }
   .testimonial-card { --quote-pad: 28px 22px; }
   .testimonial-card .quote-card__quote { font-size: 1.05rem; }
+  .testimonial-card--long[data-open="false"] .quote-card__quote { max-height: calc(var(--quote-lh) * 10em); }
 
 }

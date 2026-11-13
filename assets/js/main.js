@@ -5,11 +5,35 @@
 
   // User-facing strings that JS creates, by page language (<html lang>).
   const STRINGS = {
-    it: { toTop: "Torna su", goToReview: "Vai alla recensione " },
-    en: { toTop: "Back to top", goToReview: "Go to review " },
+    it: { toTop: "Torna su", goToReview: "Vai alla recensione ", readAll: "Leggi tutto", readLess: "Riduci" },
+    en: { toTop: "Back to top", goToReview: "Go to review ", readAll: "Read all", readLess: "Show less" },
   };
   const lang = document.documentElement.lang;
   const S = STRINGS[lang] || STRINGS.en;
+
+  /* ---------- Long testimonial: collapsed, with a "read all" button ----------
+     Without JS the whole text shows. */
+  function initLongQuotes() {
+    document.querySelectorAll(".testimonial-card--long").forEach(function (card) {
+      const quote = card.querySelector(".quote-card__quote");
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "btn testimonial-card__more";
+      btn.setAttribute("aria-controls", quote.id);
+      function set(open) {
+        card.dataset.open = open;
+        btn.setAttribute("aria-expanded", open);
+        btn.textContent = open ? S.readLess : S.readAll;
+      }
+      btn.addEventListener("click", function () {
+        const open = card.dataset.open !== "true";
+        set(open);
+        if (!open) card.scrollIntoView({ block: "nearest" });
+      });
+      quote.after(btn);
+      set(false);
+    });
+  }
 
   /* ---------- Mobile nav toggle ---------- */
   function initNav() {
@@ -331,6 +355,7 @@
     document.querySelectorAll(".nav__item--has-sub").forEach(initSubmenu);
     initAccordions();
     initCarousels();
+    initLongQuotes();
     initMarquees();
   });
 })();

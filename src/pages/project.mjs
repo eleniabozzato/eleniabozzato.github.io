@@ -37,11 +37,15 @@ export default function project({ t, href, projects, project: p }) {
       ? `\n\n        <!-- GALLERIA FOTOGRAFICA -->\n${gallery({ t, slides: p.gallery.slides, alts: c.slides, mod: 'gallery-carousel--standalone', pad: 8 })}`
       : '';
 
-  // Optional: a project without a client quote simply has no card.
+  // Optional: a project without a client quote simply has no card. A quote given as a list of
+  // paragraphs is a long one: main.js shows its start with a "read all" button.
+  const q = c.testimonial?.quote;
   const testimonial = c.testimonial
     ? `        <!-- TESTIMONIAL -->
-        <div class="quote-card testimonial-card">
-          <p class="quote-card__quote">${c.testimonial.quote}</p>
+        <div class="quote-card testimonial-card${Array.isArray(q) ? ' testimonial-card--long' : ''}">
+${Array.isArray(q)
+    ? `          <div class="quote-card__quote" id="quote-${p.key}">\n${q.map((x) => `            <p>${x}</p>`).join('\n')}\n          </div>`
+    : `          <p class="quote-card__quote">${q}</p>`}
           <p class="quote-card__author">${c.testimonial.author}</p>
           <p class="quote-card__role">${c.testimonial.role}</p>
         </div>`
