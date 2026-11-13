@@ -17,14 +17,14 @@ export function footer({ t, href, cta = true, links = null }) {
   const linkBand = links
     ? `      <div class="footer-links">
         <nav aria-label="${f.links.blogLabel}">
-          <p class="footer-links__title">${f.links.blog}</p>
+          <p class="footer-links__title"><a href="${href.blog()}">${f.links.blog}</a></p>
           <ul class="footer-links__list">
 ${links.articles.map((a) => `            <li><a href="${href.article(a.slug)}">${a.short}</a></li>`).join('\n')}
             <li class="footer-links__all"><a href="${href.blog()}">${f.links.all} ${ARROW_RIGHT}</a></li>
           </ul>
         </nav>
         <nav aria-label="${f.links.projectsLabel}">
-          <p class="footer-links__title">${f.links.projects}</p>
+          <p class="footer-links__title"><a href="${href.page('experience')}">${f.links.projects}</a></p>
           <ul class="footer-links__list">
 ${links.projects.map((p) => `            <li><a href="${href.project(p)}">${p.navName}</a></li>`).join('\n')}
           </ul>

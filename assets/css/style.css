@@ -957,7 +957,9 @@ textarea:focus-visible,
   color: rgb(0 0 0 / 0.75);
 }
 .footer-links__list a:hover,
-.footer-links__list a:focus-visible { text-decoration: underline; }
+.footer-links__list a:focus-visible,
+.footer-links__title a:hover,
+.footer-links__title a:focus-visible { text-decoration: underline; }
 .footer-links__all .arrow { --arrow-w: 14px; --arrow-h: 9px; margin-left: 0.2rem; vertical-align: middle; }
 .footer-legal {
   border-top: var(--line-hairline);
