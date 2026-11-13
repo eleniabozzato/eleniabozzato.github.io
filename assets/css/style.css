@@ -685,8 +685,13 @@ textarea:focus-visible,
   padding-bottom: var(--accordion-pb-closed, var(--accordion-pt, 30px));
 }
 /* Title: gradient text when open (the ink colour fades to transparent to reveal the
-   clipped gradient). The fill follows `color` because -webkit-text-fill-color does not animate. */
+   clipped gradient). The fill follows `color` because -webkit-text-fill-color does not animate.
+   The span is a flex item, so its background stops at the line box: with a tight line-height
+   the descenders (g, p, y) fell outside the gradient. The padding extends it, the negative
+   margin keeps the layout. */
 .accordion__trigger > span:first-child {
+  padding-bottom: 0.25em;
+  margin-bottom: -0.25em;
   background: var(--accordion-title-grad, var(--grad-title));
   -webkit-background-clip: text;
   background-clip: text;
