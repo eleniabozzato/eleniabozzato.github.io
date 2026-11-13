@@ -52,36 +52,21 @@ main > .section { padding: 44px 0 64px; }
   margin: var(--space-2) auto 0;
 }
 .testimonial-card .quote-card__role { line-height: 1.35; }
+/* Long testimonial (main.js): closed, the quote shows its first lines and fades out */
+.testimonial-card--long .quote-card__quote p { margin: 0; }
+.testimonial-card--long .quote-card__quote p + p { margin-top: 1em; }
+.testimonial-card--long[data-open="false"] .quote-card__quote {
+  max-height: calc(var(--quote-lh) * 6em);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(#000 50%, transparent);
+  mask-image: linear-gradient(#000 50%, transparent);
+}
+.testimonial-card__more { margin: 0 auto var(--quote-gap); }
 
 /* ---------- "Vedi le altre esperienze": slow marquee of the other projects ----------
-   The track holds 3 identical sets (1 real + 2 aria-hidden) and slides by one set, so the loop is seamless
-   as long as one set is not narrower than the screen. */
+   The marquee itself is in style.css 6.10. */
 main > .section.more-exp { padding: 56px 0 64px; border-top: var(--line-hairline); text-align: center; }
 .more-exp__head { padding: 0 var(--gutter); margin-bottom: 36px; }
-/* Scroll container moved by main.js (auto-advance, swipe, wheel, mouse drag); no scrollbar.
-   Hover does not pause it (it made the cards hard to follow). */
-.more-exp__marquee { overflow-x: auto; overflow-y: clip; scrollbar-width: none; overscroll-behavior-x: contain; cursor: grab; }
-.more-exp__marquee::-webkit-scrollbar { display: none; }
-.more-exp__marquee.is-dragging { cursor: grabbing; user-select: none; }
-.more-exp__marquee img { -webkit-user-drag: none; }
-.more-exp__track {
-  --card-w: 340px; --card-gap: var(--space-3);
-  display: flex; width: max-content; margin: 0; padding: 0; list-style: none; text-align: left;
-}
-.more-exp__item { flex: none; width: var(--card-w); margin-right: var(--card-gap); }
-.more-exp__card {
-  display: flex; flex-direction: column; height: 100%; border: var(--line-hairline); border-radius: var(--radius-lg);
-  overflow: clip; background: var(--white); color: var(--ink);
-}
-.more-exp__card:hover, .more-exp__card:focus-visible { background: var(--grad-brand-soft); }
-.more-exp__media { display: block; aspect-ratio: 4 / 3; overflow: hidden; }
-.more-exp__media img { display: block; width: 100%; height: 100%; object-fit: var(--hero-fit, cover); background: var(--hero-bg, none); object-position: var(--card-pos, 50% 25%); }
-.more-exp__body { display: flex; flex-direction: column; gap: 12px; padding: 24px 24px 28px; text-align: center; }
-.more-exp__name { --pn-size: 2rem; --pn-lh: 1.05; --pn-accent-size: 2.1rem; }
-.more-exp__desc { font-size: 1rem; line-height: 1.4; }
-@media (prefers-reduced-motion: reduce) {
-  .more-exp__item[aria-hidden="true"] { display: none; }
-}
 
 /* ---------- Desktop ---------- */
 @media (min-width: 1024px) {
@@ -138,7 +123,6 @@ main > .section.more-exp { padding: 56px 0 64px; border-top: var(--line-hairline
   .gallery-carousel .carousel__btn--next { right: 6px; }
   .testimonial-card { --quote-pad: 28px 22px; }
   .testimonial-card .quote-card__quote { font-size: 1.05rem; }
+  .testimonial-card--long[data-open="false"] .quote-card__quote { max-height: calc(var(--quote-lh) * 10em); }
 
-  .more-exp__track { --card-w: 260px; --card-gap: var(--space-2); }
-  .more-exp__name { --pn-size: 1.7rem; --pn-accent-size: 1.8rem; }
 }

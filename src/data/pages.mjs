@@ -52,6 +52,9 @@ export function linkHelpers(lang) {
   return {
     page: (id, hash = '') => urlPath(lang, pageFiles[lang][id]) + (hash ? `#${hash}` : ''),
     project: (p) => urlPath(lang, `${p.slug}.html`),
+    // Blog: Italian only, whatever the page language.
+    blog: () => urlPath('it', 'blog/'),
+    article: (slug) => urlPath('it', `blog/${slug}.html`),
   };
 }
 

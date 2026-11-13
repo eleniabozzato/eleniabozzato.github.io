@@ -58,7 +58,7 @@ export default function home({ t, href, projects }) {
           <p>${c.hero.text}</p>
         </div>
         <div class="hero__media">
-          <img src="/assets/img/home-hero-elenia.webp" srcset="/assets/img/home-hero-elenia-600.webp 612w, /assets/img/home-hero-elenia.webp 960w" sizes="(max-width: 767px) 327px, 516px" alt="${c.hero.imgAlt}" width="960" height="952" />
+          <img fetchpriority="high" src="/assets/img/home-hero-elenia.webp" srcset="/assets/img/home-hero-elenia-600.webp 612w, /assets/img/home-hero-elenia.webp 960w" sizes="(max-width: 767px) 327px, 516px" alt="${c.hero.imgAlt}" width="960" height="952" />
         </div>
       </div>
     </section>

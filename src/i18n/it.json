@@ -18,7 +18,29 @@
     "city": "Cordovado PN",
     "legal": "Elenia Bozzato • P.IVA 04701970271",
     "privacy": "Privacy Policy e Cookie Policy",
-    "copyright": "© Copyright 2026"
+    "copyright": "© Copyright 2026",
+    "links": {
+      "blog": "Approfondimenti",
+      "blogLabel": "Approfondimenti",
+      "all": "Tutti gli articoli",
+      "projects": "Progetti",
+      "projectsLabel": "Progetti"
+    }
+  },
+  "blog": {
+    "eyebrow": "Approfondimenti",
+    "readingTime": "min di lettura",
+    "projects": "I progetti",
+    "related": "Leggi anche",
+    "index": {
+      "meta": {
+        "title": "Approfondimenti su brand e comunicazione \u2014 Elenia Bozzato",
+        "description": "Guide su direzione del brand, rebranding, brand identity e comunicazione per piccole imprese e professionisti di Friuli Venezia Giulia e Veneto."
+      },
+      "title": "<em-magenta>APPROFONDIMENTI</em-magenta>",
+      "intro": "Brevi guide su brand e comunicazione per piccole imprese e professionisti, con esempi dai progetti che ho seguito.",
+      "listLabel": "Tutti gli articoli"
+    }
   },
   "gallery": {
     "prev": "Immagine precedente",
@@ -51,7 +73,7 @@
   "projects": {
     "dentisti": {
       "meta": {
-        "title": "Dentisti Cordovado — Elenia Bozzato",
+        "title": "Dentisti Cordovado: comunicazione dello studio — Elenia Bozzato",
         "description": "Direzione e coordinamento del brand per Dentisti Cordovado: comunicazione social, campagne e identità visiva dello studio."
       },
       "tagline": "Direzione<br />e coordinamento<br />del brand",
@@ -94,7 +116,7 @@
     },
     "alplan": {
       "meta": {
-        "title": "Al Plan Hotel — Elenia Bozzato",
+        "title": "Al Plan Hotel: comunicazione di un hotel di famiglia — Elenia Bozzato",
         "description": "Direzione e coordinamento del brand per Al Plan Hotel, hotel a conduzione familiare in Val Badia: comunicazione, contenuti e coordinamento delle attività di marketing."
       },
       "tagline": "Direzione<br />e coordinamento<br />del brand",
@@ -149,11 +171,22 @@
         "Dessert su un piatto di vetro blu, a un tavolo apparecchiato",
         "Terrazza con tavolini apparecchiati e fiori, con vista sul paese"
       ],
+      "testimonial": {
+        "quote": [
+          "“Come descrivere Elenia? Una giovane donna piena di interessi e di voglia di aiutare gli altri, sempre solare e piena di energia, come un fiore che sta per sbocciare. La frase che ricorderò per sempre è «Tutto se pol far!»: viene dalla famiglia Bozzato, sempre disponibile e piena di entusiasmo, che va avanti con energia senza lasciare nulla al caso, alla ricerca della perfezione.",
+          "Per noi Elenia è ormai parte della famiglia. Spesso sono le cose più semplici a essere le più belle: essere autentici e sempre di buon umore, ed Elenia ne è la prova. Conosciamo la famiglia Bozzato da tanto tempo: prima come clienti, poi come ospiti e oggi come amici. E la cosa più bella della vita è trovare amici che ti aiutano a realizzare i tuoi sogni.",
+          "Siamo una famiglia un po’ particolare, che da tanti anni porta avanti l’hotel fondato dai nostri genitori. Da oltre trent’anni abbiamo una vera e propria malattia, il collezionismo di oggetti d’epoca, e siamo riusciti a farla diventare parte del nostro lavoro: oggi ci aiuta a far rallentare gli ospiti che vengono a trovarci. Ai più grandi facciamo ricordare, e ai più giovani facciamo scoprire, come si viveva una volta, in un tempo più semplice e senza fretta. Proprio quello di cui ha bisogno chi è in vacanza per rigenerarsi davvero.",
+          "Elenia è diventata un’imprenditrice precisa e attenta, e si vede da dove arriva: dai suoi genitori e dalla loro bellissima carrozzeria, che per noi è una vera beauty farm. Siamo davvero fieri e felici di averla al nostro fianco nel lavoro. Noi siamo dei gran confusionari, e lei riesce sempre a mettere tutto in ordine! Così i nostri futuri ospiti, e chi ci segue sui social e sui portali, possono capire meglio la nostra filosofia e lo stile di vita semplice che vogliamo trasmettere.",
+          "Elenia è precisa e ordinata, ma semplice e con i piedi per terra. Con lei senti che ti accompagna per il desiderio sincero di aiutare: una cosa che oggi, purtroppo, è sempre più rara. Si capisce subito che per lei il lavoro non è un dovere ma una passione. E quando una cosa si fa con amore e passione, diventa un progetto pieno di soddisfazioni e un traguardo di successo!”"
+        ],
+        "author": "Famiglia Trebo",
+        "role": "Al Plan Hotel"
+      },
       "listAlt": "Veduta aerea invernale dell'Al Plan Hotel"
     },
     "carrozzeria": {
       "meta": {
-        "title": "Carrozzeria Bozzato — Elenia Bozzato",
+        "title": "Carrozzeria Bozzato: rebranding e immagine coordinata — Elenia Bozzato",
         "description": "Direzione e coordinamento del brand per Carrozzeria Bozzato: rebranding, identità visiva, immagine coordinata, sito web e comunicazione social dell’azienda di famiglia."
       },
       "tagline": "Direzione<br />e coordinamento<br />del brand",
@@ -203,7 +236,7 @@
     },
     "perform": {
       "meta": {
-        "title": "Perform Health — Elenia Bozzato",
+        "title": "Perform Health: naming e brand identity — Elenia Bozzato",
         "description": "Progettazione e sviluppo della brand identity di Perform Health, dal naming al sistema visivo e comunicativo, fino a sito web e materiali corporate."
       },
       "tagline": "Progettazione<br />e sviluppo della<br />brand identity",
@@ -250,7 +283,7 @@
     },
     "pulicasa": {
       "meta": {
-        "title": "Pulicasa — Elenia Bozzato",
+        "title": "Pulicasa: restyling del logo per i 40 anni — Elenia Bozzato",
         "description": "Restyling del logo e revisione completa dell’identità visiva di Pulicasa, azienda di pulizie civili e industriali del Portogruarese, in occasione dei suoi 40 anni di attività."
       },
       "tagline": "Progettazione e sviluppo<br />della brand identity",
@@ -290,7 +323,7 @@
     },
     "paola": {
       "meta": {
-        "title": "Paola Nadin, Consu.Lab — Elenia Bozzato",
+        "title": "Paola Nadin: identità visiva e formazione social — Elenia Bozzato",
         "description": "Formazione e consulenza strategica per Consu.Lab di Paola Nadin: identità visiva, sito web e percorso formativo per rendere autonoma la comunicazione social."
       },
       "tagline": "Formazione<br />e consulenza<br />strategica",

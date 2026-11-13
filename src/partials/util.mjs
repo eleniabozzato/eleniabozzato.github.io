@@ -16,3 +16,10 @@ export const attr = (name, value) => (value == null ? '' : ` ${name}="${value}"`
 
 // Indent every line after the first by `n` spaces (used to nest multi-line partials).
 export const indent = (s, n) => s.split('\n').map((l, i) => (i && l ? ' '.repeat(n) + l : l)).join('\n');
+
+// Escape text for an HTML attribute value.
+export const escAttr = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+
+// <script type="application/ld+json"> block ("<" escaped so the JSON cannot close the tag).
+export const jsonLd = (obj) =>
+  `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;

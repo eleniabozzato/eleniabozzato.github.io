@@ -1,0 +1,70 @@
+/* ---------- Page: blog (index and articles) ----------
+   Built only from site components: eyebrow badge, section title, hairline cards with the
+   project-card hover, the project card itself (style.css 6.10). The footer CTA closes every page. */
+
+/* ---------- Head ---------- */
+.blog-head { padding: 4rem 0 2.25rem; text-align: center; }
+.blog-head__eyebrow { --badge-gap: var(--space-1); }
+a.blog-head__eyebrow:hover, a.blog-head__eyebrow:focus-visible { text-decoration: underline; }
+.blog-head__title { max-width: 780px; margin: 0 auto; font-size: 2.25rem; line-height: 1.25; }
+.blog-head__meta { margin-top: 1.25rem; font-size: 0.875rem; line-height: 1.4; color: rgb(0 0 0 / 0.7); }
+.blog-head__intro { max-width: 620px; margin: 1.25rem auto 0; font-size: var(--fs-lead); line-height: var(--lh-lead); }
+
+/* ---------- Article body: one column, like the accordion text of the project pages ---------- */
+.blog-body { padding: 0 0 4rem; }
+.blog-prose { max-width: 712px; margin: 0 auto; font-size: 1.0625rem; line-height: 1.7; }
+.blog-prose > * { margin: 0 0 1.4em; }
+.blog-prose > :last-child { margin-bottom: 0; }
+.blog-prose h2 { margin: 2.2em 0 0.7em; font-size: 1.5rem; font-weight: 700; line-height: 1.3; }
+.blog-prose h3 { margin: 1.8em 0 0.6em; font-size: 1.15rem; font-weight: 700; line-height: 1.35; }
+.blog-prose > :is(h2, h3):first-child { margin-top: 0; }
+.blog-prose ul, .blog-prose ol { padding-left: 1.5rem; }
+.blog-prose ul { list-style: disc; }
+.blog-prose ol { list-style: decimal; }
+.blog-prose li { margin-bottom: 0.5em; padding-left: 0.25rem; }
+.blog-prose li:last-child { margin-bottom: 0; }
+.blog-prose a { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.blog-prose a:hover, .blog-prose a:focus-visible { color: var(--magenta); }
+/* quiet quote: italic text on a left rule */
+.blog-prose blockquote { padding-left: 1.4rem; border-left: var(--line-w) solid var(--line); }
+.blog-prose blockquote p { font-style: italic; margin: 0; }
+
+/* ---------- Blocks after the text: project, related articles ---------- */
+.blog-block { padding: 3.25rem 0 3.5rem; border-top: var(--line-hairline); }
+.blog-block__title { margin-bottom: 1.75rem; font-size: 1.5rem; font-weight: 700; line-height: 1.3; text-align: center; }
+.blog-list { padding: 2.75rem 0 3rem; }
+.blog-head + .blog-block { margin-top: 1.5rem; }
+
+
+/* ---------- Article cards ---------- */
+.blog-cards { display: grid; gap: var(--space-3); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.blog-cards > li { display: flex; }
+.blog-card {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; width: 100%; padding: 1.75rem 1.75rem 1.5rem;
+  border: var(--line-hairline); border-radius: var(--radius-lg); background: var(--white); color: var(--ink);
+}
+.blog-card:hover, .blog-card:focus-visible { background: var(--grad-brand-soft); }
+.blog-card__title { font-size: 1.25rem; font-weight: 700; line-height: 1.3; }
+.blog-card__title .italic-accent { font-size: 1.05em; }
+.blog-card__desc { font-size: 0.875rem; line-height: 1.5; color: rgb(0 0 0 / 0.75); }
+.blog-card .arrow { --arrow-w: 32px; --arrow-h: 19px; margin-top: auto; }
+.blog-card__desc + .arrow { margin-top: auto; }
+.blog-card__desc { margin-bottom: 0.25rem; }
+
+@media (min-width: 768px) {
+  .blog-cards--2 { grid-template-columns: 1fr 1fr; }
+  .blog-head__title { font-size: 2.5rem; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+  .blog-head { padding: 2.5rem 0 1.5rem; }
+  .blog-head__title { font-size: 1.7rem; }
+  .blog-head__intro { font-size: 1rem; line-height: 1.5; }
+  .blog-body { padding-bottom: 3rem; }
+  .blog-prose { font-size: 1rem; line-height: 1.65; }
+  .blog-prose h2 { font-size: 1.3rem; }
+  .blog-block { padding: 2.5rem 0 2.75rem; }
+  .blog-cards { grid-template-columns: 1fr; }
+  .blog-card { padding: 1.5rem 1.4rem 1.3rem; }
+}

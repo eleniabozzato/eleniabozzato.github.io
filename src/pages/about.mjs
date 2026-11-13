@@ -16,7 +16,7 @@ export default function about({ t }) {
   return `  <main class="cs">
     <!-- HERO full-bleed photo -->
     <section class="cs-hero">
-      <img src="/assets/img/chi-sono-elenia-bambina-1600.webp" srcset="/assets/img/chi-sono-elenia-bambina-800.webp 800w, /assets/img/chi-sono-elenia-bambina-1600.webp 1600w" sizes="100vw" alt="${c.hero.imgAlt}" width="1600" height="899" />
+      <img fetchpriority="high" src="/assets/img/chi-sono-elenia-bambina-1600.webp" srcset="/assets/img/chi-sono-elenia-bambina-800.webp 800w, /assets/img/chi-sono-elenia-bambina-1600.webp 1600w" sizes="100vw" alt="${c.hero.imgAlt}" width="1600" height="899" />
     </section>
 
     <!-- MI RACCONTO -->

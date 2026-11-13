@@ -7,13 +7,15 @@ export const layout = ({ t }) => ({
   css: 'esperienze',
 });
 
+// The photo links to the project too, but only for the mouse: keyboard and screen readers get
+// the button, so each project is announced once.
 export default function experience({ t, href, projects }) {
   const cells = projects
     .map((p) => {
       const i = p.listImg;
       return `        <div class="exp-photo-grid__cell">
           <div class="exp-photo-grid__media">
-            <img src="${i.src}" srcset="${i.srcset}" sizes="(min-width: 768px) 50vw, 100vw" alt="${t.projects[p.key].listAlt}" width="${i.width}" height="${i.height}"${attr('loading', i.loading)} />
+            <a href="${href.project(p)}" tabindex="-1" aria-hidden="true"><img src="${i.src}" srcset="${i.srcset}" sizes="(min-width: 768px) 50vw, 100vw" alt="${t.projects[p.key].listAlt}" width="${i.width}" height="${i.height}"${attr('loading', i.loading)} /></a>
           </div>
           <div class="exp-photo-grid__body">
             <span class="badge badge--acqua">${t.experienceLabel}</span>

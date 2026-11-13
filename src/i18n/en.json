@@ -51,7 +51,7 @@
   "projects": {
     "dentisti": {
       "meta": {
-        "title": "Dentisti Cordovado — Elenia Bozzato",
+        "title": "Dentisti Cordovado: communication for a dental practice — Elenia Bozzato",
         "description": "Brand direction and coordination for Dentisti Cordovado: social media communication, campaigns and the visual identity of the practice."
       },
       "tagline": "Brand direction<br />and coordination",
@@ -94,7 +94,7 @@
     },
     "alplan": {
       "meta": {
-        "title": "Al Plan Hotel — Elenia Bozzato",
+        "title": "Al Plan Hotel: communication for a family-run hotel — Elenia Bozzato",
         "description": "Brand direction and coordination for Al Plan Hotel, a family-run hotel in Val Badia: communication, content and coordination of marketing activities."
       },
       "tagline": "Brand direction<br />and coordination",
@@ -149,11 +149,22 @@
         "Dessert on a blue glass plate, on a set table",
         "Terrace with set tables and flowers, overlooking the village"
       ],
+      "testimonial": {
+        "quote": [
+          "“Come descrivere Elenia? Una giovane donna piena di interessi e di voglia di aiutare gli altri, sempre solare e piena di energia, come un fiore che sta per sbocciare. La frase che ricorderò per sempre è «Tutto se pol far!»: viene dalla famiglia Bozzato, sempre disponibile e piena di entusiasmo, che va avanti con energia senza lasciare nulla al caso, alla ricerca della perfezione.",
+          "Per noi Elenia è ormai parte della famiglia. Spesso sono le cose più semplici a essere le più belle: essere autentici e sempre di buon umore, ed Elenia ne è la prova. Conosciamo la famiglia Bozzato da tanto tempo: prima come clienti, poi come ospiti e oggi come amici. E la cosa più bella della vita è trovare amici che ti aiutano a realizzare i tuoi sogni.",
+          "Siamo una famiglia un po’ particolare, che da tanti anni porta avanti l’hotel fondato dai nostri genitori. Da oltre trent’anni abbiamo una vera e propria malattia, il collezionismo di oggetti d’epoca, e siamo riusciti a farla diventare parte del nostro lavoro: oggi ci aiuta a far rallentare gli ospiti che vengono a trovarci. Ai più grandi facciamo ricordare, e ai più giovani facciamo scoprire, come si viveva una volta, in un tempo più semplice e senza fretta. Proprio quello di cui ha bisogno chi è in vacanza per rigenerarsi davvero.",
+          "Elenia è diventata un’imprenditrice precisa e attenta, e si vede da dove arriva: dai suoi genitori e dalla loro bellissima carrozzeria, che per noi è una vera beauty farm. Siamo davvero fieri e felici di averla al nostro fianco nel lavoro. Noi siamo dei gran confusionari, e lei riesce sempre a mettere tutto in ordine! Così i nostri futuri ospiti, e chi ci segue sui social e sui portali, possono capire meglio la nostra filosofia e lo stile di vita semplice che vogliamo trasmettere.",
+          "Elenia è precisa e ordinata, ma semplice e con i piedi per terra. Con lei senti che ti accompagna per il desiderio sincero di aiutare: una cosa che oggi, purtroppo, è sempre più rara. Si capisce subito che per lei il lavoro non è un dovere ma una passione. E quando una cosa si fa con amore e passione, diventa un progetto pieno di soddisfazioni e un traguardo di successo!”"
+        ],
+        "author": "Famiglia Trebo",
+        "role": "Al Plan Hotel"
+      },
       "listAlt": "Winter aerial view of Al Plan Hotel"
     },
     "carrozzeria": {
       "meta": {
-        "title": "Carrozzeria Bozzato — Elenia Bozzato",
+        "title": "Carrozzeria Bozzato: rebranding and corporate identity — Elenia Bozzato",
         "description": "Brand direction and coordination for Carrozzeria Bozzato: rebranding, visual identity, stationery, website and social media communication for the family business."
       },
       "tagline": "Brand direction<br />and coordination",
@@ -203,7 +214,7 @@
     },
     "perform": {
       "meta": {
-        "title": "Perform Health — Elenia Bozzato",
+        "title": "Perform Health: naming and brand identity — Elenia Bozzato",
         "description": "Brand identity design and development for Perform Health, from naming to the visual and communication system, up to the website and corporate materials."
       },
       "tagline": "Brand identity<br />design and<br />development",
@@ -250,7 +261,7 @@
     },
     "pulicasa": {
       "meta": {
-        "title": "Pulicasa — Elenia Bozzato",
+        "title": "Pulicasa: logo restyling for its 40th anniversary — Elenia Bozzato",
         "description": "Logo restyling and a complete review of the visual identity of Pulicasa, a cleaning company for homes and industry in the Portogruaro area, for its 40 years in business."
       },
       "tagline": "Brand identity<br />design and development",
@@ -290,7 +301,7 @@
     },
     "paola": {
       "meta": {
-        "title": "Paola Nadin, Consu.Lab — Elenia Bozzato",
+        "title": "Paola Nadin: visual identity and social media training — Elenia Bozzato",
         "description": "Strategic training and consulting for Paola Nadin’s Consu.Lab: visual identity, website and a training path to make social media communication independent."
       },
       "tagline": "Strategic<br />training and<br />consulting",
