@@ -25,7 +25,7 @@ Testo...
 ```
 
 - `order`: position in every list (blog index, footer, related). Follows the order of the projects on the site.
-- `title`: the H1. Exactly ONE accent span, `<em-magenta>…</em-magenta>` or `<em-acqua>…</em-acqua>`, around the UPPERCASE key words (same style as the site headlines). In the `<title>` tag and JSON-LD the build strips the tags and writes the words in normal case — so write the accent words in UPPERCASE in the source anyway.
+- `title`: the H1. Exactly ONE accent span, `<em-magenta>…</em-magenta>` or `<em-acqua>…</em-acqua>`, around the UPPERCASE key words (same style as the site headlines). The colour you pick is not kept: the build gives the articles magenta and acqua in turn, by their place in the blog index, and the "Approfondimento" eyebrow takes the other colour. In the `<title>` tag and JSON-LD the build strips the tags and writes the words in normal case — so write the accent words in UPPERCASE in the source anyway.
 - `seo`: optional, plain text, ≤ 52 characters. The `<title>` and `og:title` (the build adds " — Elenia Bozzato"); the H1 keeps `title`. Search keyword first, because Google cuts the end. Without it the build uses the plain `title`.
 - `short`: ≤ 32 characters, plain text, used in the footer and in compact links.
 - `description`: meta description, plain text, 140–160 characters, no quotes.

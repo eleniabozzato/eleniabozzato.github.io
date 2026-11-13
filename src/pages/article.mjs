@@ -93,7 +93,7 @@ ${blogCards({ t, href, articles: related, pad: 8 })}
     <!-- TESTATA -->
     <header class="blog-head">
       <div class="container">
-        <a class="badge badge--acqua blog-head__eyebrow" href="${href.blog()}">${b.eyebrow}</a>
+        <a class="badge${a.accent === 'magenta' ? ' badge--acqua' : ''} blog-head__eyebrow" href="${href.blog()}">${b.eyebrow}</a>
         <h1 class="section-title blog-head__title">${a.title}</h1>
         <p class="blog-head__meta">${a.minutes} ${b.readingTime}</p>
       </div>

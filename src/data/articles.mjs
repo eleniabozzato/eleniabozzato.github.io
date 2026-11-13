@@ -72,6 +72,12 @@ export function loadArticles(projects) {
     }
   }
   articles.sort((a, b) => a.order - b.order || a.slug.localeCompare(b.slug));
+  // Accent colour by position in the blog index: magenta, acqua, magenta… The article page and
+  // every card of the article use it, whatever colour the front matter title names.
+  articles.forEach((a, i) => {
+    a.accent = i % 2 ? 'acqua' : 'magenta';
+    a.title = a.title.replace(/italic-accent--(acqua|magenta)/, `italic-accent--${a.accent}`);
+  });
   const bySlug = new Map(articles.map((a) => [a.slug, a]));
 
   // Link targets: page:<id>[#anchor], project:<key>, article:<slug>, or an https:// URL.
